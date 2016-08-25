@@ -43,5 +43,12 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+#Div stuff
+.idea/compiler.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/copyright/profiles_settings.xml
+INF2100.iml
+
 # Mac
 .DS_Store
