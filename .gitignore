@@ -52,3 +52,5 @@ INF2100.iml
 
 # Mac
 .DS_Store
+.idea/
+INF2100.iml
