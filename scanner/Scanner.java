@@ -45,6 +45,7 @@ public class Scanner {
 	curToken = nextToken;  nextToken = null;
 
 	// Del 1 her:
+        //TODO Oblig 1 skal skrives her
 
         Main.log.noteToken(nextToken);
     }

@@ -1,0 +1,155 @@
+For Emacs: -*- coding: utf-8 -*-
+
+
+			       INF2100
+		     Øvelsesoppgaver uke 35 2016
+
+
+Oppgave 1
+
+Hva gjør dette programmet? Prøv først å finne det ut bare ved å lese
+koden; prøv så å kompilere det med ~inf2100/pascal2016 og kjøre det.
+
+
+program p1;
+var i: integer;
+    p: integer;
+begin
+   i := 0;  p := 1;
+   while i <= 10 do begin
+      write(2, '^', i, '=', p, eol);
+      i := i+1;  p := 2*p;
+   end;
+end.
+
+
+
+Oppgave 2
+
+Hva gjør dette programmet?
+
+Se spesielt på linje 16: «F := X;»; hva gjør den?
+Se også på linje 23: «write(F, eol)»; hva gjør den?
+
+
+program P2;
+
+const N = 6;
+
+var A: array [1..N] of Integer;
+
+function F: Integer;
+var I: Integer;  X: Integer;
+begin
+   X := A[1];
+   I := 2;
+   while I <= N do begin
+      if A[I] > X then X := A[I];
+      I := I+1
+   end;
+   F := X
+end; {F}
+
+begin
+   A[1] := 17;  A[2] := -2;  A[3] := 22;
+   A[4] := 12;  A[5] :=  0;  A[6] :=  9;
+
+   write(F, eol)
+end.
+
+
+Oppgave 3
+
+Her er et Java-program som regner ut et Fibonacci-tall på to ulike
+måter. Oversett programmet til Pascal2016.
+
+
+class Fib {
+    final static int n = 40;
+
+    static int fib1(int x) {
+	int f1 = 0, f2 = 1;
+
+	for (int i = 0;  i < x;  i++) {
+	    int f3 = f1+f2;
+	    f1 = f2;  f2 = f3;
+	}
+	return f1;
+    }
+
+    static int fib2(int x) {
+	if (x <= 2)
+	    return 1;
+	else
+	    return fib2(x-2) + fib2(x-1);
+    }
+
+    public static void main(String arg[]) {
+	System.out.println("fib1(" + n + ") = " + fib1(n));
+	System.out.println("fib2(" + n + ") = " + fib2(n));
+    }
+}
+
+
+
+Oppgave 4
+
+Alle disse fem små programmene inneholder en syntaksfeil. Bruk
+jernbanediagrammene til å finne ut hva som er galt.
+
+
+a)
+
+program TestTall;
+const X	= -10;
+var V : integer;
+begin
+   V := 8;
+   if (V < X) V := V+1;
+   write('V er ', V, eol)
+end.
+
+
+b)
+
+program TestTall;
+var V : Integer;
+const X	=  10;
+begin
+   V := 8;
+   if (V < X) then V := V+1;
+   write('V er ', V, eol)
+end.
+
+
+c)
+
+program EnFunksjon;
+
+function F (): integer; begin
+   F := 4
+end; { F }
+
+begin
+   write('Svaret er ', F(), eol)
+end.
+
+
+d)
+
+program TestTall;
+const X	= 10;
+var V : Integer;
+begin
+   V := X/2;
+   if (V < X/4) then V := V+1;
+   write('V er ', V, eol)
+end.
+
+
+e)
+
+PROGRAM Skriv_et_tall;
+BEGIN
+   write(10, '.')
+END.
