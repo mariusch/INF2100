@@ -46,6 +46,8 @@ public class Scanner {
 
         // Del 1 her:
         //TODO Oblig 1 skal skrives her
+        
+
 
     //Er linja blank?
         if (sourceLine == "") {
