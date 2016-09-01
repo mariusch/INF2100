@@ -44,9 +44,19 @@ public class Scanner {
     public void readNextToken() {
 	curToken = nextToken;  nextToken = null;
 
-	// Del 1 her:
+        // Del 1 her:
         //TODO Oblig 1 skal skrives her
 
+    //Er linja blank?
+        if (sourceLine == "") {
+            readNextLine();
+            System.out.println("*tom linje funnet*");
+        }
+        readNextLine();
+        System.out.println(sourceLine);
+        System.out.println("Linje: " + getFileLineNum());
+
+        //Gjør dette til slutt
         Main.log.noteToken(nextToken);
     }
 

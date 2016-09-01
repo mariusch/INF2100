@@ -21,7 +21,7 @@ public class Main {
     public static void main(String arg[]) {
 	OS = System.getProperty("os.name");
 	System.out.println("This is the Ifi Pascal2016 compiler running on " + OS + ". Developed by Silje & Marius. " +
-            "Version " + version);
+            "Version " + version + ".");
 
 
 	int exitStatus = 0;
@@ -60,8 +60,8 @@ public class Main {
 
 
     private static void readArgs(String arg[]) {
-	for (int i = 0;  i < arg.length;  i++) {
-	    String a = arg[i];
+	for (String a : arg) {
+        System.out.println(a);
 
 	    if (a.equals("-logB")) {
 		log.doLogBinding = true;
