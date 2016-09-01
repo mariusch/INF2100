@@ -7,7 +7,7 @@ import static scanner.TokenKind.*;
 import java.io.*;
 
 public class Main {
-    public static final String version = "2016-08-22";
+    public static final String version = "1.9.2016";
 
     // Del 3: public static parser.Library library;
     public static LogFile log = new LogFile();
@@ -20,8 +20,9 @@ public class Main {
 
     public static void main(String arg[]) {
 	OS = System.getProperty("os.name");
-	System.out.println("This is the Ifi Pascal2016 compiler (" +
-	    version + ") running on " + OS);
+	System.out.println("This is the Ifi Pascal2016 compiler running on " + OS + ". Developed by Silje & Marius. " +
+            "Version " + version);
+
 
 	int exitStatus = 0;
 	try {
