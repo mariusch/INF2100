@@ -30,7 +30,7 @@ public class Scanner {
 
 
     public int curLineNum() {
-	return curToken.lineNum;
+	    return curToken.lineNum;
     }
 
     
@@ -46,17 +46,38 @@ public class Scanner {
 
         // Del 1 her:
         //TODO Oblig 1 skal skrives her
-        
 
+        //Den viktigste metoden i Scanner er readNextToken som leser neste
+        //symbol fra innfilen og lar nextToken peke på et nytt Token-objekt.
 
-    //Er linja blank?
-        if (sourceLine == "") {
+        //readNextLine();
+
+        //Legg alle symbolene i sourceline i en array
+        //char[] c = sourceLine.toCharArray();
+
+        //System.out.println("Linje: " + getFileLineNum());
+
+        if (sourceLine.length() == 0) {
+            System.out.println(" Linje: " + getFileLineNum());
             readNextLine();
-            System.out.println("*tom linje funnet*");
         }
-        readNextLine();
-        System.out.println(sourceLine);
-        System.out.println("Linje: " + getFileLineNum());
+
+        char c= sourceLine.charAt(0);
+        sourceLine = sourceLine.substring(1);
+
+        if (curToken == null) {
+            curToken = new Token("" + c, getFileLineNum());
+            nextToken = curToken;
+        }
+        else
+        {
+            nextToken = new Token(""+c, curLineNum());
+        }
+
+        System.out.print(curToken.id);
+
+
+
 
         //Gjør dette til slutt
         Main.log.noteToken(nextToken);

@@ -1,0 +1,92 @@
+   1: /* Hei*/ 
+Scanner: name token on line 1: /
+Scanner: name token on line 1: *
+Scanner: name token on line 1:  
+Scanner: name token on line 1: H
+Scanner: name token on line 1: e
+Scanner: name token on line 1: i
+Scanner: name token on line 1: *
+Scanner: name token on line 1: /
+Scanner: name token on line 1:  
+   2: /* Et minimalt Pascal-program */ 
+Scanner: name token on line 1: /
+Scanner: name token on line 1: *
+Scanner: name token on line 1:  
+Scanner: name token on line 1: E
+Scanner: name token on line 1: t
+Scanner: name token on line 1:  
+Scanner: name token on line 1: m
+Scanner: name token on line 1: i
+Scanner: name token on line 1: n
+Scanner: name token on line 1: i
+Scanner: name token on line 1: m
+Scanner: name token on line 1: a
+Scanner: name token on line 1: l
+Scanner: name token on line 1: t
+Scanner: name token on line 1:  
+Scanner: name token on line 1: P
+Scanner: name token on line 1: a
+Scanner: name token on line 1: s
+Scanner: name token on line 1: c
+Scanner: name token on line 1: a
+Scanner: name token on line 1: l
+Scanner: name token on line 1: -
+Scanner: name token on line 1: p
+Scanner: name token on line 1: r
+Scanner: name token on line 1: o
+Scanner: name token on line 1: g
+Scanner: name token on line 1: r
+Scanner: name token on line 1: a
+Scanner: name token on line 1: m
+Scanner: name token on line 1:  
+Scanner: name token on line 1: *
+Scanner: name token on line 1: /
+Scanner: name token on line 1:  
+   3:  
+Scanner: name token on line 1:  
+   4:  
+Scanner: name token on line 1:  
+   5: program Mini; 
+Scanner: name token on line 1: p
+Scanner: name token on line 1: r
+Scanner: name token on line 1: o
+Scanner: name token on line 1: g
+Scanner: name token on line 1: r
+Scanner: name token on line 1: a
+Scanner: name token on line 1: m
+Scanner: name token on line 1:  
+Scanner: name token on line 1: M
+Scanner: name token on line 1: i
+Scanner: name token on line 1: n
+Scanner: name token on line 1: i
+Scanner: name token on line 1: ;
+Scanner: name token on line 1:  
+   6: begin 
+Scanner: name token on line 1: b
+Scanner: name token on line 1: e
+Scanner: name token on line 1: g
+Scanner: name token on line 1: i
+Scanner: name token on line 1: n
+Scanner: name token on line 1:  
+   7:    write('x'); 
+Scanner: name token on line 1:  
+Scanner: name token on line 1:  
+Scanner: name token on line 1:  
+Scanner: name token on line 1: w
+Scanner: name token on line 1: r
+Scanner: name token on line 1: i
+Scanner: name token on line 1: t
+Scanner: name token on line 1: e
+Scanner: name token on line 1: (
+Scanner: name token on line 1: '
+Scanner: name token on line 1: x
+Scanner: name token on line 1: '
+Scanner: name token on line 1: )
+Scanner: name token on line 1: ;
+Scanner: name token on line 1:  
+   8: end. 
+Scanner: name token on line 1: e
+Scanner: name token on line 1: n
+Scanner: name token on line 1: d
+Scanner: name token on line 1: .
+Scanner: name token on line 1:  
