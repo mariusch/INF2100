@@ -50,11 +50,6 @@ public class Scanner {
         //Den viktigste metoden i Scanner er readNextToken som leser neste
         //symbol fra innfilen og lar nextToken peke på et nytt Token-objekt.
 
-        //readNextLine();
-
-        //Legg alle symbolene i sourceline i en array
-        //char[] c = sourceLine.toCharArray();
-
         //System.out.println("Linje: " + getFileLineNum());
 
         if (sourceLine.length() == 0) {
@@ -62,20 +57,54 @@ public class Scanner {
             readNextLine();
         }
 
+        sourceLine = sourceLine.trim();
         char c= sourceLine.charAt(0);
-        sourceLine = sourceLine.substring(1);
 
-        if (curToken == null) {
-            curToken = new Token("" + c, getFileLineNum());
-            nextToken = curToken;
+        //Hvis første char er A-Z eller a-z så må vi gå videre for å se om det er et name, programtoken eller noe annet ... helt til vi kommer til space
+        Token tmp = null;
+
+        //Hvis space, gå videre til ikke space
+
+        String tok = "";
+
+        if (isLetterAZ(c)) {
+            while (isLetterAZ(c) == true) {
+                tok += c;
+
+                if (sourceLine.length() == 0) {
+                    System.out.println(" Linje: " + getFileLineNum());
+                    readNextLine();
+                }
+                sourceLine = sourceLine.substring(1);
+                c= sourceLine.charAt(0);
+            }
+            tmp = new Token(tok, getFileLineNum());
         }
-        else
+        //Hvis første er et siffer
+        else if (isDigit(c)) {
+            while (isDigit(c))
+            {
+                tok = tok + c;
+
+                if (sourceLine.length() == 0) {
+                    System.out.println(" Linje: " + getFileLineNum());
+                    readNextLine();
+                }
+                sourceLine = sourceLine.substring(1);
+                c= sourceLine.charAt(0);
+            }
+        }
+        //Hvis annet tegn,
+        else {
+            //Hvis første er kommentartegn ...
+                //Vi skal ta høyde for (fange) feil dersom det ikke er noen slutt på kommentar
+            //Andre tegn ...
+        }
+        System.out.println("End of token! New token: " + tmp.identify());
+        /*if isLetterAZ(c)
         {
-            nextToken = new Token(""+c, curLineNum());
-        }
-
-        System.out.print(curToken.id);
-
+        }*/
+        nextToken = tmp;
 
 
 
@@ -114,7 +143,6 @@ public class Scanner {
     private boolean isLetterAZ(char c) {
 	return 'A'<=c && c<='Z' || 'a'<=c && c<='z';
     }
-
 
     private boolean isDigit(char c) {
 	return '0'<=c && c<='9';
