@@ -72,9 +72,9 @@ public class Token {
 	    t += " on line " + lineNum;
 
 	switch (kind) {
-	case nameToken:    t += ": " + id;  break;
-	case intValToken:  t += ": " + intVal;  break;
-	case charValToken: t += ": '" + charVal + "'";  break;
+        case nameToken:    t += ": " + id;  break;
+        case intValToken:  t += ": " + intVal;  break;
+        case charValToken: t += ": '" + charVal + "'";  break;
 	}
 	return t;
     }

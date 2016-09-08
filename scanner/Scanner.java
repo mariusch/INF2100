@@ -44,6 +44,9 @@ public class Scanner {
     public void readNextToken() {
 	curToken = nextToken;  nextToken = null;
 
+        //Første kjøring
+
+
         // Del 1 her:
         //TODO Oblig 1 skal skrives her
 
