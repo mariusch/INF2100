@@ -49,7 +49,9 @@ public class Scanner {
         - Ta høyde for linjeskift i kommentarer (antar det finnes)
         - Sjekke for e-o-f på slutten av filen
         - Dele opp metoden i mindre deler
+        - Logge
         - Javadoce
+        - Lese igjennom kompendium/foiler for ting vi kan ha glemt/oversett
 
         Testenv: -testscanner ./ressurser/test/mini.pas
         På original mini.pas
