@@ -1,7 +1,6 @@
 package scanner;
 
 import main.Main;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import static scanner.TokenKind.*;
 
@@ -154,7 +153,7 @@ public class Scanner {
             */
 
 
-            
+
 
 
         }
