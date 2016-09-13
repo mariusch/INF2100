@@ -2,8 +2,6 @@ package scanner;
 
 import main.Main;
 
-import static scanner.TokenKind.*;
-
 import java.io.*;
 
 public class Scanner {
@@ -77,7 +75,7 @@ public class Scanner {
 
                 //Kodesnutten under tror jeg ikke fungerer
 
-                if (sourceLine.length() == 0) {
+                if (sourceLine.length() == 1) {
                     System.out.println(" Linje: " + getFileLineNum());
                     readNextLine();
                 }
@@ -113,16 +111,12 @@ public class Scanner {
             tmp = new Token(Integer.parseInt(tok), getFileLineNum());
         }
         //Sjekk om kommentar
-        else if (sourceLine.substring(0,2).equals("/*")) {
+        else if (c == '/' && sourceLine.substring(1,2).equals("*")) {
 
             try {
                 System.out.println("Fant kommentar start på linjepos: " + sourcePos);
-                int teller = 1;
-                while (!sourceLine.substring(0,2).equals("*/")) { //  c != '*' && !sourceLine.substring(1,2).equals("/"
+                while (!sourceLine.substring(0,2).equals("*/")) {
 
-                    //Debugg
-                    //System.out.println(teller + ": " + "C: " + c + " andre: " + sourceLine.substring(1,2));
-                    //teller++;
 
                     tok = tok + c;
 
@@ -142,10 +136,10 @@ public class Scanner {
                 System.out.println("Dette er en kommentar: " + tok);
 
                 //TODO Dette er feil. Det skal ikke bli laget nametoken av kommentar. Midlertidig fix
-                tmp = new Token(Integer.parseInt(tok), getFileLineNum());
+                tmp = new Token(tok, getFileLineNum());
 
             } catch (Exception e) {
-               error("ERROR: Comment did not end.");
+               //error("ERROR: Comment did not end.");
             }
         }
         //Alle tegn (ikke tall, bokstaverAZ eller kommentar)
@@ -224,6 +218,7 @@ public class Scanner {
             if (sourceLine == null) {
                 sourceFile.close();  sourceFile = null;
                 sourceLine = "";
+                System.out.println("Slutt på filen!");
             } else {
                 sourceLine += " ";
             }
@@ -240,7 +235,7 @@ public class Scanner {
         while (sourceLine.trim().isEmpty()) {
 
             readNextLine();
-            System.out.println("Linje var tom. Readnextline() kjørt, linje er nå: " + sourceLine);
+            //System.out.println("Linje var tom. Readnextline() kjørt, linje er nå: " + sourceLine);
 
         }
     }
