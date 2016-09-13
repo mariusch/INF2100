@@ -16,6 +16,13 @@ Scanner: name token on line 5: x
 Scanner: char token on line 5: '''
 Scanner: ) token on line 5
 Scanner: ; token on line 5
-   6: end. 
-Scanner: end token on line 6
-Scanner: . token on line 6
+   6:    write(123); 
+Scanner: char token on line 6: ' '
+Scanner: name token on line 6: write
+Scanner: ( token on line 6
+Scanner: number token on line 6: 123
+Scanner: ) token on line 6
+Scanner: ; token on line 6
+   7: end. 
+Scanner: end token on line 7
+Scanner: . token on line 7

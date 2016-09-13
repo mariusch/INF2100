@@ -5,108 +5,81 @@ import main.Main;
 import java.io.*;
 
 public class Scanner {
-    public Token curToken = null, nextToken = null; 
+    public Token curToken = null, nextToken = null;
 
     private LineNumberReader sourceFile = null;
     private String sourceFileName, sourceLine = "";
     private int sourcePos = 0;
 
     public Scanner(String fileName) {
-	sourceFileName = fileName;
-	try {
-	    sourceFile = new LineNumberReader(new FileReader(fileName));
-	} catch (FileNotFoundException e) {
-	    Main.error("Cannot read " + fileName + "!");
-	}
+        sourceFileName = fileName;
+        try {
+            sourceFile = new LineNumberReader(new FileReader(fileName));
+        } catch (FileNotFoundException e) {
+            Main.error("Cannot read " + fileName + "!");
+        }
 
-	readNextToken(); readNextToken();
+        readNextToken(); readNextToken();
     }
 
 
     public String identify() {
-	return "Scanner reading " + sourceFileName;
+        return "Scanner reading " + sourceFileName;
     }
 
 
     public int curLineNum() {
-	    return curToken.lineNum;
+        return curToken.lineNum;
     }
 
-    
+
     private void error(String message) {
-	Main.error("Scanner error on " +
-		   (curLineNum()<0 ? "last line" : "line "+curLineNum()) + 
-		   ": " + message);
+        Main.error("Scanner error on " +
+                (curLineNum()<0 ? "last line" : "line "+curLineNum()) +
+                ": " + message);
     }
 
 
     public void readNextToken() {
         /*
         TODO
-        - Implenetere tegn-tokens
-        - Ta høyde for linjeskift i kommentarer (antar det finnes)
-        - Sjekke for e-o-f på slutten av filen
-        - Dele opp metoden i mindre deler
-        - Logge
-        - Javadoce
-        - Lese igjennom kompendium/foiler for ting vi kan ha glemt/oversett
-
-        Testenv: -testscanner ./ressurser/test/mini.pas
-        På original mini.pas
+        - Multiline comments
+        - e-o-f
+        - Cleanup
+        - Javadoc
         */
 
-	    curToken = nextToken;  nextToken = null;
+        curToken = nextToken;  nextToken = null;
 
-        //Fjerner space
-        sourceLine = sourceLine.trim();
+        sourceLine = trimStart(sourceLine);
+
         System.out.println("Linje: " + sourceLine);
 
-        //Sjekker for tom linje(r)
+        //Check for empty lines, run readNextLine() if empty
         checkEmptyLine();
 
         Token tmp = null;
         String tok = "";
         char c = sourceLine.charAt(0);
 
-        //Sjekker om A-Z
+        //Sjekker om vi starter med A-Z
         if (isLetterAZ(c)) {
-            while (isLetterAZ(c)) {
+
+            while (isLetterAZ(c) || isDigit(c)) {
+
                 tok += c;
-
-                //Kodesnutten under tror jeg ikke fungerer
-
-                if (sourceLine.length() == 1) {
-                    System.out.println(" Linje: " + getFileLineNum());
-                    readNextLine();
-                }
-                //System.out.println("Sourceline er:" + sourceLine.length());
                 sourceLine = sourceLine.substring(1);
-                //c = sourceLine.charAt(0);
-                /*System.out.println("Her kræsjer det: " + sourceLine);
-                System.out.println(tok);*/
-                /*if (!(sourceLine.isEmpty()))*/
-                //if (sourceLine.length() > 0)
                 c = sourceLine.charAt(0);
-
             }
-
-            //Hva hvis det neste er end of line?
-
             tmp = new Token(tok, getFileLineNum());
         }
         //Sjekker om Digit
         else if (isDigit(c)) {
-            while (isDigit(c))
-            {
-                tok = tok + c;
 
-                //Kodesnutten under tror jeg ikke fungerer
-                if (sourceLine.length() == 0) {
-                    System.out.println(" Linje: " + getFileLineNum());
-                    readNextLine();
-                }
+            while (isDigit(c)) {
+                tok += c;
                 sourceLine = sourceLine.substring(1);
-                c= sourceLine.charAt(0);
+                c = sourceLine.charAt(0);
             }
             tmp = new Token(Integer.parseInt(tok), getFileLineNum());
         }
@@ -139,7 +112,7 @@ public class Scanner {
                 tmp = new Token(tok, getFileLineNum());
 
             } catch (Exception e) {
-               //error("ERROR: Comment did not end.");
+                //error("ERROR: Comment did not end.");
             }
         }
         //Alle tegn (ikke tall, bokstaverAZ eller kommentar)
@@ -183,8 +156,9 @@ public class Scanner {
                 tmp = new Token(tok, getFileLineNum());
                 sourceLine = sourceLine.substring(2);
 
-            } else {
-            //Vanlig tegn token
+            }
+            else {
+                //Vanlig tegn token
 
                 System.out.println("Linje: " + sourceLine);
 
@@ -214,18 +188,18 @@ public class Scanner {
     private void readNextLine() {
         if (sourceFile != null) {
             try {
-            sourceLine = sourceFile.readLine();
-            if (sourceLine == null) {
-                sourceFile.close();  sourceFile = null;
-                sourceLine = "";
-                //Fjern denne kommentaren - bare for debug
-                System.out.println("Slutt på filen!");
-            } else {
-                sourceLine += " ";
-            }
-            sourcePos = 0;
+                sourceLine = sourceFile.readLine();
+                if (sourceLine == null) {
+                    sourceFile.close();  sourceFile = null;
+                    sourceLine = "";
+                    //Fjern denne kommentaren - bare for debug
+                    System.out.println("Slutt på filen!");
+                } else {
+                    sourceLine += " ";
+                }
+                sourcePos = 0;
             } catch (IOException e) {
-            Main.error("Scanner error: unspecified I/O error!");
+                Main.error("Scanner error: unspecified I/O error!");
             }
         }
         if (sourceFile != null)
@@ -236,6 +210,7 @@ public class Scanner {
         while (sourceLine.trim().isEmpty()) {
 
             readNextLine();
+            //sourceLine = sourceLine.trim();
             //System.out.println("Linje var tom. Readnextline() kjørt, linje er nå: " + sourceLine);
 
         }
@@ -243,36 +218,43 @@ public class Scanner {
 
 
     private int getFileLineNum() {
-	return (sourceFile!=null ? sourceFile.getLineNumber() : 0);
+        return (sourceFile!=null ? sourceFile.getLineNumber() : 0);
     }
 
 
     // Character test utilities:
 
     private boolean isLetterAZ(char c) {
-	return 'A'<=c && c<='Z' || 'a'<=c && c<='z';
+        return 'A'<=c && c<='Z' || 'a'<=c && c<='z';
     }
 
     private boolean isDigit(char c) {
-	return '0'<=c && c<='9';
+        return '0'<=c && c<='9';
     }
 
 
     // Parser tests:
 
     public void test(TokenKind t) {
-	if (curToken.kind != t)
-	    testError(t.toString());
+        if (curToken.kind != t)
+            testError(t.toString());
     }
 
     public void testError(String message) {
-	Main.error(curLineNum(), 
-		   "Expected a " + message +
-		   " but found a " + curToken.kind + "!");
+        Main.error(curLineNum(),
+                "Expected a " + message +
+                        " but found a " + curToken.kind + "!");
     }
 
     public void skip(TokenKind t) {
-	test(t);  
-	readNextToken();
+        test(t);
+        readNextToken();
+    }
+
+    private String trimStart(String s){
+        while (s.length() > 0 && s.charAt(0) == ' '){
+            s = s.substring(1);
+        }
+        return s;
     }
 }
