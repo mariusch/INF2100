@@ -1,3 +1,5 @@
    1: program Mini; 
 Scanner: program token on line 1
 Scanner: name token on line 1: Mini
+Scanner: name token on line 1: ;
+   2: begin 

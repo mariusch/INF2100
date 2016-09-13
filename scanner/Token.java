@@ -51,6 +51,19 @@ public class Token {
 	    kind = varToken;
 	else if (s.equals("while"))
 	    kind = whileToken;
+	//Andre tokens bestående av rekker med symboler
+	else if (s.equals("+"))
+		kind = addToken;
+	else if (s.equals(":="))
+		kind = assignToken;
+	else if (s.equals(">="))
+		kind = greaterEqualToken;
+	else if (s.equals("<="))
+		kind = lessEqualToken;
+	else if (s.equals("<>"))
+		kind = notEqualToken;
+	else if (s.equals(".."))
+		kind = rangeToken;
 	else
 	    kind = nameToken;
 
@@ -62,7 +75,58 @@ public class Token {
     }
 
     Token(char c, int lNum) {
-	kind = charValToken;  charVal = c;  lineNum = lNum;
+	charVal = c;  lineNum = lNum;
+		//Setter kind basert på char-verdi
+		if (c == '+')
+			kind = addToken;
+		else if (c == ':')
+			kind = colonToken;
+		else if (c == ',')
+			kind = commaToken;
+		else if (c == '.')
+			kind = dotToken;
+		else if (c == '=')
+			kind = equalToken;
+		else if (c == '>')
+			kind = greaterToken;
+		else if (c == '[')
+			kind = leftBracketToken;
+		else if (c == '(')
+			kind = leftParToken;
+		else if (c == '<')
+			kind = lessToken;
+		else if (c == '*')
+			kind = multiplyToken;
+		else if (c == ']')
+			kind = rightBracketToken;
+		else if (c == ')')
+			kind = rightParToken;
+		else if (c == ';')
+			kind = semicolonToken;
+		else if (c == '-')
+			kind = subtractToken;
+		else
+			kind = charValToken;
+
+			/*addToken("+"),
+				assignToken(":="),
+				colonToken(":"),
+				commaToken(","),
+				dotToken("."),
+				equalToken("="),
+				greaterToken(">"),
+				greaterEqualToken(">="),
+				leftBracketToken("["),
+				leftParToken("("),
+				lessToken("<"),
+				lessEqualToken("<="),
+				multiplyToken("*"),
+				notEqualToken("<>"),
+				rangeToken(".."),
+				rightBracketToken("]"),
+				rightParToken(")"),
+				semicolonToken(";"),
+				subtractToken("-"),*/
     }
 
 

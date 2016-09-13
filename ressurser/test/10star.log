@@ -1,0 +1,17 @@
+   1: program TenStars; 
+Scanner: program token on line 1
+Scanner: name token on line 1: TenStars
+Scanner: char token on line 1: ';'
+   2: const N	=  10; 
+Scanner: const token on line 2
+Scanner: name token on line 2: N
+Scanner: char token on line 2: '='
+Scanner: number token on line 2: 10
+Scanner: char token on line 2: ';'
+   3: var i : integer; 
+Scanner: var token on line 3
+Scanner: name token on line 3: i
+Scanner: char token on line 3: ':'
+Scanner: name token on line 3: integer
+Scanner: char token on line 3: ';'
+   4: begin 

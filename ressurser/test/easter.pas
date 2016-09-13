@@ -1,6 +1,6 @@
 /* Test program 'easter'
                 ========
-   Computes Easter Sunday for the years 2010-2020. 
+   Computes Easter Sunday for the years 2010-2020.
 */
 
 program Easter;

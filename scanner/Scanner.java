@@ -59,12 +59,12 @@ public class Scanner {
 
 	    curToken = nextToken;  nextToken = null;
 
-        //Sjekker for tom linje(r)
-        checkEmptyLine();
-
         //Fjerner space
         sourceLine = sourceLine.trim();
         System.out.println("Linje: " + sourceLine);
+
+        //Sjekker for tom linje(r)
+        checkEmptyLine();
 
         Token tmp = null;
         String tok = "";
@@ -76,19 +76,24 @@ public class Scanner {
                 tok += c;
 
                 //Kodesnutten under tror jeg ikke fungerer
+
                 if (sourceLine.length() == 0) {
                     System.out.println(" Linje: " + getFileLineNum());
                     readNextLine();
                 }
                 //System.out.println("Sourceline er:" + sourceLine.length());
                 sourceLine = sourceLine.substring(1);
-                //System.out.println("Her kræsjer det: " + sourceLine);
-                //System.out.println(tok);
-                //checkEmptyLine();
+                //c = sourceLine.charAt(0);
+                /*System.out.println("Her kræsjer det: " + sourceLine);
+                System.out.println(tok);*/
+                /*if (!(sourceLine.isEmpty()))*/
+                //if (sourceLine.length() > 0)
                 c = sourceLine.charAt(0);
 
-
             }
+
+            //Hva hvis det neste er end of line?
+
             tmp = new Token(tok, getFileLineNum());
         }
         //Sjekker om Digit
@@ -105,9 +110,10 @@ public class Scanner {
                 sourceLine = sourceLine.substring(1);
                 c= sourceLine.charAt(0);
             }
+            tmp = new Token(Integer.parseInt(tok), getFileLineNum());
         }
         //Sjekk om kommentar
-        else if (c == '/' && sourceLine.substring(1,2).equals("*")) {
+        else if (sourceLine.substring(0,2).equals("/*")) {
 
             try {
                 System.out.println("Fant kommentar start på linjepos: " + sourcePos);
@@ -136,7 +142,7 @@ public class Scanner {
                 System.out.println("Dette er en kommentar: " + tok);
 
                 //TODO Dette er feil. Det skal ikke bli laget nametoken av kommentar. Midlertidig fix
-                tmp = new Token(tok, getFileLineNum());
+                tmp = new Token(Integer.parseInt(tok), getFileLineNum());
 
             } catch (Exception e) {
                error("ERROR: Comment did not end.");
@@ -160,6 +166,8 @@ public class Scanner {
                 System.out.println("JA");
                 tok = sourceLine.substring(0,2);
             }
+
+            //Tokenkind k = new TokenKind (tok);
 
             if (tok.equals(":=")) {
 
@@ -186,7 +194,7 @@ public class Scanner {
 
                 System.out.println(sourceLine);
 
-                String t = sourceLine.substring(0,1);
+                char t = sourceLine.charAt(0);
                 sourceLine = sourceLine.substring(1);
                 System.out.println("Lager token av: " + t);
                 //System.out.println(sourceLine);

@@ -1,8 +1,2 @@
    1:  
    2: /* Et minimalt Pascal-program */ 
-Scanner: name token on line 2: /* Et minimalt Pascal-program */
-   3: program Mini; 
-Scanner: program token on line 3
-Scanner: name token on line 3: Mini
-Scanner: name token on line 3: ;
-   4: begin 
