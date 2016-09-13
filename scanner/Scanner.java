@@ -145,7 +145,7 @@ public class Scanner {
         //Alle tegn (ikke tall, bokstaverAZ eller kommentar)
         else {
 
-            System.out.println("*Ikke implementert* Dette antar jeg er et tegn: " + sourceLine);
+            //System.out.println("*Ikke implementert* Dette antar jeg er et tegn: " + sourceLine);
 
             /* Disse er de sammensatte tegnene: (resten kan behandles enklere)
             1: :=
@@ -157,7 +157,7 @@ public class Scanner {
             //Sjekker spesialtilfelle
             //TODO - Lager bare nametokens av tegn
             if (sourceLine.length() >= 2) {
-                System.out.println("JA");
+                //System.out.println("Fant tegn som er 2 langt");
                 tok = sourceLine.substring(0,2);
             }
 
@@ -186,7 +186,7 @@ public class Scanner {
             } else {
             //Vanlig tegn token
 
-                System.out.println(sourceLine);
+                System.out.println("Linje: " + sourceLine);
 
                 char t = sourceLine.charAt(0);
                 sourceLine = sourceLine.substring(1);
@@ -218,6 +218,7 @@ public class Scanner {
             if (sourceLine == null) {
                 sourceFile.close();  sourceFile = null;
                 sourceLine = "";
+                //Fjern denne kommentaren - bare for debug
                 System.out.println("Slutt på filen!");
             } else {
                 sourceLine += " ";
