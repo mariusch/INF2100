@@ -60,12 +60,7 @@ public class Scanner {
 	    curToken = nextToken;  nextToken = null;
 
         //Sjekker for tom linje(r)
-        while (sourceLine.trim().isEmpty() ) {
-
-            readNextLine();
-            System.out.println("Linje var tom. Readnextline() kjørt, linje er nå: " + sourceLine);
-
-        }
+        checkEmptyLine();
 
         //Fjerner space
         sourceLine = sourceLine.trim();
@@ -73,7 +68,7 @@ public class Scanner {
 
         Token tmp = null;
         String tok = "";
-        char c= sourceLine.charAt(0);
+        char c = sourceLine.charAt(0);
 
         //Sjekker om A-Z
         if (isLetterAZ(c)) {
@@ -85,9 +80,14 @@ public class Scanner {
                     System.out.println(" Linje: " + getFileLineNum());
                     readNextLine();
                 }
-
+                //System.out.println("Sourceline er:" + sourceLine.length());
                 sourceLine = sourceLine.substring(1);
-                c= sourceLine.charAt(0);
+                //System.out.println("Her kræsjer det: " + sourceLine);
+                //System.out.println(tok);
+                //checkEmptyLine();
+                c = sourceLine.charAt(0);
+
+
             }
             tmp = new Token(tok, getFileLineNum());
         }
@@ -154,7 +154,45 @@ public class Scanner {
             4: <>
             */
 
+            //Sjekker spesialtilfelle
+            //TODO - Lager bare nametokens av tegn
+            if (sourceLine.length() >= 2) {
+                System.out.println("JA");
+                tok = sourceLine.substring(0,2);
+            }
 
+            if (tok.equals(":=")) {
+
+                tmp = new Token(tok, getFileLineNum());
+                sourceLine = sourceLine.substring(2);
+
+            } else if (tok.equals(">=")) {
+
+                tmp = new Token(tok, getFileLineNum());
+                sourceLine = sourceLine.substring(2);
+
+            } else if (tok.equals("<=")) {
+
+                tmp = new Token(tok, getFileLineNum());
+                sourceLine = sourceLine.substring(2);
+
+            } else if (tok.equals("<>")) {
+
+                tmp = new Token(tok, getFileLineNum());
+                sourceLine = sourceLine.substring(2);
+
+            } else {
+            //Vanlig tegn token
+
+                System.out.println(sourceLine);
+
+                String t = sourceLine.substring(0,1);
+                sourceLine = sourceLine.substring(1);
+                System.out.println("Lager token av: " + t);
+                //System.out.println(sourceLine);
+                tmp = new Token(t, getFileLineNum());
+                System.out.println("Dette er igjen: " + sourceLine);
+            }
 
 
 
@@ -188,6 +226,15 @@ public class Scanner {
         }
         if (sourceFile != null)
             Main.log.noteSourceLine(getFileLineNum(), sourceLine);
+    }
+
+    private void checkEmptyLine() {
+        while (sourceLine.trim().isEmpty()) {
+
+            readNextLine();
+            System.out.println("Linje var tom. Readnextline() kjørt, linje er nå: " + sourceLine);
+
+        }
     }
 
 
