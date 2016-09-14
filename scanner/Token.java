@@ -9,7 +9,7 @@ public class Token {
     public int intVal, lineNum;
 
     Token(TokenKind k, int lNum) {
-	kind = k;  lineNum = lNum;
+	    kind = k;  lineNum = lNum;
     }
 
     Token(String s, int lNum) {
@@ -73,11 +73,11 @@ public class Token {
     }
 
     Token(int n, int lNum) {
-	kind = intValToken;  intVal = n;  lineNum = lNum;
+	    kind = intValToken;  intVal = n;  lineNum = lNum;
     }
 
     Token(char c, int lNum) {
-	charVal = c;  lineNum = lNum;
+	    charVal = c;  lineNum = lNum;
 		//Setter kind basert på char-verdi
 		if (c == '+')
 			kind = addToken;
@@ -109,39 +109,19 @@ public class Token {
 			kind = subtractToken;
 		else
 			kind = charValToken;
-
-			/*addToken("+"),
-				assignToken(":="),
-				colonToken(":"),
-				commaToken(","),
-				dotToken("."),
-				equalToken("="),
-				greaterToken(">"),
-				greaterEqualToken(">="),
-				leftBracketToken("["),
-				leftParToken("("),
-				lessToken("<"),
-				lessEqualToken("<="),
-				multiplyToken("*"),
-				notEqualToken("<>"),
-				rangeToken(".."),
-				rightBracketToken("]"),
-				rightParToken(")"),
-				semicolonToken(";"),
-				subtractToken("-"),*/
     }
 
 
     public String identify() {
-	String t = kind.identify();
-	if (lineNum > 0) 
-	    t += " on line " + lineNum;
+        String t = kind.identify();
+        if (lineNum > 0)
+            t += " on line " + lineNum;
 
-	switch (kind) {
-        case nameToken:    t += ": " + id;  break;
-        case intValToken:  t += ": " + intVal;  break;
-        case charValToken: t += ": '" + charVal + "'";  break;
-	}
-	return t;
+        switch (kind) {
+            case nameToken:    t += ": " + id;  break;
+            case intValToken:  t += ": " + intVal;  break;
+            case charValToken: t += ": '" + charVal + "'";  break;
+        }
+        return t;
     }
 }
