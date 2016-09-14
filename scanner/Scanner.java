@@ -43,10 +43,11 @@ public class Scanner {
     public void readNextToken() {
         /*
         TODO
-        - Multiline comments
-        - e-o-f
+        - Multiline comments - Oppretter Token av kommentar
         - Cleanup
         - Javadoc
+        - Se at logg stemmer med referanse kompilator
+        - Sjekke foiler/kompendiet
         */
 
         curToken = nextToken;  nextToken = null;
@@ -90,21 +91,20 @@ public class Scanner {
                 System.out.println("Fant kommentar start på linjepos: " + sourcePos);
                 while (!sourceLine.substring(0,2).equals("*/")) {
 
-
                     tok = tok + c;
 
-                    //Kodesnutten under tror jeg ikke fungerer
-                    if (sourceLine.trim().isEmpty()) {
-                        System.out.println("Linjeskift i kommentar: " + getFileLineNum());
+                    //Multiline comments
+                    if (sourceLine.length() == 2) {
                         readNextLine();
+                        System.out.println("Multiline comment. Next part: " + sourceLine);
                     }
+
                     sourceLine = sourceLine.substring(1);
                     c= sourceLine.charAt(0);
 
                 }
                 //Klipper bort "*/" som ikke blir med i loopen
                 sourceLine = sourceLine.substring(2);
-
                 tok += "*/";
                 System.out.println("Dette er en kommentar: " + tok);
 
@@ -113,12 +113,11 @@ public class Scanner {
 
             } catch (Exception e) {
                 //error("ERROR: Comment did not end.");
+                System.out.println("Kommentar sluttet ikke.");
             }
         }
         //Alle tegn (ikke tall, bokstaverAZ eller kommentar)
         else {
-
-            //System.out.println("*Ikke implementert* Dette antar jeg er et tegn: " + sourceLine);
 
             /* Disse er de sammensatte tegnene: (resten kan behandles enklere)
             1: :=
@@ -127,15 +126,12 @@ public class Scanner {
             4: <>
             */
 
-            //Sjekker spesialtilfelle
-            //TODO - Lager bare nametokens av tegn
+            //For nullpointer
             if (sourceLine.length() >= 2) {
-                //System.out.println("Fant tegn som er 2 langt");
                 tok = sourceLine.substring(0,2);
             }
 
-            //Tokenkind k = new TokenKind (tok);
-
+            //Sjekker spesialtilfelle
             if (tok.equals(":=")) {
 
                 tmp = new Token(tok, getFileLineNum());
@@ -156,25 +152,18 @@ public class Scanner {
                 tmp = new Token(tok, getFileLineNum());
                 sourceLine = sourceLine.substring(2);
 
-            } else if (sourceLine.equals("*e-o-f*")) {
+            }else if (sourceLine.equals("*e-o-f*")) {
+                //EOF token
                 tmp = new Token("eof", getFileLineNum());
                 sourceLine = "";
 
             }
             else {
                 //Vanlig tegn token
-
-                System.out.println("Linje: " + sourceLine);
-
                 char t = sourceLine.charAt(0);
                 sourceLine = sourceLine.substring(1);
-                System.out.println("Lager token av: " + t);
-                //System.out.println(sourceLine);
                 tmp = new Token(t, getFileLineNum());
-                System.out.println("Dette er igjen: " + sourceLine);
             }
-
-
 
         }
 

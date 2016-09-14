@@ -26,3 +26,4 @@ Scanner: ; token on line 6
    7: end. 
 Scanner: end token on line 7
 Scanner: . token on line 7
+Scanner: e-o-f token
