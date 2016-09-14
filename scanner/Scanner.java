@@ -156,6 +156,10 @@ public class Scanner {
                 tmp = new Token(tok, getFileLineNum());
                 sourceLine = sourceLine.substring(2);
 
+            } else if (sourceLine.equals("*e-o-f*")) {
+                tmp = new Token("eof", getFileLineNum());
+                sourceLine = "";
+
             }
             else {
                 //Vanlig tegn token
@@ -191,7 +195,7 @@ public class Scanner {
                 sourceLine = sourceFile.readLine();
                 if (sourceLine == null) {
                     sourceFile.close();  sourceFile = null;
-                    sourceLine = "";
+                    sourceLine = "*e-o-f*";
                     //Fjern denne kommentaren - bare for debug
                     System.out.println("Slutt på filen!");
                 } else {

@@ -64,6 +64,8 @@ public class Token {
 		kind = notEqualToken;
 	else if (s.equals(".."))
 		kind = rangeToken;
+    else if (s.equals("eof"))
+        kind = eofToken;
 	else
 	    kind = nameToken;
 
