@@ -43,7 +43,7 @@ public class Scanner {
     public void readNextToken() {
         /*
         TODO
-        - Multiline comments
+        - Multiline comments - Oppretter Token av kommentar
         - Cleanup
         - Javadoc
         - Se at logg stemmer med referanse kompilator
@@ -154,34 +154,26 @@ public class Scanner {
 
             }else if (sourceLine.equals("*e-o-f*")) {
                 //EOF token
-
                 tmp = new Token("eof", getFileLineNum());
                 sourceLine = "";
 
             }
             else {
                 //Vanlig tegn token
-
-                System.out.println("Linje: " + sourceLine);
-
                 char t = sourceLine.charAt(0);
                 sourceLine = sourceLine.substring(1);
-                System.out.println("Lager token av: " + t);
-                //System.out.println(sourceLine);
                 tmp = new Token(t, getFileLineNum());
-                System.out.println("Dette er igjen: " + sourceLine);
             }
 
         }
 
 
-        //System.out.println("Opprettet Token: " + tmp.identify());
+        System.out.println("Opprettet Token: " + tmp.identify());
         System.out.println("Det som er igjen av linja: " + sourceLine);
 
-        //Sett neste og logg den. Null check for comment
+        //Sett neste og logg den
         nextToken = tmp;
-        //if (tmp != null)
-            Main.log.noteToken(nextToken);
+        Main.log.noteToken(nextToken);
 
     }
 
