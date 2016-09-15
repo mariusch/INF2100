@@ -107,7 +107,7 @@ public class Scanner {
             }
 
             //Checks special cases
-            if (tok.equals(":=") || tok.equals(">=") || tok.equals("<=") || tok.equals("<>")) {
+            if (tok.equals(":=") || tok.equals(">=") || tok.equals("<=") || tok.equals("<>") || tok.equals("..")) {
 
                 tmp = new Token(tok, getFileLineNum());
                 sourceLine = sourceLine.substring(2);
