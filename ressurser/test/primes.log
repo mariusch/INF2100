@@ -3,8 +3,7 @@
    3:    using a technique called "The sieve of Eratosthenes". */ 
    4:  
    5: program Primes; 
-Scanner: char token on line 5: 'p'
-Scanner: name token on line 5: rogram
+Scanner: program token on line 5
 Scanner: name token on line 5: Primes
 Scanner: ; token on line 5
    6:  
@@ -113,8 +112,7 @@ Scanner: end token on line 27
 Scanner: ; token on line 27
   28:  
   29: procedure P4 (x	: integer); 
-Scanner: char token on line 29: 'p'
-Scanner: name token on line 29: rocedure
+Scanner: procedure token on line 29
 Scanner: name token on line 29: P4
 Scanner: ( token on line 29
 Scanner: name token on line 29: x
@@ -172,8 +170,7 @@ Scanner: end token on line 35
 Scanner: ; token on line 35
   36:  
   37: procedure PrintPrimes; 
-Scanner: char token on line 37: 'p'
-Scanner: name token on line 37: rocedure
+Scanner: procedure token on line 37
 Scanner: name token on line 37: PrintPrimes
 Scanner: ; token on line 37
   38: var i	     : integer; 
@@ -274,8 +271,7 @@ Scanner: end token on line 52
 Scanner: ; token on line 52
   53:  
   54: begin {main program} 
-Scanner: char token on line 54: 'b'
-Scanner: name token on line 54: egin
+Scanner: begin token on line 54
   55:    i := 2; 
 Scanner: char token on line 55: ' '
 Scanner: name token on line 55: i
@@ -314,6 +310,4 @@ Scanner: ; token on line 59
   60: end. {main program} 
 Scanner: end token on line 60
 Scanner: . token on line 60
-Scanner: * token
-Scanner: name token: e
 Scanner: e-o-f token

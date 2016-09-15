@@ -74,6 +74,10 @@ public class Scanner {
             removeComment(tok,c,tmp, s);
         }
 
+        checkEmptyLine();
+        c= sourceLine.charAt(0);
+        System.out.println("Linje: " + sourceLine);
+
         //Checks if A-Z
         if (isLetterAZ(c)) {
 
@@ -117,7 +121,6 @@ public class Scanner {
 
             } else {
                 //Normal char
-                checkEmptyLine();
                 char t = sourceLine.charAt(0);
                 sourceLine = sourceLine.substring(1);
                 tmp = new Token(t, getFileLineNum());
