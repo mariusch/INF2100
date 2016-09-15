@@ -45,7 +45,6 @@ public class Scanner {
         /*
         TODO
         - Oppretter Token av kommentar
-        - Ta med {} kommentarer
         - Lage feilmeldinger (sourcePos bruker aldri?)
         - Javadoc
         - Se at logg stemmer med referanse kompilator
@@ -73,6 +72,7 @@ public class Scanner {
                 sourceLine = sourceLine.substring(1);
                 c = sourceLine.charAt(0);
             }
+            System.out.println(tok);
             tmp = new Token(tok, getFileLineNum());
         }
         //Checks if Digit
@@ -218,7 +218,7 @@ public class Scanner {
                     c= sourceLine.charAt(0);
 
                 }
-                //Removes "*/" at the end
+                //Removes "}" at the end
                 sourceLine = sourceLine.substring(1);
                 tok += "}";
 
@@ -259,7 +259,6 @@ public class Scanner {
                 System.out.println("Kommentar sluttet ikke.");
             }
         }
-
         return tmp;
     }
 
