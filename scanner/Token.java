@@ -13,43 +13,43 @@ public class Token {
     }
 
     Token(String s, int lNum) {
-	if (s.equals("and"))
+	if (s.equalsIgnoreCase("and"))
 	    kind = andToken;
-	else if (s.equals("array"))
+	else if (s.equalsIgnoreCase("array"))
 	    kind = arrayToken;
-	else if (s.equals("begin"))
+	else if (s.equalsIgnoreCase("begin"))
 	    kind = beginToken;
-	else if (s.equals("const"))
+	else if (s.equalsIgnoreCase("const"))
 	    kind = constToken;
-	else if (s.equals("div"))
+	else if (s.equalsIgnoreCase("div"))
 	    kind = divToken;
-	else if (s.equals("do"))
+	else if (s.equalsIgnoreCase("do"))
 	    kind = doToken;
-	else if (s.equals("else"))
+	else if (s.equalsIgnoreCase("else"))
 	    kind = elseToken;
-	else if (s.equals("end"))
+	else if (s.equalsIgnoreCase("end"))
 	    kind = endToken;
-	else if (s.equals("function"))
+	else if (s.equalsIgnoreCase("function"))
 	    kind = functionToken;
-	else if (s.equals("if"))
+	else if (s.equalsIgnoreCase("if"))
 	    kind = ifToken;
-	else if (s.equals("mod"))
+	else if (s.equalsIgnoreCase("mod"))
 	    kind = modToken;
-	else if (s.equals("not"))
+	else if (s.equalsIgnoreCase("not"))
 	    kind = notToken;
-	else if (s.equals("of"))
+	else if (s.equalsIgnoreCase("of"))
 	    kind = ofToken;
-	else if (s.equals("or"))
+	else if (s.equalsIgnoreCase("or"))
 	    kind = orToken;
-	else if (s.equals("procedure"))
+	else if (s.equalsIgnoreCase("procedure"))
 	    kind = procedureToken;
-	else if (s.equals("program"))
+	else if (s.equalsIgnoreCase("program"))
 	    kind = programToken;
-	else if (s.equals("then"))
+	else if (s.equalsIgnoreCase("then"))
 	    kind = thenToken;
-	else if (s.equals("var"))
+	else if (s.equalsIgnoreCase("var"))
 	    kind = varToken;
-	else if (s.equals("while"))
+	else if (s.equalsIgnoreCase("while"))
 	    kind = whileToken;
 	//Andre tokens bestående av rekker med symboler
 	else if (s.equals("+"))
@@ -64,7 +64,7 @@ public class Token {
 		kind = notEqualToken;
 	else if (s.equals(".."))
 		kind = rangeToken;
-    else if (s.equals("eof"))
+    else if (s.equalsIgnoreCase("eof"))
         kind = eofToken;
 	else
 	    kind = nameToken;

@@ -96,9 +96,9 @@ public class Main {
 
 
     private static void doTestScanner(Scanner s) {
-	while (s.nextToken.kind != eofToken)
-	    s.readNextToken();
-    }
+        while (s.nextToken.kind != eofToken)
+            s.readNextToken();
+        }
 
 
     /* Del 2:
