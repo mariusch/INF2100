@@ -44,9 +44,9 @@ public class Scanner {
     public void readNextToken() {
         /*
         TODO
-        - Multiline comments - Oppretter Token av kommentar
-        - Lage feilmeldinger
-        - Cleanup
+        - Oppretter Token av kommentar
+        - Ta med {} kommentarer
+        - Lage feilmeldinger (sourcePos bruker aldri?)
         - Javadoc
         - Se at logg stemmer med referanse kompilator
         - Sjekke foiler/kompendiet
@@ -54,9 +54,8 @@ public class Scanner {
 
         curToken = nextToken;  nextToken = null;
 
-        sourceLine = trimStart(sourceLine);
-
         System.out.println("Linje: " + sourceLine);
+        sourceLine = trimStart(sourceLine);
 
         //Check for empty lines, run readNextLine() if empty
         checkEmptyLine();
@@ -65,7 +64,7 @@ public class Scanner {
         String tok = "";
         char c = sourceLine.charAt(0);
 
-        //Sjekker om vi starter med A-Z
+        //Checks if A-Z
         if (isLetterAZ(c)) {
 
             while (isLetterAZ(c) || isDigit(c)) {
@@ -76,7 +75,7 @@ public class Scanner {
             }
             tmp = new Token(tok, getFileLineNum());
         }
-        //Sjekker om Digit
+        //Checks if Digit
         else if (isDigit(c)) {
 
             while (isDigit(c)) {
@@ -86,59 +85,34 @@ public class Scanner {
             }
             tmp = new Token(Integer.parseInt(tok), getFileLineNum());
         }
-        //Sjekk om kommentar
-        else if (c == '/' && sourceLine.substring(1,2).equals("*")) {
-
-            try {
-                System.out.println("Fant kommentar start på linjepos: " + sourcePos);
-                while (!sourceLine.substring(0,2).equals("*/")) {
-
-                    tok = tok + c;
-
-                    //Multiline comments
-                    if (sourceLine.length() == 2) {
-                        readNextLine();
-                        System.out.println("Multiline comment. Next part: " + sourceLine);
-                    }
-
-                    sourceLine = sourceLine.substring(1);
-                    c= sourceLine.charAt(0);
-
-                }
-                //Klipper bort "*/" som ikke blir med i loopen
-                sourceLine = sourceLine.substring(2);
-                tok += "*/";
-                System.out.println("Dette er en kommentar: " + tok);
-
-                //TODO Dette er feil. Det skal ikke bli laget nametoken av kommentar. Midlertidig fix
-                tmp = new Token(tok, getFileLineNum());
-
-            } catch (Exception e) {
-                //error("ERROR: Comment did not end.");
-                System.out.println("Kommentar sluttet ikke.");
-            }
-        } else if (endOfFile) {
+        //Checks if comment
+        else if (c == '/' && sourceLine.substring(1,2).equals("*") || c == '{') {
+            boolean s = false;
+            if (c == '{')
+                s = true;
+            tmp = removeComment(tok,c,tmp, s);
+        }
+        //Checks if EOF
+        else if (endOfFile) {
             tmp = new Token("eof", getFileLineNum());
             sourceLine = "";
         }
-        //Alle tegn (ikke tall, bokstaverAZ eller kommentar)
+        //Checks if chars
         else {
 
-
-
-            //For nullpointer
+            //Nullpointer check for char > 2
             if (sourceLine.length() >= 2) {
                 tok = sourceLine.substring(0,2);
             }
 
-            //Sjekker spesialtilfeller
+            //Checks special cases
             if (tok.equals(":=") || tok.equals(">=") || tok.equals("<=") || tok.equals("<>")) {
 
                 tmp = new Token(tok, getFileLineNum());
                 sourceLine = sourceLine.substring(2);
 
             } else {
-                //Vanlig tegn token
+                //Normal char
                 char t = sourceLine.charAt(0);
                 sourceLine = sourceLine.substring(1);
                 tmp = new Token(t, getFileLineNum());
@@ -146,11 +120,10 @@ public class Scanner {
 
         }
 
-
         System.out.println("Opprettet Token: " + tmp.identify());
         System.out.println("Det som er igjen av linja: " + sourceLine);
 
-        //Sett neste og logg den
+        //Set next and log
         nextToken = tmp;
         Main.log.noteToken(nextToken);
 
@@ -176,17 +149,6 @@ public class Scanner {
         if (sourceFile != null)
             Main.log.noteSourceLine(getFileLineNum(), sourceLine);
     }
-
-    private void checkEmptyLine() {
-        while (sourceLine.trim().isEmpty()) {
-
-            readNextLine();
-            //sourceLine = sourceLine.trim();
-            //System.out.println("Linje var tom. Readnextline() kjørt, linje er nå: " + sourceLine);
-
-        }
-    }
-
 
     private int getFileLineNum() {
         return (sourceFile!=null ? sourceFile.getLineNumber() : 0);
@@ -222,10 +184,83 @@ public class Scanner {
         readNextToken();
     }
 
+
+    //Helper methods
+
+    private void checkEmptyLine() {
+        while (sourceLine.trim().isEmpty()) {
+            readNextLine();
+        }
+    }
+
     private String trimStart(String s){
         while (s.length() > 0 && s.charAt(0) == ' '){
             s = s.substring(1);
         }
         return s;
     }
+
+    private Token removeComment(String tok, char c, Token tmp, boolean s) {
+
+        if (s) {
+            try {
+                while (!sourceLine.substring(0,1).equals("}")) {
+
+                    tok = tok + c;
+
+                    //Multiline comments
+                    if (sourceLine.length() == 1) {
+                        readNextLine();
+                        System.out.println("Multiline comment. Next part: " + sourceLine);
+                    }
+
+                    sourceLine = sourceLine.substring(1);
+                    c= sourceLine.charAt(0);
+
+                }
+                //Removes "*/" at the end
+                sourceLine = sourceLine.substring(1);
+                tok += "}";
+
+                //TODO Dette er feil. Det skal ikke bli laget nametoken av kommentar. Midlertidig fix
+                tmp = new Token(tok, getFileLineNum());
+                System.out.println("Dette er en kommentar: " + tok);
+
+            } catch (Exception e) {
+                //error("ERROR: Comment did not end.");
+                System.out.println("Kommentar sluttet ikke.");
+            }
+        } else {
+            try {
+                while (!sourceLine.substring(0,2).equals("*/")) {
+
+                    tok = tok + c;
+
+                    //Multiline comments
+                    if (sourceLine.length() == 2) {
+                        readNextLine();
+                        System.out.println("Multiline comment. Next part: " + sourceLine);
+                    }
+
+                    sourceLine = sourceLine.substring(1);
+                    c= sourceLine.charAt(0);
+
+                }
+                //Removes "*/" at the end
+                sourceLine = sourceLine.substring(2);
+                tok += "*/";
+
+                //TODO Dette er feil. Det skal ikke bli laget nametoken av kommentar. Midlertidig fix
+                tmp = new Token(tok, getFileLineNum());
+                System.out.println("Dette er en kommentar: " + tok);
+
+            } catch (Exception e) {
+                //error("ERROR: Comment did not end.");
+                System.out.println("Kommentar sluttet ikke.");
+            }
+        }
+
+        return tmp;
+    }
+
 }

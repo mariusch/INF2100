@@ -122,9 +122,7 @@ Scanner: end token on line 26
   27: end; {FindPrimes} 
 Scanner: end token on line 27
 Scanner: ; token on line 27
-Scanner: char token on line 27: '{'
-Scanner: name token on line 27: FindPrimes
-Scanner: char token on line 27: '}'
+Scanner: name token on line 27: {FindPrimes}
   28:  
   29: procedure P4 (x	: integer); 
 Scanner: procedure token on line 29
@@ -187,9 +185,7 @@ Scanner: ; token on line 34
   35: end; {P4} 
 Scanner: end token on line 35
 Scanner: ; token on line 35
-Scanner: char token on line 35: '{'
-Scanner: name token on line 35: P4
-Scanner: char token on line 35: '}'
+Scanner: name token on line 35: {P4}
   36:  
   37: procedure PrintPrimes; 
 Scanner: procedure token on line 37
@@ -301,16 +297,11 @@ Scanner: ) token on line 51
   52: end; {PrintPrimes} 
 Scanner: end token on line 52
 Scanner: ; token on line 52
-Scanner: char token on line 52: '{'
-Scanner: name token on line 52: PrintPrimes
-Scanner: char token on line 52: '}'
+Scanner: name token on line 52: {PrintPrimes}
   53:  
   54: begin {main program} 
 Scanner: begin token on line 54
-Scanner: char token on line 54: '{'
-Scanner: name token on line 54: main
-Scanner: program token on line 54
-Scanner: char token on line 54: '}'
+Scanner: name token on line 54: {main program}
   55:    i := 2; 
 Scanner: char token on line 55: ' '
 Scanner: name token on line 55: i
@@ -352,8 +343,5 @@ Scanner: ; token on line 59
   60: end. {main program} 
 Scanner: end token on line 60
 Scanner: . token on line 60
-Scanner: char token on line 60: '{'
-Scanner: name token on line 60: main
-Scanner: program token on line 60
-Scanner: char token on line 60: '}'
+Scanner: name token on line 60: {main program}
 Scanner: e-o-f token
