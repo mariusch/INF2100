@@ -30,7 +30,6 @@ Scanner: name token on line 9: Boolean
 Scanner: ; token on line 9
   10:     i	  : integer; 
 Scanner: name token on line 10: i
-Scanner: char token on line 10: '	'
 Scanner: : token on line 10
 Scanner: name token on line 10: integer
 Scanner: ; token on line 10
@@ -81,7 +80,7 @@ Scanner: do token on line 20
   21:       begin 
 Scanner: begin token on line 21
   22: 	 prime[i2] := false; 
-Scanner: char token on line 22: '	'
+Scanner: char token on line 22: ' '
 Scanner: name token on line 22: prime
 Scanner: [ token on line 22
 Scanner: name token on line 22: i2
@@ -90,7 +89,7 @@ Scanner: := token on line 22
 Scanner: name token on line 22: false
 Scanner: ; token on line 22
   23: 	 i2 := i2+i1 
-Scanner: char token on line 23: '	'
+Scanner: char token on line 23: ' '
 Scanner: name token on line 23: i2
 Scanner: := token on line 23
 Scanner: name token on line 23: i2
@@ -116,7 +115,6 @@ Scanner: procedure token on line 29
 Scanner: name token on line 29: P4
 Scanner: ( token on line 29
 Scanner: name token on line 29: x
-Scanner: char token on line 29: '	'
 Scanner: : token on line 29
 Scanner: name token on line 29: integer
 Scanner: ) token on line 29
@@ -176,7 +174,6 @@ Scanner: ; token on line 37
   38: var i	     : integer; 
 Scanner: var token on line 38
 Scanner: name token on line 38: i
-Scanner: char token on line 38: '	'
 Scanner: : token on line 38
 Scanner: name token on line 38: integer
 Scanner: ; token on line 38
@@ -214,7 +211,7 @@ Scanner: then token on line 44
   45:       begin 
 Scanner: begin token on line 45
   46: 	 if (NPrinted > 0) and (NPrinted mod 10 = 0) then write(eol); 
-Scanner: char token on line 46: '	'
+Scanner: char token on line 46: ' '
 Scanner: if token on line 46
 Scanner: ( token on line 46
 Scanner: name token on line 46: NPrinted
@@ -236,7 +233,7 @@ Scanner: name token on line 46: eol
 Scanner: ) token on line 46
 Scanner: ; token on line 46
   47: 	 P4(i);  NPrinted := NPrinted + 1; 
-Scanner: char token on line 47: '	'
+Scanner: char token on line 47: ' '
 Scanner: name token on line 47: P4
 Scanner: ( token on line 47
 Scanner: name token on line 47: i
@@ -273,7 +270,6 @@ Scanner: ; token on line 52
   54: begin {main program} 
 Scanner: begin token on line 54
   55:    i := 2; 
-Scanner: char token on line 55: ' '
 Scanner: name token on line 55: i
 Scanner: := token on line 55
 Scanner: number token on line 55: 2
@@ -302,7 +298,6 @@ Scanner: ; token on line 56
   57:  
   58:    /* Find and print the primes: */ 
   59:    FindPrimes;  PrintPrimes; 
-Scanner: char token on line 59: ' '
 Scanner: name token on line 59: FindPrimes
 Scanner: ; token on line 59
 Scanner: name token on line 59: PrintPrimes

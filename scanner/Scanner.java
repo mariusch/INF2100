@@ -44,8 +44,6 @@ public class Scanner {
     public void readNextToken() {
         /*
         TODO
-        - Oppretter Token av kommentar
-        - Tror den lager char tokens av mellomrom, ref linje 58 i primes. trimStart tar bare starten og ikke slutten?
         - Lage feilmeldinger (sourcePos bruker aldri?)
             - Kommentarer slutter ikke
             - Mer feilmeldinger 33 min ut i del 2 av podcast
@@ -53,18 +51,15 @@ public class Scanner {
         - Se at logg stemmer med referanse kompilator
         - Sjekke foiler/kompendiet
         */
-
         curToken = nextToken;  nextToken = null;
 
         //Check for empty lines, run readNextLine() if empty
         checkEmptyLine();
-
-        System.out.println("Linje: " + sourceLine);
         sourceLine = trimStart(sourceLine);
+        char c = sourceLine.charAt(0);
 
         Token tmp = null;
         String tok = "";
-        char c = sourceLine.charAt(0);
 
         //Checks if comment
         if (c == '/' && sourceLine.substring(1,2).equals("*") || c == '{') {
@@ -72,11 +67,10 @@ public class Scanner {
             if (c == '{')
                 s = true;
             removeComment(tok,c,tmp, s);
+            checkEmptyLine();
+            sourceLine = trimStart(sourceLine);
+            c= sourceLine.charAt(0);
         }
-
-        checkEmptyLine();
-        c= sourceLine.charAt(0);
-        System.out.println("Linje: " + sourceLine);
 
         //Checks if A-Z
         if (isLetterAZ(c)) {
@@ -87,7 +81,6 @@ public class Scanner {
                 sourceLine = sourceLine.substring(1);
                 c = sourceLine.charAt(0);
             }
-            System.out.println(tok);
             tmp = new Token(tok, getFileLineNum());
         }
         //Checks if Digit
@@ -205,7 +198,7 @@ public class Scanner {
         while (s.length() > 0 && s.charAt(0) == ' '){
             s = s.substring(1);
         }
-        return s;
+        return s.replace("\t", "");
     }
 
     private void removeComment(String tok, char c, Token tmp, boolean s) {
@@ -231,7 +224,6 @@ public class Scanner {
                 tok += "}";
 
                 System.out.println("Dette er en kommentar: " + tok);
-                System.out.println("Sourceline er: " + sourceLine);
 
             } catch (Exception e) {
                 //error("ERROR: Comment did not end.");
@@ -258,7 +250,6 @@ public class Scanner {
                 tok += "*/";
 
                 System.out.println("Dette er en kommentar: " + tok);
-                System.out.println("Sourceline er: " + sourceLine);
 
             } catch (Exception e) {
                 //error("ERROR: Comment did not end.");
