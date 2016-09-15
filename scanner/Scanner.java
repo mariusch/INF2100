@@ -66,6 +66,14 @@ public class Scanner {
         String tok = "";
         char c = sourceLine.charAt(0);
 
+        //Checks if comment
+        if (c == '/' && sourceLine.substring(1,2).equals("*") || c == '{') {
+            boolean s = false;
+            if (c == '{')
+                s = true;
+            removeComment(tok,c,tmp, s);
+        }
+
         //Checks if A-Z
         if (isLetterAZ(c)) {
 
@@ -87,13 +95,6 @@ public class Scanner {
                 c = sourceLine.charAt(0);
             }
             tmp = new Token(Integer.parseInt(tok), getFileLineNum());
-        }
-        //Checks if comment
-        else if (c == '/' && sourceLine.substring(1,2).equals("*") || c == '{') {
-            boolean s = false;
-            if (c == '{')
-                s = true;
-            tmp = removeComment(tok,c,tmp, s);
         }
         //Checks if EOF
         else if (endOfFile) {
@@ -203,7 +204,7 @@ public class Scanner {
         return s;
     }
 
-    private Token removeComment(String tok, char c, Token tmp, boolean s) {
+    private void removeComment(String tok, char c, Token tmp, boolean s) {
 
         if (s) {
             try {
@@ -262,7 +263,6 @@ public class Scanner {
                 System.out.println("Kommentar sluttet ikke.");
             }
         }
-        return tmp;
     }
 
 }
