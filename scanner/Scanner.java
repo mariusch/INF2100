@@ -10,6 +10,7 @@ public class Scanner {
     private LineNumberReader sourceFile = null;
     private String sourceFileName, sourceLine = "";
     private int sourcePos = 0;
+    private boolean endOfFile = false;
 
     public Scanner(String fileName) {
         sourceFileName = fileName;
@@ -44,6 +45,7 @@ public class Scanner {
         /*
         TODO
         - Multiline comments - Oppretter Token av kommentar
+        - Lage feilmeldinger
         - Cleanup
         - Javadoc
         - Se at logg stemmer med referanse kompilator
@@ -115,6 +117,9 @@ public class Scanner {
                 //error("ERROR: Comment did not end.");
                 System.out.println("Kommentar sluttet ikke.");
             }
+        } else if (endOfFile) {
+            tmp = new Token("eof", getFileLineNum());
+            sourceLine = "";
         }
         //Alle tegn (ikke tall, bokstaverAZ eller kommentar)
         else {
@@ -152,13 +157,7 @@ public class Scanner {
                 tmp = new Token(tok, getFileLineNum());
                 sourceLine = sourceLine.substring(2);
 
-            }else if (sourceLine.equals("*e-o-f*")) {
-                //EOF token
-                tmp = new Token("eof", getFileLineNum());
-                sourceLine = "";
-
-            }
-            else {
+            } else {
                 //Vanlig tegn token
                 char t = sourceLine.charAt(0);
                 sourceLine = sourceLine.substring(1);
@@ -185,8 +184,7 @@ public class Scanner {
                 if (sourceLine == null) {
                     sourceFile.close();  sourceFile = null;
                     sourceLine = "*e-o-f*";
-                    //Fjern denne kommentaren - bare for debug
-                    System.out.println("Slutt på filen!");
+                    endOfFile = true;
                 } else {
                     sourceLine += " ";
                 }
