@@ -226,8 +226,6 @@ public class Scanner {
                 sourceLine = sourceLine.substring(1);
                 tok += "}";
 
-                //TODO Dette er feil. Det skal ikke bli laget nametoken av kommentar. Midlertidig fix
-                tmp = new Token(tok, getFileLineNum());
                 System.out.println("Dette er en kommentar: " + tok);
 
             } catch (Exception e) {
@@ -254,8 +252,6 @@ public class Scanner {
                 sourceLine = sourceLine.substring(2);
                 tok += "*/";
 
-                //TODO Dette er feil. Det skal ikke bli laget nametoken av kommentar. Midlertidig fix
-                tmp = new Token(tok, getFileLineNum());
                 System.out.println("Dette er en kommentar: " + tok);
 
             } catch (Exception e) {
