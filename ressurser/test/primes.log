@@ -21,8 +21,7 @@ Scanner: : token on line 9
 Scanner: array token on line 9
 Scanner: [ token on line 9
 Scanner: number token on line 9: 2
-Scanner: . token on line 9
-Scanner: . token on line 9
+Scanner: .. token on line 9
 Scanner: name token on line 9: Limit
 Scanner: ] token on line 9
 Scanner: of token on line 9
@@ -80,7 +79,6 @@ Scanner: do token on line 20
   21:       begin 
 Scanner: begin token on line 21
   22: 	 prime[i2] := false; 
-Scanner: char token on line 22: ' '
 Scanner: name token on line 22: prime
 Scanner: [ token on line 22
 Scanner: name token on line 22: i2
@@ -89,7 +87,6 @@ Scanner: := token on line 22
 Scanner: name token on line 22: false
 Scanner: ; token on line 22
   23: 	 i2 := i2+i1 
-Scanner: char token on line 23: ' '
 Scanner: name token on line 23: i2
 Scanner: := token on line 23
 Scanner: name token on line 23: i2
@@ -211,7 +208,6 @@ Scanner: then token on line 44
   45:       begin 
 Scanner: begin token on line 45
   46: 	 if (NPrinted > 0) and (NPrinted mod 10 = 0) then write(eol); 
-Scanner: char token on line 46: ' '
 Scanner: if token on line 46
 Scanner: ( token on line 46
 Scanner: name token on line 46: NPrinted
@@ -233,7 +229,6 @@ Scanner: name token on line 46: eol
 Scanner: ) token on line 46
 Scanner: ; token on line 46
   47: 	 P4(i);  NPrinted := NPrinted + 1; 
-Scanner: char token on line 47: ' '
 Scanner: name token on line 47: P4
 Scanner: ( token on line 47
 Scanner: name token on line 47: i
@@ -306,3 +301,4 @@ Scanner: ; token on line 59
 Scanner: end token on line 60
 Scanner: . token on line 60
 Scanner: e-o-f token
+Scanner: const token on line 7

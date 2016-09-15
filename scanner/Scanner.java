@@ -195,10 +195,10 @@ public class Scanner {
     }
 
     private String trimStart(String s){
-        while (s.length() > 0 && s.charAt(0) == ' '){
+        while (s.length() > 0 && Character.isWhitespace(s.charAt(0))){
             s = s.substring(1);
         }
-        return s.replace("\t", "");
+        return s;
     }
 
     private void removeComment(String tok, char c, Token tmp, boolean s) {
