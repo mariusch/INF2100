@@ -45,7 +45,10 @@ public class Scanner {
         /*
         TODO
         - Oppretter Token av kommentar
+        - Tror den lager char tokens av mellomrom, ref linje 58 i primes. trimStart tar bare starten og ikke slutten?
         - Lage feilmeldinger (sourcePos bruker aldri?)
+            - Kommentarer slutter ikke
+            - Mer feilmeldinger 33 min ut i del 2 av podcast
         - Javadoc
         - Se at logg stemmer med referanse kompilator
         - Sjekke foiler/kompendiet
