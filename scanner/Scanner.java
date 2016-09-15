@@ -124,35 +124,15 @@ public class Scanner {
         //Alle tegn (ikke tall, bokstaverAZ eller kommentar)
         else {
 
-            /* Disse er de sammensatte tegnene: (resten kan behandles enklere)
-            1: :=
-            2: >=
-            3: <=
-            4: <>
-            */
+
 
             //For nullpointer
             if (sourceLine.length() >= 2) {
                 tok = sourceLine.substring(0,2);
             }
 
-            //Sjekker spesialtilfelle
-            if (tok.equals(":=")) {
-
-                tmp = new Token(tok, getFileLineNum());
-                sourceLine = sourceLine.substring(2);
-
-            } else if (tok.equals(">=")) {
-
-                tmp = new Token(tok, getFileLineNum());
-                sourceLine = sourceLine.substring(2);
-
-            } else if (tok.equals("<=")) {
-
-                tmp = new Token(tok, getFileLineNum());
-                sourceLine = sourceLine.substring(2);
-
-            } else if (tok.equals("<>")) {
+            //Sjekker spesialtilfeller
+            if (tok.equals(":=") || tok.equals(">=") || tok.equals("<=") || tok.equals("<>")) {
 
                 tmp = new Token(tok, getFileLineNum());
                 sourceLine = sourceLine.substring(2);
