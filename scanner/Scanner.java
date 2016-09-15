@@ -56,11 +56,11 @@ public class Scanner {
 
         curToken = nextToken;  nextToken = null;
 
-        System.out.println("Linje: " + sourceLine);
-        sourceLine = trimStart(sourceLine);
-
         //Check for empty lines, run readNextLine() if empty
         checkEmptyLine();
+
+        System.out.println("Linje: " + sourceLine);
+        sourceLine = trimStart(sourceLine);
 
         Token tmp = null;
         String tok = "";
@@ -117,6 +117,7 @@ public class Scanner {
 
             } else {
                 //Normal char
+                checkEmptyLine();
                 char t = sourceLine.charAt(0);
                 sourceLine = sourceLine.substring(1);
                 tmp = new Token(t, getFileLineNum());
@@ -227,6 +228,7 @@ public class Scanner {
                 tok += "}";
 
                 System.out.println("Dette er en kommentar: " + tok);
+                System.out.println("Sourceline er: " + sourceLine);
 
             } catch (Exception e) {
                 //error("ERROR: Comment did not end.");
@@ -253,6 +255,7 @@ public class Scanner {
                 tok += "*/";
 
                 System.out.println("Dette er en kommentar: " + tok);
+                System.out.println("Sourceline er: " + sourceLine);
 
             } catch (Exception e) {
                 //error("ERROR: Comment did not end.");
