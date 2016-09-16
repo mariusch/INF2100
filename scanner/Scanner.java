@@ -145,6 +145,7 @@ public class Scanner {
                         }
                         else {
                             //Kast feilmelding fordi tegnet ikke ble avsluttet med fnutt
+                            error("Illegal char literal!");
                         }
                     }
                 }
