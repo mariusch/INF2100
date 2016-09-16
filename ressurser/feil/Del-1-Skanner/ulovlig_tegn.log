@@ -38,8 +38,20 @@ Scanner: ) token on line 8
 Scanner: ; token on line 8
    9:  
   10:    { Men ikke ellers: } 
-  11:    x := 127 % 4; 
+  11:    x := 127; 
 Scanner: name token on line 11: x
 Scanner: := token on line 11
 Scanner: number token on line 11: 127
-Scanner error on line 11: Illegal character: '%'!
+Scanner: ; token on line 11
+  12:    write(x, eol); 
+Scanner: name token on line 12: write
+Scanner: ( token on line 12
+Scanner: name token on line 12: x
+Scanner: , token on line 12
+Scanner: name token on line 12: eol
+Scanner: ) token on line 12
+Scanner: ; token on line 12
+  13: end. 
+Scanner: end token on line 13
+Scanner: . token on line 13
+Scanner: e-o-f token

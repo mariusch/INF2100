@@ -44,10 +44,6 @@ public class Scanner {
     public void readNextToken() {
         /*
         TODO
-        - Sjekke ulovige tegn (fullføre påbegynt metode)
-        - Lage feilmeldinger
-            - Ulvlige tegn
-        - Bindestrek og tall skal bli negative tall
         - Gjøre kommentar metode mer generell
         - Javadoc
         - Se at logg stemmer med referanse kompilator
@@ -86,7 +82,13 @@ public class Scanner {
             tmp = new Token(tok.toLowerCase(), getFileLineNum());
         }
         //Checks if Digit
-        else if (isDigit(c)) {
+        else if (isDigit(c) || (c == '-' && isDigit(sourceLine.charAt(1)))) {
+
+            if (c == '-') {
+                tok += c;
+                sourceLine = sourceLine.substring(1);
+                c = sourceLine.charAt(0);
+            }
 
             while (isDigit(c)) {
                 tok += c;
