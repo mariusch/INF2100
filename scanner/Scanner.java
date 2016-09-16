@@ -107,14 +107,47 @@ public class Scanner {
             //Nullpointer check for char > 2
             if (sourceLine.length() >= 2) {
                 tok = sourceLine.substring(0,2);
-            }
+                //Checks special cases
+                if (tok.equals(":=") || tok.equals(">=") || tok.equals("<=") || tok.equals("<>") || tok.equals("..")) {
 
-            //Checks special cases
-            if (tok.equals(":=") || tok.equals(">=") || tok.equals("<=") || tok.equals("<>") || tok.equals("..")) {
+                    tmp = new Token(tok, getFileLineNum());
+                    sourceLine = sourceLine.substring(2);
 
-                tmp = new Token(tok, getFileLineNum());
-                sourceLine = sourceLine.substring(2);
+                    nextToken = tmp;
+                    Main.log.noteToken(nextToken);
+                    return;
 
+                }
+
+                if (sourceLine.length() >= 3) {
+
+                    if (sourceLine.charAt(0) == '\'') {
+                        //Start of comment!
+
+                        //Check for all chars except '
+                        if (sourceLine.charAt(2) == '\'') {
+                            tmp = new Token (sourceLine.charAt(1), getFileLineNum());
+
+                            sourceLine = sourceLine.substring(3);
+                            nextToken = tmp;
+                            Main.log.noteToken(nextToken);
+                            return;
+                        }
+                        else if (sourceLine.length() >= 4) {
+                            if (sourceLine.substring(0, 4).equals("\'\'\'\'")) {
+                                tmp = new Token ('\'', getFileLineNum());
+
+                                sourceLine.substring(4);
+                                nextToken = tmp;
+                                Main.log.noteToken(nextToken);
+                                return;
+                            }
+                        }
+                        else {
+                            //Kast feilmelding fordi tegnet ikke ble avsluttet med fnutt
+                        }
+                    }
+                }
             } else {
                 //Normal char
                 char t = sourceLine.charAt(0);
