@@ -7,7 +7,7 @@ import static scanner.TokenKind.*;
 import java.io.*;
 
 public class Main {
-    public static final String version = "1.9.2016";
+    public static final String version = "16.9.2016";
 
     // Del 3: public static parser.Library library;
     public static LogFile log = new LogFile();
@@ -19,43 +19,43 @@ public class Main {
 
 
     public static void main(String arg[]) {
-	OS = System.getProperty("os.name");
-	System.out.println("This is the Ifi Pascal2016 compiler running on " + OS + ". Developed by Silje & Marius. " +
-            "Version " + version + ".");
+        OS = System.getProperty("os.name");
+        System.out.println("This is the Ifi Pascal2016 compiler running on " + OS + ". Developed by Silje & Marius. " +
+                "Version " + version + ".");
 
 
-	int exitStatus = 0;
-	try {
-	    readArgs(arg);
-	    log.init(baseFileName + ".log");
+        int exitStatus = 0;
+        try {
+            readArgs(arg);
+            log.init(baseFileName + ".log");
 
-	    Scanner s = new Scanner(sourceFileName);
-	    if (testScanner) 
-		doTestScanner(s);
-	    // Del 2: 
-	    // else if (testParser)
-	    //     doTestParser(s);
-	    // Del 3:
-	    // else if (testChecker)
-	    //     doTestChecker(s);
-	    // Del 4:
-	    // else
-	    //     doRunRealCompiler(s);
-	} catch (PascalError e) {
-	    System.out.println();
-	    System.err.println(e.getMessage());
-	    exitStatus = 1;
-	} finally {
-	    log.finish();
-	}
+            Scanner s = new Scanner(sourceFileName);
+            if (testScanner)
+                doTestScanner(s);
+            // Del 2:
+            // else if (testParser)
+            //     doTestParser(s);
+            // Del 3:
+            // else if (testChecker)
+            //     doTestChecker(s);
+            // Del 4:
+            // else
+            //     doRunRealCompiler(s);
+        } catch (PascalError e) {
+            System.out.println();
+            System.err.println(e.getMessage());
+            exitStatus = 1;
+        } finally {
+            log.finish();
+        }
 
-	System.exit(exitStatus);
+        System.exit(exitStatus);
     }
 
 
     public static boolean useUnderscore() {
 	// Should global names start with an '_'? Not with Linux/Unix.
-	return ! OS.matches(".*n.*x.*");
+	    return ! OS.matches(".*n.*x.*");
     }
 
 
@@ -64,27 +64,27 @@ public class Main {
         System.out.println(a);
 
 	    if (a.equals("-logB")) {
-		log.doLogBinding = true;
+		    log.doLogBinding = true;
 	    } else if (a.equals("-logP")) {
-		log.doLogParser = true;
+		    log.doLogParser = true;
 	    } else if (a.equals("-logS")) {
-		log.doLogScanner = true;
+		    log.doLogScanner = true;
 	    } else if (a.equals("-logT")) {
-		log.doLogTypeChecks = true;
+		    log.doLogTypeChecks = true;
 	    } else if (a.equals("-logY")) {
-		log.doLogPrettyPrint = true;
+		    log.doLogPrettyPrint = true;
 	    } else if (a.equals("-testchecker")) {
-		testChecker = log.doLogBinding = log.doLogTypeChecks = true;
+		    testChecker = log.doLogBinding = log.doLogTypeChecks = true;
 	    } else if (a.equals("-testparser")) {
-		testParser = log.doLogParser = log.doLogPrettyPrint = true; 
+		    testParser = log.doLogParser = log.doLogPrettyPrint = true;
 	    } else if (a.equals("-testscanner")) {
-		testScanner = log.doLogScanner = true; 
+		    testScanner = log.doLogScanner = true;
 	    } else if (a.startsWith("-")) {
-		warning("Warning: Unknown option " + a + " ignored.");
+		    warning("Warning: Unknown option " + a + " ignored.");
 	    } else if (sourceFileName != null) {
-		usage();
+		    usage();
 	    } else {
-		sourceFileName = a;
+		    sourceFileName = a;
 	    }
 	}
 	if (sourceFileName == null) usage();
@@ -152,64 +152,64 @@ public class Main {
 
 
     private static void assembleCode() {
-	String pName = baseFileName;
-	String sName = baseFileName + ".s";
+        String pName = baseFileName;
+        String sName = baseFileName + ".s";
 
-	String cmd[] = new String[8];
-	cmd[0] = "gcc";  cmd[1] = "-m32";
-	cmd[2] = "-o";   cmd[3] = pName;
-	cmd[4] = sName;  
-	cmd[5] = "-L.";  cmd[6] = "-L/hom/inf2100";  cmd[7] = "-lpas2016";  
+        String cmd[] = new String[8];
+        cmd[0] = "gcc";  cmd[1] = "-m32";
+        cmd[2] = "-o";   cmd[3] = pName;
+        cmd[4] = sName;
+        cmd[5] = "-L.";  cmd[6] = "-L/hom/inf2100";  cmd[7] = "-lpas2016";
 
-	System.out.print("Running");
-	for (String s: cmd) {
-	    if (s.contains(" "))
-		System.out.print(" '" + s + "'");
-	    else
-		System.out.print(" " + s);
-	}
-	System.out.println();
+        System.out.print("Running");
+        for (String s: cmd) {
+            if (s.contains(" "))
+                System.out.print(" '" + s + "'");
+            else
+                System.out.print(" " + s);
+        }
+        System.out.println();
 
-	try {
-	    String line;
-	    Process p = Runtime.getRuntime().exec(cmd);
+        try {
+            String line;
+            Process p = Runtime.getRuntime().exec(cmd);
 
-	    // Print any output from the assembly process:
-	    BufferedReader out = new BufferedReader
-		(new InputStreamReader(p.getInputStream()));
-	    BufferedReader err = new BufferedReader
-		(new InputStreamReader(p.getErrorStream()));
+            // Print any output from the assembly process:
+            BufferedReader out = new BufferedReader
+            (new InputStreamReader(p.getInputStream()));
+            BufferedReader err = new BufferedReader
+            (new InputStreamReader(p.getErrorStream()));
 
-	    while ((line = out.readLine()) != null) {
-		System.out.println(line);
-	    }
-	    while ((line = err.readLine()) != null) {
-		System.out.println(line);
-	    }
-	    out.close();  err.close();
-	    p.waitFor();
-	} catch (Exception err) {
-	    error("Assembly errors detected.");
-	}
+            while ((line = out.readLine()) != null) {
+                System.out.println(line);
+            }
+            while ((line = err.readLine()) != null) {
+                System.out.println(line);
+            }
+            out.close();  err.close();
+            p.waitFor();
+        } catch (Exception err) {
+            error("Assembly errors detected.");
+        }
     }
 
 
     // Error message utilities:
 
     public static void error(String message) {
-	log.noteError(message);
-	throw new PascalError(message);
+        log.noteError(message);
+        throw new PascalError(message);
     }
 	
     public static void error(int lineNum, String message) {
-	error("Error in " +
-	      (lineNum<0 ? "last line" : "line "+lineNum) + 
-	      ": " + message);
+        error("Error in " +
+              (lineNum<0 ? "last line" : "line "+lineNum) +
+              ": " + message);
     }
 
     private static void usage() {
-	error("Usage: java -jar pascal2016.jar " +
-	    "[-log{B|P|S|T|Y}] [-test{checker|parser|scanner}] file");
+        error("Usage: java -jar pascal2016.jar " +
+            "[-log{B|P|S|T|Y}] [-test{checker|parser|scanner}] file");
     }
 
     public static void panic(String where) {
@@ -217,7 +217,7 @@ public class Main {
     }
 
     public static void warning(String message) {
-	log.noteError(message);
-	System.err.println(message);
+        log.noteError(message);
+        System.err.println(message);
     }
 }

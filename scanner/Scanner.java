@@ -40,15 +40,14 @@ public class Scanner {
                 ": " + message);
     }
 
-
-    public void readNextToken() {
         /*
         TODO
         - Gjøre kommentar metode mer generell
+        - Bruk sourcepos istedenfor substring for å navigere i sourceline
         - Javadoc
-        - Se at logg stemmer med referanse kompilator
-        - Sjekke foiler/kompendiet
         */
+
+    public void readNextToken() {
         curToken = nextToken;  nextToken = null;
 
         //Check for empty lines, run readNextLine() if empty
@@ -56,7 +55,7 @@ public class Scanner {
         sourceLine = trimStart(sourceLine);
         char c = sourceLine.charAt(0);
 
-        Token tmp = null;
+        Token tmp;
         String tok = "";
 
         //Checks if comment
@@ -102,10 +101,10 @@ public class Scanner {
             tmp = new Token("eof", getFileLineNum());
             sourceLine = "";
         }
-        //Checks if chars
+        //Checks if char(s)
         else {
 
-            //Nullpointer check for char > 2
+            //Nullpointer check for special cases
             if (sourceLine.length() >= 2) {
                 tok = sourceLine.substring(0, 2);
             }
@@ -120,14 +119,13 @@ public class Scanner {
                 return;
 
             }
-            //Sjekker fnutter
+            //Checks if ' '
             if (sourceLine.length() >= 3) {
 
                 if (sourceLine.charAt(0) == '\'') {
-                    //We have an iteral!
 
-                    //Check for all chars except '
                     if (sourceLine.length() >= 4) {
+                        //Iteral escaped with '
                         if (sourceLine.substring(0, 4).equals("\'\'\'\'")) {
                             tmp = new Token('\'', getFileLineNum());
 
@@ -138,6 +136,7 @@ public class Scanner {
                             return;
                         }
                     }
+                    //Iteral with whatever between '
                     if (sourceLine.charAt(2) == '\'') {
                         tmp = new Token ("'" + sourceLine.charAt(1) + "'", getFileLineNum());
 
@@ -148,7 +147,7 @@ public class Scanner {
                         return;
                     }
                     else {
-                        //Kast feilmelding fordi tegnet ikke ble avsluttet med fnutt
+                        //Iteral started with no end
                         error("Illegal char literal!");
                     }
                 }
@@ -256,7 +255,7 @@ public class Scanner {
 
                     tok = tok + c;
 
-                    //Multiline comments
+                    //Multiline comment
                     if (sourceLine.length() == 1) {
                         readNextLine();
                         checkEmptyLine();
@@ -286,7 +285,7 @@ public class Scanner {
 
                     tok = tok + c;
 
-                    //Multiline comments
+                    //Multiline comment
                     if (sourceLine.length() == 2) {
                         readNextLine();
                         checkEmptyLine();

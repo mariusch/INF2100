@@ -51,7 +51,7 @@ public class Token {
 	    kind = varToken;
 	else if (s.equals("while"))
 	    kind = whileToken;
-	//Andre tokens bestående av rekker med symboler
+	//Other tokens with symbols
 	else if (s.equals("+"))
 		kind = addToken;
 	else if (s.equals(":="))
@@ -69,7 +69,6 @@ public class Token {
     else if (s.startsWith("'") && s.endsWith("'")) {
         String tmp = s.substring(1,2);
         charVal = tmp.charAt(0);
-        System.out.println("HER ER S " + s);
         kind = charValToken;
     }
 	else
@@ -84,7 +83,7 @@ public class Token {
 
     Token(char c, int lNum) {
 	    charVal = c;  lineNum = lNum;
-		//Setter kind basert på char-verdi
+		//Sets kind based on char value
 		if (c == '+')
 			kind = addToken;
 		else if (c == ':')
