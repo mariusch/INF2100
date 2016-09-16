@@ -191,7 +191,6 @@ public class Scanner {
     private void checkEmptyLine() {
         while (sourceLine.trim().isEmpty()) {
             readNextLine();
-            System.out.println("Er den her?");
         }
     }
 
