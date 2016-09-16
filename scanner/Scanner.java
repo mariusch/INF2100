@@ -122,18 +122,13 @@ public class Scanner {
             }
             //Sjekker fnutter
             if (sourceLine.length() >= 3) {
-                System.out.println("Lengre enn 3!");
 
                 if (sourceLine.charAt(0) == '\'') {
                     //We have an iteral!
-                    System.out.println("Fant start med '!");
 
                     //Check for all chars except '
                     if (sourceLine.length() >= 4) {
-                        System.out.println("Lengde 4 '");
-                        System.out.println(sourceLine.substring(0, 4));
                         if (sourceLine.substring(0, 4).equals("\'\'\'\'")) {
-                            System.out.println("Fant 4 '");
                             tmp = new Token('\'', getFileLineNum());
 
                             sourceLine = sourceLine.substring(4);
@@ -144,13 +139,12 @@ public class Scanner {
                         }
                     }
                     if (sourceLine.charAt(2) == '\'') {
-                        System.out.println("Fant slutt med '!");
                         tmp = new Token ("'" + sourceLine.charAt(1) + "'", getFileLineNum());
 
                         sourceLine = sourceLine.substring(3);
                         nextToken = tmp;
                         Main.log.noteToken(nextToken);
-                        System.out.println("Opprettet Token RIKTIG STED: " + tmp.identify());
+                        System.out.println("Opprettet Token: " + tmp.identify());
                         return;
                     }
                     else {
@@ -248,13 +242,10 @@ public class Scanner {
     }
 
     private void checkLegalChar(char c) {
-        //http://heim.ifi.uio.no/~inf2100/oblig/feil/Del-1-Skanner/ulovlig_tegn.pas
         String tegn = "+:;.=<>[(*])-,";
 
         if (!tegn.contains(c + ""))
             error("Illegal character: '" + c + "'!");
-
-
     }
 
     private void removeComment(String tok, char c, boolean s) {
@@ -288,7 +279,6 @@ public class Scanner {
 
             } catch (Exception e) {
                 error("No end for comment starting on line " + curLineNum() + "!");
-                System.out.println("Kommentar sluttet ikke.");
             }
         } else {
             try {
@@ -317,7 +307,6 @@ public class Scanner {
 
             } catch (Exception e) {
                 error("No end for comment starting on line " + curLineNum() + "!");
-                System.out.println("Kommentar sluttet ikke.");
             }
         }
     }
