@@ -213,12 +213,12 @@ public class Scanner {
                     if (sourceLine.length() == 1) {
                         readNextLine();
                         System.out.println("Multiline comment. Next part: " + sourceLine);
-                        System.out.println("Leter etter }");
                     }
 
-                    sourceLine = sourceLine.substring(1);
-                    c= sourceLine.charAt(0);
-                    System.out.println(sourceLine.substring(0,1).equals("}") + "Har: " + sourceLine.substring(0,1));
+                    if (!sourceLine.substring(0,1).equals("}")) {
+                        sourceLine = sourceLine.substring(1);
+                        c= sourceLine.charAt(0);
+                    }
 
                 }
                 //Removes "}" at the end
@@ -226,6 +226,8 @@ public class Scanner {
                 tok += "}";
 
                 System.out.println("Dette er en kommentar: " + tok);
+                System.out.println("Dette er igjen av sourceline: " + sourceLine);
+
 
             } catch (Exception e) {
                 //error("ERROR: Comment did not end.");
@@ -243,8 +245,10 @@ public class Scanner {
                         System.out.println("Multiline comment. Next part: " + sourceLine);
                     }
 
-                    sourceLine = sourceLine.substring(1);
-                    c= sourceLine.charAt(0);
+                    if (!sourceLine.substring(0,2).equals("*/")) {
+                        sourceLine = sourceLine.substring(1);
+                        c= sourceLine.charAt(0);
+                    }
 
                 }
                 //Removes "*/" at the end
