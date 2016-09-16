@@ -137,7 +137,7 @@ public class Scanner {
                 sourceLine = sourceFile.readLine();
                 if (sourceLine == null) {
                     sourceFile.close();  sourceFile = null;
-                    sourceLine = "";
+                    sourceLine = "*EOF*";
                     endOfFile = true;
                 } else {
                     sourceLine += " ";
@@ -191,6 +191,7 @@ public class Scanner {
     private void checkEmptyLine() {
         while (sourceLine.trim().isEmpty()) {
             readNextLine();
+            System.out.println("Er den her?");
         }
     }
 
@@ -263,5 +264,4 @@ public class Scanner {
             }
         }
     }
-
 }

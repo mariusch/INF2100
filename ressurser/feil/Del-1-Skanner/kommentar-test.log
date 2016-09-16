@@ -63,3 +63,4 @@ Scanner: . token on line 13
   15: { Det er lov aa ha kommentarer _etter_ programmet ogsaa, 
   16:   baade /*...*/-kommentarer og de med kroellparenteser. 
   17: } 
+Scanner: e-o-f token
