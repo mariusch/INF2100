@@ -155,31 +155,13 @@ public class Scanner {
                         //Kast feilmelding fordi tegnet ikke ble avsluttet med fnutt
                         error("Illegal char literal!");
                     }
-
-
-                } else {
-                    //Normal char
-                    char t = sourceLine.charAt(0);
-                    checkLegalChar(t);
-                    sourceLine = sourceLine.substring(1);
-                    tmp = new Token(t, getFileLineNum());
-                    nextToken = tmp;
-                    Main.log.noteToken(nextToken);
-                    System.out.println("Opprettet Token INNERST I ELSE: " + tmp.identify());
-                    return;
                 }
-            } else {
-                //Normal char
-                char t = sourceLine.charAt(0);
-                checkLegalChar(t);
-                sourceLine = sourceLine.substring(1);
-                tmp = new Token(t, getFileLineNum());
-                nextToken = tmp;
-                Main.log.noteToken(nextToken);
-                System.out.println("Opprettet Token YTTERST i else: " + tmp.identify());
-                return;
             }
-
+            //Normal char
+            char t = sourceLine.charAt(0);
+            checkLegalChar(t);
+            sourceLine = sourceLine.substring(1);
+            tmp = new Token(t, getFileLineNum());
 
         }
 
