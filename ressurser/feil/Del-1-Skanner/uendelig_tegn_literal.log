@@ -15,3 +15,4 @@ Scanner: char token on line 7: 'P'
 Scanner: , token on line 7
 Scanner: char token on line 7: 'i'
 Scanner: , token on line 7
+Scanner error on line 7: Illegal char literal!

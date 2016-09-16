@@ -138,7 +138,8 @@ public class Scanner {
                         System.out.println("Opprettet Token RIKTIG STED: " + tmp.identify());
                         return;
                     }
-                    else if (sourceLine.length() >= 4) {
+
+                    if (sourceLine.length() >= 4) {
                         System.out.println("Fant 4 '");
                         if (sourceLine.substring(0, 4).equals("\'\'\'\'")) {
                             tmp = new Token ('\'', getFileLineNum());
@@ -149,11 +150,12 @@ public class Scanner {
                             System.out.println("Opprettet Token: " + tmp.identify());
                             return;
                         }
+                        else {
+                            //Kast feilmelding fordi tegnet ikke ble avsluttet med fnutt
+                            error("Illegal char literal!");
+                        }
                     }
-                    else {
-                        //Kast feilmelding fordi tegnet ikke ble avsluttet med fnutt
-                        error("Illegal char literal!");
-                    }
+
                 } else {
                     //Normal char
                     char t = sourceLine.charAt(0);
