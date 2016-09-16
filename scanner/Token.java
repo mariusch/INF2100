@@ -66,6 +66,12 @@ public class Token {
 		kind = rangeToken;
     else if (s.equalsIgnoreCase("eof"))
         kind = eofToken;
+    else if (s.startsWith("'") && s.endsWith("'")) {
+        String tmp = s.substring(1,2);
+        charVal = tmp.charAt(0);
+        System.out.println("HER ER S " + s);
+        kind = charValToken;
+    }
 	else
 	    kind = nameToken;
 
