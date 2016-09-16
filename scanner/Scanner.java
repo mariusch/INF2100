@@ -66,7 +66,7 @@ public class Scanner {
             boolean s = false;
             if (c == '{')
                 s = true;
-            removeComment(tok,c,tmp, s);
+            removeComment(tok,c, s);
             checkEmptyLine();
             sourceLine = trimStart(sourceLine);
             c= sourceLine.charAt(0);
@@ -81,7 +81,7 @@ public class Scanner {
                 sourceLine = sourceLine.substring(1);
                 c = sourceLine.charAt(0);
             }
-            tmp = new Token(tok, getFileLineNum());
+            tmp = new Token(tok.toLowerCase(), getFileLineNum());
         }
         //Checks if Digit
         else if (isDigit(c)) {
@@ -137,7 +137,7 @@ public class Scanner {
                 sourceLine = sourceFile.readLine();
                 if (sourceLine == null) {
                     sourceFile.close();  sourceFile = null;
-                    sourceLine = "*e-o-f*";
+                    sourceLine = "";
                     endOfFile = true;
                 } else {
                     sourceLine += " ";
@@ -201,7 +201,7 @@ public class Scanner {
         return s;
     }
 
-    private void removeComment(String tok, char c, Token tmp, boolean s) {
+    private void removeComment(String tok, char c, boolean s) {
 
         if (s) {
             try {
@@ -213,10 +213,12 @@ public class Scanner {
                     if (sourceLine.length() == 1) {
                         readNextLine();
                         System.out.println("Multiline comment. Next part: " + sourceLine);
+                        System.out.println("Leter etter }");
                     }
 
                     sourceLine = sourceLine.substring(1);
                     c= sourceLine.charAt(0);
+                    System.out.println(sourceLine.substring(0,1).equals("}") + "Har: " + sourceLine.substring(0,1));
 
                 }
                 //Removes "}" at the end
