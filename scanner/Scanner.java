@@ -206,8 +206,8 @@ public class Scanner {
         try {
 
         } catch (Exception e) {
-            error("Illegal character:");
-            System.out.println("Scanner error on line 11: Illegal character: '%'!");
+            error("Illegal character: '" + c + "'!");
+            System.out.println("Scanner error on line 11: Illegal character: ''!");
         }
 
     }
