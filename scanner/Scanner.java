@@ -45,7 +45,6 @@ public class Scanner {
         /*
         TODO
         - Lage feilmeldinger (sourcePos bruker aldri?)
-            - Kommentarer slutter ikke
             - Mer feilmeldinger 33 min ut i del 2 av podcast
         - Javadoc
         - Se at logg stemmer med referanse kompilator
@@ -115,6 +114,7 @@ public class Scanner {
             } else {
                 //Normal char
                 char t = sourceLine.charAt(0);
+                checkLegalChar(t);
                 sourceLine = sourceLine.substring(1);
                 tmp = new Token(t, getFileLineNum());
             }
@@ -201,6 +201,17 @@ public class Scanner {
         return s;
     }
 
+    private void checkLegalChar(char c) {
+        //http://heim.ifi.uio.no/~inf2100/oblig/feil/Del-1-Skanner/ulovlig_tegn.pas
+        try {
+
+        } catch (Exception e) {
+            error("Illegal character:");
+            System.out.println("Scanner error on line 11: Illegal character: '%'!");
+        }
+
+    }
+
     private void removeComment(String tok, char c, boolean s) {
 
         if (s) {
@@ -212,6 +223,7 @@ public class Scanner {
                     //Multiline comments
                     if (sourceLine.length() == 1) {
                         readNextLine();
+                        checkEmptyLine();
                         System.out.println("Multiline comment. Next part: " + sourceLine);
                     }
 
@@ -230,7 +242,7 @@ public class Scanner {
 
 
             } catch (Exception e) {
-                //error("ERROR: Comment did not end.");
+                //error("No end for comment starting on line");
                 System.out.println("Kommentar sluttet ikke.");
             }
         } else {
@@ -242,6 +254,7 @@ public class Scanner {
                     //Multiline comments
                     if (sourceLine.length() == 2) {
                         readNextLine();
+                        checkEmptyLine();
                         System.out.println("Multiline comment. Next part: " + sourceLine);
                     }
 
@@ -258,7 +271,7 @@ public class Scanner {
                 System.out.println("Dette er en kommentar: " + tok);
 
             } catch (Exception e) {
-                //error("ERROR: Comment did not end.");
+                //error("No end for comment starting on line");
                 System.out.println("Kommentar sluttet ikke.");
             }
         }

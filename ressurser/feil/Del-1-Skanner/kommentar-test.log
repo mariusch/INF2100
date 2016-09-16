@@ -2,25 +2,7 @@
    2:    Det er faktisk lovlig. 
    3:  
    4: /* Dette er en del av samme kommentar, 
-Scanner: char token on line 4: '/'
-Scanner: * token on line 4
-Scanner: name token on line 4: dette
-Scanner: name token on line 4: er
-Scanner: name token on line 4: en
-Scanner: name token on line 4: del
-Scanner: name token on line 4: av
-Scanner: name token on line 4: samme
-Scanner: name token on line 4: kommentar
-Scanner: , token on line 4
    5:    men naa er det slutt. */ 
-Scanner: name token on line 5: men
-Scanner: name token on line 5: naa
-Scanner: name token on line 5: er
-Scanner: name token on line 5: det
-Scanner: name token on line 5: slutt
-Scanner: . token on line 5
-Scanner: * token on line 5
-Scanner: char token on line 5: '/'
    6:  
    7: program Kommentar; 
 Scanner: program token on line 7
