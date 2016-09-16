@@ -242,7 +242,7 @@ public class Scanner {
 
 
             } catch (Exception e) {
-                //error("No end for comment starting on line");
+                error("No end for comment starting on line " + curLineNum() + "!");
                 System.out.println("Kommentar sluttet ikke.");
             }
         } else {
@@ -271,7 +271,7 @@ public class Scanner {
                 System.out.println("Dette er en kommentar: " + tok);
 
             } catch (Exception e) {
-                //error("No end for comment starting on line");
+                error("No end for comment starting on line " + curLineNum() + "!");
                 System.out.println("Kommentar sluttet ikke.");
             }
         }
