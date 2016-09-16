@@ -13,43 +13,43 @@ public class Token {
     }
 
     Token(String s, int lNum) {
-	if (s.equalsIgnoreCase("and"))
+	if (s.equals("and"))
 	    kind = andToken;
-	else if (s.equalsIgnoreCase("array"))
+	else if (s.equals("array"))
 	    kind = arrayToken;
-	else if (s.equalsIgnoreCase("begin"))
+	else if (s.equals("begin"))
 	    kind = beginToken;
-	else if (s.equalsIgnoreCase("const"))
+	else if (s.equals("const"))
 	    kind = constToken;
-	else if (s.equalsIgnoreCase("div"))
+	else if (s.equals("div"))
 	    kind = divToken;
-	else if (s.equalsIgnoreCase("do"))
+	else if (s.equals("do"))
 	    kind = doToken;
-	else if (s.equalsIgnoreCase("else"))
+	else if (s.equals("else"))
 	    kind = elseToken;
-	else if (s.equalsIgnoreCase("end"))
+	else if (s.equals("end"))
 	    kind = endToken;
-	else if (s.equalsIgnoreCase("function"))
+	else if (s.equals("function"))
 	    kind = functionToken;
-	else if (s.equalsIgnoreCase("if"))
+	else if (s.equals("if"))
 	    kind = ifToken;
-	else if (s.equalsIgnoreCase("mod"))
+	else if (s.equals("mod"))
 	    kind = modToken;
-	else if (s.equalsIgnoreCase("not"))
+	else if (s.equals("not"))
 	    kind = notToken;
-	else if (s.equalsIgnoreCase("of"))
+	else if (s.equals("of"))
 	    kind = ofToken;
-	else if (s.equalsIgnoreCase("or"))
+	else if (s.equals("or"))
 	    kind = orToken;
-	else if (s.equalsIgnoreCase("procedure"))
+	else if (s.equals("procedure"))
 	    kind = procedureToken;
-	else if (s.equalsIgnoreCase("program"))
+	else if (s.equals("program"))
 	    kind = programToken;
-	else if (s.equalsIgnoreCase("then"))
+	else if (s.equals("then"))
 	    kind = thenToken;
-	else if (s.equalsIgnoreCase("var"))
+	else if (s.equals("var"))
 	    kind = varToken;
-	else if (s.equalsIgnoreCase("while"))
+	else if (s.equals("while"))
 	    kind = whileToken;
 	//Andre tokens bestående av rekker med symboler
 	else if (s.equals("+"))
@@ -64,7 +64,7 @@ public class Token {
 		kind = notEqualToken;
 	else if (s.equals(".."))
 		kind = rangeToken;
-    else if (s.equalsIgnoreCase("eof"))
+    else if (s.equals("eof"))
         kind = eofToken;
     else if (s.startsWith("'") && s.endsWith("'")) {
         String tmp = s.substring(1,2);
