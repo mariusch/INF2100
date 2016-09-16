@@ -44,8 +44,12 @@ public class Scanner {
     public void readNextToken() {
         /*
         TODO
-        - Lage feilmeldinger (sourcePos bruker aldri?)
-            - Mer feilmeldinger 33 min ut i del 2 av podcast
+        - Fullføre påbegynt char arbeid
+        - Lage feilmeldinger
+            - Se: http://heim.ifi.uio.no/~inf2100/oblig/feil/Del-1-Skanner/
+        - Sjekke ulovige tegn (fullføre påbegynt metode)
+        - Bindestrek og tall skal bli negative tall
+        - Gjøre kommentar metode mer generell
         - Javadoc
         - Se at logg stemmer med referanse kompilator
         - Sjekke foiler/kompendiet
