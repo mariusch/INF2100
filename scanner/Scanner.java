@@ -5,11 +5,11 @@ import main.Main;
 import java.io.*;
 
 /**
- * Scanner class used for scanning and tokenizing Pascal2016 code. Based on base code provided through INF2100.
+ * Scanner class used for scanning and tokenizing input from Pascal2016 code files. Base code provided through INF2100.
  *
  * @author Marius Christensen
  * @author Silje Merethe Dahl
- * @since 2016-09-19
+ * @version 2016-09-19
  */
 public class Scanner {
     public Token curToken = null, nextToken = null;
@@ -46,13 +46,6 @@ public class Scanner {
                 (curLineNum()<0 ? "last line" : "line "+curLineNum()) +
                 ": " + message);
     }
-
-        /*
-        TODO
-        - Gjøre kommentar metode mer generell
-        - Bruk sourcepos istedenfor substring for å navigere i sourceline
-        - Javadoc
-        */
 		
 	 /**
       * Finds and tokenizes objects from the current sourceline of the scanned document.
@@ -64,24 +57,24 @@ public class Scanner {
     public void readNextToken() {
         curToken = nextToken;  nextToken = null;
 
-        //Check for empty lines, run readNextLine() if empty
+        //Check for empty lines and run readNextLine() if empty
         checkEmptyLine();
 
+        //Remove excess whitespace at beginning of sourceLine
         sourceLine = trimStart(sourceLine);
-        char c = sourceLine.charAt(0);
 
+        char c = sourceLine.charAt(0);
         Token tmp;
         String tok = "";
 
-        //Checks if comment
+        //Checks for and removes eventual comments
         if (c == '/' && sourceLine.substring(1,2).equals("*") || c == '{') {
-            removeComment(tok,c);
+            removeComment(c);
             checkEmptyLine();
-            sourceLine = trimStart(sourceLine);
-            c= sourceLine.charAt(0);
+            c = sourceLine.charAt(0);
         }
 
-        //Checks if A-Z
+        //Checks if token string consists of a letter, possibly followed by letters or digits
         if (isLetterAZ(c)) {
 
             while (isLetterAZ(c) || isDigit(c)) {
@@ -92,7 +85,7 @@ public class Scanner {
             }
             tmp = new Token(tok.toLowerCase(), getFileLineNum());
         }
-        //Checks if Digit
+        //Checks if token string is a number
         else if (isDigit(c) || (c == '-' && isDigit(sourceLine.charAt(1)))) {
 
             if (c == '-') {
@@ -113,14 +106,12 @@ public class Scanner {
             tmp = new Token("eof", getFileLineNum());
             sourceLine = "";
         }
-        //Checks if char(s)
         else {
 
-            //Nullpointer check for special cases
+            //Checks for operators
             if (sourceLine.length() >= 2) {
                 tok = sourceLine.substring(0, 2);
             }
-            //Checks special cases
             if (tok.equals(":=") || tok.equals(">=") || tok.equals("<=") || tok.equals("<>") || tok.equals("..")) {
 
                 tmp = new Token(tok, getFileLineNum());
@@ -131,35 +122,34 @@ public class Scanner {
                 return;
 
             }
-            //Checks if ' '
+
+            //Checks for special cases
             if (sourceLine.length() >= 3) {
 
                 if (sourceLine.charAt(0) == '\'') {
 
                     if (sourceLine.length() >= 4) {
-                        //Iteral escaped with '
+
+                        //Literal ', which in Pascal2016 is escaped with '
                         if (sourceLine.substring(0, 4).equals("\'\'\'\'")) {
                             tmp = new Token('\'', getFileLineNum());
 
                             sourceLine = sourceLine.substring(4);
                             nextToken = tmp;
                             Main.log.noteToken(nextToken);
-                            System.out.println("Opprettet Token: " + tmp.identify());
                             return;
                         }
                     }
-                    //Iteral with whatever between '
+                    //Other literal characters
                     if (sourceLine.charAt(2) == '\'') {
                         tmp = new Token ("'" + sourceLine.charAt(1) + "'", getFileLineNum());
 
                         sourceLine = sourceLine.substring(3);
                         nextToken = tmp;
                         Main.log.noteToken(nextToken);
-                        System.out.println("Opprettet Token: " + tmp.identify());
                         return;
                     }
                     else {
-                        //Iteral started with no end
                         error("Illegal char literal!");
                     }
                 }
@@ -172,15 +162,10 @@ public class Scanner {
 
         }
 
-        System.out.println("Opprettet Token: " + tmp.identify());
-        System.out.println("Det som er igjen av linja: " + sourceLine);
-
-        //Set next and log
+        //Set nextToken and log
         nextToken = tmp;
         Main.log.noteToken(nextToken);
-
     }
-
 
     private void readNextLine() {
         if (sourceFile != null) {
@@ -246,6 +231,12 @@ public class Scanner {
         }
     }
 
+    /**
+     * Removes preliminary white space from a string.
+     *
+     * @param s The String to be trimmed
+     * @return String with preliminary white space removed
+     */
     private String trimStart(String s){
         while (s.length() > 0 && Character.isWhitespace(s.charAt(0))){
             s = s.substring(1);
@@ -260,14 +251,13 @@ public class Scanner {
             error("Illegal character: '" + c + "'!");
     }
 
-    private void removeComment(String tok, char c) {
-
-        /*Begynne med å sjekke { eller skråstrek stjerne
-        * Hvis a: husk å å holde styr på at vi er ute etter første tegn (0, 1)
-        * Hvis b: sett en variabel til å holde styr på at vi er ute etter 2 første tegn (0, 2)
-        * Gjør det samme for begge.
-        */
-
+    /**
+     * Removes single and multiline comments.
+     * Gives an error if the comment was never closed.
+     *
+     * @param c Decides which start of comment marker was used
+     */
+    private void removeComment(char c) {
         String commentEnd;
 
         if (c == '{') {
@@ -278,13 +268,10 @@ public class Scanner {
         }
 
         while (!sourceLine.substring(0,commentEnd.length()).equals(commentEnd)) {
-            tok = tok + c;
 
-            //Multiline comment
             if (sourceLine.length() == commentEnd.length()) {
                 readNextLine();
                 checkEmptyLine();
-                System.out.println("Multiline comment. Next part: " + sourceLine);
             }
 
             if (endOfFile) {
@@ -293,21 +280,8 @@ public class Scanner {
 
             if (!sourceLine.substring(0,commentEnd.length()).equals(commentEnd)) {
                 sourceLine = sourceLine.substring(1);
-                c= sourceLine.charAt(0);
             }
-
         }
-        //Removes "}" at the end
         sourceLine = sourceLine.substring(commentEnd.length());
-        tok += commentEnd;
-
-        System.out.println("Dette er en kommentar: " + tok);
-        System.out.println("Dette er igjen av sourceline: " + sourceLine);
-
-
-
-
-
-
     }
 }
