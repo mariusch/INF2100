@@ -263,66 +263,51 @@ public class Scanner {
     private void removeComment(String tok, char c) {
 
         /*Begynne med å sjekke { eller skråstrek stjerne
-        * Hvis a: sett en variabel til å holde styr på at vi er ute etter første tegn (0, 1)
+        * Hvis a: husk å å holde styr på at vi er ute etter første tegn (0, 1)
         * Hvis b: sett en variabel til å holde styr på at vi er ute etter 2 første tegn (0, 2)
         * Gjør det samme for begge.
         */
 
-
+        String commentEnd;
 
         if (c == '{') {
-                while (!sourceLine.substring(0,1).equals("}")) {
-                    tok = tok + c;
-
-                    //Multiline comment
-                    if (sourceLine.length() == 1) {
-                        checkEmptyLine();
-                        System.out.println("Multiline comment. Next part: " + sourceLine);
-                    }
-
-                    if (endOfFile) {
-                        error("No end for comment starting on line " + curLineNum() + "!");
-                    }
-
-                    if (!sourceLine.substring(0,1).equals("}")) {
-                        sourceLine = sourceLine.substring(1);
-                        c= sourceLine.charAt(0);
-                    }
-
-                }
-                //Removes "}" at the end
-                sourceLine = sourceLine.substring(1);
-                tok += "}";
-
-                System.out.println("Dette er en kommentar: " + tok);
-                System.out.println("Dette er igjen av sourceline: " + sourceLine);
-
-        } else {
-                while (!sourceLine.substring(0,2).equals("*/")) {
-                    tok = tok + c;
-
-                    //Multiline comment
-                    if (sourceLine.length() == 2) {
-                        readNextLine();
-                        checkEmptyLine();
-                        System.out.println("Multiline comment. Next part: " + sourceLine);
-                    }
-
-                    if (endOfFile) {
-                        error("No end for comment starting on line " + curLineNum() + "!");
-                    }
-
-                    if (!sourceLine.substring(0,2).equals("*/")) {
-                        sourceLine = sourceLine.substring(1);
-                        c= sourceLine.charAt(0);
-                    }
-
-                }
-                //Removes "*/" at the end
-                sourceLine = sourceLine.substring(2);
-                tok += "*/";
-
-                System.out.println("Dette er en kommentar: " + tok);
+            commentEnd = "}";
         }
+        else {
+            commentEnd = "*/";
+        }
+
+        while (!sourceLine.substring(0,commentEnd.length()).equals(commentEnd)) {
+            tok = tok + c;
+
+            //Multiline comment
+            if (sourceLine.length() == commentEnd.length()) {
+                readNextLine();
+                checkEmptyLine();
+                System.out.println("Multiline comment. Next part: " + sourceLine);
+            }
+
+            if (endOfFile) {
+                error("No end for comment starting on line " + curLineNum() + "!");
+            }
+
+            if (!sourceLine.substring(0,commentEnd.length()).equals(commentEnd)) {
+                sourceLine = sourceLine.substring(1);
+                c= sourceLine.charAt(0);
+            }
+
+        }
+        //Removes "}" at the end
+        sourceLine = sourceLine.substring(commentEnd.length());
+        tok += commentEnd;
+
+        System.out.println("Dette er en kommentar: " + tok);
+        System.out.println("Dette er igjen av sourceline: " + sourceLine);
+
+
+
+
+
+
     }
 }
