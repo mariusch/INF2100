@@ -51,6 +51,7 @@ fabric.properties
 INF2100.iml
 *.log
 *.html
+*.zip
 
 # Mac
 .DS_Store
