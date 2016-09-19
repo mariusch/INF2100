@@ -50,6 +50,7 @@ fabric.properties
 .idea/copyright/profiles_settings.xml
 INF2100.iml
 *.log
+*.html
 
 # Mac
 .DS_Store
