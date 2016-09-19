@@ -4,6 +4,13 @@ import main.Main;
 
 import java.io.*;
 
+/**
+ * Scanner class used for scanning and tokenizing Pascal2016 code. Based on base code provided through INF2100.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @since 2016-09-19
+ */
 public class Scanner {
     public Token curToken = null, nextToken = null;
 
@@ -46,6 +53,21 @@ public class Scanner {
         - Bruk sourcepos istedenfor substring for å navigere i sourceline
         - Javadoc
         */
+		
+	 /**
+	 * Finds and tokenizes objects from the current sourceline of the document we're reading.
+	 * Tokens are created based on the content of the current sourceLine String object (except for the EOF token).
+	 * The sourceLine is modified along the way using substring() until it's empty.
+	 *
+	 * Checks whether a string snippet matches the following:
+	 *      a) A comment (several snippets are checked for multi-line comments)
+	 *      b) A letter (a-z), possibly followed by either letters or digits (0-9)
+	 *      c) A digit, possibly followed by one or more digits
+	 *      d) One or more special characters
+	 *
+	 * ... and creates a new Token object using the various constructors on a case-to-case basis.
+	 * Then updates nextToken so that the method is ready to be called again.
+	 */
 
     public void readNextToken() {
         curToken = nextToken;  nextToken = null;
