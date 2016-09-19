@@ -49,7 +49,7 @@ fabric.properties
 .idea/modules.xml
 .idea/copyright/profiles_settings.xml
 INF2100.iml
-**/*.log
+*.log
 
 # Mac
 .DS_Store
