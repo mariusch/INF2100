@@ -12,6 +12,13 @@ public class Token {
 	    kind = k;  lineNum = lNum;
     }
 
+    /**
+     * Creates Token based on string input.
+     * Modified to handle operators, literals and EOF.
+     *
+     * @param s
+     * @param lNum
+     */
     Token(String s, int lNum) {
 	if (s.equals("and"))
 	    kind = andToken;
@@ -51,7 +58,8 @@ public class Token {
 	    kind = varToken;
 	else if (s.equals("while"))
 	    kind = whileToken;
-	//Other tokens with symbols
+
+	//Operator tokens and EOF
 	else if (s.equals("+"))
 		kind = addToken;
 	else if (s.equals(":="))
@@ -66,6 +74,8 @@ public class Token {
 		kind = rangeToken;
     else if (s.equals("eof"))
         kind = eofToken;
+
+    //We know the length of this String is 3 because of how strings are handled in Scanner.
     else if (s.startsWith("'") && s.endsWith("'")) {
         String tmp = s.substring(1,2);
         charVal = tmp.charAt(0);
