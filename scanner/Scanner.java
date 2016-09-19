@@ -242,6 +242,7 @@ public class Scanner {
     private void checkEmptyLine() {
         while (sourceLine.trim().isEmpty()) {
             readNextLine();
+            sourceLine = trimStart(sourceLine);
         }
     }
 
@@ -265,11 +266,13 @@ public class Scanner {
             try {
                 while (!sourceLine.substring(0,1).equals("}")) {
 
+                    //if (sourceFile.hasNext()) {}
+
                     tok = tok + c;
 
                     //Multiline comment
                     if (sourceLine.length() == 1) {
-                        readNextLine();
+                        //readNextLine();
                         checkEmptyLine();
                         System.out.println("Multiline comment. Next part: " + sourceLine);
                     }
