@@ -3,5 +3,4 @@
 program Mini;
 begin
    write('x');
-   write(123);
 end.
