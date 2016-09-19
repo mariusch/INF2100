@@ -262,19 +262,26 @@ public class Scanner {
 
     private void removeComment(String tok, char c) {
 
+        /*Begynne med å sjekke { eller skråstrek stjerne
+        * Hvis a: sett en variabel til å holde styr på at vi er ute etter første tegn (0, 1)
+        * Hvis b: sett en variabel til å holde styr på at vi er ute etter 2 første tegn (0, 2)
+        * Gjør det samme for begge.
+        */
+
+
+
         if (c == '{') {
-            try {
                 while (!sourceLine.substring(0,1).equals("}")) {
-
-                    //if (sourceFile.hasNext()) {}
-
                     tok = tok + c;
 
                     //Multiline comment
                     if (sourceLine.length() == 1) {
-                        //readNextLine();
                         checkEmptyLine();
                         System.out.println("Multiline comment. Next part: " + sourceLine);
+                    }
+
+                    if (endOfFile) {
+                        error("No end for comment starting on line " + curLineNum() + "!");
                     }
 
                     if (!sourceLine.substring(0,1).equals("}")) {
@@ -290,14 +297,8 @@ public class Scanner {
                 System.out.println("Dette er en kommentar: " + tok);
                 System.out.println("Dette er igjen av sourceline: " + sourceLine);
 
-
-            } catch (Exception e) {
-                error("No end for comment starting on line " + curLineNum() + "!");
-            }
         } else {
-            try {
                 while (!sourceLine.substring(0,2).equals("*/")) {
-
                     tok = tok + c;
 
                     //Multiline comment
@@ -305,6 +306,10 @@ public class Scanner {
                         readNextLine();
                         checkEmptyLine();
                         System.out.println("Multiline comment. Next part: " + sourceLine);
+                    }
+
+                    if (endOfFile) {
+                        error("No end for comment starting on line " + curLineNum() + "!");
                     }
 
                     if (!sourceLine.substring(0,2).equals("*/")) {
@@ -318,10 +323,6 @@ public class Scanner {
                 tok += "*/";
 
                 System.out.println("Dette er en kommentar: " + tok);
-
-            } catch (Exception e) {
-                error("No end for comment starting on line " + curLineNum() + "!");
-            }
         }
     }
 }
