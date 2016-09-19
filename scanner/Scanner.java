@@ -55,25 +55,18 @@ public class Scanner {
         */
 		
 	 /**
-	 * Finds and tokenizes objects from the current sourceline of the document we're reading.
-	 * Tokens are created based on the content of the current sourceLine String object (except for the EOF token).
-	 * The sourceLine is modified along the way using substring() until it's empty.
-	 *
-	 * Checks whether a string snippet matches the following:
-	 *      a) A comment (several snippets are checked for multi-line comments)
-	 *      b) A letter (a-z), possibly followed by either letters or digits (0-9)
-	 *      c) A digit, possibly followed by one or more digits
-	 *      d) One or more special characters
-	 *
-	 * ... and creates a new Token object using the various constructors on a case-to-case basis.
-	 * Then updates nextToken so that the method is ready to be called again.
-	 */
+      * Finds and tokenizes objects from the current sourceline of the scanned document.
+      * A <tt>Token</tt> object is created using the various constructors based on the content of sourceLine (except for the EOF token).
+      * The sourceLine is modified along the way using substring() until it's empty.
+      * Then updates nextToken so that the method is ready to be called again.
+      */
 
     public void readNextToken() {
         curToken = nextToken;  nextToken = null;
 
         //Check for empty lines, run readNextLine() if empty
         checkEmptyLine();
+
         sourceLine = trimStart(sourceLine);
         char c = sourceLine.charAt(0);
 
@@ -82,10 +75,7 @@ public class Scanner {
 
         //Checks if comment
         if (c == '/' && sourceLine.substring(1,2).equals("*") || c == '{') {
-            boolean s = false;
-            if (c == '{')
-                s = true;
-            removeComment(tok,c, s);
+            removeComment(tok,c);
             checkEmptyLine();
             sourceLine = trimStart(sourceLine);
             c= sourceLine.charAt(0);
@@ -269,9 +259,9 @@ public class Scanner {
             error("Illegal character: '" + c + "'!");
     }
 
-    private void removeComment(String tok, char c, boolean s) {
+    private void removeComment(String tok, char c) {
 
-        if (s) {
+        if (c == '{') {
             try {
                 while (!sourceLine.substring(0,1).equals("}")) {
 
