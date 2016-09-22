@@ -19,10 +19,10 @@ class VarDecl extends PascalDecl {
     static VarDecl parse(Scanner s) {
         enterParser("while-statm");
 
-        VarDecl stm = new VarDecl(s.curLineNum());
+        //VarDecl stm = new VarDecl(s.curLineNum());
 
         leaveParser("while-statm");
-        return stm;
+        return null;
     }
 
     @Override

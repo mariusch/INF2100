@@ -18,10 +18,10 @@ class ParamDecl extends PascalDecl {
 
     static ParamDecl parse(Scanner s) {
         enterParser("while-statm");
-        ParamDecl stm = new ParamDecl(s.curLineNum());
+        //ParamDecl stm = new ParamDecl(s.curLineNum());
 
         leaveParser("while-statm");
-        return stm;
+        return null;
     }
 
     @Override

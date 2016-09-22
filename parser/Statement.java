@@ -16,4 +16,13 @@ abstract class Statement extends PascalSyntax {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    static Statement parse(Scanner s) {
+        enterParser("while-statm");
+
+        //Statement stm = new Statement(s.curLineNum());
+
+        leaveParser("while-statm");
+        return null;
+    }
+
 }

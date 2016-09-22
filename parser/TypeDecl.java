@@ -19,10 +19,10 @@ class TypeDecl extends PascalDecl {
     static TypeDecl parse(Scanner s) {
         enterParser("while-statm");
 
-        TypeDecl stm = new TypeDecl(s.curLineNum());
+        //TypeDecl stm = new TypeDecl(s.curLineNum());
 
         leaveParser("while-statm");
-        return stm;
+        return null;
     }
 
     @Override

@@ -18,10 +18,10 @@ class ProcDecl extends PascalDecl {
 
     static ProcDecl parse(Scanner s) {
         enterParser("while-statm");
-        ProcDecl stm = new ProcDecl(s.curLineNum());
+        //ProcDecl stm = new ProcDecl(s.curLineNum());
 
         leaveParser("while-statm");
-        return stm;
+        return null;
     }
 
     @Override

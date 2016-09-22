@@ -39,9 +39,9 @@ class Program extends PascalDecl {
     static Program parse(Scanner s) {
         enterParser("while-statm");
 
-        Program stm = new Program(s.curLineNum());
+        //Program stm = new Program(s.curLineNum());
 
         leaveParser("while-statm");
-        return stm;
+        return null;
     }
 }
