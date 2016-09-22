@@ -1,11 +1,19 @@
 package parser;
 
 import scanner.Scanner;
+import types.TypeName;
+
+import static scanner.TokenKind.*;
+
 
 /**
  * Created by marius on 22.09.2016.
  */
+/* <paramDecl> ::= <name> ’:’ <type name> */
 class ParamDecl extends PascalDecl {
+
+    String name;
+    TypeName tn;
 
     ParamDecl(String id, int lNum) {
         super(id, lNum);
@@ -13,15 +21,19 @@ class ParamDecl extends PascalDecl {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<paramDecl> on line " + lineNum;
     }
 
     static ParamDecl parse(Scanner s) {
-        enterParser("while-statm");
-        //ParamDecl stm = new ParamDecl(s.curLineNum());
+        enterParser("param-decl");
+        ParamDecl pd = new ParamDecl(s.curToken.id, s.curLineNum());
 
-        leaveParser("while-statm");
-        return null;
+        s.test(nameToken);
+        pd.name = "";
+        s.skip(colonToken);
+
+        leaveParser("param-decl");
+        return pd;
     }
 
     @Override

@@ -19,7 +19,7 @@ abstract class Statement extends PascalSyntax {
     static Statement parse(Scanner s) {
         enterParser("while-statm");
 
-        //Statement stm = new Statement(s.curLineNum());
+        //Statement stm = new Statement(s.curToken.id, s.curLineNum());
 
         leaveParser("while-statm");
         return null;
