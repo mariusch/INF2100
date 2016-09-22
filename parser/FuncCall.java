@@ -17,8 +17,11 @@ class FuncCall extends Factor {
     }
 
     static FuncCall parse(Scanner s) {
+        enterParser("while-statm");
+
         FuncCall stm = new FuncCall(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

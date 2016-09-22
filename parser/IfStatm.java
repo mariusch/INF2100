@@ -17,8 +17,11 @@ class IfStatm extends Statement {
     }
 
     static IfStatm parse(Scanner s) {
+        enterParser("while-statm");
+
         IfStatm stm = new IfStatm(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

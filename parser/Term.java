@@ -17,8 +17,11 @@ class Term extends PascalSyntax {
     }
 
     static Term parse(Scanner s) {
+        enterParser("while-statm");
+
         Term stm = new Term(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

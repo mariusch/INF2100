@@ -18,8 +18,11 @@ class Constant extends PascalSyntax {
 
 
     static Constant parse(Scanner s) {
+        enterParser("while-statm");
+
         Constant stm = new Constant(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 

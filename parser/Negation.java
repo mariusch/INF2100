@@ -17,8 +17,10 @@ class Negation extends Factor {
     }
 
     static Negation parse(Scanner s) {
+        enterParser("while-statm");
         Negation stm = new Negation(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

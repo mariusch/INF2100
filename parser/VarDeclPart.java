@@ -17,8 +17,11 @@ class VarDeclPart extends PascalSyntax {
     }
 
     static VarDeclPart parse(Scanner s) {
+        enterParser("while-statm");
+
         VarDeclPart stm = new VarDeclPart(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

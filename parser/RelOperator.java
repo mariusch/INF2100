@@ -16,8 +16,11 @@ class RelOperator extends Operator {
     }
 
     static RelOperator parse(Scanner s) {
+        enterParser("while-statm");
+
         RelOperator stm = new RelOperator(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

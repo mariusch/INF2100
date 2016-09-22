@@ -17,8 +17,11 @@ class FuncDecl extends ProcDecl {
     }
 
     static FuncDecl parse(Scanner s) {
+        enterParser("while-statm");
+
         FuncDecl stm = new FuncDecl(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

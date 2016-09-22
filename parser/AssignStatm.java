@@ -17,8 +17,10 @@ class AssignStatm extends Statement {
     }
 
     static AssignStatm parse(Scanner s) {
+        enterParser("while-statm");
         AssignStatm stm = new AssignStatm(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

@@ -16,8 +16,11 @@ class Variable extends Factor {
     }
 
     static Variable parse(Scanner s) {
+        enterParser("while-statm");
+
         Variable stm = new Variable(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 

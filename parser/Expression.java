@@ -18,8 +18,11 @@ class Expression extends PascalSyntax{
     }
 
     static Expression parse(Scanner s) {
+        enterParser("while-statm");
+
         Expression stm = new Expression(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 

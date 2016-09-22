@@ -17,8 +17,11 @@ class EmptyStatm extends Statement {
     }
 
     static EmptyStatm parse(Scanner s) {
+        enterParser("while-statm");
+
         EmptyStatm stm = new EmptyStatm(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

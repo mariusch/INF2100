@@ -17,8 +17,10 @@ class ProcCallStatm extends Statement {
     }
 
     static ProcCallStatm parse(Scanner s) {
+        enterParser("while-statm");
         ProcCallStatm stm = new ProcCallStatm(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

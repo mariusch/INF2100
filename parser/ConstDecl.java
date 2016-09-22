@@ -17,8 +17,11 @@ class ConstDecl extends PascalDecl {
     }
 
     static ConstDecl parse(Scanner s) {
+        enterParser("while-statm");
+
         ConstDecl stm = new ConstDecl(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 

@@ -17,8 +17,11 @@ class InnerExpr extends Factor {
     }
 
     static InnerExpr parse(Scanner s) {
+        enterParser("while-statm");
+
         InnerExpr stm = new InnerExpr(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

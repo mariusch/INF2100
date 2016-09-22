@@ -16,8 +16,10 @@ class NumberLiteral extends UnsignedConstant {
     }
 
     static NumberLiteral parse(Scanner s) {
+        enterParser("while-statm");
         NumberLiteral stm = new NumberLiteral(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

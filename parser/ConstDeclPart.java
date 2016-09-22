@@ -18,8 +18,10 @@ class ConstDeclPart extends PascalSyntax {
 
 
     static ConstDeclPart parse(Scanner s) {
+        enterParser("while-statm");
         ConstDeclPart cdp = new ConstDeclPart(s.curLineNum());
 
+        leaveParser("while-statm");
         return cdp;
     }
 

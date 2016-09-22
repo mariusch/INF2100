@@ -17,8 +17,11 @@ class CharLiteral extends UnsignedConstant {
     }
 
     static CharLiteral parse(Scanner s) {
+        enterParser("while-statm");
+
         CharLiteral stm = new CharLiteral(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

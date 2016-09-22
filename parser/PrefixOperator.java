@@ -16,8 +16,11 @@ class PrefixOperator extends Operator {
     }
 
     static PrefixOperator parse(Scanner s) {
+        enterParser("while-statm");
+
         PrefixOperator stm = new PrefixOperator(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

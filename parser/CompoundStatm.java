@@ -17,8 +17,10 @@ class CompoundStatm extends Statement {
     }
 
     static CompoundStatm parse(Scanner s) {
+        enterParser("while-statm");
         CompoundStatm stm = new CompoundStatm(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

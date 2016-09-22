@@ -17,8 +17,10 @@ class NamedConst extends UnsignedConstant {
     }
 
     static NamedConst parse(Scanner s) {
+        enterParser("while-statm");
         NamedConst stm = new NamedConst(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

@@ -17,8 +17,11 @@ class SimpleExpr extends PascalSyntax {
     }
 
     static SimpleExpr parse(Scanner s) {
+        enterParser("while-statm");
+
         SimpleExpr stm = new SimpleExpr(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

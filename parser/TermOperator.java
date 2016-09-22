@@ -17,8 +17,11 @@ class TermOperator extends Operator {
     }
 
     static TermOperator parse(Scanner s) {
+        enterParser("while-statm");
+
         TermOperator stm = new TermOperator(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

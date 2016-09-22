@@ -17,8 +17,11 @@ class StatmList extends PascalSyntax {
     }
 
     static StatmList parse(Scanner s) {
+        enterParser("while-statm");
+
         StatmList stm = new StatmList(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }

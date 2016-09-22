@@ -17,8 +17,10 @@ class ParamDeclList extends PascalSyntax {
     }
 
     static ParamDeclList parse(Scanner s) {
+        enterParser("while-statm");
         ParamDeclList stm = new ParamDeclList(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 

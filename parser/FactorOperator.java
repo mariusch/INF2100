@@ -16,8 +16,10 @@ class FactorOperator extends Operator {
     }
 
     static FactorOperator parse(Scanner s) {
+        enterParser("while-statm");
         FactorOperator stm = new FactorOperator(s.curLineNum());
 
+        leaveParser("while-statm");
         return stm;
     }
 }
