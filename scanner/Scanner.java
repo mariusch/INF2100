@@ -89,9 +89,12 @@ public class Scanner {
         else if (isDigit(c) || (c == '-' && isDigit(sourceLine.charAt(1)))) {
 
             if (c == '-') {
-                tok += c;
                 sourceLine = sourceLine.substring(1);
-                c = sourceLine.charAt(0);
+                tmp = new Token(c, getFileLineNum());
+
+                nextToken = tmp;
+                Main.log.noteToken(nextToken);
+                return;
             }
 
             while (isDigit(c)) {
@@ -154,7 +157,7 @@ public class Scanner {
                     }
                 }
             }
-            //Normal char
+            //Normal symbol
             char t = sourceLine.charAt(0);
             checkLegalChar(t);
             sourceLine = sourceLine.substring(1);
