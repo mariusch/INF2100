@@ -245,7 +245,7 @@ public class Scanner {
     }
 
     private void checkLegalChar(char c) {
-        String tegn = "+:;.=<>[(*])-,";
+        String tegn = "+:;.= <>[(*])-,";
 
         if (!tegn.contains(c + ""))
             error("Illegal character: '" + c + "'!");
