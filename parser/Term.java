@@ -16,6 +16,11 @@ class Term extends PascalSyntax {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static Term parse(Scanner s) {
         enterParser("while-statm");
 

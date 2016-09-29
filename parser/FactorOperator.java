@@ -1,6 +1,8 @@
 package parser;
 
 import scanner.Scanner;
+import static scanner.TokenKind.*;
+
 
 /**
  * Created by marius on 22.09.2016.
@@ -12,14 +14,34 @@ class FactorOperator extends Operator {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<factor opr> on line " + lineNum;
+    }
+
+    @Override
+    void prettyPrint() {
+
     }
 
     static FactorOperator parse(Scanner s) {
-        enterParser("while-statm");
-        FactorOperator stm = new FactorOperator(s.curLineNum());
+        enterParser("factor opr");
+        FactorOperator fo = new FactorOperator(s.curLineNum());
 
-        leaveParser("while-statm");
-        return stm;
+        switch (s.curToken.kind) {
+            case multiplyToken:
+                s.skip(multiplyToken);
+                break;
+            case divToken:
+                s.skip(divToken);
+                break;
+            case modToken:
+                s.skip(modToken);
+                break;
+            case andToken:
+                s.skip(andToken);
+                break;
+        }
+
+        leaveParser("factor opr");
+        return fo;
     }
 }
