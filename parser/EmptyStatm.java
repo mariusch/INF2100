@@ -13,15 +13,20 @@ class EmptyStatm extends Statement {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<empty statm> on line " + lineNum;
+    }
+
+    @Override
+    void prettyPrint() {
+
     }
 
     static EmptyStatm parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("empty-statm");
 
-        EmptyStatm stm = new EmptyStatm(s.curLineNum());
+        EmptyStatm es = new EmptyStatm(s.curLineNum());
 
-        leaveParser("while-statm");
-        return stm;
+        leaveParser("empty-statm");
+        return es;
     }
 }

@@ -24,6 +24,11 @@ class ParamDecl extends PascalDecl {
         return "<paramDecl> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static ParamDecl parse(Scanner s) {
         enterParser("param-decl");
         ParamDecl pd = new ParamDecl(s.curToken.id, s.curLineNum());
