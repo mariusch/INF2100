@@ -1,11 +1,15 @@
 package parser;
 
 import scanner.Scanner;
+import static scanner.TokenKind.*;
+
 
 /**
  * Created by marius on 22.09.2016.
  */
 class InnerExpr extends Factor {
+
+    Expression expr;
 
     InnerExpr(int lNum) {
         super(lNum);
@@ -13,15 +17,23 @@ class InnerExpr extends Factor {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<inner expr> on line " + lineNum;
+    }
+
+    @Override
+    void prettyPrint() {
+
     }
 
     static InnerExpr parse(Scanner s) {
-        enterParser("while-statm");
-
+        enterParser("inner expr");
         InnerExpr stm = new InnerExpr(s.curLineNum());
 
-        leaveParser("while-statm");
+        s.skip(leftParToken);
+        stm.expr = Expression.parse(s);
+        s.skip(rightParToken);
+
+        leaveParser("inner expr");
         return stm;
     }
 }
