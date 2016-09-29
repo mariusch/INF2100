@@ -16,6 +16,11 @@ class ProcCallStatm extends Statement {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static ProcCallStatm parse(Scanner s) {
         enterParser("while-statm");
         ProcCallStatm stm = new ProcCallStatm(s.curLineNum());

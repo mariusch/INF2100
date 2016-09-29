@@ -15,6 +15,11 @@ class NumberLiteral extends UnsignedConstant {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static NumberLiteral parse(Scanner s) {
         enterParser("while-statm");
         NumberLiteral stm = new NumberLiteral(s.curLineNum());

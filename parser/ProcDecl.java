@@ -16,6 +16,11 @@ class ProcDecl extends PascalDecl {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static ProcDecl parse(Scanner s) {
         enterParser("while-statm");
         //ProcDecl stm = new ProcDecl(s.curLineNum());

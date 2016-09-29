@@ -16,6 +16,11 @@ class FuncCall extends Factor {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static FuncCall parse(Scanner s) {
         enterParser("while-statm");
 

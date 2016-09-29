@@ -13,4 +13,9 @@ class Library extends PascalSyntax {
     public String identify() {
         return "<NAVN-HER> on line " + lineNum;
     }
+
+    @Override
+    void prettyPrint() {
+
+    }
 }

@@ -26,15 +26,20 @@ class Block extends PascalSyntax {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<block> on line " + lineNum;
+    }
+
+    @Override
+    void prettyPrint() {
+
     }
 
     static Block parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("block");
 
         Block stm = new Block(s.curLineNum());
 
-        leaveParser("while-statm");
+        leaveParser("block");
         return stm;
     }
 }

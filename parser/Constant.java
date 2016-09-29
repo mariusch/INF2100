@@ -16,6 +16,11 @@ class Constant extends PascalSyntax {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
 
     static Constant parse(Scanner s) {
         enterParser("while-statm");

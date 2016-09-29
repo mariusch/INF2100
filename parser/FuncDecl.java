@@ -16,6 +16,11 @@ class FuncDecl extends ProcDecl {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static FuncDecl parse(Scanner s) {
         enterParser("while-statm");
 

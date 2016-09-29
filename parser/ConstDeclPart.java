@@ -16,6 +16,11 @@ class ConstDeclPart extends PascalSyntax {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
 
     static ConstDeclPart parse(Scanner s) {
         enterParser("while-statm");

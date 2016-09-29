@@ -16,6 +16,11 @@ class IfStatm extends Statement {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static IfStatm parse(Scanner s) {
         enterParser("while-statm");
 

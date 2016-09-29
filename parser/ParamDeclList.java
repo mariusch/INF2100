@@ -16,6 +16,11 @@ class ParamDeclList extends PascalSyntax {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static ParamDeclList parse(Scanner s) {
         enterParser("while-statm");
         ParamDeclList stm = new ParamDeclList(s.curLineNum());
