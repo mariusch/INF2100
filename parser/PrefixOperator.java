@@ -15,6 +15,11 @@ class PrefixOperator extends Operator {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static PrefixOperator parse(Scanner s) {
         enterParser("while-statm");
 
