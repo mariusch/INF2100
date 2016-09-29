@@ -11,6 +11,7 @@ import static scanner.TokenKind.*;
 class VarDecl extends PascalDecl {
 
     Type type;
+    String name;
 
     VarDecl(String id, int lNum) {
         super(id, lNum);
@@ -18,7 +19,7 @@ class VarDecl extends PascalDecl {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<var-decl> on line " + lineNum;
     }
 
     @Override
@@ -31,19 +32,14 @@ class VarDecl extends PascalDecl {
 
         VarDecl vd = new VarDecl(s.curToken.id, s.curLineNum());
 
-        // gjør noe med name token - men hva?
+        vd.name = s.curToken.id;
         s.skip(nameToken);
-        //Skip .
-        s.skip(dotToken);
-        // Parse type
+        s.skip(colonToken);
         vd.type = Type.parse(s);
-        // skip ;
-        s.skip(commaToken);
-
-
+        s.skip(semicolonToken);
 
         leaveParser("var-decl");
-        return null;
+        return vd;
     }
 
     @Override
