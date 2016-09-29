@@ -11,6 +11,7 @@ import static scanner.TokenKind.*;
 class ConstDecl extends PascalDecl {
 
     Constant con;
+    String name;
 
     ConstDecl(String id, int lNum) {
         super(id, lNum);
@@ -18,26 +19,26 @@ class ConstDecl extends PascalDecl {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<const-decl> on line " + lineNum;
+    }
+
+    @Override
+    void prettyPrint() {
+
     }
 
     static ConstDecl parse(Scanner s) {
-        enterParser("while-statm");
-
+        enterParser("const-decl");
         ConstDecl cd = new ConstDecl(s.curToken.id, s.curLineNum());
-        //Gjør noe med name
 
-        //Skip =
+        cd.name = s.curToken.id;
+        s.readNextToken();
         s.skip(commaToken);
-
-        //parse constant
         cd.con = Constant.parse(s);
-
-        //Skip ;
         s.skip(semicolonToken);
 
-        leaveParser("while-statm");
-        return null;
+        leaveParser("const-decl");
+        return cd;
     }
 
     @Override
