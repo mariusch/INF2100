@@ -1,11 +1,16 @@
 package parser;
 
 import scanner.Scanner;
+import scanner.TokenKind;
+
+import static scanner.TokenKind.*;
 
 /**
  * Created by marius on 22.09.2016.
  */
 class ConstDecl extends PascalDecl {
+
+    Constant con;
 
     ConstDecl(String id, int lNum) {
         super(id, lNum);
@@ -19,7 +24,17 @@ class ConstDecl extends PascalDecl {
     static ConstDecl parse(Scanner s) {
         enterParser("while-statm");
 
-        //ConstDecl stm = new ConstDecl(s.curLineNum());
+        ConstDecl cd = new ConstDecl(s.curToken.id, s.curLineNum());
+        //Gjør noe med name
+
+        //Skip =
+        s.skip(commaToken);
+
+        //parse constant
+        cd.con = Constant.parse(s);
+
+        //Skip ;
+        s.skip(semicolonToken);
 
         leaveParser("while-statm");
         return null;
