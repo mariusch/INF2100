@@ -17,6 +17,11 @@ class Expression extends PascalSyntax{
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static Expression parse(Scanner s) {
         enterParser("while-statm");
 
