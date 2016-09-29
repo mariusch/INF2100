@@ -16,6 +16,11 @@ class TypeDecl extends PascalDecl {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static TypeDecl parse(Scanner s) {
         enterParser("while-statm");
 

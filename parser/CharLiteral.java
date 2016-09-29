@@ -13,7 +13,7 @@ class CharLiteral extends UnsignedConstant {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<char literal> on line " + lineNum;
     }
 
     @Override
@@ -22,11 +22,11 @@ class CharLiteral extends UnsignedConstant {
     }
 
     static CharLiteral parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("char literal");
 
         CharLiteral stm = new CharLiteral(s.curLineNum());
 
-        leaveParser("while-statm");
+        leaveParser("char literal");
         return stm;
     }
 }

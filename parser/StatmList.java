@@ -16,6 +16,11 @@ class StatmList extends PascalSyntax {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static StatmList parse(Scanner s) {
         enterParser("while-statm");
 

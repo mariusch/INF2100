@@ -22,12 +22,17 @@ class Program extends PascalDecl {
         return "<program> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static Program parse(Scanner s) {
         enterParser("program");
+        Program p = new Program(s.curToken.id, s.curLineNum());
 
         s.skip(programToken);
         s.test(nameToken);
-        Program p = new Program(s.curToken.id, s.curLineNum());
         s.readNextToken();
         s.skip(semicolonToken);
         p.progBlock = Block.parse(s); p.progBlock.context = p;

@@ -16,6 +16,11 @@ class NamedConst extends UnsignedConstant {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static NamedConst parse(Scanner s) {
         enterParser("while-statm");
         NamedConst stm = new NamedConst(s.curLineNum());
