@@ -2,6 +2,8 @@ package parser;
 
 import scanner.Scanner;
 
+import static scanner.TokenKind.*;
+
 /**
  * Created by marius on 22.09.2016.
  */
@@ -13,15 +15,32 @@ class TermOperator extends Operator {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<term-opr> on line " + lineNum;
+    }
+
+    @Override
+    void prettyPrint() {
+
     }
 
     static TermOperator parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("term-opr");
 
-        TermOperator stm = new TermOperator(s.curLineNum());
+        TermOperator to = new TermOperator(s.curLineNum());
 
-        leaveParser("while-statm");
-        return stm;
+        switch (s.curToken.kind) {
+            case addToken:
+                s.skip(addToken);
+                break;
+            case subtractToken:
+                s.skip(subtractToken);
+                break;
+            case orToken:
+                s.skip(orToken);
+                break;
+        }
+
+        leaveParser("term-opr");
+        return to;
     }
 }
