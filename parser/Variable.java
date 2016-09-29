@@ -1,11 +1,16 @@
 package parser;
 
 import scanner.Scanner;
+import scanner.TokenKind;
+
+import static scanner.TokenKind.*;
 
 /**
  * Created by marius on 22.09.2016.
  */
 class Variable extends Factor {
+    Expression expr;
+
     Variable(int lNum) {
         super(lNum);
     }
@@ -21,12 +26,26 @@ class Variable extends Factor {
     }
 
     static Variable parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("variable");
 
-        Variable stm = new Variable(s.curLineNum());
+        Variable var = new Variable(s.curLineNum());
+        //Gjør noe med name - vil det fungere å bare hoppe til next Token?
+        s.readNextToken();
 
-        leaveParser("while-statm");
-        return stm;
+
+        //Sjekk om nextToken er [
+        if (s.nextToken.kind == leftBracketToken) {
+            s.skip(leftBracketToken);
+            var.expr = Expression.parse(s);
+            s.skip(rightBracketToken);
+        }
+
+
+        //Hvis ikke er vi ferdig med variabelen
+
+
+        leaveParser("variable");
+        return var;
     }
 
 }
