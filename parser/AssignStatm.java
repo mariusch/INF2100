@@ -1,11 +1,15 @@
 package parser;
 
 import scanner.Scanner;
+import static scanner.TokenKind.*;
 
 /**
  * Created by marius on 22.09.2016.
  */
 class AssignStatm extends Statement {
+
+    Variable variable;
+    Expression expr;
 
     AssignStatm(int lNum) {
         super(lNum);
@@ -13,14 +17,23 @@ class AssignStatm extends Statement {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<assign-statm> on line " + lineNum;
+    }
+
+    @Override
+    void prettyPrint() {
+
     }
 
     static AssignStatm parse(Scanner s) {
-        enterParser("while-statm");
-        AssignStatm stm = new AssignStatm(s.curLineNum());
+        enterParser("assign-statm");
+        AssignStatm as = new AssignStatm(s.curLineNum());
 
-        leaveParser("while-statm");
-        return stm;
+        as.variable = Variable.parse(s);
+        s.skip(assignToken);
+        as.expr = Expression.parse(s);
+
+        leaveParser("assign-statm");
+        return as;
     }
 }
