@@ -29,4 +29,6 @@ public abstract class PascalSyntax {
     static void leaveParser(String nonTerm) {
 	Main.log.leaveParser(nonTerm);
     }
+
+    abstract void prettyPrint();
 }
