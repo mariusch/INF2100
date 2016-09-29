@@ -1,6 +1,7 @@
 package parser;
 
 import scanner.Scanner;
+import static scanner.TokenKind.*;
 
 /**
  * Created by marius on 22.09.2016.
@@ -12,7 +13,7 @@ class PrefixOperator extends Operator {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<prefix operator " + lineNum;
     }
 
     @Override
@@ -21,11 +22,20 @@ class PrefixOperator extends Operator {
     }
 
     static PrefixOperator parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("prefix operator");
 
-        PrefixOperator stm = new PrefixOperator(s.curLineNum());
+        PrefixOperator po = new PrefixOperator(s.curLineNum());
 
-        leaveParser("while-statm");
-        return stm;
+        switch (s.curToken.kind) {
+            case addToken:
+                s.skip(addToken);
+                break;
+            case subtractToken:
+               s.skip(subtractToken);
+               break;
+        }
+
+        leaveParser("prefix operator");
+        return po;
     }
 }

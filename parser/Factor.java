@@ -13,4 +13,5 @@ abstract class Factor extends PascalSyntax {
     public String identify() {
         return "<NAVN-HER> on line " + lineNum;
     }
+
 }

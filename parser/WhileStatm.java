@@ -19,6 +19,11 @@ class WhileStatm extends Statement {
         return "<while-statm> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
 
     static WhileStatm parse(Scanner s) {
         enterParser("while-statm");

@@ -16,6 +16,11 @@ class CharLiteral extends UnsignedConstant {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    void prettyPrint() {
+
+    }
+
     static CharLiteral parse(Scanner s) {
         enterParser("while-statm");
 
