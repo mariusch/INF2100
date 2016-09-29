@@ -31,13 +31,14 @@ class VarDecl extends PascalDecl {
 
         VarDecl vd = new VarDecl(s.curToken.id, s.curLineNum());
 
-        // gjør noe med name token
+        // gjør noe med name token - men hva?
         s.skip(nameToken);
         //Skip .
         s.skip(dotToken);
         // Parse type
         vd.type = Type.parse(s);
         // skip ;
+        s.skip(commaToken);
 
 
 
