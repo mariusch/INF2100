@@ -1,6 +1,7 @@
 package parser;
 
 import scanner.Scanner;
+import scanner.TokenKind;
 
 import java.util.ArrayList;
 
@@ -46,9 +47,33 @@ class Block extends PascalSyntax {
     static Block parse(Scanner s) {
         enterParser("block");
 
-        Block stm = new Block(s.curLineNum());
+        Block bl = new Block(s.curLineNum());
+
+        if (s.nextToken.kind == TokenKind.constToken){
+            s.skip(TokenKind.constToken);
+            bl.cdp = ConstDeclPart.parse(s);
+        }
+
+        if (s.nextToken.kind == TokenKind.varToken){
+            s.skip(TokenKind.varToken);
+            bl.vdp = VarDeclPart.parse(s);
+        }
+
+        while (s.nextToken.kind == TokenKind.functionToken || s.nextToken.kind == TokenKind.procedureToken){
+            if (s.nextToken.kind == TokenKind.functionToken){
+                s.skip(TokenKind.functionToken);
+                bl.pdList.add(FuncDecl.parse(s));
+            }
+            //Hvis ikke er det et procedure token
+            else {
+                s.skip(TokenKind.procedureToken);
+                bl.pdList.add(ProcDecl.parse(s));
+            }
+        }
+
+
 
         leaveParser("block");
-        return stm;
+        return bl;
     }
 }
