@@ -2,6 +2,8 @@ package parser;
 
 import scanner.Scanner;
 
+import java.util.ArrayList;
+
 /**
  * Created by marius on 22.09.2016.
  */
@@ -17,6 +19,13 @@ import scanner.Scanner;
 * */
 
 class Block extends PascalSyntax {
+
+    ConstDeclPart cdp;
+    VarDeclPart vdp;
+    ArrayList<ProcDecl> pdList = new ArrayList<>();
+    StatmList stml;
+
+
 
     Program context; //Skal dette være mer generelt feks PascalSyntax istedenfor Program?
 
