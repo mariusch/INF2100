@@ -9,7 +9,7 @@ import static scanner.TokenKind.*;
  */
 
 /* <program> ::= ’program’ <name> ’;’ <block> '.' */
-class Program extends PascalDecl {
+public class Program extends PascalDecl {
 
     Block progBlock;
 
@@ -23,11 +23,11 @@ class Program extends PascalDecl {
     }
 
     @Override
-    void prettyPrint() {
+    public void prettyPrint() {
 
     }
 
-    static Program parse(Scanner s) {
+    public static Program parse(Scanner s) {
         enterParser("program");
         Program p = new Program(s.curToken.id, s.curLineNum());
 

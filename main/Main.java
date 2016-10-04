@@ -101,7 +101,7 @@ public class Main {
         }
 
 
-    /* Del 2:
+    //Del 2:
     private static void doTestParser(Scanner s) {
 	Program prog = Program.parse(s);
 	if (s.curToken.kind != eofToken) 
@@ -109,7 +109,7 @@ public class Main {
 
 	prog.prettyPrint();
     }
-    */
+
 
 
     /* Del 3:
