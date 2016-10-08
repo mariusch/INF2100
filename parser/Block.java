@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
 
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 /* <program> ::= ’program’ <name> ’;’ <block> '.'
 * Se side 23 i kompendiet
 *
-* - En blokk kan begynne med en ConsDeclPart
+* - En blokk kan begynne med en ConstDeclPart
 * - Kan ha en VarDeclPart
 * - Kan ha en eller flere FuncDecl eller ProcDecl om hverandre
 * - Må ha begin
@@ -41,7 +42,27 @@ class Block extends PascalSyntax {
 
     @Override
     void prettyPrint() {
+        if (cdp != null) {
+            Main.log.prettyPrint("const "); cdp.prettyPrint();
+        }
+        if (vdp != null){
+            Main.log.prettyPrint("var "); vdp.prettyPrint();
+        }
 
+        for (ProcDecl pd : pdList){
+            if (pd instanceof FuncDecl){
+                Main.log.prettyPrint("function ");
+            }
+            //Hvis ikke er det en ProcDecl
+            else {
+                Main.log.prettyPrint("procedure ");
+            }
+            pd.prettyPrint();
+        }
+        Main.log.prettyPrint("begin"); Main.log.prettyIndent();
+        stml.prettyPrint();
+        Main.log.prettyOutdent();
+        Main.log.prettyPrint("end");
     }
 
     static Block parse(Scanner s) {
@@ -71,7 +92,9 @@ class Block extends PascalSyntax {
             }
         }
 
-
+        s.skip(TokenKind.beginToken);
+        bl.stml = StatmList.parse(s);
+        s.skip(TokenKind.endToken);
 
         leaveParser("block");
         return bl;
