@@ -7,6 +7,8 @@ Parser:   <program>
    6:  
    7: const Limit = 1000; 
 Parser:     <block>
-Parser:       <const decl part>
-Parser:       </const decl part>
-Error in line 7: Expected a begin but found a name!
+Parser:       <const-decl-part>
+Parser:         <const-decl>
+Parser:           <while-statm>
+Parser:           </while-statm>
+Error in line 7: Expected a ; but found a number!

@@ -9,6 +9,9 @@ import static scanner.TokenKind.*;
 
 class ConstDeclPart extends PascalSyntax {
 
+    //Const Decl Part inneholder
+    //Et const token
+    //En eller flere Const Decl
 
     ConstDeclPart(int lNum) {
         super(lNum);
@@ -26,8 +29,6 @@ class ConstDeclPart extends PascalSyntax {
         for (ConstDecl cd : cdList){
             cd.prettyPrint();
         }
-
-
     }
 
 
@@ -36,13 +37,19 @@ class ConstDeclPart extends PascalSyntax {
 
         ConstDeclPart cdp = new ConstDeclPart(s.curLineNum());
 
+
+
+
         s.skip(TokenKind.constToken);
 
         cdp.cdList.add(ConstDecl.parse(s));
 
+
+
         while (s.curToken.kind == nameToken){
             cdp.cdList.add(ConstDecl.parse(s));
         }
+
 
 
         leaveParser("const-decl-part");
