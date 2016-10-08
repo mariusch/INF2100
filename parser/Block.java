@@ -70,18 +70,18 @@ class Block extends PascalSyntax {
 
         Block bl = new Block(s.curLineNum());
 
-        if (s.nextToken.kind == TokenKind.constToken){
+        if (s.curToken.kind == TokenKind.constToken){
             s.skip(TokenKind.constToken);
             bl.cdp = ConstDeclPart.parse(s);
         }
 
-        if (s.nextToken.kind == TokenKind.varToken){
+        if (s.curToken.kind == TokenKind.varToken){
             s.skip(TokenKind.varToken);
             bl.vdp = VarDeclPart.parse(s);
         }
 
-        while (s.nextToken.kind == TokenKind.functionToken || s.nextToken.kind == TokenKind.procedureToken){
-            if (s.nextToken.kind == TokenKind.functionToken){
+        while (s.curToken.kind == TokenKind.functionToken || s.curToken.kind == TokenKind.procedureToken){
+            if (s.curToken.kind == TokenKind.functionToken){
                 s.skip(TokenKind.functionToken);
                 bl.pdList.add(FuncDecl.parse(s));
             }

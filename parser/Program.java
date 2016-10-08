@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
 
@@ -12,6 +13,7 @@ import static scanner.TokenKind.*;
 public class Program extends PascalDecl {
 
     Block progBlock;
+    String name;
 
     Program(String id, int lNum) {
         super(id, lNum);
@@ -24,7 +26,9 @@ public class Program extends PascalDecl {
 
     @Override
     public void prettyPrint() {
-
+        Main.log.prettyPrint("program "); Main.log.prettyPrint(name); Main.log.prettyPrint(";");
+        progBlock.prettyPrint();
+        Main.log.prettyPrint(".");
     }
 
     public static Program parse(Scanner s) {
@@ -33,6 +37,7 @@ public class Program extends PascalDecl {
 
         s.skip(programToken);
         s.test(nameToken);
+        p.name = s.curToken.id;
         s.readNextToken();
         s.skip(semicolonToken);
         p.progBlock = Block.parse(s); p.progBlock.context = p;

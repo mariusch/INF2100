@@ -35,7 +35,6 @@ class VarDeclPart extends PascalSyntax {
 
         vdp.varDecl = VarDecl.parse(s);
         s.skip(varToken);
-        VarDecl.parse(s);
 
 
 

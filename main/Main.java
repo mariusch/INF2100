@@ -33,8 +33,8 @@ public class Main {
             if (testScanner)
                 doTestScanner(s);
             // Del 2:
-            // else if (testParser)
-            //     doTestParser(s);
+            else if (testParser)
+                doTestParser(s);
             // Del 3:
             // else if (testChecker)
             //     doTestChecker(s);

@@ -3,3 +3,10 @@
    3:    using a technique called "The sieve of Eratosthenes". */ 
    4:  
    5: program Primes; 
+Parser:   <program>
+   6:  
+   7: const Limit = 1000; 
+Parser:     <block>
+Parser:       <const decl part>
+Parser:       </const decl part>
+Error in line 7: Expected a begin but found a name!
