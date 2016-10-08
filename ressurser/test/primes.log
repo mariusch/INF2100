@@ -9,6 +9,16 @@ Parser:   <program>
 Parser:     <block>
 Parser:       <const-decl-part>
 Parser:         <const-decl>
-Parser:           <while-statm>
-Parser:           </while-statm>
-Error in line 7: Expected a ; but found a number!
+Parser:           <constant>
+Parser:             <unsigned constant>
+Parser:               <while-statm>
+   8:  
+   9: var prime : array [2..Limit] of Boolean; 
+Parser:               </while-statm>
+Parser:             </unsigned constant>
+Parser:           </constant>
+Parser:         </const-decl>
+Parser:       </const-decl-part>
+Parser:       <var-decl-part>
+Parser:         <var-decl>
+Error in line 9: Expected a name but found a var!

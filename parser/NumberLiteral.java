@@ -1,6 +1,7 @@
 package parser;
 
 import scanner.Scanner;
+import scanner.TokenKind;
 
 /**
  * Created by marius on 22.09.2016.
@@ -9,6 +10,8 @@ class NumberLiteral extends UnsignedConstant {
     NumberLiteral(int lNum) {
         super(lNum);
     }
+
+    private int num;
 
     @Override
     public String identify() {
@@ -22,9 +25,12 @@ class NumberLiteral extends UnsignedConstant {
 
     static NumberLiteral parse(Scanner s) {
         enterParser("while-statm");
-        NumberLiteral stm = new NumberLiteral(s.curLineNum());
+        NumberLiteral numLit = new NumberLiteral(s.curLineNum());
+
+        numLit.num = s.curToken.intVal;
+        s.skip(TokenKind.intValToken);
 
         leaveParser("while-statm");
-        return stm;
+        return numLit;
     }
 }

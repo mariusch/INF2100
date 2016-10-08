@@ -6,6 +6,8 @@ import static scanner.TokenKind.*;
 
 class Constant extends PascalSyntax {
 
+    private PrefixOperator po;
+    private UnsignedConstant uc;
 
     Constant(int lNum) {
         super(lNum);
@@ -23,12 +25,17 @@ class Constant extends PascalSyntax {
 
 
     static Constant parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("constant");
+        Constant con = new Constant(s.curLineNum());
 
-        Constant stm = new Constant(s.curLineNum());
+        if (s.curToken.kind == addToken || s.curToken.kind == subtractToken){
+                con.po = PrefixOperator.parse(s);
+        }
 
-        leaveParser("while-statm");
-        return stm;
+        con.uc = UnsignedConstant.parse(s);
+
+        leaveParser("constant");
+        return con;
     }
 
 }
