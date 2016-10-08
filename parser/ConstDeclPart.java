@@ -37,14 +37,9 @@ class ConstDeclPart extends PascalSyntax {
 
         ConstDeclPart cdp = new ConstDeclPart(s.curLineNum());
 
-
-
-
         s.skip(TokenKind.constToken);
 
         cdp.cdList.add(ConstDecl.parse(s));
-
-
 
         while (s.curToken.kind == nameToken){
             cdp.cdList.add(ConstDecl.parse(s));
