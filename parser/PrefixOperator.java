@@ -38,4 +38,15 @@ class PrefixOperator extends Operator {
         leaveParser("prefix operator");
         return po;
     }
+
+    static boolean isPrefixOpr(Scanner s){
+        switch (s.curToken.kind) {
+            case addToken:
+                return true;
+            case subtractToken:
+                return true;
+            default:
+                return false;
+        }
+    }
 }

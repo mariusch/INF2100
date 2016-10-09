@@ -43,4 +43,18 @@ class TermOperator extends Operator {
         leaveParser("term-opr");
         return to;
     }
+
+    static boolean isTermOpr(Scanner s){
+
+        switch (s.curToken.kind) {
+            case addToken:
+                return true;
+            case subtractToken:
+                return true;
+            case orToken:
+                return true;
+            default:
+                return false;
+        }
+    }
 }
