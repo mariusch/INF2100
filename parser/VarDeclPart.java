@@ -4,6 +4,8 @@ import main.*;
 import scanner.Scanner;
 import scanner.*;
 
+import java.util.ArrayList;
+
 import static scanner.TokenKind.varToken;
 
 /**
@@ -11,7 +13,7 @@ import static scanner.TokenKind.varToken;
  */
 class VarDeclPart extends PascalSyntax {
 
-    private VarDecl varDecl;
+    private ArrayList<VarDecl> vdList = new ArrayList<>();
 
     VarDeclPart(int lNum) {
         super(lNum);
@@ -33,8 +35,13 @@ class VarDeclPart extends PascalSyntax {
 
         VarDeclPart vdp = new VarDeclPart(s.curLineNum());
 
-        vdp.varDecl = VarDecl.parse(s);
         s.skip(varToken);
+
+        vdp.vdList.add(VarDecl.parse(s));
+
+        while (s.curToken.kind == TokenKind.nameToken){
+            vdp.vdList.add(VarDecl.parse(s));
+        }
 
 
 

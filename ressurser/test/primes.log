@@ -21,4 +21,4 @@ Parser:         </const-decl>
 Parser:       </const-decl-part>
 Parser:       <var-decl-part>
 Parser:         <var-decl>
-Error in line 9: Expected a name but found a var!
+Error in line 9: Expected a ; but found a array!
