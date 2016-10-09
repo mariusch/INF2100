@@ -37,8 +37,10 @@ class VarDecl extends PascalDecl {
 
         VarDecl vd = new VarDecl(s.curToken.id, s.curLineNum());
 
+        s.test(nameToken);
         vd.name = s.curToken.id;
         s.skip(nameToken);
+        
         s.skip(colonToken);
 
         /* @TODO: Må finne en måte å registrere Type på.
