@@ -1,11 +1,18 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
+import scanner.TokenKind;
+
+import java.util.ArrayList;
 
 /**
  * Created by marius on 22.09.2016.
  */
 class ProcCallStatm extends Statement {
+
+    private String name;
+    private ArrayList<Expression> exprList = new ArrayList<>();
 
     ProcCallStatm(int lNum) {
         super(lNum);
@@ -19,13 +26,34 @@ class ProcCallStatm extends Statement {
     @Override
     void prettyPrint() {
 
+        Main.log.prettyPrint(name);
+        for (Expression e : exprList){
+            e.prettyPrint();
+        }
     }
 
     static ProcCallStatm parse(Scanner s) {
-        enterParser("while-statm");
-        ProcCallStatm stm = new ProcCallStatm(s.curLineNum());
+        enterParser("proc-call-statm");
+        ProcCallStatm pcs = new ProcCallStatm(s.curLineNum());
 
-        leaveParser("while-statm");
-        return stm;
+        s.test(TokenKind.nameToken);
+        pcs.name = s.curToken.id;
+        s.skip(TokenKind.nameToken);
+
+        //Har vi en liste med expressions?
+        if (s.curToken.kind == TokenKind.leftParToken){
+            s.skip(TokenKind.leftParToken);
+            pcs.exprList.add(Expression.parse(s));
+
+            while (s.curToken.kind == TokenKind.commaToken){
+                s.skip(TokenKind.commaToken);
+                pcs.exprList.add(Expression.parse(s));
+            }
+
+            s.skip(TokenKind.rightParToken);
+        }
+
+        leaveParser("proc-call-statm");
+        return pcs;
     }
 }
