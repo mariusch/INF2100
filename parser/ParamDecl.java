@@ -41,7 +41,7 @@ class ParamDecl extends PascalDecl {
         /* @TODO: Vet ikke hvordan jeg behandler TypeName enda.
 
         *   Fant svaret!
-        *   Siden det finnes ikke-terminaler i jernbanediagrammene som heter Type, TypeName og ArrayType,
+        *   "Siden det finnes ikke-terminaler i jernbanediagrammene som heter Type, TypeName og ArrayType,
         *   vil du trenger klasser for hver av disse, og de skal ligge i parser-pakken.
         *   I pakken types ligger noen klasser som først skal brukes i del 3 av prosjektet,
         *   så de kan ignoreres foreløpig. (Legg merke til at det da vil finnes både en parser.Type og en types.Type
