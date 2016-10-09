@@ -39,7 +39,10 @@ class ProcDecl extends PascalDecl {
         ProcDecl pd = new ProcDecl(s.curToken.id, s.curLineNum());
 
         s.skip(TokenKind.procedureToken);
+        
+        s.test(TokenKind.nameToken);
         pd.name = s.curToken.id;
+
         s.skip(TokenKind.nameToken);
 
         if (s.curToken.kind == TokenKind.leftParToken){
