@@ -1,7 +1,6 @@
 package parser;
 
 import scanner.Scanner;
-import types.TypeName;
 
 import static scanner.TokenKind.*;
 

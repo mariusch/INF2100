@@ -11,7 +11,7 @@ public class BoolType extends Type {
         super(n);
     }
 
-    public static Type parse(Scanner s) {
+    public static BoolType parse(Scanner s) {
         return null;
     }
 

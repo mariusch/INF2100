@@ -10,7 +10,7 @@ public class ArrayType extends Type {
         super(n);
     }
 
-    public static Type parse(Scanner s) {
+    public static ArrayType parse(Scanner s) {
         return null;
     }
 

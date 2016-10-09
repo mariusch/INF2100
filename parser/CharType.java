@@ -10,7 +10,7 @@ public class CharType extends Type {
         super(n);
     }
 
-    public static Type parse(Scanner s) {
+    public static CharType parse(Scanner s) {
         return null;
     }
 

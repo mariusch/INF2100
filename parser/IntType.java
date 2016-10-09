@@ -10,7 +10,7 @@ public class IntType extends Type {
         super(n);
     }
 
-    public static Type parse(Scanner s) {
+    public static IntType parse(Scanner s) {
         return null;
     }
 

@@ -10,7 +10,7 @@ public class TypeName extends Type {
         super(n);
     }
 
-    public static Type parse(Scanner s) {
+    public static TypeName parse(Scanner s) {
         return null;
     }
 
