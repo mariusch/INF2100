@@ -36,7 +36,11 @@ class ParamDecl extends PascalDecl {
         s.test(nameToken);
         pd.name = s.curToken.id;
         s.skip(nameToken);
+
         s.skip(colonToken);
+
+        /* @TODO: Vet ikke hvordan jeg behandler TypeName enda.
+         */
 
         leaveParser("param-decl");
         return pd;
