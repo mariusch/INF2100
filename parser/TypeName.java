@@ -3,16 +3,12 @@ package parser;
 import scanner.Scanner;
 
 /**
- * Created by essi on 29.09.2016.
+ * Created by essi on 09.10.2016.
  */
-
-
-
-public abstract class Type extends PascalSyntax {
-    Type(int n) {
+public class TypeName extends Type {
+    TypeName(int n) {
         super(n);
     }
-
 
     public static Type parse(Scanner s) {
         return null;
@@ -24,9 +20,5 @@ public abstract class Type extends PascalSyntax {
     }
 
     @Override
-    void prettyPrint() {
-
-    }
+    void prettyPrint() {}
 }
-
-//Skal vi egentlig ha denne klassen, eller kun den i types?
