@@ -51,4 +51,23 @@ class RelOperator extends Operator {
         leaveParser("rel-opr");
         return ro;
     }
+
+    static boolean isRelOpr(Scanner s) {
+        switch (s.curToken.kind) {
+            case equalToken:
+                return true;
+            case notEqualToken:
+                return true;
+            case lessToken:
+                return true;
+            case lessEqualToken:
+                return true;
+            case greaterToken:
+                return true;
+            case greaterEqualToken:
+                return true;
+            default:
+                return false;
+        }
+    }
 }

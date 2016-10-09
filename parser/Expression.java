@@ -1,12 +1,15 @@
 package parser;
 
 import scanner.Scanner;
+import scanner.TokenKind;
 
 /**
  * Created by marius on 22.09.2016.
  */
 class Expression extends PascalSyntax{
 
+    private SimpleExpr se, se2;
+    private RelOperator ro;
 
     Expression(int lNum) {
         super(lNum);
@@ -23,14 +26,18 @@ class Expression extends PascalSyntax{
     }
 
     static Expression parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("expression");
 
-        Expression stm = new Expression(s.curLineNum());
+        Expression expr = new Expression(s.curLineNum());
 
+        expr.se = SimpleExpr.parse(s);
+        if (RelOperator.isRelOpr(s)){
+            expr.ro = RelOperator.parse(s);
+            expr.se2 = SimpleExpr.parse(s);
+        }
 
-
-        leaveParser("while-statm");
-        return stm;
+        leaveParser("expression");
+        return expr;
     }
 
 }
