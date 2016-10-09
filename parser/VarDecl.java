@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
 
@@ -10,7 +11,7 @@ import static scanner.TokenKind.*;
  */
 class VarDecl extends PascalDecl {
 
-    Type type;
+    types.Type type;
     String name;
 
     VarDecl(String id, int lNum) {
@@ -24,6 +25,10 @@ class VarDecl extends PascalDecl {
 
     @Override
     void prettyPrint() {
+        Main.log.prettyPrint(name);
+        Main.log.prettyPrint(":");
+        Main.log.prettyPrint(type.identify());
+        Main.log.prettyPrint(";");
 
     }
 
@@ -35,7 +40,13 @@ class VarDecl extends PascalDecl {
         vd.name = s.curToken.id;
         s.skip(nameToken);
         s.skip(colonToken);
-        vd.type = Type.parse(s);
+
+        /* @TODO: Må finne en måte å registrere Type på.
+         * Det ser ut som om vi skal bruke types.Type, men Type arver ikke fra noen klasse som krever .parse().
+         * Arraytype må kunne håndtere påfølgende tokens fordi det er flere enn ett, se jernbanediagram for
+         * array-type.
+        */
+
         s.skip(semicolonToken);
 
         leaveParser("var-decl");
