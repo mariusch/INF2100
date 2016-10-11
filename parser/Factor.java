@@ -20,30 +20,42 @@ abstract class Factor extends PascalSyntax {
 
     public abstract void prettyPrint();
 
-
-    static Factor parse(Scanner s) {
+    public static Factor parse(Scanner s) {
         enterParser("factor");
-        Factor f;
+        Factor f = null;
 
-        /*
+        //Which type of Factor to use is unknown, so for now we follow these rules:
+        //If the first token is a left parentheses: Inner expr
+        //If the first token is a not token: Negation
+        //If the first token is name and it is followed by a left bracket: Variable
+        //If the first token is a name and it is followed by a parentheses: Function call
+        //If none of the above match: Treat as Variable for now.
+
         switch (s.curToken.kind) {
-            case varToken:
-                s.skip(varToken);
+            case leftParToken:
+                f = InnerExpr.parse(s);
                 break;
-            case functionToken:
-                s.skip(divToken);
+            case notToken:
+                f = Negation.parse(s);
                 break;
-            case in:
-                s.skip(modToken);
+            case nameToken:
+                switch (s.nextToken.kind) {
+                    case leftBracketToken:
+                        f = Variable.parse(s);
+                        break;
+                    case leftParToken:
+                        f = FuncCall.parse(s);
+                        break;
+                }
                 break;
-            case ne:
-                s.skip(andToken);
+            //Unknown, treat as variable
+            default:
+                f = Variable.parse(s);
                 break;
         }
-        */
 
         leaveParser("factor");
-        return null;
+        return f;
     }
 
 }
