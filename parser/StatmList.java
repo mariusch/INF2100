@@ -1,6 +1,8 @@
 package parser;
 
 import scanner.Scanner;
+import static scanner.TokenKind.*;
+
 
 /**
  * Created by marius on 22.09.2016.
@@ -13,7 +15,7 @@ class StatmList extends PascalSyntax {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<statm list> on line " + lineNum;
     }
 
     @Override
@@ -22,11 +24,11 @@ class StatmList extends PascalSyntax {
     }
 
     static StatmList parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("statm list");
 
-        StatmList stm = new StatmList(s.curLineNum());
+        StatmList stml = new StatmList(s.curLineNum());
 
-        leaveParser("while-statm");
-        return stm;
+        leaveParser("statm list");
+        return stml;
     }
 }

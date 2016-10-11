@@ -2,6 +2,8 @@ package parser;
 
 import scanner.Scanner;
 import scanner.TokenKind;
+import static scanner.TokenKind.*;
+
 
 /**
  * Created by marius on 22.09.2016.
@@ -15,22 +17,27 @@ class NumberLiteral extends UnsignedConstant {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<numeric literal> on line " + lineNum;
     }
 
     @Override
     void prettyPrint() {
 
+
     }
 
     static NumberLiteral parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("numeric literal");
         NumberLiteral numLit = new NumberLiteral(s.curLineNum());
 
         numLit.num = s.curToken.intVal;
         s.skip(TokenKind.intValToken);
 
-        leaveParser("while-statm");
+        if (s.nextToken.kind == intValToken) {
+
+        }
+
+        leaveParser("numeric literal");
         return numLit;
     }
 }

@@ -21,6 +21,10 @@ class WhileStatm extends Statement {
 
     @Override
     void prettyPrint() {
+        Main.log.prettyPrint("while ");
+        expr.prettyPrint();
+        Main.log.prettyPrint("do");
+        body.prettyPrint();
 
     }
 
