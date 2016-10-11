@@ -1,12 +1,19 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
+
+import java.security.PrivateKey;
+
 import static scanner.TokenKind.*;
 
 /**
  * Created by marius on 22.09.2016.
  */
 class PrefixOperator extends Operator {
+
+    private String type;
+
     PrefixOperator(int lNum) {
         super(lNum);
     }
@@ -18,6 +25,7 @@ class PrefixOperator extends Operator {
 
     @Override
     void prettyPrint() {
+        Main.log.prettyPrint(type);
 
     }
 
@@ -29,9 +37,11 @@ class PrefixOperator extends Operator {
         switch (s.curToken.kind) {
             case addToken:
                 s.skip(addToken);
+                po.type = "+";
                 break;
             case subtractToken:
                s.skip(subtractToken);
+                po.type = "-";
                break;
         }
 
