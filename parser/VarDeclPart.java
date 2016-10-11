@@ -13,7 +13,7 @@ import static scanner.TokenKind.varToken;
  */
 class VarDeclPart extends PascalSyntax {
 
-    private ArrayList<VarDecl> vdList = new ArrayList<>();
+    private ArrayList<VarDecl> vdList = new ArrayList<VarDecl>();
 
     VarDeclPart(int lNum) {
         super(lNum);

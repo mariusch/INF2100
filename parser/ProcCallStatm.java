@@ -12,7 +12,7 @@ import java.util.ArrayList;
 class ProcCallStatm extends Statement {
 
     private String name;
-    private ArrayList<Expression> exprList = new ArrayList<>();
+    private ArrayList<Expression> exprList = new ArrayList<Expression>();
 
     ProcCallStatm(int lNum) {
         super(lNum);

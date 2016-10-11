@@ -16,7 +16,7 @@ class ConstDeclPart extends PascalSyntax {
     ConstDeclPart(int lNum) {
         super(lNum);
     }
-    private ArrayList <ConstDecl> cdList = new ArrayList<>();
+    private ArrayList <ConstDecl> cdList = new ArrayList<ConstDecl>();
 
     @Override
     public String identify() {

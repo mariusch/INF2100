@@ -24,7 +24,7 @@ class Block extends PascalSyntax {
 
     ConstDeclPart cdp;
     VarDeclPart vdp;
-    ArrayList<ProcDecl> pdList = new ArrayList<>();
+    ArrayList<ProcDecl> pdList = new ArrayList<ProcDecl>();
     StatmList stml;
 
 

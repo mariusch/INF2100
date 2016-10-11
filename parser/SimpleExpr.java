@@ -11,8 +11,8 @@ import java.util.ArrayList;
 class SimpleExpr extends PascalSyntax {
 
     private PrefixOperator po;
-    private ArrayList<Term> tList = new ArrayList<>();
-    private ArrayList<TermOperator> toList = new ArrayList<>();
+    private ArrayList<Term> tList = new ArrayList<Term>();
+    private ArrayList<TermOperator> toList = new ArrayList<TermOperator>();
 
     SimpleExpr(int lNum) {
         super(lNum);
