@@ -167,6 +167,7 @@ public class Scanner {
 
         //Set nextToken and log
         nextToken = tmp;
+
         Main.log.noteToken(nextToken);
     }
 
@@ -211,6 +212,7 @@ public class Scanner {
     public void test(TokenKind t) {
         if (curToken.kind != t)
             testError(t.toString());
+
     }
 
     public void testError(String message) {
@@ -222,6 +224,8 @@ public class Scanner {
     public void skip(TokenKind t) {
         test(t);
         readNextToken();
+
+        //System.out.println(curToken.identify());
     }
 
 
