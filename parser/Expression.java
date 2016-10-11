@@ -17,7 +17,7 @@ class Expression extends PascalSyntax{
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<expression> on line " + lineNum;
     }
 
     @Override
@@ -34,7 +34,11 @@ class Expression extends PascalSyntax{
 
         Expression expr = new Expression(s.curLineNum());
 
+
+
+
         expr.se = SimpleExpr.parse(s);
+
         if (RelOperator.isRelOpr(s)){
             expr.ro = RelOperator.parse(s);
             expr.se2 = SimpleExpr.parse(s);

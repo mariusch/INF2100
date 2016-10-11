@@ -24,7 +24,12 @@ abstract class Factor extends PascalSyntax {
         enterParser("factor");
         Factor f = null;
 
-        //Which type of Factor to use is unknown, so for now we follow these rules:
+
+        System.out.println(s.curToken.identify());
+
+        //Which type of Factor to use may be unknown, so for now we follow these rules:
+        //If the first token is a char: char literal
+        //If the first token is a number: number literal
         //If the first token is a left parentheses: Inner expr
         //If the first token is a not token: Negation
         //If the first token is name and it is followed by a left bracket: Variable
@@ -37,6 +42,10 @@ abstract class Factor extends PascalSyntax {
                 break;
             case notToken:
                 f = Negation.parse(s);
+                break;
+            case charValToken:
+            case intValToken:
+                f = UnsignedConstant.parse(s);
                 break;
             case nameToken:
                 switch (s.nextToken.kind) {

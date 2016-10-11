@@ -18,7 +18,7 @@ class Term extends PascalSyntax {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<term> on line " + lineNum;
     }
 
     @Override
@@ -36,7 +36,10 @@ class Term extends PascalSyntax {
 
         Term term = new Term(s.curLineNum());
 
+
         term.fList.add(Factor.parse(s));
+
+
 
         for (int i = 0; i < term.fOList.size(); i++){
             term.fOList.add(FactorOperator.parse(s));

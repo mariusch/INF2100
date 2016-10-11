@@ -20,7 +20,7 @@ class SimpleExpr extends PascalSyntax {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<simple-expr> on line " + lineNum;
     }
 
     @Override
@@ -44,11 +44,18 @@ class SimpleExpr extends PascalSyntax {
 
         SimpleExpr se = new SimpleExpr(s.curLineNum());
 
+
+
+
+
         if (PrefixOperator.isPrefixOpr(s)){
             se.po = PrefixOperator.parse(s);
         }
 
         se.tList.add(Term.parse(s));
+
+
+
 
         //Mens current token er en term opr
         while (TermOperator.isTermOpr(s)){

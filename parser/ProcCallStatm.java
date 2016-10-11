@@ -36,13 +36,18 @@ class ProcCallStatm extends Statement {
         enterParser("proc-call-statm");
         ProcCallStatm pcs = new ProcCallStatm(s.curLineNum());
 
+
         s.test(TokenKind.nameToken);
         pcs.name = s.curToken.id;
         s.skip(TokenKind.nameToken);
 
+
         //Har vi en liste med expressions?
         if (s.curToken.kind == TokenKind.leftParToken){
             s.skip(TokenKind.leftParToken);
+
+
+
             pcs.exprList.add(Expression.parse(s));
 
             while (s.curToken.kind == TokenKind.commaToken){

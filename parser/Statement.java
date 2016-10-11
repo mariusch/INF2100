@@ -19,6 +19,8 @@ abstract class Statement extends PascalSyntax {
     static Statement parse(Scanner s) {
         enterParser("statement");
         Statement st;
+
+
         switch (s.curToken.kind) {
             case beginToken:
                 st = CompoundStatm.parse(s);
@@ -27,12 +29,14 @@ abstract class Statement extends PascalSyntax {
                 st = IfStatm.parse(s);
                 break;
             case nameToken:
+
                 switch (s.nextToken.kind) {
                     case assignToken:
                     case leftBracketToken:
                         st = AssignStatm.parse(s);
                         break;
                     default:
+
                         st = ProcCallStatm.parse(s);
                         break;
                 }

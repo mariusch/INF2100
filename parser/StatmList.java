@@ -41,8 +41,12 @@ class StatmList extends PascalSyntax {
 
         stml.sl.add(Statement.parse(s));
 
-        while(s.curToken.kind == commaToken){
-            s.skip(commaToken);
+
+
+        while(s.curToken.kind == semicolonToken){
+
+
+            s.skip(semicolonToken);
             stml.sl.add(Statement.parse(s));
         }
 
