@@ -24,6 +24,7 @@ public class TypeName extends Type {
         tn.name = s.curToken.id;
         s.skip(TokenKind.nameToken);
 
+
         leaveParser("type-name");
 
         return tn;

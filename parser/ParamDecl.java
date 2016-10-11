@@ -38,6 +38,7 @@ class ParamDecl extends PascalDecl {
 
         s.skip(colonToken);
 
+
         /* @TODO: Vet ikke hvordan jeg behandler TypeName enda.
 
         *   Fant svaret!
@@ -51,6 +52,7 @@ class ParamDecl extends PascalDecl {
          */
 
         pd.tn = TypeName.parse(s);
+
 
         leaveParser("param-decl");
         return pd;

@@ -50,13 +50,14 @@ class ProcDecl extends PascalDecl {
 
         if (s.curToken.kind == TokenKind.leftParToken){
 
-            System.out.println(s.curToken.identify());
             pd.pdl = ParamDeclList.parse(s);
+
         }
 
         s.skip(TokenKind.semicolonToken);
 
         pd.block = Block.parse(s);
+
 
         s.skip(TokenKind.semicolonToken);
 

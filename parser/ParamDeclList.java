@@ -36,10 +36,13 @@ class ParamDeclList extends PascalSyntax {
         ParamDeclList pdl = new ParamDeclList(s.curLineNum());
 
         s.skip(TokenKind.leftParToken);
+
         pdl.pdList.add(ParamDecl.parse(s));
+
 
         //Hvis semikolon skal vi se etter flere param decl
         while(s.curToken.kind == TokenKind.semicolonToken){
+            s.skip(TokenKind.semicolonToken);
             pdl.pdList.add(ParamDecl.parse(s));
         }
 
