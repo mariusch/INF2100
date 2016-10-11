@@ -18,6 +18,8 @@ abstract class Factor extends PascalSyntax {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    public abstract void prettyPrint();
+
 
     static Factor parse(Scanner s) {
         enterParser("factor");
