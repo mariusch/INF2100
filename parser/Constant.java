@@ -20,6 +20,10 @@ class Constant extends PascalSyntax {
 
     @Override
     void prettyPrint() {
+        if (po != null) {
+            po.prettyPrint();
+        }
+        uc.prettyPrint();
 
     }
 
