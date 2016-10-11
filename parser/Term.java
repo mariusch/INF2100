@@ -39,9 +39,9 @@ class Term extends PascalSyntax {
 
         term.fList.add(Factor.parse(s));
 
+        while (s.curToken.kind.isFactorOpr()){
 
 
-        for (int i = 0; i < term.fOList.size(); i++){
             term.fOList.add(FactorOperator.parse(s));
             term.fList.add(Factor.parse(s));
         }

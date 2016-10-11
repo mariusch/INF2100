@@ -23,7 +23,7 @@ class ParamDeclList extends PascalSyntax {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<param-decl-list> on line " + lineNum;
     }
 
     @Override
@@ -32,7 +32,7 @@ class ParamDeclList extends PascalSyntax {
     }
 
     static ParamDeclList parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("param-decl-list");
         ParamDeclList pdl = new ParamDeclList(s.curLineNum());
 
         s.skip(TokenKind.leftParToken);
@@ -48,7 +48,8 @@ class ParamDeclList extends PascalSyntax {
 
         s.skip(TokenKind.rightParToken);
 
-        leaveParser("while-statm");
+
+        leaveParser("param-decl-list");
         return pdl;
     }
 

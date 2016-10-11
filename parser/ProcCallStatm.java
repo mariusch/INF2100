@@ -48,14 +48,15 @@ class ProcCallStatm extends Statement {
         if (s.curToken.kind == TokenKind.leftParToken){
             s.skip(TokenKind.leftParToken);
 
-
-
             pcs.exprList.add(Expression.parse(s));
 
             while (s.curToken.kind == TokenKind.commaToken){
                 s.skip(TokenKind.commaToken);
+
                 pcs.exprList.add(Expression.parse(s));
+
             }
+
 
             s.skip(TokenKind.rightParToken);
         }

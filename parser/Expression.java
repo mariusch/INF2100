@@ -35,8 +35,6 @@ class Expression extends PascalSyntax{
         Expression expr = new Expression(s.curLineNum());
 
 
-
-
         expr.se = SimpleExpr.parse(s);
 
         if (RelOperator.isRelOpr(s)){
