@@ -25,7 +25,7 @@ class Term extends PascalSyntax {
     void prettyPrint() {
         fList.get(0).prettyPrint();
 
-        for (int i = 0; i < fOList.size()){
+        for (int i = 0; i < fOList.size();){
             fOList.get(i).prettyPrint();
             fList.get(i+1).prettyPrint();
         }

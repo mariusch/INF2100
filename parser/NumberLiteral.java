@@ -33,7 +33,7 @@ class NumberLiteral extends UnsignedConstant {
         numLit.num = s.curToken.intVal;
         s.skip(TokenKind.intValToken);
 
-        if (s.nextToken.kind == intValToken) {
+        if (s.curToken.kind == intValToken) {
 
         }
 
