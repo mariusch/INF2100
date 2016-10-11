@@ -21,7 +21,7 @@ class InnerExpr extends Factor {
     }
 
     @Override
-    void prettyPrint() {
+    public void prettyPrint() {
 
     }
 
