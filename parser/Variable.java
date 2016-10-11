@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
 
@@ -24,7 +25,12 @@ class Variable extends Factor {
 
     @Override
     void prettyPrint() {
-
+        Main.log.prettyPrint(name);
+        if (expr != null){
+            Main.log.prettyPrint("[");
+            expr.prettyPrint();
+            Main.log.prettyPrint("]");
+        }
     }
 
     static Variable parse(Scanner s) {
@@ -33,6 +39,7 @@ class Variable extends Factor {
 
         //Gjør noe med name - vil det fungere å bare hoppe til next Token?
 
+        s.test(nameToken);
         var.name = s.curToken.id;
         s.skip(nameToken);
 
