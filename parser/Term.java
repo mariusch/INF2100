@@ -2,10 +2,15 @@ package parser;
 
 import scanner.Scanner;
 
+import java.util.ArrayList;
+
 /**
  * Created by marius on 22.09.2016.
  */
 class Term extends PascalSyntax {
+
+    private ArrayList<Factor> fList = new ArrayList<Factor>();
+    private ArrayList<FactorOperator> fOList = new ArrayList<FactorOperator>();
 
     Term(int lNum) {
         super(lNum);
@@ -18,15 +23,28 @@ class Term extends PascalSyntax {
 
     @Override
     void prettyPrint() {
+        fList.get(0).prettyPrint();
 
+        for (int i = 0; i < fOList.size()){
+            fOList.get(i).prettyPrint();
+            fList.get(i+1).prettyPrint();
+        }
     }
 
     static Term parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("term");
 
-        Term stm = new Term(s.curLineNum());
+        Term term = new Term(s.curLineNum());
 
-        leaveParser("while-statm");
-        return stm;
+        term.fList.add(Factor.parse(s));
+
+        for (int i = 0; i < term.fOList.size(); i++){
+            term.fOList.add(FactorOperator.parse(s));
+            term.fList.add(Factor.parse(s));
+        }
+
+
+        leaveParser("term");
+        return term;
     }
 }
