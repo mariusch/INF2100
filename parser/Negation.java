@@ -29,13 +29,13 @@ class Negation extends Factor {
     }
 
     static Negation parse(Scanner s) {
-        enterParser("while-statm");
+        enterParser("negation");
         Negation n = new Negation(s.curLineNum());
 
         s.skip(notToken);
         n.fact = Factor.parse(s);
 
-        leaveParser("while-statm");
+        leaveParser("negation");
         return n;
     }
 }
