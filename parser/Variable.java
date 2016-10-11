@@ -37,8 +37,6 @@ class Variable extends Factor {
         enterParser("variable");
         Variable var = new Variable(s.curLineNum());
 
-        //Gjør noe med name - vil det fungere å bare hoppe til next Token?
-
         s.test(nameToken);
         var.name = s.curToken.id;
         s.skip(nameToken);
