@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
 import static scanner.TokenKind.*;
@@ -9,6 +10,9 @@ import static scanner.TokenKind.*;
  * Created by marius on 22.09.2016.
  */
 class RelOperator extends Operator {
+
+    private String opVal;
+
     RelOperator(int lNum) {
         super(lNum);
     }
@@ -20,12 +24,13 @@ class RelOperator extends Operator {
 
     @Override
     void prettyPrint() {
-
+        Main.log.prettyPrint(opVal);
     }
 
     static RelOperator parse(Scanner s) {
         enterParser("rel-opr");
         RelOperator ro = new RelOperator(s.curLineNum());
+        ro.opVal = s.curToken.id;
 
         switch (s.curToken.kind) {
             case equalToken:
