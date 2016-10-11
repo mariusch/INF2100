@@ -24,11 +24,10 @@ class FactorOperator extends Operator {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint(type);
-
     }
 
     static FactorOperator parse(Scanner s) {
-        enterParser("factor opr");
+        enterParser("factor-opr");
         FactorOperator fo = new FactorOperator(s.curLineNum());
 
         switch (s.curToken.kind) {
@@ -50,7 +49,7 @@ class FactorOperator extends Operator {
                 break;
         }
 
-        leaveParser("factor opr");
+        leaveParser("factor-opr");
         return fo;
     }
 }
