@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
 
@@ -22,7 +23,9 @@ class AssignStatm extends Statement {
 
     @Override
     void prettyPrint() {
-
+        variable.prettyPrint();
+        Main.log.prettyPrint(":=");
+        expr.prettyPrint();
     }
 
     static AssignStatm parse(Scanner s) {
