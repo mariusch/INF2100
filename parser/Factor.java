@@ -25,7 +25,8 @@ abstract class Factor extends PascalSyntax {
         Factor f = null;
 
 
-        System.out.println(s.curToken.identify());
+
+
 
         //Which type of Factor to use may be unknown, so for now we follow these rules:
         //If the first token is a char: char literal
@@ -55,11 +56,10 @@ abstract class Factor extends PascalSyntax {
                     case leftParToken:
                         f = FuncCall.parse(s);
                         break;
+                    default:
+                        f = Variable.parse(s);
+                        break;
                 }
-                break;
-            //Unknown, treat as variable
-            default:
-                f = Variable.parse(s);
                 break;
         }
 
