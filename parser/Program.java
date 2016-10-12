@@ -43,7 +43,6 @@ public class Program extends PascalDecl {
         p.progBlock = Block.parse(s); p.progBlock.context = p;
         s.skip(dotToken);
 
-
         leaveParser("program");
         return p;
     }

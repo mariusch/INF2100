@@ -57,6 +57,12 @@ public class Scanner {
     public void readNextToken() {
         curToken = nextToken;  nextToken = null;
 
+        //Check for e-o-f since the scanner is running ahead of the parser
+        if (endOfFile) {
+            //curToken = nextToken;
+            return;
+        }
+
         //Check for empty lines and run readNextLine() if empty
         checkEmptyLine();
 
@@ -225,8 +231,6 @@ public class Scanner {
     public void skip(TokenKind t) {
         test(t);
         readNextToken();
-
-        //System.out.println(curToken.identify());
     }
 
 
