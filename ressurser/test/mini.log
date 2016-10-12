@@ -29,3 +29,5 @@ Parser:           </empty-statm>
 Parser:         </statement>
 Parser:       </statm-list>
 Parser:     </block>
+Parser:   </program>
+program mini;beginwritex;end.

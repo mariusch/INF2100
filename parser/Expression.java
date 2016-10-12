@@ -23,10 +23,10 @@ class Expression extends PascalSyntax{
     @Override
     void prettyPrint() {
         se.prettyPrint();
-        if (ro != null)
+        if (ro != null) {
             ro.prettyPrint();
             se2.prettyPrint();
-
+        }
     }
 
     static Expression parse(Scanner s) {
