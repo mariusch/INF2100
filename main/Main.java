@@ -96,18 +96,22 @@ public class Main {
 
 
     private static void doTestScanner(Scanner s) {
-        while (s.nextToken.kind != eofToken)
+        while (s.nextToken.kind != eofToken) {
             s.readNextToken();
         }
+        System.out.println("Ferdig med Scanning");
+    }
 
 
     //Del 2:
     private static void doTestParser(Scanner s) {
-	Program prog = Program.parse(s);
-	if (s.curToken.kind != eofToken) 
-	    error("Scanner error: Garbage after the program!");
+        System.out.println("Starter parsing av program");
+        Program prog = Program.parse(s);
+        System.out.println("Ferdig med parsing av program");
+        if (s.curToken.kind != eofToken)
+            error("Scanner error: Garbage after the program!");
 
-	prog.prettyPrint();
+        prog.prettyPrint();
     }
 
 

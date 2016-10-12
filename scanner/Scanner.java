@@ -212,6 +212,7 @@ public class Scanner {
     public void test(TokenKind t) {
         if (curToken.kind != t)
             testError(t.toString());
+        System.out.println("Tester: " + curToken.identify() + ". Neste: " + nextToken.identify());
 
     }
 
