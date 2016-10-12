@@ -33,19 +33,14 @@ class Term extends PascalSyntax {
 
     static Term parse(Scanner s) {
         enterParser("term");
-
         Term term = new Term(s.curLineNum());
-
 
         term.fList.add(Factor.parse(s));
 
         while (s.curToken.kind.isFactorOpr()){
-
-
             term.fOList.add(FactorOperator.parse(s));
             term.fList.add(Factor.parse(s));
         }
-
 
         leaveParser("term");
         return term;

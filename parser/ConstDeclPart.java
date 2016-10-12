@@ -45,8 +45,6 @@ class ConstDeclPart extends PascalSyntax {
             cdp.cdList.add(ConstDecl.parse(s));
         }
 
-
-
         leaveParser("const-decl-part");
         return cdp;
     }

@@ -35,32 +35,20 @@ class ProcDecl extends PascalDecl {
 
     static ProcDecl parse(Scanner s) {
         enterParser("proc-decl");
-
         ProcDecl pd = new ProcDecl(s.curToken.id, s.curLineNum());
 
-
-
         s.skip(TokenKind.procedureToken);
-
-
-
         s.test(TokenKind.nameToken);
         pd.name = s.curToken.id;
         s.skip(TokenKind.nameToken);
 
         if (s.curToken.kind == TokenKind.leftParToken){
-
             pd.pdl = ParamDeclList.parse(s);
-
         }
 
         s.skip(TokenKind.semicolonToken);
-
         pd.block = Block.parse(s);
-
-
         s.skip(TokenKind.semicolonToken);
-
 
         leaveParser("proc-decl");
         return null;

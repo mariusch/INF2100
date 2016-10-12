@@ -28,5 +28,3 @@ public abstract class Type extends PascalSyntax {
 
     }
 }
-
-//Skal vi egentlig ha denne klassen, eller kun den i types?

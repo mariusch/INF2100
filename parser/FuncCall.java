@@ -38,7 +38,6 @@ class FuncCall extends Factor {
             }
             Main.log.prettyPrint(")");
         }
-
     }
 
     static FuncCall parse(Scanner s) {
@@ -59,11 +58,8 @@ class FuncCall extends Factor {
                 s.skip(commaToken);
                 fc.eList.add(Expression.parse(s));
             }
-
             s.skip(rightParToken);
-
         }
-
 
         leaveParser("func-call");
         return fc;

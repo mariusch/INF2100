@@ -110,6 +110,8 @@ public class Main {
 
         System.out.println("Starter PrettyPrint");
         prog.prettyPrint();
+        System.out.println("PrettyPrint ferdig");
+
     }
 
 

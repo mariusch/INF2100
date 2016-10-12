@@ -40,7 +40,6 @@ class VarDecl extends PascalDecl {
         s.test(nameToken);
         vd.name = s.curToken.id;
         s.skip(nameToken);
-
         s.skip(colonToken);
 
         /* @TODO: Må finne en måte å registrere Type på.

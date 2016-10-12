@@ -41,21 +41,13 @@ class SimpleExpr extends PascalSyntax {
 
     static SimpleExpr parse(Scanner s) {
         enterParser("simple-expr");
-
         SimpleExpr se = new SimpleExpr(s.curLineNum());
-
-
-
-
 
         if (PrefixOperator.isPrefixOpr(s)){
             se.po = PrefixOperator.parse(s);
         }
 
         se.tList.add(Term.parse(s));
-
-
-
 
         //Mens current token er en term opr
         while (TermOperator.isTermOpr(s)){

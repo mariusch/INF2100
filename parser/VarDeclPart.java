@@ -27,7 +27,6 @@ class VarDeclPart extends PascalSyntax {
 
     @Override
     void prettyPrint() {
-
         Main.log.prettyPrint("variable ");
         for (VarDecl vd : vdList){
             vd.prettyPrint();
@@ -36,18 +35,14 @@ class VarDeclPart extends PascalSyntax {
 
     static VarDeclPart parse(Scanner s) {
         enterParser("var-decl-part");
-
         VarDeclPart vdp = new VarDeclPart(s.curLineNum());
 
         s.skip(varToken);
-
         vdp.vdList.add(VarDecl.parse(s));
 
         while (s.curToken.kind == TokenKind.nameToken){
             vdp.vdList.add(VarDecl.parse(s));
         }
-
-
 
         leaveParser("var-decl-part");
         return vdp;

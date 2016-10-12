@@ -11,14 +11,14 @@ Parser:       <const-decl-part>
 Parser:         <const-decl>
 Parser:           <constant>
 Parser:             <unsigned constant>
-Parser:               <while-statm>
+Parser:               <numeric literal>
    8:  
    9: var prime : array [2..Limit] of Boolean; 
-Parser:               </while-statm>
+Parser:               </numeric literal>
 Parser:             </unsigned constant>
 Parser:           </constant>
 Parser:         </const-decl>
 Parser:       </const-decl-part>
 Parser:       <var-decl-part>
 Parser:         <var-decl>
-Error in line 9: Expected a ; but found a [!
+Error in line 9: Expected a ; but found a array!
