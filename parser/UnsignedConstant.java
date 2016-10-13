@@ -11,6 +11,8 @@ abstract class UnsignedConstant extends Factor {
         super(lNum);
     }
 
+    abstract void prettyPrint();
+
     @Override
     public String identify() {
         return "<unsigned constant> on line " + lineNum;
