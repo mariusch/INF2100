@@ -36,7 +36,6 @@ abstract class Statement extends PascalSyntax {
                         st = AssignStatm.parse(s);
                         break;
                     default:
-
                         st = ProcCallStatm.parse(s);
                         break;
                 }
