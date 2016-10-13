@@ -2,6 +2,8 @@ package parser;
 
 import scanner.Scanner;
 
+import static scanner.TokenKind.nameToken;
+
 /**
  * Created by essi on 29.09.2016.
  */
@@ -15,7 +17,21 @@ public abstract class Type extends PascalSyntax {
 
 
     public static Type parse(Scanner s) {
-        return null;
+        enterParser("type");
+
+        Type t = null;
+
+        if (s.curToken.kind == nameToken){
+            t = TypeName.parse(s);
+        }
+        else{
+            t = ArrayType.parse(s);
+        }
+
+        leaveParser("type");
+
+        return t;
+
     }
 
     @Override

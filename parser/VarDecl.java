@@ -11,7 +11,7 @@ import static scanner.TokenKind.*;
  */
 class VarDecl extends PascalDecl {
 
-    private types.Type type;
+    private Type type;
     private String name;
 
     VarDecl(String id, int lNum) {
@@ -42,11 +42,7 @@ class VarDecl extends PascalDecl {
         s.skip(nameToken);
         s.skip(colonToken);
 
-        /* @TODO: Må finne en måte å registrere Type på.
-         * Det ser ut som om vi skal bruke types.Type, men Type arver ikke fra noen klasse som krever .parse().
-         * Arraytype må kunne håndtere påfølgende tokens fordi det er flere enn ett, se jernbanediagram for
-         * array-type.
-        */
+        vd.type = Type.parse(s);
 
         s.skip(semicolonToken);
 
