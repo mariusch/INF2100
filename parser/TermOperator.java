@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 
 import static scanner.TokenKind.*;
@@ -8,6 +9,8 @@ import static scanner.TokenKind.*;
  * Created by marius on 22.09.2016.
  */
 class TermOperator extends Operator {
+
+    private String opr;
 
     TermOperator(int lNum) {
         super(lNum);
@@ -20,7 +23,7 @@ class TermOperator extends Operator {
 
     @Override
     void prettyPrint() {
-
+        Main.log.prettyPrint(opr);
     }
 
     static TermOperator parse(Scanner s) {
@@ -30,12 +33,15 @@ class TermOperator extends Operator {
 
         switch (s.curToken.kind) {
             case addToken:
+                to.opr = "+";
                 s.skip(addToken);
                 break;
             case subtractToken:
+                to.opr = "-";
                 s.skip(subtractToken);
                 break;
             case orToken:
+                to.opr = "or";
                 s.skip(orToken);
                 break;
         }

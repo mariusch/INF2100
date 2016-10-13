@@ -24,7 +24,5 @@ public abstract class Type extends PascalSyntax {
     }
 
     @Override
-    void prettyPrint() {
-
-    }
+    abstract void prettyPrint();
 }
