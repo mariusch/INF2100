@@ -52,7 +52,6 @@ class IfStatm extends Statement {
             is.stm.add(Statement.parse(s));
         }
 
-
         leaveParser("if-statm");
         return is;
     }

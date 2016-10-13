@@ -1,11 +1,15 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
+import static scanner.TokenKind.*;
 
 /**
  * Created by marius on 22.09.2016.
  */
 class NamedConst extends UnsignedConstant {
+
+    private String name;
 
     NamedConst(int lNum) {
         super(lNum);
@@ -13,19 +17,23 @@ class NamedConst extends UnsignedConstant {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<named-const> on line " + lineNum;
     }
 
     @Override
     void prettyPrint() {
-
+        Main.log.prettyPrint(name);
     }
 
     static NamedConst parse(Scanner s) {
-        enterParser("while-statm");
-        NamedConst stm = new NamedConst(s.curLineNum());
+        enterParser("named-const");
+        NamedConst nc = new NamedConst(s.curLineNum());
 
-        leaveParser("while-statm");
-        return stm;
+        s.test(nameToken);
+        nc.name = s.curToken.id;
+        s.readNextToken();
+
+        leaveParser("named-const");
+        return nc;
     }
 }
