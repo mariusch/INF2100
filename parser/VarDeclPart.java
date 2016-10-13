@@ -34,7 +34,7 @@ class VarDeclPart extends PascalSyntax {
     }
 
     static VarDeclPart parse(Scanner s) {
-        enterParser("var decl-part");
+        enterParser("var decl part");
         VarDeclPart vdp = new VarDeclPart(s.curLineNum());
 
         s.skip(varToken);
@@ -44,7 +44,7 @@ class VarDeclPart extends PascalSyntax {
             vdp.vdList.add(VarDecl.parse(s));
         }
 
-        leaveParser("var decl-part");
+        leaveParser("var decl part");
         return vdp;
     }
 }
