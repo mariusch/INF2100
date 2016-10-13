@@ -13,20 +13,18 @@ import static scanner.TokenKind.nameToken;
 
 public abstract class Type extends PascalSyntax {
 
-    private Type body;
-
     Type(int n) {
         super(n);
     }
 
     public static Type parse(Scanner s) {
         enterParser("type");
-        Type t = null;
+        Type t;
 
         if (s.curToken.kind == nameToken){
-            t.body = TypeName.parse(s);
+            t = TypeName.parse(s);
         } else {
-            t.body = ArrayType.parse(s);
+            t = ArrayType.parse(s);
         }
 
         leaveParser("type");
@@ -39,7 +37,5 @@ public abstract class Type extends PascalSyntax {
     }
 
     @Override
-    void prettyPrint() {
-        body.prettyPrint();
-    }
+    abstract void prettyPrint();
 }
