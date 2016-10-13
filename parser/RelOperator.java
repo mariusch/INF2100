@@ -51,6 +51,9 @@ class RelOperator extends Operator {
             case greaterEqualToken:
                 s.skip(greaterEqualToken);
                 break;
+            default:
+                Main.panic("Her er det noe feil!");
+                break;
         }
 
         leaveParser("rel-opr");

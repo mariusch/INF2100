@@ -61,7 +61,7 @@ class Block extends PascalSyntax {
                     Main.log.prettyPrint("procedure ");
                 }
 
-                pd.prettyPrint(); //TODO denne linjen gir nullpointer på opers.pas
+                pd.prettyPrint();
             }
             Main.log.prettyPrint("begin");
             Main.log.prettyIndent();

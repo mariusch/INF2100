@@ -43,6 +43,9 @@ class PrefixOperator extends Operator {
                s.skip(subtractToken);
                 po.type = "-";
                break;
+            default:
+                Main.panic("Her er det noe feil!");
+                break;
         }
 
         leaveParser("prefix operator");

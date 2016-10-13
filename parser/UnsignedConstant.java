@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 
 /**
@@ -31,6 +32,9 @@ abstract class UnsignedConstant extends Factor {
                 break;
             case charValToken:
                 uc = CharLiteral.parse(s);
+                break;
+            default:
+                Main.panic("Her er det noe feil!");
                 break;
         }
 

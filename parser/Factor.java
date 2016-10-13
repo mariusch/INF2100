@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 
 import static scanner.TokenKind.*;
@@ -23,10 +24,6 @@ abstract class Factor extends PascalSyntax {
     static Factor parse(Scanner s) {
         enterParser("factor");
         Factor f = null;
-
-
-
-
 
         //Which type of Factor to use may be unknown, so for now we follow these rules:
         //If the first token is a char: char literal
@@ -57,9 +54,12 @@ abstract class Factor extends PascalSyntax {
                         f = FuncCall.parse(s);
                         break;
                     default:
-                        f = Variable.parse(s);
+                        Main.panic("Her er det noe feil!");
                         break;
                 }
+                break;
+            default:
+                Main.panic("Her er det noe feil! Referansekompilatoren forventer en Value.");
                 break;
         }
 

@@ -47,6 +47,9 @@ class FactorOperator extends Operator {
                 fo.type = andToken.name();
                 s.skip(andToken);
                 break;
+            default:
+                Main.panic("Her er det noe feil!");
+                break;
         }
 
         leaveParser("factor opr");

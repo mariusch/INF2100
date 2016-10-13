@@ -44,6 +44,9 @@ class TermOperator extends Operator {
                 to.opr = "or";
                 s.skip(orToken);
                 break;
+            default:
+                Main.panic("Her er det noe feil!");
+                break;
         }
 
         leaveParser("term opr");
