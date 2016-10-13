@@ -9,6 +9,8 @@ abstract class Operator extends PascalSyntax {
         super(lNum);
     }
 
+    abstract void prettyPrint();
+
     @Override
     public String identify() {
         return "<NAVN-HER> on line " + lineNum;
