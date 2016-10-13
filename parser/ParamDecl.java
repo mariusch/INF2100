@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 
 import static scanner.TokenKind.*;
@@ -26,6 +27,9 @@ class ParamDecl extends PascalDecl {
     @Override
     void prettyPrint() {
 
+        Main.log.prettyPrint(name);
+        Main.log.prettyPrint(":");
+        tn.prettyPrint();
     }
 
     static ParamDecl parse(Scanner s) {
