@@ -9,7 +9,7 @@ import scanner.TokenKind;
  */
 class CompoundStatm extends Statement {
 
-    StatmList statmList;
+    private StatmList statmList;
 
     CompoundStatm(int lNum) {
         super(lNum);

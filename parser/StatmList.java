@@ -13,7 +13,7 @@ import static scanner.TokenKind.*;
  */
 class StatmList extends PascalSyntax {
 
-    ArrayList<Statement> sl = new ArrayList<Statement>();
+    private ArrayList<Statement> sl = new ArrayList<Statement>();
 
     StatmList(int lNum) {
         super(lNum);

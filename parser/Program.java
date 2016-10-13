@@ -12,8 +12,8 @@ import static scanner.TokenKind.*;
 /* <program> ::= ’program’ <name> ’;’ <block> '.' */
 public class Program extends PascalDecl {
 
-    Block progBlock;
-    String name;
+    private Block progBlock;
+    private String name;
 
     Program(String id, int lNum) {
         super(id, lNum);

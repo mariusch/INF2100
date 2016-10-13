@@ -9,8 +9,8 @@ import static scanner.TokenKind.*;
  */
 class AssignStatm extends Statement {
 
-    Variable variable;
-    Expression expr;
+    private Variable variable;
+    private Expression expr;
 
     AssignStatm(int lNum) {
         super(lNum);

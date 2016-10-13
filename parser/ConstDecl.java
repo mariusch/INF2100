@@ -17,8 +17,8 @@ import static scanner.TokenKind.*;
  */
 class ConstDecl extends PascalDecl {
 
-    Constant con;
-    String name;
+    private Constant con;
+    private String name;
 
     ConstDecl(String id, int lNum) {
         super(id, lNum);

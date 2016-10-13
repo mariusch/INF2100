@@ -8,6 +8,7 @@ import scanner.TokenKind;
  * Created by essi on 09.10.2016.
  */
 public class TypeName extends Type {
+
     private String name;
 
     TypeName(int n) {

@@ -9,8 +9,8 @@ import static scanner.TokenKind.charValToken;
  * Created by marius on 22.09.2016.
  */
 class CharLiteral extends UnsignedConstant {
-    private char val;
 
+    private char val;
 
     CharLiteral(int lNum) {
         super(lNum);

@@ -10,7 +10,7 @@ import static scanner.TokenKind.*;
  */
 class InnerExpr extends Factor {
 
-    Expression expr;
+    private Expression expr;
 
     InnerExpr(int lNum) {
         super(lNum);

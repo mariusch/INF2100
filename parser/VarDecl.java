@@ -11,8 +11,8 @@ import static scanner.TokenKind.*;
  */
 class VarDecl extends PascalDecl {
 
-    types.Type type;
-    String name;
+    private types.Type type;
+    private String name;
 
     VarDecl(String id, int lNum) {
         super(id, lNum);

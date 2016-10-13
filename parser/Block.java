@@ -22,10 +22,10 @@ import java.util.ArrayList;
 
 class Block extends PascalSyntax {
 
-    ConstDeclPart cdp;
-    VarDeclPart vdp;
-    ArrayList<ProcDecl> pdList = new ArrayList<ProcDecl>();
-    StatmList stml;
+    private ConstDeclPart cdp;
+    private VarDeclPart vdp;
+    private ArrayList<ProcDecl> pdList = new ArrayList<ProcDecl>();
+    private StatmList stml;
 
 
 

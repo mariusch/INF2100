@@ -9,11 +9,12 @@ import static scanner.TokenKind.*;
  * Created by marius on 22.09.2016.
  */
 class NumberLiteral extends UnsignedConstant {
+
+    private int num;
+
     NumberLiteral(int lNum) {
         super(lNum);
     }
-
-    private int num;
 
     @Override
     public String identify() {

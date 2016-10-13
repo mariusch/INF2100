@@ -7,8 +7,8 @@ import static scanner.TokenKind.*;
 /* <while-statm> ::= ’while’ <expression> ’do’ <statement> */
 class WhileStatm extends Statement {
 
-    Expression expr;
-    Statement body;
+    private Expression expr;
+    private Statement body;
 
     WhileStatm(int lNum) {
         super(lNum);

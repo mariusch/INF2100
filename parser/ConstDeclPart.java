@@ -9,6 +9,7 @@ import static scanner.TokenKind.*;
 
 class ConstDeclPart extends PascalSyntax {
 
+    private ArrayList <ConstDecl> cdList = new ArrayList<ConstDecl>();
     //Const Decl Part inneholder
     //Et const token
     //En eller flere Const Decl
@@ -16,7 +17,6 @@ class ConstDeclPart extends PascalSyntax {
     ConstDeclPart(int lNum) {
         super(lNum);
     }
-    private ArrayList <ConstDecl> cdList = new ArrayList<ConstDecl>();
 
     @Override
     public String identify() {

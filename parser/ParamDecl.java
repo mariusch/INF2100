@@ -11,8 +11,8 @@ import static scanner.TokenKind.*;
 /* <paramDecl> ::= <name> ’:’ <type name> */
 class ParamDecl extends PascalDecl {
 
-    String name;
-    TypeName tn;
+    private String name;
+    private TypeName tn;
 
     ParamDecl(String id, int lNum) {
         super(id, lNum);

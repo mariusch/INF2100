@@ -10,7 +10,7 @@ import static scanner.TokenKind.*;
  */
 class Negation extends Factor {
 
-    Factor fact;
+    private Factor fact;
 
     Negation(int lNum) {
         super(lNum);

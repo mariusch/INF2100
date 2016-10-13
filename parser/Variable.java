@@ -11,8 +11,8 @@ import static scanner.TokenKind.*;
  */
 class Variable extends Factor {
 
-    Expression expr;
-    String name;
+    private Expression expr;
+    private String name;
 
     Variable(int lNum) {
         super(lNum);
