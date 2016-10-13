@@ -1,6 +1,7 @@
 package parser;
 
 import scanner.Scanner;
+import static scanner.TokenKind.*;
 
 import static scanner.TokenKind.nameToken;
 
@@ -11,27 +12,25 @@ import static scanner.TokenKind.nameToken;
 
 
 public abstract class Type extends PascalSyntax {
+
+    private Type body;
+
     Type(int n) {
         super(n);
     }
 
-
     public static Type parse(Scanner s) {
         enterParser("type");
-
         Type t = null;
 
         if (s.curToken.kind == nameToken){
-            t = TypeName.parse(s);
-        }
-        else{
-            t = ArrayType.parse(s);
+            t.body = TypeName.parse(s);
+        } else {
+            t.body = ArrayType.parse(s);
         }
 
         leaveParser("type");
-
         return t;
-
     }
 
     @Override
@@ -40,5 +39,7 @@ public abstract class Type extends PascalSyntax {
     }
 
     @Override
-    abstract void prettyPrint();
+    void prettyPrint() {
+        body.prettyPrint();
+    }
 }
