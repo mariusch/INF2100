@@ -15,6 +15,9 @@ abstract class Statement extends PascalSyntax {
         return "<NAVN-HER> on line " + lineNum;
     }
 
+    @Override
+    abstract void prettyPrint();
+
 
     static Statement parse(Scanner s) {
         enterParser("statement");
