@@ -51,7 +51,7 @@ class ProcDecl extends PascalDecl {
         s.skip(TokenKind.semicolonToken);
 
         leaveParser("proc-decl");
-        return null;
+        return pd;
     }
 
     @Override

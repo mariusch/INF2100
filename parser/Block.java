@@ -43,26 +43,32 @@ class Block extends PascalSyntax {
     @Override
     void prettyPrint() {
         if (cdp != null) {
-            Main.log.prettyPrint("const "); cdp.prettyPrint();
+            Main.log.prettyPrint("const ");
+            cdp.prettyPrint();
         }
-        if (vdp != null){
-            Main.log.prettyPrint("var "); vdp.prettyPrint();
+        if (vdp != null) {
+            Main.log.prettyPrint("var ");
+            vdp.prettyPrint();
         }
 
-        for (ProcDecl pd : pdList){
-            if (pd instanceof FuncDecl){
-                Main.log.prettyPrint("function ");
+        if (!pdList.isEmpty()) {
+            for (ProcDecl pd : pdList) {
+                if (pd instanceof FuncDecl) {
+                    Main.log.prettyPrint("function ");
+                }
+                //Hvis ikke er det en ProcDecl
+                else {
+                    Main.log.prettyPrint("procedure ");
+                }
+
+                pd.prettyPrint(); //TODO denne linjen gir nullpointer på opers.pas
             }
-            //Hvis ikke er det en ProcDecl
-            else {
-                Main.log.prettyPrint("procedure ");
-            }
-            //pd.prettyPrint(); TODO denne linjen gir nullpointer på opers.pas
+            Main.log.prettyPrint("begin");
+            Main.log.prettyIndent();
+            stml.prettyPrint();
+            Main.log.prettyOutdent();
+            Main.log.prettyPrint("end");
         }
-        Main.log.prettyPrint("begin"); Main.log.prettyIndent();
-        stml.prettyPrint();
-        Main.log.prettyOutdent();
-        Main.log.prettyPrint("end");
     }
 
     static Block parse(Scanner s) {
@@ -85,6 +91,7 @@ class Block extends PascalSyntax {
             //Hvis ikke er det et procedure token
             else {
                 bl.pdList.add(ProcDecl.parse(s));
+
             }
         }
 
