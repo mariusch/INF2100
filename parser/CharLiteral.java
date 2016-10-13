@@ -32,7 +32,7 @@ class CharLiteral extends UnsignedConstant {
     }
 
     static CharLiteral parse(Scanner s) {
-        enterParser("char-literal");
+        enterParser("char literal");
 
         CharLiteral cl = new CharLiteral(s.curLineNum());
 
@@ -40,7 +40,7 @@ class CharLiteral extends UnsignedConstant {
         s.skip(charValToken);
 
 
-        leaveParser("char-literal");
+        leaveParser("char literal");
         return cl;
     }
 }

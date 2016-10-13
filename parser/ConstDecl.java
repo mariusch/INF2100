@@ -26,7 +26,7 @@ class ConstDecl extends PascalDecl {
 
     @Override
     public String identify() {
-        return "<const-decl> on line " + lineNum;
+        return "<const decl> on line " + lineNum;
     }
 
     @Override
@@ -41,7 +41,7 @@ class ConstDecl extends PascalDecl {
 
     static ConstDecl parse(Scanner s) {
 
-        enterParser("const-decl");
+        enterParser("const decl");
         ConstDecl cd = new ConstDecl(s.curToken.id, s.curLineNum());
 
         cd.name = s.curToken.id;
@@ -51,7 +51,7 @@ class ConstDecl extends PascalDecl {
 
         s.skip(semicolonToken);
 
-        leaveParser("const-decl");
+        leaveParser("const decl");
         return cd;
     }
 

@@ -108,9 +108,7 @@ public class Main {
         if (s.curToken.kind != eofToken)
             error("Scanner error: Garbage after the program!");
 
-        System.out.println("Starter PrettyPrint");
         prog.prettyPrint();
-        System.out.println("PrettyPrint ferdig");
 
     }
 

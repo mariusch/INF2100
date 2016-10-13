@@ -22,11 +22,11 @@ class EmptyStatm extends Statement {
     }
 
     static EmptyStatm parse(Scanner s) {
-        enterParser("empty-statm");
+        enterParser("empty statm");
 
         EmptyStatm es = new EmptyStatm(s.curLineNum());
 
-        leaveParser("empty-statm");
+        leaveParser("empty statm");
         return es;
     }
 }

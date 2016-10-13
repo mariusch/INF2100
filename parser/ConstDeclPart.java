@@ -20,7 +20,7 @@ class ConstDeclPart extends PascalSyntax {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<const decl part> on line " + lineNum;
     }
 
     @Override
@@ -33,7 +33,7 @@ class ConstDeclPart extends PascalSyntax {
 
 
     static ConstDeclPart parse(Scanner s) {
-        enterParser("const-decl-part");
+        enterParser("const decl part");
 
         ConstDeclPart cdp = new ConstDeclPart(s.curLineNum());
 
@@ -45,7 +45,7 @@ class ConstDeclPart extends PascalSyntax {
             cdp.cdList.add(ConstDecl.parse(s));
         }
 
-        leaveParser("const-decl-part");
+        leaveParser("const decl part");
         return cdp;
     }
 

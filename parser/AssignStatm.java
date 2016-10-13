@@ -18,7 +18,7 @@ class AssignStatm extends Statement {
 
     @Override
     public String identify() {
-        return "<assign-statm> on line " + lineNum;
+        return "<assign statm> on line " + lineNum;
     }
 
     @Override
@@ -29,14 +29,14 @@ class AssignStatm extends Statement {
     }
 
     static AssignStatm parse(Scanner s) {
-        enterParser("assign-statm");
+        enterParser("assign statm");
         AssignStatm as = new AssignStatm(s.curLineNum());
 
         as.variable = Variable.parse(s);
         s.skip(assignToken);
         as.expr = Expression.parse(s);
 
-        leaveParser("assign-statm");
+        leaveParser("assign statm");
         return as;
     }
 }

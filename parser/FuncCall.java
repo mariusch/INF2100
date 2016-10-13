@@ -41,7 +41,7 @@ class FuncCall extends Factor {
     }
 
     static FuncCall parse(Scanner s) {
-        enterParser("func-call");
+        enterParser("func call");
 
         FuncCall fc = new FuncCall(s.curLineNum());
 
@@ -61,7 +61,7 @@ class FuncCall extends Factor {
             s.skip(rightParToken);
         }
 
-        leaveParser("func-call");
+        leaveParser("func call");
         return fc;
     }
 }

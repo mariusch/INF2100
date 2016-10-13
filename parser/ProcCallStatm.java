@@ -20,7 +20,7 @@ class ProcCallStatm extends Statement {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<proc call statm> on line " + lineNum;
     }
 
     @Override

@@ -18,7 +18,7 @@ public class ArrayType extends Type {
 
     public static ArrayType parse(Scanner s) {
 
-        enterParser("array-type");
+        enterParser("array type");
 
         ArrayType at = new ArrayType(s.curLineNum());
 
@@ -31,13 +31,13 @@ public class ArrayType extends Type {
         s.skip(TokenKind.ofToken);
         at.type = Type.parse(s);
 
-        leaveParser("array-type");
+        leaveParser("array type");
 
         return at;
     }
 
     @Override
-    public String identify() {return "<array-type> on line " + lineNum;}
+    public String identify() {return "<array type> on line " + lineNum;}
 
     @Override
     void prettyPrint() {

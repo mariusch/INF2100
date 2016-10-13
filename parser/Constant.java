@@ -15,7 +15,7 @@ class Constant extends PascalSyntax {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<constant> on line " + lineNum;
     }
 
     @Override
