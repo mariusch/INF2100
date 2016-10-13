@@ -207,7 +207,7 @@ public class Main {
 	
     public static void error(int lineNum, String message) {
         error("Error in " +
-              (lineNum<0 ? "last line" : "line "+lineNum) +
+              (lineNum<=0 ? "last line" : "line "+lineNum) +
               ": " + message);
     }
 
