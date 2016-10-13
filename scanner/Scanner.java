@@ -59,7 +59,6 @@ public class Scanner {
 
         //Check for e-o-f since the scanner is running ahead of the parser
         if (endOfFile) {
-            //curToken = nextToken;
             return;
         }
 
