@@ -35,7 +35,7 @@ class StatmList extends PascalSyntax {
     }
 
     static StatmList parse(Scanner s) {
-        enterParser("statm-list");
+        enterParser("statm list");
         StatmList stml = new StatmList(s.curLineNum());
 
         stml.sl.add(Statement.parse(s));
@@ -45,7 +45,7 @@ class StatmList extends PascalSyntax {
             stml.sl.add(Statement.parse(s));
         }
 
-        leaveParser("statm-list");
+        leaveParser("statm list");
         return stml;
     }
 }

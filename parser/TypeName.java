@@ -17,7 +17,7 @@ public class TypeName extends Type {
 
     public static TypeName parse(Scanner s) {
 
-        enterParser("type-name");
+        enterParser("type name");
 
         TypeName tn = new TypeName(s.curLineNum());
 
@@ -26,14 +26,14 @@ public class TypeName extends Type {
         s.skip(TokenKind.nameToken);
 
 
-        leaveParser("type-name");
+        leaveParser("type name");
 
         return tn;
     }
 
     @Override
     public String identify() {
-        return null;
+        return "<type name> on line " + lineNum;
     }
 
     @Override

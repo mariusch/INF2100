@@ -20,7 +20,7 @@ class SimpleExpr extends PascalSyntax {
 
     @Override
     public String identify() {
-        return "<simple-expr> on line " + lineNum;
+        return "<simple expr> on line " + lineNum;
     }
 
     @Override
@@ -40,7 +40,7 @@ class SimpleExpr extends PascalSyntax {
     }
 
     static SimpleExpr parse(Scanner s) {
-        enterParser("simple-expr");
+        enterParser("simple expr");
         SimpleExpr se = new SimpleExpr(s.curLineNum());
 
         if (PrefixOperator.isPrefixOpr(s)){
@@ -55,7 +55,7 @@ class SimpleExpr extends PascalSyntax {
             se.tList.add(Term.parse(s));
         }
 
-        leaveParser("simple-expr");
+        leaveParser("simple expr");
         return se;
     }
 }

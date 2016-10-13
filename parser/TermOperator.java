@@ -18,7 +18,7 @@ class TermOperator extends Operator {
 
     @Override
     public String identify() {
-        return "<term-opr> on line " + lineNum;
+        return "<term opr> on line " + lineNum;
     }
 
     @Override
@@ -27,7 +27,7 @@ class TermOperator extends Operator {
     }
 
     static TermOperator parse(Scanner s) {
-        enterParser("term-opr");
+        enterParser("term opr");
 
         TermOperator to = new TermOperator(s.curLineNum());
 
@@ -46,7 +46,7 @@ class TermOperator extends Operator {
                 break;
         }
 
-        leaveParser("term-opr");
+        leaveParser("term opr");
         return to;
     }
 
