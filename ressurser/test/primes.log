@@ -7,8 +7,8 @@ Parser:   <program>
    6:  
    7: const Limit = 1000; 
 Parser:     <block>
-Parser:       <const-decl-part>
-Parser:         <const-decl>
+Parser:       <const decl part>
+Parser:         <const decl>
 Parser:           <constant>
 Parser:             <unsigned constant>
 Parser:               <numeric literal>
@@ -17,8 +17,162 @@ Parser:               <numeric literal>
 Parser:               </numeric literal>
 Parser:             </unsigned constant>
 Parser:           </constant>
-Parser:         </const-decl>
-Parser:       </const-decl-part>
-Parser:       <var-decl-part>
-Parser:         <var-decl>
-Error in line 9: Expected a ; but found a array!
+Parser:         </const decl>
+Parser:       </const decl part>
+Parser:       <var decl part>
+Parser:         <var decl>
+Parser:           <type>
+Parser:             <array type>
+Parser:               <constant>
+Parser:                 <unsigned constant>
+Parser:                   <numeric literal>
+Parser:                   </numeric literal>
+Parser:                 </unsigned constant>
+Parser:               </constant>
+Parser:               <constant>
+Parser:                 <unsigned constant>
+Parser:                   <named-const>
+Parser:                   </named-const>
+Parser:                 </unsigned constant>
+Parser:               </constant>
+Parser:               <type>
+Parser:                 <type name>
+  10:     i	  : integer; 
+Parser:                 </type name>
+Parser:               </type>
+Parser:             </array type>
+Parser:           </type>
+Parser:         </var decl>
+Parser:         <var decl>
+Parser:           <type>
+Parser:             <type name>
+  11:  
+  12: procedure FindPrimes; 
+Parser:             </type name>
+Parser:           </type>
+Parser:         </var decl>
+Parser:       </var decl part>
+Parser:       <proc-decl>
+  13: var i1 : integer; 
+Parser:         <block>
+Parser:           <var decl part>
+Parser:             <var decl>
+Parser:               <type>
+Parser:                 <type name>
+  14:     I2 : Integer; 
+Parser:                 </type name>
+Parser:               </type>
+Parser:             </var decl>
+Parser:             <var decl>
+Parser:               <type>
+Parser:                 <type name>
+  15: begin 
+Parser:                 </type name>
+Parser:               </type>
+  16:    i1 := 2; 
+Parser:             </var decl>
+Parser:           </var decl part>
+Parser:           <statm list>
+Parser:             <statement>
+Parser:               <assign statm>
+Parser:                 <variable>
+Parser:                 </variable>
+Parser:                 <expression>
+Parser:                   <simple expr>
+Parser:                     <term>
+Parser:                       <factor>
+Parser:                         <unsigned constant>
+Parser:                           <numeric literal>
+  17:    while i1 <= Limit do 
+Parser:                           </numeric literal>
+Parser:                         </unsigned constant>
+Parser:                       </factor>
+Parser:                     </term>
+Parser:                   </simple expr>
+Parser:                 </expression>
+Parser:               </assign statm>
+Parser:             </statement>
+Parser:             <statement>
+Parser:               <while-statm>
+Parser:                 <expression>
+Parser:                   <simple expr>
+Parser:                     <term>
+Parser:                       <factor>
+Parser:                         <variable>
+Parser:                         </variable>
+Parser:                       </factor>
+Parser:                     </term>
+Parser:                   </simple expr>
+Parser:                   <rel-opr>
+Parser:                   </rel-opr>
+Parser:                   <simple expr>
+Parser:                     <term>
+Parser:                       <factor>
+Parser:                         <variable>
+  18:    begin 
+Parser:                         </variable>
+Parser:                       </factor>
+Parser:                     </term>
+Parser:                   </simple expr>
+Parser:                 </expression>
+  19:       i2 := 2*i1; 
+Parser:                 <statement>
+Parser:                   <compound statm>
+Parser:                     <statm list>
+Parser:                       <statement>
+Parser:                         <assign statm>
+Parser:                           <variable>
+Parser:                           </variable>
+Parser:                           <expression>
+Parser:                             <simple expr>
+Parser:                               <term>
+Parser:                                 <factor>
+Parser:                                   <unsigned constant>
+Parser:                                     <numeric literal>
+Parser:                                     </numeric literal>
+Parser:                                   </unsigned constant>
+Parser:                                 </factor>
+Parser:                                 <factor opr>
+Parser:                                 </factor opr>
+Parser:                                 <factor>
+Parser:                                   <variable>
+  20:       while i2 <= Limit do 
+Parser:                                   </variable>
+Parser:                                 </factor>
+Parser:                               </term>
+Parser:                             </simple expr>
+Parser:                           </expression>
+Parser:                         </assign statm>
+Parser:                       </statement>
+Parser:                       <statement>
+Parser:                         <while-statm>
+Parser:                           <expression>
+Parser:                             <simple expr>
+Parser:                               <term>
+Parser:                                 <factor>
+Parser:                                   <variable>
+Parser:                                   </variable>
+Parser:                                 </factor>
+Parser:                               </term>
+Parser:                             </simple expr>
+Parser:                             <rel-opr>
+Parser:                             </rel-opr>
+Parser:                             <simple expr>
+Parser:                               <term>
+Parser:                                 <factor>
+Parser:                                   <variable>
+  21:       begin 
+Parser:                                   </variable>
+Parser:                                 </factor>
+Parser:                               </term>
+Parser:                             </simple expr>
+Parser:                           </expression>
+  22: 	 prime[i2] := false; 
+Parser:                           <statement>
+Parser:                             <compound statm>
+Parser:                               <statm list>
+Parser:                                 <statement>
+Parser:                                   <assign statm>
+Parser:                                     <variable>
+Parser:                                     </variable>
+Error in line 22: Expected a := but found a [!

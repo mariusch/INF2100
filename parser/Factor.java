@@ -54,7 +54,7 @@ abstract class Factor extends PascalSyntax {
                         f = FuncCall.parse(s);
                         break;
                     default:
-                        Main.panic("Her er det noe feil!");
+                        f = Variable.parse(s);
                         break;
                 }
                 break;
