@@ -39,7 +39,7 @@ class IfStatm extends Statement {
     }
 
     static IfStatm parse(Scanner s) {
-        enterParser("if-statm");
+        enterParser("if statm");
         IfStatm is = new IfStatm(s.curLineNum());
 
         s.skip(ifToken);
@@ -52,7 +52,7 @@ class IfStatm extends Statement {
             is.stm.add(Statement.parse(s));
         }
 
-        leaveParser("if-statm");
+        leaveParser("if statm");
         return is;
     }
 }
