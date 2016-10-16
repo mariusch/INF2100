@@ -23,7 +23,7 @@ class CompoundStatm extends Statement {
 
     @Override
     void prettyPrint() {
-        Main.log.prettyPrint("begin");
+        Main.log.prettyPrint("begin\n");
         statmList.prettyPrint();
         Main.log.prettyPrint("end");
     }

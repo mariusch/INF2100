@@ -28,7 +28,7 @@ class CharLiteral extends UnsignedConstant {
         if (val == '\''){
             Main.log.prettyPrint("''");
         } else {
-            Main.log.prettyPrint(""+val);
+            Main.log.prettyPrint("" + val);
         }
 
         Main.log.prettyPrint("'");

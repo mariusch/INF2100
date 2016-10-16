@@ -20,17 +20,17 @@ class PrefixOperator extends Operator {
 
     @Override
     public String identify() {
-        return "<prefix operator " + lineNum;
+        return "<prefix opr" + lineNum;
     }
 
     @Override
     void prettyPrint() {
-        Main.log.prettyPrint(type);
+        Main.log.prettyPrint(" " + type + " ");
 
     }
 
     static PrefixOperator parse(Scanner s) {
-        enterParser("prefix operator");
+        enterParser("prefix opr");
 
         PrefixOperator po = new PrefixOperator(s.curLineNum());
 
@@ -48,7 +48,7 @@ class PrefixOperator extends Operator {
                 break;
         }
 
-        leaveParser("prefix operator");
+        leaveParser("prefix opr");
         return po;
     }
 

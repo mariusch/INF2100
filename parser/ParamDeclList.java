@@ -24,7 +24,7 @@ class ParamDeclList extends PascalSyntax {
 
     @Override
     public String identify() {
-        return "<param-decl-list> on line " + lineNum;
+        return "<param decl list> on line " + lineNum;
     }
 
     @Override
@@ -40,7 +40,7 @@ class ParamDeclList extends PascalSyntax {
     }
 
     static ParamDeclList parse(Scanner s) {
-        enterParser("param-decl-list");
+        enterParser("param decl list");
         ParamDeclList pdl = new ParamDeclList(s.curLineNum());
 
         s.skip(TokenKind.leftParToken);
@@ -54,7 +54,7 @@ class ParamDeclList extends PascalSyntax {
 
         s.skip(TokenKind.rightParToken);
 
-        leaveParser("param-decl-list");
+        leaveParser("param decl list");
         return pdl;
     }
 

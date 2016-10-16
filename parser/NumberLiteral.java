@@ -19,7 +19,7 @@ class NumberLiteral extends UnsignedConstant {
 
     @Override
     public String identify() {
-        return "<numeric literal> on line " + lineNum;
+        return "<number literal> on line " + lineNum;
     }
 
     @Override
@@ -30,7 +30,7 @@ class NumberLiteral extends UnsignedConstant {
     }
 
     static NumberLiteral parse(Scanner s) {
-        enterParser("numeric literal");
+        enterParser("number literal");
         NumberLiteral numLit = new NumberLiteral(s.curLineNum());
 
         numLit.num.add(s.curToken.intVal);
@@ -41,7 +41,7 @@ class NumberLiteral extends UnsignedConstant {
             s.skip(intValToken);
         }
 
-        leaveParser("numeric literal");
+        leaveParser("number literal");
         return numLit;
     }
 }

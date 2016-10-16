@@ -19,7 +19,7 @@ class ProcDecl extends PascalDecl {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<proc decl> on line " + lineNum;
     }
 
     @Override
@@ -34,7 +34,7 @@ class ProcDecl extends PascalDecl {
     }
 
     static ProcDecl parse(Scanner s) {
-        enterParser("proc-decl");
+        enterParser("proc decl");
         ProcDecl pd = new ProcDecl(s.curToken.id, s.curLineNum());
 
         s.skip(TokenKind.procedureToken);
@@ -50,7 +50,7 @@ class ProcDecl extends PascalDecl {
         pd.block = Block.parse(s);
         s.skip(TokenKind.semicolonToken);
 
-        leaveParser("proc-decl");
+        leaveParser("proc decl");
         return pd;
     }
 

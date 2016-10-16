@@ -145,7 +145,8 @@ const n = 10;
 var i : integer;
 begin
 i := 0;
-while i<ndo beginwrite('*');
-i := i+1end;
+while i < n do begin
+write('*');
+i := i + 1end;
 write(eol);
 end.

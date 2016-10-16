@@ -58,9 +58,9 @@ public class Scanner {
         curToken = nextToken;  nextToken = null;
 
         //Check for e-o-f since the scanner is running ahead of the parser
-        if (endOfFile) {
+        if (endOfFile)
             return;
-        }
+
 
         //Check for empty lines and run readNextLine() if empty
         checkEmptyLine();

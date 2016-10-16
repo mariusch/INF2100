@@ -19,16 +19,16 @@ class RelOperator extends Operator {
 
     @Override
     public String identify() {
-        return "<rel-opr> on line " + lineNum;
+        return "<rel opr> on line " + lineNum;
     }
 
     @Override
     void prettyPrint() {
-        Main.log.prettyPrint(opVal);
+        Main.log.prettyPrint(" " + opVal + " ");
     }
 
     static RelOperator parse(Scanner s) {
-        enterParser("rel-opr");
+        enterParser("rel opr");
         RelOperator ro = new RelOperator(s.curLineNum());
         ro.opVal = s.curToken.kind + "";
 
@@ -56,7 +56,7 @@ class RelOperator extends Operator {
                 break;
         }
 
-        leaveParser("rel-opr");
+        leaveParser("rel opr");
         return ro;
     }
 

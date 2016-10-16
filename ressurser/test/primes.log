@@ -150,7 +150,7 @@ Parser:                           <expression>
 Parser:                             <simple expr>
 Parser:                               <term>
 Parser:                                 <factor>
-Parser:                                    <variable>
+Parser:                                   <variable>
 Parser:                                   </variable>
 Parser:                                 </factor>
 Parser:                               </term>

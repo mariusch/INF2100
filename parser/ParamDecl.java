@@ -21,7 +21,7 @@ class ParamDecl extends PascalDecl {
 
     @Override
     public String identify() {
-        return "<paramDecl> on line " + lineNum;
+        return "<param decl> on line " + lineNum;
     }
 
     @Override
@@ -33,7 +33,7 @@ class ParamDecl extends PascalDecl {
     }
 
     static ParamDecl parse(Scanner s) {
-        enterParser("param-decl");
+        enterParser("param decl");
         ParamDecl pd = new ParamDecl(s.curToken.id, s.curLineNum());
 
         s.test(nameToken);
@@ -58,7 +58,7 @@ class ParamDecl extends PascalDecl {
         pd.tn = TypeName.parse(s);
 
 
-        leaveParser("param-decl");
+        leaveParser("param decl");
         return pd;
     }
 

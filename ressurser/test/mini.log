@@ -7,7 +7,7 @@ Parser:   <program>
 Parser:     <block>
 Parser:       <statm list>
 Parser:         <statement>
-Parser:           <proc call statm>
+Parser:           <proc call>
 Parser:             <expression>
 Parser:               <simple expr>
 Parser:                 <term>
@@ -21,7 +21,7 @@ Parser:                 </term>
 Parser:               </simple expr>
 Parser:             </expression>
    6: end. 
-Parser:           </proc call statm>
+Parser:           </proc call>
 Parser:         </statement>
 Parser:         <statement>
 Parser:           <empty statm>
