@@ -30,4 +30,6 @@ Parser:         </statement>
 Parser:       </statm list>
 Parser:     </block>
 Parser:   </program>
-program mini;.
+program mini;
+begin
+writex;end.

@@ -42,6 +42,8 @@ class Block extends PascalSyntax {
 
     @Override
     void prettyPrint() {
+        System.out.println(stml.identify());
+
         if (cdp != null) {
             Main.log.prettyPrint("const ");
             cdp.prettyPrint();
@@ -63,12 +65,12 @@ class Block extends PascalSyntax {
 
                 pd.prettyPrint();
             }
-            Main.log.prettyPrint("begin\n");
-            Main.log.prettyIndent();
-            stml.prettyPrint();
-            Main.log.prettyOutdent();
-            Main.log.prettyPrint("end");
         }
+        Main.log.prettyPrint("begin\n");
+        Main.log.prettyIndent();
+        stml.prettyPrint();
+        Main.log.prettyOutdent();
+        Main.log.prettyPrint("end");
     }
 
     static Block parse(Scanner s) {
