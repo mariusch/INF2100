@@ -26,7 +26,7 @@ public class Program extends PascalDecl {
 
     @Override
     public void prettyPrint() {
-        Main.log.prettyPrint("program "); Main.log.prettyPrint(name); Main.log.prettyPrint(";");
+        Main.log.prettyPrint("program "); Main.log.prettyPrint(name); Main.log.prettyPrint(";\n");
         progBlock.prettyPrint();
         Main.log.prettyPrint(".");
     }

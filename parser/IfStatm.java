@@ -29,11 +29,11 @@ class IfStatm extends Statement {
     void prettyPrint() {
         Main.log.prettyPrint("if ");
         exp.prettyPrint();
-        Main.log.prettyPrint("then");
+        Main.log.prettyPrint("then\n");
         stm.get(0).prettyPrint();
 
         if (stm.get(1) != null) {
-            Main.log.prettyPrint("else");
+            Main.log.prettyPrint("else\n");
             stm.get(1).prettyPrint();
         }
     }

@@ -5,29 +5,29 @@ Parser:   <program>
    4: begin 
    5:    write('x'); 
 Parser:     <block>
-Parser:       <statm-list>
+Parser:       <statm list>
 Parser:         <statement>
-Parser:           <proc-call-statm>
+Parser:           <proc call statm>
 Parser:             <expression>
-Parser:               <simple-expr>
+Parser:               <simple expr>
 Parser:                 <term>
 Parser:                   <factor>
 Parser:                     <unsigned constant>
-Parser:                       <char-literal>
-Parser:                       </char-literal>
+Parser:                       <char literal>
+Parser:                       </char literal>
 Parser:                     </unsigned constant>
 Parser:                   </factor>
 Parser:                 </term>
-Parser:               </simple-expr>
+Parser:               </simple expr>
 Parser:             </expression>
    6: end. 
-Parser:           </proc-call-statm>
+Parser:           </proc call statm>
 Parser:         </statement>
 Parser:         <statement>
-Parser:           <empty-statm>
-Parser:           </empty-statm>
+Parser:           <empty statm>
+Parser:           </empty statm>
 Parser:         </statement>
-Parser:       </statm-list>
+Parser:       </statm list>
 Parser:     </block>
 Parser:   </program>
 program mini;.
