@@ -43,14 +43,12 @@ class Block extends PascalSyntax {
     @Override
     void prettyPrint() {
 
-        if (cdp != null) {
-            Main.log.prettyPrint("const ");
+        if (cdp != null)
             cdp.prettyPrint();
-        }
-        if (vdp != null) {
-            Main.log.prettyPrint("var ");
+
+
+        if (vdp != null)
             vdp.prettyPrint();
-        }
 
         if (!pdList.isEmpty()) {
             for (ProcDecl pd : pdList) {

@@ -140,4 +140,11 @@ Parser:         </statement>
 Parser:       </statm list>
 Parser:     </block>
 Parser:   </program>
-program tenstars;const const n=10;var variable i:<type name> on line 3;.
+program tenstars;
+const n = 10;
+variable i:<type name> on line 3;begin
+i:=0;
+while inullndobeginwrite('*');
+i:=i+1end;
+write(eol);
+end.

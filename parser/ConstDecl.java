@@ -31,11 +31,10 @@ class ConstDecl extends PascalDecl {
 
     @Override
     void prettyPrint() {
-
         Main.log.prettyPrint(name);
-        Main.log.prettyPrint("=");
+        Main.log.prettyPrint(" = ");
         con.prettyPrint();
-        Main.log.prettyPrint(";");
+        Main.log.prettyPrint(";\n");
 
     }
 
