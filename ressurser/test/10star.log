@@ -142,7 +142,8 @@ Parser:     </block>
 Parser:   </program>
 program tenstars;
 const n = 10;
-variable i:<type name> on line 3;begin
+var i : integer;
+begin
 i:=0;
 while inullndobeginwrite('*');
 i:=i+1end;
