@@ -42,7 +42,6 @@ class Block extends PascalSyntax {
 
     @Override
     void prettyPrint() {
-        System.out.println(stml.identify());
 
         if (cdp != null) {
             Main.log.prettyPrint("const ");

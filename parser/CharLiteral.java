@@ -23,12 +23,15 @@ class CharLiteral extends UnsignedConstant {
 
     @Override
     void prettyPrint() {
+        Main.log.prettyPrint("'");
+
         if (val == '\''){
-            Main.log.prettyPrint("''''");
-        }
-        else {
+            Main.log.prettyPrint("''");
+        } else {
             Main.log.prettyPrint(""+val);
         }
+
+        Main.log.prettyPrint("'");
     }
 
     static CharLiteral parse(Scanner s) {

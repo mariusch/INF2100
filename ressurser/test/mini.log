@@ -32,4 +32,5 @@ Parser:     </block>
 Parser:   </program>
 program mini;
 begin
-writex;end.
+write('x');
+end.

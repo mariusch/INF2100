@@ -13,6 +13,7 @@ class ProcCallStatm extends Statement {
 
     private String name;
     private ArrayList<Expression> exprList = new ArrayList<Expression>();
+    private boolean procCallShort = true;
 
     ProcCallStatm(int lNum) {
         super(lNum);
@@ -25,10 +26,19 @@ class ProcCallStatm extends Statement {
 
     @Override
     void prettyPrint() {
-
         Main.log.prettyPrint(name);
-        for (Expression e : exprList){
-            e.prettyPrint();
+
+        if (!procCallShort) {
+            Main.log.prettyPrint("(");
+
+
+            exprList.get(0).prettyPrint();
+            for (int i = 1; i < exprList.size(); i++){
+                Main.log.prettyPrint("'");
+                exprList.get(i).prettyPrint();
+            }
+
+            Main.log.prettyPrint(")");
         }
     }
 
@@ -41,7 +51,8 @@ class ProcCallStatm extends Statement {
         s.skip(TokenKind.nameToken);
 
         //Har vi en liste med expressions?
-        if (s.curToken.kind == TokenKind.leftParToken){
+        if (s.curToken.kind == TokenKind.leftParToken) {
+            pcs.procCallShort = false;
             s.skip(TokenKind.leftParToken);
 
             pcs.exprList.add(Expression.parse(s));

@@ -26,10 +26,11 @@ class StatmList extends PascalSyntax {
 
     @Override
     void prettyPrint() {
+
         sl.get(0).prettyPrint();
 
         for (int i = 1; i < sl.size(); i++){
-            Main.log.prettyPrint(";");
+            Main.log.prettyPrint(";\n");
             sl.get(i).prettyPrint();
         }
     }
