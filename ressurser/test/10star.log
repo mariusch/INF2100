@@ -144,8 +144,8 @@ program tenstars;
 const n = 10;
 var i : integer;
 begin
-i:=0;
-while inullndobeginwrite('*');
-i:=i+1end;
+i := 0;
+while i<ndo beginwrite('*');
+i := i+1end;
 write(eol);
 end.

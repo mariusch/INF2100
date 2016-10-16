@@ -30,7 +30,7 @@ class RelOperator extends Operator {
     static RelOperator parse(Scanner s) {
         enterParser("rel-opr");
         RelOperator ro = new RelOperator(s.curLineNum());
-        ro.opVal = s.curToken.id;
+        ro.opVal = s.curToken.kind + "";
 
         switch (s.curToken.kind) {
             case equalToken:

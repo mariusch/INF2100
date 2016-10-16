@@ -24,7 +24,7 @@ class AssignStatm extends Statement {
     @Override
     void prettyPrint() {
         variable.prettyPrint();
-        Main.log.prettyPrint(":=");
+        Main.log.prettyPrint(" := ");
         expr.prettyPrint();
     }
 
