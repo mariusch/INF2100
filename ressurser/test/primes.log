@@ -883,20 +883,19 @@ begin
       i1 := i1 + 1
     end
 end;
-procedure p4(x:integer);
+
+procedure p4 (x: integer);
 begin
   if x < 1000 then
-  write(' ')
-  ;
+    write(' ');
   if x < 100 then
-  write(' ')
-  ;
+    write(' ');
   if x < 10 then
-  write(' ')
-  ;
+    write(' ');
   write(x);
 
 end;
+
 procedure printprimes;
 var
   i: integer;
@@ -907,20 +906,19 @@ begin
   while i <= limit do 
     begin
       if prime[i] then
-      begin
-        if (nprinted > 0) and (nprinted mod 10 = 0) then
-        write(eol)
-        ;
-        p4(i);
-        nprinted := nprinted + 1;
+        begin
+          if (nprinted > 0) and (nprinted mod 10 = 0) then
+            write(eol);
+          p4(i);
+          nprinted := nprinted + 1;
 
-      end
-      ;
+        end;
       i := i + 1;
 
     end;
   write(eol)
 end;
+
 begin
   i := 2;
   while i <= limit do 

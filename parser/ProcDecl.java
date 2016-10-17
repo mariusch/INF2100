@@ -31,12 +31,15 @@ class ProcDecl extends PascalDecl {
         Main.log.prettyPrint("procedure ");
         Main.log.prettyPrint(name);
 
-        if (pdl != null)
+        if (pdl != null) {
+            Main.log.prettyPrint(" ");
             pdl.prettyPrint();
+        }
 
         Main.log.prettyPrintLn(";");
         block.prettyPrint();
         Main.log.prettyPrint(";");
+        Main.log.prettyPrintLn();
         Main.log.prettyPrintLn();
     }
 

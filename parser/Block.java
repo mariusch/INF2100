@@ -42,12 +42,6 @@ class Block extends PascalSyntax {
 
         if (!pdList.isEmpty()) {
             for (ProcDecl pd : pdList) {
-                /*if (pd instanceof FuncDecl) {
-                    Main.log.prettyPrint("function ");
-                } else {
-                    Main.log.prettyPrint("procedure ");
-                }*/
-
                 pd.prettyPrint();
             }
         }

@@ -33,11 +33,13 @@ class IfStatm extends Statement {
         exp.prettyPrint();
         Main.log.prettyPrintLn(" then");
 
+        Main.log.prettyIndent();
         for (int i = 0; i < stm.size(); i++){
             stm.get(i).prettyPrint();
         }
+        Main.log.prettyOutdent();
 
-        Main.log.prettyPrintLn();
+        //Main.log.prettyPrintLn();
     }
 
     static IfStatm parse(Scanner s) {
