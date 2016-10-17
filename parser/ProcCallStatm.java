@@ -28,6 +28,8 @@ class ProcCallStatm extends Statement {
     void prettyPrint() {
         Main.log.prettyPrint(name);
 
+
+
         if (!procCallShort) {
             Main.log.prettyPrint("(");
 
@@ -40,6 +42,8 @@ class ProcCallStatm extends Statement {
 
             Main.log.prettyPrint(")");
         }
+
+        Main.log.prettyPrintLn();
     }
 
     static ProcCallStatm parse(Scanner s) {

@@ -29,13 +29,12 @@ class IfStatm extends Statement {
     void prettyPrint() {
         Main.log.prettyPrint("if ");
         exp.prettyPrint();
-        Main.log.prettyPrint("then\n");
-        stm.get(0).prettyPrint();
+        Main.log.prettyPrintLn("then");
 
-        if (stm.get(1) != null) {
-            Main.log.prettyPrint("else\n");
-            stm.get(1).prettyPrint();
+        for (int i = 0; i < stm.size(); i++){
+            stm.get(i).prettyPrint();
         }
+        Main.log.prettyPrintLn();
     }
 
     static IfStatm parse(Scanner s) {

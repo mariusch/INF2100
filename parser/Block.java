@@ -63,11 +63,12 @@ class Block extends PascalSyntax {
                 pd.prettyPrint();
             }
         }
-        Main.log.prettyPrint("begin\n");
+        Main.log.prettyPrintLn("begin");
         Main.log.prettyIndent();
         stml.prettyPrint();
         Main.log.prettyOutdent();
         Main.log.prettyPrint("end");
+        Main.log.prettyPrintLn();
     }
 
     static Block parse(Scanner s) {
@@ -97,6 +98,8 @@ class Block extends PascalSyntax {
         s.skip(TokenKind.beginToken);
         bl.stml = StatmList.parse(s);
         s.skip(TokenKind.endToken);
+
+
 
         leaveParser("block");
         return bl;

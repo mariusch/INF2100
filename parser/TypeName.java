@@ -39,5 +39,6 @@ public class TypeName extends Type {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint(name);
+        Main.log.prettyPrintLn();
     }
 }

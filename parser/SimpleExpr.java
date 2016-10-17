@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
 
@@ -25,6 +26,7 @@ class SimpleExpr extends PascalSyntax {
 
     @Override
     void prettyPrint() {
+
         if (po != null)
             po.prettyPrint();
 
@@ -36,7 +38,7 @@ class SimpleExpr extends PascalSyntax {
             toList.get(i).prettyPrint();
             tList.get(i+1).prettyPrint();
         }
-
+        Main.log.prettyPrintLn();
     }
 
     static SimpleExpr parse(Scanner s) {

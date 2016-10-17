@@ -27,12 +27,17 @@ class StatmList extends PascalSyntax {
     @Override
     void prettyPrint() {
 
+
+
         sl.get(0).prettyPrint();
 
         for (int i = 1; i < sl.size(); i++){
-            Main.log.prettyPrint(";\n");
+            Main.log.prettyPrintLn(";");
+
             sl.get(i).prettyPrint();
+
         }
+        Main.log.prettyPrintLn();
     }
 
     static StatmList parse(Scanner s) {

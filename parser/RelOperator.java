@@ -25,6 +25,7 @@ class RelOperator extends Operator {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint(" " + opVal + " ");
+        Main.log.prettyPrintLn();
     }
 
     static RelOperator parse(Scanner s) {

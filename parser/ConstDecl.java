@@ -34,7 +34,7 @@ class ConstDecl extends PascalDecl {
         Main.log.prettyPrint(name);
         Main.log.prettyPrint(" = ");
         con.prettyPrint();
-        Main.log.prettyPrint(";\n");
+        Main.log.prettyPrintLn(";");
 
     }
 

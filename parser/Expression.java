@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
 
@@ -27,6 +28,7 @@ class Expression extends PascalSyntax{
             ro.prettyPrint();
             se2.prettyPrint();
         }
+        Main.log.prettyPrintLn();
     }
 
     static Expression parse(Scanner s) {

@@ -26,9 +26,10 @@ public class Program extends PascalDecl {
 
     @Override
     public void prettyPrint() {
-        Main.log.prettyPrint("program "); Main.log.prettyPrint(name); Main.log.prettyPrint(";\n");
+        Main.log.prettyPrint("program "); Main.log.prettyPrint(name); Main.log.prettyPrintLn(";");
         progBlock.prettyPrint();
         Main.log.prettyPrint(".");
+        Main.log.prettyPrintLn();
     }
 
     public static Program parse(Scanner s) {

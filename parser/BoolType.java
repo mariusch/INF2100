@@ -21,7 +21,9 @@ public class BoolType extends Type {
     }
 
     @Override
-    void prettyPrint() {}
+    void prettyPrint() {
+
+    }
 }
 
 

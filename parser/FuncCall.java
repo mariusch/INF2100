@@ -26,11 +26,14 @@ class FuncCall extends Factor {
 
     @Override
     void prettyPrint() {
+
+
         Main.log.prettyPrint(name);
 
         if (!eList.isEmpty()){
             Main.log.prettyPrint("(");
             eList.get(0).prettyPrint();
+
 
             for (int i = 1; i < eList.size(); i++){
                 Main.log.prettyPrint(",");
@@ -38,6 +41,7 @@ class FuncCall extends Factor {
             }
             Main.log.prettyPrint(")");
         }
+        Main.log.prettyPrintLn();
     }
 
     static FuncCall parse(Scanner s) {

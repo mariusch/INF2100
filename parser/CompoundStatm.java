@@ -26,6 +26,7 @@ class CompoundStatm extends Statement {
         Main.log.prettyPrint("begin\n");
         statmList.prettyPrint();
         Main.log.prettyPrint("end");
+        Main.log.prettyPrintLn();
     }
 
     static CompoundStatm parse(Scanner s) {

@@ -26,6 +26,7 @@ class AssignStatm extends Statement {
         variable.prettyPrint();
         Main.log.prettyPrint(" := ");
         expr.prettyPrint();
+        Main.log.prettyPrintLn();
     }
 
     static AssignStatm parse(Scanner s) {

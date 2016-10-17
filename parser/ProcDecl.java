@@ -31,6 +31,7 @@ class ProcDecl extends PascalDecl {
         Main.log.prettyPrint(";");
         block.prettyPrint();
         Main.log.prettyPrint(";");
+        Main.log.prettyPrintLn();
     }
 
     static ProcDecl parse(Scanner s) {

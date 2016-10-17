@@ -27,6 +27,7 @@ class NumberLiteral extends UnsignedConstant {
         for (Integer i : num) {
             Main.log.prettyPrint(i + "");
         }
+        Main.log.prettyPrintLn();
     }
 
     static NumberLiteral parse(Scanner s) {

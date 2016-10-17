@@ -26,16 +26,19 @@ class Variable extends Factor {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint(name);
+        Main.log.prettyPrintLn();
         if (expr != null){
             Main.log.prettyPrint("[");
             expr.prettyPrint();
             Main.log.prettyPrint("]");
+            Main.log.prettyPrintLn();
         }
     }
 
     static Variable parse(Scanner s) {
         enterParser("variable");
         Variable var = new Variable(s.curLineNum());
+
 
         s.test(nameToken);
         var.name = s.curToken.id;

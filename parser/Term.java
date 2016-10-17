@@ -1,5 +1,6 @@
 package parser;
 
+import main.Main;
 import scanner.Scanner;
 
 import java.util.ArrayList;
@@ -23,12 +24,14 @@ class Term extends PascalSyntax {
 
     @Override
     void prettyPrint() {
+
         fList.get(0).prettyPrint();
 
-        for (int i = 0; i < fOList.size();){
+        for (int i = 0; i < fOList.size(); i++){
             fOList.get(i).prettyPrint();
             fList.get(i+1).prettyPrint();
         }
+        Main.log.prettyPrintLn();
     }
 
     static Term parse(Scanner s) {

@@ -25,6 +25,7 @@ class WhileStatm extends Statement {
         expr.prettyPrint();
         Main.log.prettyPrint(" do ");
         body.prettyPrint();
+        Main.log.prettyPrintLn();
     }
 
 

@@ -73,7 +73,7 @@ public class Scanner {
         String tok = "";
 
         //Checks for and removes eventual comments
-        if (c == '/' && sourceLine.substring(1,2).equals("*") || c == '{') {
+        if ((c == '/' && sourceLine.substring(1,2).equals("*")) || (c == '{')) {
             removeComment(c);
             checkEmptyLine();
             c = sourceLine.charAt(0);
@@ -234,7 +234,7 @@ public class Scanner {
     //Helper methods
 
     private void checkEmptyLine() {
-        while (sourceLine.trim().isEmpty()) {
+        while (sourceLine.trim().isEmpty() && sourceFile != null) {
             readNextLine();
             sourceLine = trimStart(sourceLine);
         }
