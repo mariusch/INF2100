@@ -41,8 +41,11 @@ class Variable extends Factor {
         var.name = s.curToken.id;
         s.skip(nameToken);
 
+
+
         //Sjekk om nextToken er [, hvis ikke er vi ferdig med variabelen
-        if (s.nextToken.kind == leftBracketToken) {
+        if (s.curToken.kind == leftBracketToken) {
+
             s.skip(leftBracketToken);
             var.expr = Expression.parse(s);
             s.skip(rightBracketToken);
