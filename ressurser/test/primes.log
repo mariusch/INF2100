@@ -887,74 +887,38 @@ begin
   i1
    := 2
 
-
-
-
   ;
   while i1
-
-
-   <= 
-  limit
-
-
-
+   <= limit
    do begin
 i2
    := 2
   multiplyToken
   i1
 
-
-
-
   ;
   while i2
-
-
-   <= 
-  limit
-
-
-
+   <= limit
    do begin
 prime
   [i2
-
-
-
   ]
    := false
-
-
-
 
   ;
   i2
    := i2
-
-   + 
-  i1
-
-
-
+   + i1
 
 
   end
-
   ;
   i1
    := i1
-
-   + 
-  1
-
-
-
+   + 1
 
 
   end
-
 
 end
 ;
@@ -963,57 +927,27 @@ procedure procedure p4(x:integer
 ;)
 ;begin
   if x
-
-
-   < 
-  1000
-
-
-
+   < 1000
   then
   write(' '
-
-
-
   )
 
   ;
   if x
-
-
-   < 
-  100
-
-
-
+   < 100
   then
   write(' '
-
-
-
   )
 
   ;
   if x
-
-
-   < 
-  10
-
-
-
+   < 10
   then
   write(' '
-
-
-
   )
 
   ;
   write(x
-
-
-
   )
   ;
 
@@ -1029,83 +963,39 @@ begin
   i
    := 2
 
-
-
-
   ;
   nprinted
    := 0
 
-
-
-
   ;
   while i
-
-
-   <= 
-  limit
-
-
-
+   <= limit
    do begin
 if prime
   [i
-
-
-
   ]
-
-
-
   then
   begin
 if (nprinted
-
-
-   > 
-  0
-
-
-
+   > 0
   )
   andToken
   (nprinted
   modToken
   10
-
-
-   = 
-  0
-
-
-
+   = 0
   )
-
-
-
   then
   write(eol
-
-
-
   )
 
   ;
   p4(i
-
-
-
   )
   ;
   nprinted
    := nprinted
-
-   + 
-  1
-
-
-
+   + 1
 
   ;
 
@@ -1114,22 +1004,13 @@ if (nprinted
   ;
   i
    := i
-
-   + 
-  1
-
-
-
+   + 1
 
   ;
 
   end
-
   ;
   write(eol
-
-
-
   )
 
 end
@@ -1138,43 +1019,22 @@ begin
   i
    := 2
 
-
-
-
   ;
   while i
-
-
-   <= 
-  limit
-
-
-
+   <= limit
    do begin
 prime
   [i
-
-
-
   ]
    := true
-
-
-
 
   ;
   i
    := i
-
-   + 
-  1
-
-
-
+   + 1
 
 
   end
-
   ;
   findprimes
   ;

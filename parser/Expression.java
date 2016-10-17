@@ -28,7 +28,7 @@ class Expression extends PascalSyntax{
             ro.prettyPrint();
             se2.prettyPrint();
         }
-        Main.log.prettyPrintLn();
+        //Main.log.prettyPrintLn();
     }
 
     static Expression parse(Scanner s) {
