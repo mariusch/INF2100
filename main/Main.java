@@ -7,7 +7,7 @@ import static scanner.TokenKind.*;
 import java.io.*;
 
 public class Main {
-    public static final String version = "16.9.2016";
+    public static final String version = "17.10.2016";
 
     // Del 3: public static parser.Library library;
     public static LogFile log = new LogFile();
