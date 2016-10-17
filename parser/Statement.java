@@ -3,7 +3,13 @@ package parser;
 import scanner.*;
 import static scanner.TokenKind.*;
 
-
+/**
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
+ */
 abstract class Statement extends PascalSyntax {
 
     Statement(int lNum) {
@@ -12,7 +18,7 @@ abstract class Statement extends PascalSyntax {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<statement> on line " + lineNum;
     }
 
     @Override
@@ -22,7 +28,6 @@ abstract class Statement extends PascalSyntax {
     static Statement parse(Scanner s) {
         enterParser("statement");
         Statement st;
-
 
         switch (s.curToken.kind) {
             case beginToken:

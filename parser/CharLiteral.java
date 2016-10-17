@@ -2,11 +2,14 @@ package parser;
 
 import main.Main;
 import scanner.Scanner;
-
 import static scanner.TokenKind.charValToken;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class CharLiteral extends UnsignedConstant {
 
@@ -37,7 +40,6 @@ class CharLiteral extends UnsignedConstant {
 
     static CharLiteral parse(Scanner s) {
         enterParser("char literal");
-
         CharLiteral cl = new CharLiteral(s.curLineNum());
 
         cl.val = s.curToken.charVal;

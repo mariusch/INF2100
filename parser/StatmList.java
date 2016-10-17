@@ -2,14 +2,16 @@ package parser;
 
 import main.Main;
 import scanner.Scanner;
-
 import java.util.ArrayList;
-
 import static scanner.TokenKind.*;
 
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class StatmList extends PascalSyntax {
 
@@ -27,16 +29,13 @@ class StatmList extends PascalSyntax {
     @Override
     void prettyPrint() {
 
-
-
         sl.get(0).prettyPrint();
 
         for (int i = 1; i < sl.size(); i++){
             Main.log.prettyPrintLn(";");
-
             sl.get(i).prettyPrint();
-
         }
+
         Main.log.prettyPrintLn();
     }
 

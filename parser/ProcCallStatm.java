@@ -3,11 +3,14 @@ package parser;
 import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
-
 import java.util.ArrayList;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class ProcCallStatm extends Statement {
 
@@ -27,8 +30,6 @@ class ProcCallStatm extends Statement {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint(name);
-
-
 
         if (!procCallShort) {
             Main.log.prettyPrint("(");
@@ -54,7 +55,6 @@ class ProcCallStatm extends Statement {
         pcs.name = s.curToken.id;
         s.skip(TokenKind.nameToken);
 
-        //Har vi en liste med expressions?
         if (s.curToken.kind == TokenKind.leftParToken) {
             pcs.procCallShort = false;
             s.skip(TokenKind.leftParToken);

@@ -1,6 +1,13 @@
 package parser;
 
-public abstract class PascalDecl extends PascalSyntax {
+/**
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
+ */
+abstract class PascalDecl extends PascalSyntax {
     String name, progProcFuncName;
     int declLevel = 0, declOffset = 0;
     types.Type type = null;

@@ -2,18 +2,14 @@ package parser;
 
 import main.Main;
 import scanner.Scanner;
-import scanner.TokenKind;
-
 import static scanner.TokenKind.*;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
  *
- * ConstDecl inneholder
- *      name
- *      equalsToken
- *      Constant
- *      semiColonToken
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class ConstDecl extends PascalDecl {
 

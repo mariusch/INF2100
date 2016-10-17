@@ -2,7 +2,14 @@ package parser;
 
 import main.*;
 
-public abstract class PascalSyntax {
+/**
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
+ */
+abstract class PascalSyntax {
     public int lineNum;
 
     PascalSyntax(int n) {
@@ -16,7 +23,6 @@ public abstract class PascalSyntax {
     // Del 3: abstract void check(Block curScope, Library lib);
     // Del 4: abstract void genCode(CodeFile f);
     abstract public String identify();
-    // Del 2: abstract void prettyPrint();
 
     public void error(String message) {
 	Main.error("Error at line " + lineNum + ": " + message);

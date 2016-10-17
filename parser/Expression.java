@@ -1,11 +1,13 @@
 package parser;
 
-import main.Main;
 import scanner.Scanner;
-import scanner.TokenKind;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class Expression extends PascalSyntax{
 
@@ -33,9 +35,7 @@ class Expression extends PascalSyntax{
 
     static Expression parse(Scanner s) {
         enterParser("expression");
-
         Expression expr = new Expression(s.curLineNum());
-
 
         expr.se = SimpleExpr.parse(s);
 

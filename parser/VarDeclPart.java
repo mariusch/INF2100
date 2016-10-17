@@ -9,7 +9,11 @@ import java.util.ArrayList;
 import static scanner.TokenKind.varToken;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class VarDeclPart extends PascalSyntax {
 
@@ -19,7 +23,6 @@ class VarDeclPart extends PascalSyntax {
         super(lNum);
     }
 
-
     @Override
     public String identify() {
         return "<var decl> on line " + lineNum;
@@ -28,7 +31,7 @@ class VarDeclPart extends PascalSyntax {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint("var ");
-        for (VarDecl vd : vdList){
+        for (VarDecl vd : vdList) {
             vd.prettyPrint();
             Main.log.prettyPrintLn();
         }

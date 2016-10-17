@@ -5,9 +5,13 @@ import scanner.Scanner;
 import scanner.TokenKind;
 
 /**
- * Created by essi on 09.10.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
-public class ArrayType extends Type {
+class ArrayType extends Type {
     Constant con;
     Constant con2;
     Type type;

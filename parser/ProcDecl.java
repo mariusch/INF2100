@@ -5,7 +5,11 @@ import scanner.Scanner;
 import scanner.TokenKind;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class ProcDecl extends PascalDecl {
 
@@ -25,6 +29,7 @@ class ProcDecl extends PascalDecl {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint("procedure "); Main.log.prettyPrint(name);
+
         if (pdl != null)
             pdl.prettyPrint();
 
@@ -43,9 +48,8 @@ class ProcDecl extends PascalDecl {
         pd.name = s.curToken.id;
         s.skip(TokenKind.nameToken);
 
-        if (s.curToken.kind == TokenKind.leftParToken){
+        if (s.curToken.kind == TokenKind.leftParToken)
             pd.pdl = ParamDeclList.parse(s);
-        }
 
         s.skip(TokenKind.semicolonToken);
         pd.block = Block.parse(s);
