@@ -32,5 +32,12 @@ Parser:     </block>
 Parser:   </program>
 program mini;
 begin
-write('x');
-end.
+  write('x'
+
+
+
+  )
+  ;
+
+end
+.

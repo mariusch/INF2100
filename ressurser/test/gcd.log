@@ -10,18 +10,18 @@ Parser:       <const decl part>
 Parser:         <const decl>
 Parser:           <constant>
 Parser:             <unsigned constant>
-Parser:               <numeric literal>
-Parser:               </numeric literal>
+Parser:               <number literal>
+Parser:               </number literal>
 Parser:             </unsigned constant>
 Parser:           </constant>
 Parser:         </const decl>
 Parser:         <const decl>
 Parser:           <constant>
 Parser:             <unsigned constant>
-Parser:               <numeric literal>
+Parser:               <number literal>
    7:  
    8: var res: integer; 
-Parser:               </numeric literal>
+Parser:               </number literal>
 Parser:             </unsigned constant>
 Parser:           </constant>
 Parser:         </const decl>
@@ -37,16 +37,16 @@ Parser:           </type>
 Parser:         </var decl>
 Parser:       </var decl part>
 Parser:       <func decl>
-Parser:         <param-decl-list>
-Parser:           <param-decl>
+Parser:         <param decl list>
+Parser:           <param decl>
 Parser:             <type name>
 Parser:             </type name>
-Parser:           </param-decl>
-Parser:           <param-decl>
+Parser:           </param decl>
+Parser:           <param decl>
 Parser:             <type name>
 Parser:             </type name>
-Parser:           </param-decl>
-Parser:         </param-decl-list>
+Parser:           </param decl>
+Parser:         </param decl list>
 Parser:         <type name>
   11: begin 
 Parser:         </type name>
@@ -54,7 +54,7 @@ Parser:         </type name>
 Parser:         <block>
 Parser:           <statm list>
 Parser:             <statement>
-Parser:               <if statm>
+Parser:               <if-statm>
 Parser:                 <expression>
 Parser:                   <simple expr>
 Parser:                     <term>
@@ -64,15 +64,15 @@ Parser:                         </variable>
 Parser:                       </factor>
 Parser:                     </term>
 Parser:                   </simple expr>
-Parser:                   <rel-opr>
-Parser:                   </rel-opr>
+Parser:                   <rel opr>
+Parser:                   </rel opr>
 Parser:                   <simple expr>
 Parser:                     <term>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   13:       GCD := m 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -139,7 +139,7 @@ Parser:                       </simple expr>
 Parser:                     </expression>
 Parser:                   </assign statm>
 Parser:                 </statement>
-Parser:               </if statm>
+Parser:               </if-statm>
 Parser:             </statement>
 Parser:           </statm list>
   17:  
@@ -186,7 +186,7 @@ Parser:             </expression>
 Parser:           </assign statm>
 Parser:         </statement>
 Parser:         <statement>
-Parser:           <proc call statm>
+Parser:           <proc call>
 Parser:             <expression>
 Parser:               <simple expr>
 Parser:                 <term>
@@ -312,7 +312,7 @@ Parser:                 </term>
 Parser:               </simple expr>
 Parser:             </expression>
   21: end. 
-Parser:           </proc call statm>
+Parser:           </proc call>
 Parser:         </statement>
 Parser:         <statement>
 Parser:           <empty statm>
@@ -321,4 +321,123 @@ Parser:         </statement>
 Parser:       </statm list>
 Parser:     </block>
 Parser:   </program>
-program gcd;const const v1=1071;v2=462;var variable res:<type name> on line 8;function functiongcd(m:integer;n:integer;):integer;;beginres:=gcd(v1,v2);writeGCD(v1,v2)=reseol;end.
+program gcd;
+const 
+v1 = 1071
+
+;
+
+v2 = 462
+
+;
+
+var res : integer
+;
+
+function functiongcd(m:integer
+
+;n:integer
+
+;)
+:integer
+;begin
+  if n
+
+
+   = 
+  0
+
+
+
+  then
+  gcd
+   := m
+
+
+
+
+  gcd
+   := gcd(n
+
+
+
+  ,m
+  modToken
+  n
+
+
+
+  )
+
+
+
+
+
+
+end
+;
+begin
+  res
+   := gcd(v1
+
+
+
+  ,v2
+
+
+
+  )
+
+
+
+
+  ;
+  write('G'
+
+
+
+  ''C'
+
+
+
+  ''D'
+
+
+
+  ''('
+
+
+
+  'v1
+
+
+
+  '','
+
+
+
+  'v2
+
+
+
+  '')'
+
+
+
+  ''='
+
+
+
+  'res
+
+
+
+  'eol
+
+
+
+  )
+  ;
+
+end
+.

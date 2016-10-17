@@ -58,8 +58,8 @@ public class LogFile {
      * @param message  The error message
      */
     public void noteError(String message) {
-	if (nLogLines > 0) 
-	    writeLogLine(message);
+        if (nLogLines > 0)
+            writeLogLine(message);
     }
 
 
@@ -71,8 +71,8 @@ public class LogFile {
      * @param line     The actual line
      */
     public void noteSourceLine(int lineNum, String line) {
-	if (doLogParser || doLogScanner) 
-	    writeLogLine(String.format("%4d: %s",lineNum,line));
+        if (doLogParser || doLogScanner)
+            writeLogLine(String.format("%4d: %s",lineNum,line));
     }
 	
 
@@ -81,23 +81,23 @@ public class LogFile {
      * This note will only be made if the user has requested it.
      */
     public void noteToken(Token tok) {
-	if (doLogScanner)
-	    writeLogLine("Scanner: " + tok.identify());
+        if (doLogScanner)
+            writeLogLine("Scanner: " + tok.identify());
     }
 
 
     public void noteTypeCheck(types.Type t1, String op, 
-			      types.Type t2, PascalSyntax where) {
-	if (doLogTypeChecks)
-	    writeLogLine("Type check " + op + " on line " + where.lineNum + 
-		": " + t1.identify() + " vs " + t2.identify());
+                      types.Type t2, PascalSyntax where) {
+        if (doLogTypeChecks)
+            writeLogLine("Type check " + op + " on line " + where.lineNum +
+            ": " + t1.identify() + " vs " + t2.identify());
     }
 
 
     public void noteBinding(String id, PascalSyntax where, PascalDecl decl) {
-	if (doLogBinding)
-	    writeLogLine("Binding on line " + where.lineNum + ": " + id + 
-		" was declared as " + decl.identify());
+        if (doLogBinding)
+            writeLogLine("Binding on line " + where.lineNum + ": " + id +
+            " was declared as " + decl.identify());
     }
 
 
@@ -120,33 +120,33 @@ public class LogFile {
      * @param name The name of the non-terminal.
      */
     public void leaveParser(String name) {
-	if (doLogParser) {
-	    --parseLevel;  noteParserInfo("/"+name);
-	}
+        if (doLogParser) {
+            --parseLevel;  noteParserInfo("/"+name);
+        }
     }
 
     private void noteParserInfo(String name) {
-	String logLine = "Parser:   ";
-	for (int i = 1;  i <= parseLevel;  ++i) logLine += "  ";
-	writeLogLine(logLine + "<" + name + ">");
+        String logLine = "Parser:   ";
+        for (int i = 1;  i <= parseLevel;  ++i) logLine += "  ";
+        writeLogLine(logLine + "<" + name + ">");
     }
 
 
     public void prettyPrint(String s) {
-	if (prettyLine.equals("")) {
-	    for (int i = 1;  i <= prettyIndentation;  i++) 
-		prettyLine += "  ";
-	}
-	prettyLine += s;
+        if (prettyLine.equals("")) {
+            for (int i = 1;  i <= prettyIndentation;  i++)
+            prettyLine += "  ";
+        }
+        prettyLine += s;
     }
 
     public void prettyPrintLn(String s) {
-	prettyPrint(s);  prettyPrintLn();
-    }
+        prettyPrint(s);  prettyPrintLn();
+        }
 
-    public void prettyPrintLn() {
-	writeLogLine(prettyLine);
-	prettyLine = "";
+        public void prettyPrintLn() {
+        writeLogLine(prettyLine);
+        prettyLine = "";
     }
 
     public void prettyIndent() {

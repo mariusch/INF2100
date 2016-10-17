@@ -18,14 +18,14 @@ Parser:             </type name>
 Parser:           </type>
 Parser:         </var decl>
 Parser:       </var decl part>
-Parser:       <proc-decl>
-Parser:         <param-decl-list>
-Parser:           <param-decl>
+Parser:       <proc decl>
+Parser:         <param decl list>
+Parser:           <param decl>
 Parser:             <type name>
 Parser:             </type name>
-Parser:           </param-decl>
+Parser:           </param decl>
   11: var 
-Parser:         </param-decl-list>
+Parser:         </param decl list>
   12:    a: integer;  b: integer;  c: integer;  d: integer;  e: integer; 
 Parser:         <block>
 Parser:           <var decl part>
@@ -145,9 +145,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   22:    b := y div 100; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -170,9 +170,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   23:    c := y mod 100; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -195,9 +195,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   24:    d := b div 4; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -220,9 +220,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   25:    e := b mod 4; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -245,9 +245,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   26:    f := (b+8) div 25; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -277,8 +277,8 @@ Parser:                               </term opr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                               </term>
@@ -290,9 +290,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   27:    g := (b-f+1) div 3; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -330,8 +330,8 @@ Parser:                               </term opr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                               </term>
@@ -343,9 +343,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   28:    h := (19*a+b-d-g+15) mod 30; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -367,8 +367,8 @@ Parser:                             <simple expr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                                 <factor opr>
@@ -407,8 +407,8 @@ Parser:                               </term opr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                               </term>
@@ -420,9 +420,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   29:    i := c div 4; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -445,9 +445,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   30:    k := c mod 4; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -470,9 +470,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   31:    l := (32+2*e+2*i-h-k) mod 7; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -494,8 +494,8 @@ Parser:                             <simple expr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                               </term>
@@ -504,8 +504,8 @@ Parser:                               </term opr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                                 <factor opr>
@@ -520,8 +520,8 @@ Parser:                               </term opr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                                 <factor opr>
@@ -555,9 +555,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   32:    m := (a+11*h+22*l) div 451; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -587,8 +587,8 @@ Parser:                               </term opr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                                 <factor opr>
@@ -603,8 +603,8 @@ Parser:                               </term opr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                                 <factor opr>
@@ -622,10 +622,10 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   33:  
   34:    month := (h+l-7*m+114) div 31; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -663,8 +663,8 @@ Parser:                               </term opr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                                 <factor opr>
@@ -679,8 +679,8 @@ Parser:                               </term opr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                               </term>
@@ -692,9 +692,9 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   35:    day := (h+l-7*m+114) mod 31 + 1; 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -732,8 +732,8 @@ Parser:                               </term opr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                                 <factor opr>
@@ -748,8 +748,8 @@ Parser:                               </term opr>
 Parser:                               <term>
 Parser:                                 <factor>
 Parser:                                   <unsigned constant>
-Parser:                                     <numeric literal>
-Parser:                                     </numeric literal>
+Parser:                                     <number literal>
+Parser:                                     </number literal>
 Parser:                                   </unsigned constant>
 Parser:                                 </factor>
 Parser:                               </term>
@@ -761,8 +761,8 @@ Parser:                       <factor opr>
 Parser:                       </factor opr>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
-Parser:                           </numeric literal>
+Parser:                           <number literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -771,10 +771,10 @@ Parser:                     </term opr>
 Parser:                     <term>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   36:  
   37:    if month = 3 then 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
@@ -783,7 +783,7 @@ Parser:                 </expression>
 Parser:               </assign statm>
 Parser:             </statement>
 Parser:             <statement>
-Parser:               <if statm>
+Parser:               <if-statm>
 Parser:                 <expression>
 Parser:                   <simple expr>
 Parser:                     <term>
@@ -793,22 +793,22 @@ Parser:                         </variable>
 Parser:                       </factor>
 Parser:                     </term>
 Parser:                   </simple expr>
-Parser:                   <rel-opr>
-Parser:                   </rel-opr>
+Parser:                   <rel opr>
+Parser:                   </rel opr>
 Parser:                   <simple expr>
 Parser:                     <term>
 Parser:                       <factor>
 Parser:                         <unsigned constant>
-Parser:                           <numeric literal>
+Parser:                           <number literal>
   38:       write(day, ' ', 'M', 'a', 'r', 'c', 'h', ' ', y, eol) 
-Parser:                           </numeric literal>
+Parser:                           </number literal>
 Parser:                         </unsigned constant>
 Parser:                       </factor>
 Parser:                     </term>
 Parser:                   </simple expr>
 Parser:                 </expression>
 Parser:                 <statement>
-Parser:                   <proc call statm>
+Parser:                   <proc call>
 Parser:                     <expression>
 Parser:                       <simple expr>
 Parser:                         <term>
@@ -925,10 +925,10 @@ Parser:                         </term>
 Parser:                       </simple expr>
 Parser:                     </expression>
   40:       write(day, ' ', 'A', 'p', 'r', 'i', 'l', ' ', y, eol); 
-Parser:                   </proc call statm>
+Parser:                   </proc call>
 Parser:                 </statement>
 Parser:                 <statement>
-Parser:                   <proc call statm>
+Parser:                   <proc call>
 Parser:                     <expression>
 Parser:                       <simple expr>
 Parser:                         <term>
@@ -1044,9 +1044,9 @@ Parser:                         </term>
 Parser:                       </simple expr>
 Parser:                     </expression>
   41: end; {easter} 
-Parser:                   </proc call statm>
+Parser:                   </proc call>
 Parser:                 </statement>
-Parser:               </if statm>
+Parser:               </if-statm>
 Parser:             </statement>
 Parser:             <statement>
 Parser:               <empty statm>
@@ -1057,7 +1057,7 @@ Parser:           </statm list>
   43: begin 
 Parser:         </block>
   44:    y := 2010; 
-Parser:       </proc-decl>
+Parser:       </proc decl>
 Parser:       <statm list>
 Parser:         <statement>
 Parser:           <assign statm>
@@ -1068,9 +1068,9 @@ Parser:               <simple expr>
 Parser:                 <term>
 Parser:                   <factor>
 Parser:                     <unsigned constant>
-Parser:                       <numeric literal>
+Parser:                       <number literal>
   45:    while y <= 2020 do 
-Parser:                       </numeric literal>
+Parser:                       </number literal>
 Parser:                     </unsigned constant>
 Parser:                   </factor>
 Parser:                 </term>
@@ -1089,15 +1089,15 @@ Parser:                     </variable>
 Parser:                   </factor>
 Parser:                 </term>
 Parser:               </simple expr>
-Parser:               <rel-opr>
-Parser:               </rel-opr>
+Parser:               <rel opr>
+Parser:               </rel opr>
 Parser:               <simple expr>
 Parser:                 <term>
 Parser:                   <factor>
 Parser:                     <unsigned constant>
-Parser:                       <numeric literal>
+Parser:                       <number literal>
   46:    begin 
-Parser:                       </numeric literal>
+Parser:                       </number literal>
 Parser:                     </unsigned constant>
 Parser:                   </factor>
 Parser:                 </term>
@@ -1108,7 +1108,7 @@ Parser:             <statement>
 Parser:               <compound statm>
 Parser:                 <statm list>
 Parser:                   <statement>
-Parser:                     <proc call statm>
+Parser:                     <proc call>
 Parser:                       <expression>
 Parser:                         <simple expr>
 Parser:                           <term>
@@ -1119,7 +1119,7 @@ Parser:                             </factor>
 Parser:                           </term>
 Parser:                         </simple expr>
 Parser:                       </expression>
-Parser:                     </proc call statm>
+Parser:                     </proc call>
 Parser:                   </statement>
 Parser:                   <statement>
 Parser:                     <assign statm>
@@ -1138,9 +1138,9 @@ Parser:                           </term opr>
 Parser:                           <term>
 Parser:                             <factor>
 Parser:                               <unsigned constant>
-Parser:                                 <numeric literal>
+Parser:                                 <number literal>
   48:    end 
-Parser:                                 </numeric literal>
+Parser:                                 </number literal>
 Parser:                               </unsigned constant>
 Parser:                             </factor>
 Parser:                           </term>
@@ -1161,4 +1161,419 @@ Parser:         </statement>
 Parser:       </statm list>
 Parser:     </block>
 Parser:   </program>
-program easter;var variable y:<type name> on line 8;procedure procedure easter(y:integer;);var variable a:<type name> on line 12;b:<type name> on line 12;c:<type name> on line 12;d:<type name> on line 12;e:<type name> on line 12;f:<type name> on line 13;g:<type name> on line 13;h:<type name> on line 13;i:<type name> on line 13;k:<type name> on line 13;l:<type name> on line 14;m:<type name> on line 14;month:<type name> on line 16;day:<type name> on line 17;ix:<type name> on line 19;;beginy:=2010;while y<=2020dobegineastery;y:=y+1;endend.
+program easter;
+var y : integer
+;
+
+procedure procedure easter(y:integer
+
+;)
+;var a : integer
+;
+
+b : integer
+;
+
+c : integer
+;
+
+d : integer
+;
+
+e : integer
+;
+
+f : integer
+;
+
+g : integer
+;
+
+h : integer
+;
+
+i : integer
+;
+
+k : integer
+;
+
+l : integer
+;
+
+m : integer
+;
+
+month : integer
+;
+
+day : integer
+;
+
+ix : integer
+;
+
+begin
+  a
+   := y
+  modToken
+  19
+
+
+
+
+  ;
+  b
+   := y
+  divToken
+  100
+
+
+
+
+  ;
+  c
+   := y
+  modToken
+  100
+
+
+
+
+  ;
+  d
+   := b
+  divToken
+  4
+
+
+
+
+  ;
+  e
+   := b
+  modToken
+  4
+
+
+
+
+  ;
+  f
+   := (b
+
+   + 
+  8
+
+
+
+  )
+  divToken
+  25
+
+
+
+
+  ;
+  g
+   := (b
+
+   - 
+  f
+
+   + 
+  1
+
+
+
+  )
+  divToken
+  3
+
+
+
+
+  ;
+  h
+   := (19
+  multiplyToken
+  a
+
+   + 
+  b
+
+   - 
+  d
+
+   - 
+  g
+
+   + 
+  15
+
+
+
+  )
+  modToken
+  30
+
+
+
+
+  ;
+  i
+   := c
+  divToken
+  4
+
+
+
+
+  ;
+  k
+   := c
+  modToken
+  4
+
+
+
+
+  ;
+  l
+   := (32
+
+   + 
+  2
+  multiplyToken
+  e
+
+   + 
+  2
+  multiplyToken
+  i
+
+   - 
+  h
+
+   - 
+  k
+
+
+
+  )
+  modToken
+  7
+
+
+
+
+  ;
+  m
+   := (a
+
+   + 
+  11
+  multiplyToken
+  h
+
+   + 
+  22
+  multiplyToken
+  l
+
+
+
+  )
+  divToken
+  451
+
+
+
+
+  ;
+  month
+   := (h
+
+   + 
+  l
+
+   - 
+  7
+  multiplyToken
+  m
+
+   + 
+  114
+
+
+
+  )
+  divToken
+  31
+
+
+
+
+  ;
+  day
+   := (h
+
+   + 
+  l
+
+   - 
+  7
+  multiplyToken
+  m
+
+   + 
+  114
+
+
+
+  )
+  modToken
+  31
+
+   + 
+  1
+
+
+
+
+  ;
+  if month
+
+
+   = 
+  3
+
+
+
+  then
+  write(day
+
+
+
+  '' '
+
+
+
+  ''M'
+
+
+
+  ''a'
+
+
+
+  ''r'
+
+
+
+  ''c'
+
+
+
+  ''h'
+
+
+
+  '' '
+
+
+
+  'y
+
+
+
+  'eol
+
+
+
+  )
+  write(day
+
+
+
+  '' '
+
+
+
+  ''A'
+
+
+
+  ''p'
+
+
+
+  ''r'
+
+
+
+  ''i'
+
+
+
+  ''l'
+
+
+
+  '' '
+
+
+
+  'y
+
+
+
+  'eol
+
+
+
+  )
+
+  ;
+
+end
+;
+begin
+  y
+   := 2010
+
+
+
+
+  ;
+  while y
+
+
+   <= 
+  2020
+
+
+
+   do begin
+easter(y
+
+
+
+  )
+  ;
+  y
+   := y
+
+   + 
+  1
+
+
+
+
+  ;
+
+  end
+
+
+end
+.

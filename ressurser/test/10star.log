@@ -6,9 +6,9 @@ Parser:       <const decl part>
 Parser:         <const decl>
 Parser:           <constant>
 Parser:             <unsigned constant>
-Parser:               <numeric literal>
+Parser:               <number literal>
    3: var i : integer; 
-Parser:               </numeric literal>
+Parser:               </number literal>
 Parser:             </unsigned constant>
 Parser:           </constant>
 Parser:         </const decl>
@@ -33,9 +33,9 @@ Parser:               <simple expr>
 Parser:                 <term>
 Parser:                   <factor>
 Parser:                     <unsigned constant>
-Parser:                       <numeric literal>
+Parser:                       <number literal>
    6:    while i < N do begin 
-Parser:                       </numeric literal>
+Parser:                       </number literal>
 Parser:                     </unsigned constant>
 Parser:                   </factor>
 Parser:                 </term>
@@ -54,8 +54,8 @@ Parser:                     </variable>
 Parser:                   </factor>
 Parser:                 </term>
 Parser:               </simple expr>
-Parser:               <rel-opr>
-Parser:               </rel-opr>
+Parser:               <rel opr>
+Parser:               </rel opr>
 Parser:               <simple expr>
 Parser:                 <term>
 Parser:                   <factor>
@@ -70,7 +70,7 @@ Parser:             <statement>
 Parser:               <compound statm>
 Parser:                 <statm list>
 Parser:                   <statement>
-Parser:                     <proc call statm>
+Parser:                     <proc call>
 Parser:                       <expression>
 Parser:                         <simple expr>
 Parser:                           <term>
@@ -83,7 +83,7 @@ Parser:                             </factor>
 Parser:                           </term>
 Parser:                         </simple expr>
 Parser:                       </expression>
-Parser:                     </proc call statm>
+Parser:                     </proc call>
 Parser:                   </statement>
 Parser:                   <statement>
 Parser:                     <assign statm>
@@ -103,8 +103,8 @@ Parser:                           </term opr>
 Parser:                           <term>
 Parser:                             <factor>
 Parser:                               <unsigned constant>
-Parser:                                 <numeric literal>
-Parser:                                 </numeric literal>
+Parser:                                 <number literal>
+Parser:                                 </number literal>
 Parser:                               </unsigned constant>
 Parser:                             </factor>
 Parser:                           </term>
@@ -119,7 +119,7 @@ Parser:             </statement>
 Parser:           </while-statm>
 Parser:         </statement>
 Parser:         <statement>
-Parser:           <proc call statm>
+Parser:           <proc call>
 Parser:             <expression>
 Parser:               <simple expr>
 Parser:                 <term>
@@ -131,7 +131,7 @@ Parser:                 </term>
 Parser:               </simple expr>
 Parser:             </expression>
   10: end. 
-Parser:           </proc call statm>
+Parser:           </proc call>
 Parser:         </statement>
 Parser:         <statement>
 Parser:           <empty statm>
@@ -141,12 +141,56 @@ Parser:       </statm list>
 Parser:     </block>
 Parser:   </program>
 program tenstars;
-const n = 10;
-var i : integer;
+const 
+n = 10
+
+;
+
+var i : integer
+;
+
 begin
-i := 0;
-while i < n do begin
-write('*');
-i := i + 1end;
-write(eol);
-end.
+  i
+   := 0
+
+
+
+
+  ;
+  while i
+
+
+   < 
+  n
+
+
+
+   do begin
+write('*'
+
+
+
+  )
+  ;
+  i
+   := i
+
+   + 
+  1
+
+
+
+
+
+  end
+
+  ;
+  write(eol
+
+
+
+  )
+  ;
+
+end
+.
