@@ -26,12 +26,12 @@ class Variable extends Factor {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint(name);
-        Main.log.prettyPrintLn();
+        //Main.log.prettyPrintLn();
         if (expr != null){
             Main.log.prettyPrint("[");
             expr.prettyPrint();
             Main.log.prettyPrint("]");
-            Main.log.prettyPrintLn();
+            //Main.log.prettyPrintLn();
         }
     }
 

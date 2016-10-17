@@ -43,6 +43,7 @@ class Block extends PascalSyntax {
     @Override
     void prettyPrint() {
 
+
         if (cdp != null)
             cdp.prettyPrint();
 
@@ -52,23 +53,26 @@ class Block extends PascalSyntax {
 
         if (!pdList.isEmpty()) {
             for (ProcDecl pd : pdList) {
-                if (pd instanceof FuncDecl) {
+                /*if (pd instanceof FuncDecl) {
                     Main.log.prettyPrint("function ");
                 }
                 //Hvis ikke er det en ProcDecl
                 else {
                     Main.log.prettyPrint("procedure ");
-                }
+                }*/
 
                 pd.prettyPrint();
             }
         }
         Main.log.prettyPrintLn("begin");
+
         Main.log.prettyIndent();
         stml.prettyPrint();
         Main.log.prettyOutdent();
+
         Main.log.prettyPrint("end");
-        Main.log.prettyPrintLn();
+        //Main.log.prettyPrintLn();
+
     }
 
     static Block parse(Scanner s) {

@@ -23,8 +23,8 @@ class FactorOperator extends Operator {
 
     @Override
     void prettyPrint() {
-        Main.log.prettyPrint(type);
-        Main.log.prettyPrintLn();
+        Main.log.prettyPrint(" " + type + " ");
+        //Main.log.prettyPrintLn();
     }
 
     static FactorOperator parse(Scanner s) {
@@ -33,19 +33,19 @@ class FactorOperator extends Operator {
 
         switch (s.curToken.kind) {
             case multiplyToken:
-                fo.type = multiplyToken.name();
+                fo.type = multiplyToken.toString();
                 s.skip(multiplyToken);
                 break;
             case divToken:
-                fo.type = divToken.name();
+                fo.type = divToken.toString();
                 s.skip(divToken);
                 break;
             case modToken:
-                fo.type = modToken.name();
+                fo.type = modToken.toString();
                 s.skip(modToken);
                 break;
             case andToken:
-                fo.type = andToken.name();
+                fo.type = andToken.toString();
                 s.skip(andToken);
                 break;
             default:

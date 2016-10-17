@@ -24,7 +24,7 @@ class Constant extends PascalSyntax {
             po.prettyPrint();
 
         uc.prettyPrint();
-        Main.log.prettyPrintLn();
+        //Main.log.prettyPrintLn();
     }
 
 

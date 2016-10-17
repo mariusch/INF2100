@@ -32,7 +32,7 @@ class CharLiteral extends UnsignedConstant {
         }
 
         Main.log.prettyPrint("'");
-        Main.log.prettyPrintLn();
+        //Main.log.prettyPrintLn();
     }
 
     static CharLiteral parse(Scanner s) {

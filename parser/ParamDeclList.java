@@ -31,13 +31,15 @@ class ParamDeclList extends PascalSyntax {
     void prettyPrint() {
         Main.log.prettyPrint("(");
 
-        for (ParamDecl pd : pdList) {
-            pd.prettyPrint();
+        pdList.get(0).prettyPrint();
+
+        for (int i = 1; i < pdList.size(); i++){
             Main.log.prettyPrint(";");
+            pdList.get(i).prettyPrint();
         }
         
         Main.log.prettyPrint(")");
-        Main.log.prettyPrintLn();
+        //Main.log.prettyPrintLn();
     }
 
     static ParamDeclList parse(Scanner s) {

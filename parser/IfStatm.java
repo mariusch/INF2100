@@ -29,7 +29,7 @@ class IfStatm extends Statement {
     void prettyPrint() {
         Main.log.prettyPrint("if ");
         exp.prettyPrint();
-        Main.log.prettyPrintLn("then");
+        Main.log.prettyPrintLn(" then");
 
         for (int i = 0; i < stm.size(); i++){
             stm.get(i).prettyPrint();

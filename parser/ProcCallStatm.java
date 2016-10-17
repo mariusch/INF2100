@@ -36,14 +36,14 @@ class ProcCallStatm extends Statement {
 
             exprList.get(0).prettyPrint();
             for (int i = 1; i < exprList.size(); i++){
-                Main.log.prettyPrint("'");
+                Main.log.prettyPrint(",");
                 exprList.get(i).prettyPrint();
             }
 
             Main.log.prettyPrint(")");
         }
 
-        Main.log.prettyPrintLn();
+        //Main.log.prettyPrintLn();
     }
 
     static ProcCallStatm parse(Scanner s) {

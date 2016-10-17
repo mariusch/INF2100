@@ -38,6 +38,8 @@ class StatmList extends PascalSyntax {
 
         }
         Main.log.prettyPrintLn();
+
+
     }
 
     static StatmList parse(Scanner s) {

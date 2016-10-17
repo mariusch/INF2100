@@ -41,14 +41,12 @@ public class ArrayType extends Type {
 
     @Override
     void prettyPrint() {
-        Main.log.prettyPrint("array");
-        Main.log.prettyPrint("[");
+        Main.log.prettyPrint("array [");
         con.prettyPrint();
         Main.log.prettyPrint("..");
         con2.prettyPrint();
-        Main.log.prettyPrint("]");
-        Main.log.prettyPrint("of");
+        Main.log.prettyPrint("] of ");
         type.prettyPrint();
-        Main.log.prettyPrintLn();
+        //Main.log.prettyPrintLn();
     }
 }

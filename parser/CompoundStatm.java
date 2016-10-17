@@ -23,10 +23,12 @@ class CompoundStatm extends Statement {
 
     @Override
     void prettyPrint() {
-        Main.log.prettyPrint("begin\n");
+        Main.log.prettyPrintLn("begin");
+        Main.log.prettyIndent();
         statmList.prettyPrint();
+        Main.log.prettyOutdent();
         Main.log.prettyPrint("end");
-        Main.log.prettyPrintLn();
+        //Main.log.prettyPrintLn();
     }
 
     static CompoundStatm parse(Scanner s) {

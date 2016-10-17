@@ -30,7 +30,7 @@ class ParamDecl extends PascalDecl {
         Main.log.prettyPrint(name);
         Main.log.prettyPrint(":");
         tn.prettyPrint();
-        Main.log.prettyPrintLn();
+        //Main.log.prettyPrintLn();
     }
 
     static ParamDecl parse(Scanner s) {

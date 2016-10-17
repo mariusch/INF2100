@@ -23,8 +23,10 @@ class WhileStatm extends Statement {
     void prettyPrint() {
         Main.log.prettyPrint("while ");
         expr.prettyPrint();
-        Main.log.prettyPrint(" do ");
+        Main.log.prettyPrintLn(" do ");
+        Main.log.prettyIndent();
         body.prettyPrint();
+        Main.log.prettyOutdent();
         //Main.log.prettyPrintLn();
     }
 
