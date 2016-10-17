@@ -54,7 +54,7 @@ public class Main {
 
 
     public static boolean useUnderscore() {
-	// Should global names start with an '_'? Not with Linux/Unix.
+	    // Should global names start with an '_'? Not with Linux/Unix.
 	    return ! OS.matches(".*n.*x.*");
     }
 
@@ -215,7 +215,7 @@ public class Main {
     }
 
     public static void panic(String where) {
-	error("PANIC! Programming error in " + where);
+	    error("PANIC! Programming error in " + where);
     }
 
     public static void warning(String message) {

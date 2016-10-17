@@ -53,7 +53,7 @@ class RelOperator extends Operator {
                 s.skip(greaterEqualToken);
                 break;
             default:
-                Main.panic("Her er det noe feil!");
+                Main.error("no token match in rel opr");
                 break;
         }
 
