@@ -5,7 +5,11 @@ import scanner.Scanner;
 import scanner.TokenKind;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class CompoundStatm extends Statement {
 
@@ -14,7 +18,6 @@ class CompoundStatm extends Statement {
     CompoundStatm(int lNum) {
         super(lNum);
     }
-
 
     @Override
     public String identify() {

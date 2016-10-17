@@ -3,16 +3,14 @@ package parser;
 import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
-
 import java.util.ArrayList;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
  *
- * Må inneholde
-    * Venstre parentes
-    * Minst et param decl
-    * Kan inneholde flere param decl såfremt det er et semikolon mellom dem
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class ParamDeclList extends PascalSyntax {
 
@@ -49,7 +47,6 @@ class ParamDeclList extends PascalSyntax {
         s.skip(TokenKind.leftParToken);
         pdl.pdList.add(ParamDecl.parse(s));
 
-        //Hvis semikolon skal vi se etter flere param decl
         while(s.curToken.kind == TokenKind.semicolonToken){
             s.skip(TokenKind.semicolonToken);
             pdl.pdList.add(ParamDecl.parse(s));

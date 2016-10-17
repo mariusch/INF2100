@@ -4,12 +4,13 @@ import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
 
-
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
-
-/* <program> ::= ’program’ <name> ’;’ <block> '.' */
 public class Program extends PascalDecl {
 
     private Block progBlock;

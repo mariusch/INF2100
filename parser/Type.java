@@ -1,17 +1,16 @@
 package parser;
 
 import scanner.Scanner;
-import static scanner.TokenKind.*;
-
 import static scanner.TokenKind.nameToken;
 
 /**
- * Created by essi on 29.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
-
-
-
-public abstract class Type extends PascalSyntax {
+abstract class Type extends PascalSyntax {
 
     Type(int n) {
         super(n);

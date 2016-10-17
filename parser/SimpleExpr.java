@@ -1,13 +1,14 @@
 package parser;
 
-import main.Main;
 import scanner.Scanner;
-import scanner.TokenKind;
-
 import java.util.ArrayList;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class SimpleExpr extends PascalSyntax {
 
@@ -32,8 +33,6 @@ class SimpleExpr extends PascalSyntax {
 
         tList.get(0).prettyPrint();
 
-        //Litt stygg printmetode for å skrive ut alle påfølgende Term Oprs og deretter Terms.
-        //Vi har alt printet første Term og vet at vi alltid vil ha 1 Term mer enn antall Term Oprs.
         for (int i = 0; i < toList.size(); i++){
             toList.get(i).prettyPrint();
             tList.get(i+1).prettyPrint();
@@ -46,13 +45,11 @@ class SimpleExpr extends PascalSyntax {
         enterParser("simple expr");
         SimpleExpr se = new SimpleExpr(s.curLineNum());
 
-        if (PrefixOperator.isPrefixOpr(s)){
+        if (PrefixOperator.isPrefixOpr(s))
             se.po = PrefixOperator.parse(s);
-        }
 
         se.tList.add(Term.parse(s));
 
-        //Mens current token er en term opr
         while (TermOperator.isTermOpr(s)){
             se.toList.add(TermOperator.parse(s));
             se.tList.add(Term.parse(s));

@@ -3,33 +3,23 @@ package parser;
 import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
-
 import java.util.ArrayList;
 
-/**
- * Created by marius on 22.09.2016.
- */
-/* <program> ::= ’program’ <name> ’;’ <block> '.'
-* Se side 23 i kompendiet
-*
-* - En blokk kan begynne med en ConstDeclPart
-* - Kan ha en VarDeclPart
-* - Kan ha en eller flere FuncDecl eller ProcDecl om hverandre
-* - Må ha begin
-* - Må ha StatmList
-* - Må ha end
-* */
 
+/**
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
+ */
 class Block extends PascalSyntax {
 
     private ConstDeclPart cdp;
     private VarDeclPart vdp;
     private ArrayList<ProcDecl> pdList = new ArrayList<ProcDecl>();
     private StatmList stml;
-
-
-
-    Program context; //Skal dette være mer generelt feks PascalSyntax istedenfor Program?
+    protected Program context;
 
     Block(int lNum) {
         super(lNum);
@@ -47,7 +37,6 @@ class Block extends PascalSyntax {
         if (cdp != null)
             cdp.prettyPrint();
 
-
         if (vdp != null)
             vdp.prettyPrint();
 
@@ -55,9 +44,7 @@ class Block extends PascalSyntax {
             for (ProcDecl pd : pdList) {
                 /*if (pd instanceof FuncDecl) {
                     Main.log.prettyPrint("function ");
-                }
-                //Hvis ikke er det en ProcDecl
-                else {
+                } else {
                     Main.log.prettyPrint("procedure ");
                 }*/
 
@@ -91,19 +78,15 @@ class Block extends PascalSyntax {
         while (s.curToken.kind == TokenKind.functionToken || s.curToken.kind == TokenKind.procedureToken){
             if (s.curToken.kind == TokenKind.functionToken){
                 bl.pdList.add(FuncDecl.parse(s));
-            }
-            //Hvis ikke er det et procedure token
-            else {
-                bl.pdList.add(ProcDecl.parse(s));
 
+            } else {
+                bl.pdList.add(ProcDecl.parse(s));
             }
         }
 
         s.skip(TokenKind.beginToken);
         bl.stml = StatmList.parse(s);
         s.skip(TokenKind.endToken);
-
-
 
         leaveParser("block");
         return bl;

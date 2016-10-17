@@ -4,7 +4,13 @@ import main.*;
 import scanner.*;
 import static scanner.TokenKind.*;
 
-/* <while-statm> ::= ’while’ <expression> ’do’ <statement> */
+/**
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
+ */
 class WhileStatm extends Statement {
 
     private Expression expr;

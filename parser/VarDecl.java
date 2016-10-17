@@ -7,7 +7,11 @@ import scanner.TokenKind;
 import static scanner.TokenKind.*;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class VarDecl extends PascalDecl {
 
@@ -29,21 +33,17 @@ class VarDecl extends PascalDecl {
         Main.log.prettyPrint(": ");
         type.prettyPrint();
         Main.log.prettyPrintLn(";");
-
     }
 
     static VarDecl parse(Scanner s) {
         enterParser("var decl");
-
         VarDecl vd = new VarDecl(s.curToken.id, s.curLineNum());
 
         s.test(nameToken);
         vd.name = s.curToken.id;
         s.skip(nameToken);
         s.skip(colonToken);
-
         vd.type = Type.parse(s);
-
         s.skip(semicolonToken);
 
         leaveParser("var decl");

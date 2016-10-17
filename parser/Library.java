@@ -1,7 +1,11 @@
 package parser;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class Library extends PascalSyntax {
 
@@ -11,7 +15,7 @@ class Library extends PascalSyntax {
 
     @Override
     public String identify() {
-        return "<NAVN-HER> on line " + lineNum;
+        return "<library> on line " + lineNum;
     }
 
     @Override

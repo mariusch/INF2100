@@ -2,12 +2,14 @@ package parser;
 
 import main.Main;
 import scanner.Scanner;
-import scanner.TokenKind;
-
 import static scanner.TokenKind.*;
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class Variable extends Factor {
 
@@ -39,16 +41,11 @@ class Variable extends Factor {
         enterParser("variable");
         Variable var = new Variable(s.curLineNum());
 
-
         s.test(nameToken);
         var.name = s.curToken.id;
         s.skip(nameToken);
 
-
-
-        //Sjekk om nextToken er [, hvis ikke er vi ferdig med variabelen
         if (s.curToken.kind == leftBracketToken) {
-
             s.skip(leftBracketToken);
             var.expr = Expression.parse(s);
             s.skip(rightBracketToken);

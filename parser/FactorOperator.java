@@ -6,7 +6,11 @@ import static scanner.TokenKind.*;
 
 
 /**
- * Created by marius on 22.09.2016.
+ * Parser class used for creating a syntax tree with tokens from the scanner module.
+ *
+ * @author Marius Christensen
+ * @author Silje Merethe Dahl
+ * @version 2016-10-17
  */
 class FactorOperator extends Operator {
 
@@ -49,7 +53,7 @@ class FactorOperator extends Operator {
                 s.skip(andToken);
                 break;
             default:
-                Main.panic("Her er det noe feil!");
+                Main.error("no token match in factor opr");
                 break;
         }
 

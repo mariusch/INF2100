@@ -10,14 +10,14 @@ public class CodeFile {
     private int numLabels = 0;
 
     CodeFile(String fName) {
-	codeFileName = fName;
-	try {
-	    code = new PrintWriter(fName);
-	} catch (FileNotFoundException e) {
-	    Main.error("Cannot create code file " + fName + "!");
-	}
-	code.println("# Code file created by Pascal2016 compiler " +
-	    new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+        codeFileName = fName;
+        try {
+            code = new PrintWriter(fName);
+        } catch (FileNotFoundException e) {
+            Main.error("Cannot create code file " + fName + "!");
+        }
+        code.println("# Code file created by Pascal2016 compiler " +
+            new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
     }
 
     void finish() {
@@ -39,14 +39,14 @@ public class CodeFile {
 
 
     public void genInstr(String lab, String instr, String arg, String comment) {
-	if (lab.length() > 0)
-	    code.println(lab + ":");
-	if ((instr+arg+comment).length() > 0) {
-	    code.printf("        %-7s %-23s ", instr, arg);
-	    if (comment.length() > 0) {
-		code.print("# " + comment);
-	    }
-	    code.println();
-	}
+        if (lab.length() > 0)
+            code.println(lab + ":");
+        if ((instr+arg+comment).length() > 0) {
+            code.printf("        %-7s %-23s ", instr, arg);
+            if (comment.length() > 0) {
+                code.print("# " + comment);
+                }
+            code.println();
+        }
     }
 }

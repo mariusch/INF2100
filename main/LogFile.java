@@ -20,34 +20,34 @@ public class LogFile {
     }
 
     public void finish() {
-	if (prettyLine.length() > 0)
-	    prettyPrintLn();
+        if (prettyLine.length() > 0)
+            prettyPrintLn();
     }
 
 
     public String identify() {
-	String t = "Log file";
-	if (logFileName != null)
-	    t += " named " + logFileName;
-	return t;
+        String t = "Log file";
+        if (logFileName != null)
+            t += " named " + logFileName;
+        return t;
     }
 
 
     private void writeLogLine(String data) {
-	if (logFileName == null) return;
+        if (logFileName == null) return;
 
-	try {
-	    PrintWriter log = (nLogLines==0 ? new PrintWriter(logFileName) :
-		new PrintWriter(new FileOutputStream(logFileName,true)));
-	    log.println(data);  ++nLogLines;
-	    log.close();
-	} catch (FileNotFoundException e) {
-	    String lName = logFileName;
-	    logFileName = null;  // To avoid infinite recursion
-	                         // Main.error -> noteError -> 
-	                         //   writeLogLine -> ...
-	    Main.error("Cannot open log file " + lName + "!");
-	}
+        try {
+            PrintWriter log = (nLogLines==0 ? new PrintWriter(logFileName) :
+            new PrintWriter(new FileOutputStream(logFileName,true)));
+            log.println(data);  ++nLogLines;
+            log.close();
+        } catch (FileNotFoundException e) {
+            String lName = logFileName;
+            logFileName = null;  // To avoid infinite recursion
+                                 // Main.error -> noteError ->
+                                 //   writeLogLine -> ...
+            Main.error("Cannot open log file " + lName + "!");
+        }
     }
 
 
@@ -108,9 +108,9 @@ public class LogFile {
      * @param name The name of the non-terminal.
      */
     public void enterParser(String name) {
-	if (doLogParser) {
-	    noteParserInfo(name);  ++parseLevel;
-	}
+        if (doLogParser) {
+            noteParserInfo(name);  ++parseLevel;
+        }
     }
 
     /**
@@ -142,9 +142,9 @@ public class LogFile {
 
     public void prettyPrintLn(String s) {
         prettyPrint(s);  prettyPrintLn();
-        }
+    }
 
-        public void prettyPrintLn() {
+    public void prettyPrintLn() {
         writeLogLine(prettyLine);
         prettyLine = "";
     }
