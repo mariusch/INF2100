@@ -53,7 +53,7 @@ class FactorOperator extends Operator {
                 s.skip(andToken);
                 break;
             default:
-                Main.panic("Her er det noe feil!");
+                Main.error("no token match in factor opr");
                 break;
         }
 

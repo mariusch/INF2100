@@ -19,7 +19,6 @@ class CompoundStatm extends Statement {
         super(lNum);
     }
 
-
     @Override
     public String identify() {
         return "<compound statm> on line " + lineNum;

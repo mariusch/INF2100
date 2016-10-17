@@ -45,7 +45,7 @@ class PrefixOperator extends Operator {
                 po.type = "-";
                break;
             default:
-                Main.panic("Her er det noe feil!");
+                Main.error("no token match in prefix opr");
                 break;
         }
 

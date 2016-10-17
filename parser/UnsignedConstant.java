@@ -38,7 +38,7 @@ abstract class UnsignedConstant extends Factor {
                 uc = CharLiteral.parse(s);
                 break;
             default:
-                Main.panic("Her er det noe feil!");
+                Main.error("no token match in unsigned const");
                 break;
         }
 

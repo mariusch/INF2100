@@ -19,10 +19,7 @@ class Block extends PascalSyntax {
     private VarDeclPart vdp;
     private ArrayList<ProcDecl> pdList = new ArrayList<ProcDecl>();
     private StatmList stml;
-
-
-
-    Program context;
+    protected Program context;
 
     Block(int lNum) {
         super(lNum);
@@ -39,7 +36,6 @@ class Block extends PascalSyntax {
         if (cdp != null)
             cdp.prettyPrint();
 
-
         if (vdp != null)
             vdp.prettyPrint();
 
@@ -50,7 +46,6 @@ class Block extends PascalSyntax {
                 } else {
                     Main.log.prettyPrint("procedure ");
                 }
-
                 pd.prettyPrint();
             }
         }

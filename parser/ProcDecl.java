@@ -28,7 +28,8 @@ class ProcDecl extends PascalDecl {
 
     @Override
     void prettyPrint() {
-        Main.log.prettyPrint("procedure "); Main.log.prettyPrint(name);
+        Main.log.prettyPrint("procedure ");
+        Main.log.prettyPrint(name);
 
         if (pdl != null)
             pdl.prettyPrint();

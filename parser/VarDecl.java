@@ -33,7 +33,6 @@ class VarDecl extends PascalDecl {
         Main.log.prettyPrint(" : ");
         type.prettyPrint();
         Main.log.prettyPrintLn(";");
-
     }
 
     static VarDecl parse(Scanner s) {

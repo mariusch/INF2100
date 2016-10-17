@@ -27,7 +27,6 @@ class TypeDecl extends PascalDecl {
 
     static TypeDecl parse(Scanner s) {
         enterParser("type decl");
-
         //TypeDecl stm = new TypeDecl(s.curLineNum());
 
         leaveParser("type decl");

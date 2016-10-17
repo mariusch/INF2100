@@ -11,7 +11,7 @@ import static scanner.TokenKind.*;
  * @author Silje Merethe Dahl
  * @version 2016-10-17
  */
-class Program extends PascalDecl {
+public class Program extends PascalDecl {
 
     private Block progBlock;
     private String name;

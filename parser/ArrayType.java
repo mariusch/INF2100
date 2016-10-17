@@ -12,9 +12,9 @@ import scanner.TokenKind;
  * @version 2016-10-17
  */
 class ArrayType extends Type {
-    Constant con;
-    Constant con2;
-    Type type;
+    private Constant con;
+    private Constant con2;
+    private Type type;
 
     ArrayType(int n) {
         super(n);

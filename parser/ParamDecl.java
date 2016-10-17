@@ -27,7 +27,6 @@ class ParamDecl extends PascalDecl {
 
     @Override
     void prettyPrint() {
-
         Main.log.prettyPrint(name);
         Main.log.prettyPrint(":");
         tn.prettyPrint();

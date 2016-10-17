@@ -7,7 +7,7 @@ package parser;
  * @author Silje Merethe Dahl
  * @version 2016-10-17
  */
-abstract class PascalDecl extends PascalSyntax {
+public abstract class PascalDecl extends PascalSyntax {
     String name, progProcFuncName;
     int declLevel = 0, declOffset = 0;
     types.Type type = null;

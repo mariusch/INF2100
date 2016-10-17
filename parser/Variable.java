@@ -46,7 +46,6 @@ class Variable extends Factor {
         s.skip(nameToken);
 
         if (s.curToken.kind == leftBracketToken) {
-
             s.skip(leftBracketToken);
             var.expr = Expression.parse(s);
             s.skip(rightBracketToken);

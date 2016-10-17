@@ -9,7 +9,7 @@ import main.*;
  * @author Silje Merethe Dahl
  * @version 2016-10-17
  */
-abstract class PascalSyntax {
+public abstract class PascalSyntax {
     public int lineNum;
 
     PascalSyntax(int n) {

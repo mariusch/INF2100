@@ -5,7 +5,6 @@ import scanner.Scanner;
 import java.util.ArrayList;
 import static scanner.TokenKind.*;
 
-
 /**
  * Parser class used for creating a syntax tree with tokens from the scanner module.
  *
