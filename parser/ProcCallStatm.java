@@ -42,8 +42,6 @@ class ProcCallStatm extends Statement {
 
             Main.log.prettyPrint(")");
         }
-
-        //Main.log.prettyPrintLn();
     }
 
     static ProcCallStatm parse(Scanner s) {

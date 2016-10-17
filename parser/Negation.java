@@ -29,7 +29,6 @@ class Negation extends Factor {
     void prettyPrint() {
         Main.log.prettyPrint("not ");
         fact.prettyPrint();
-        //Main.log.prettyPrintLn();
 
     }
 

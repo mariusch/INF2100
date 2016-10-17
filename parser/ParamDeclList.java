@@ -37,7 +37,6 @@ class ParamDeclList extends PascalSyntax {
         }
         
         Main.log.prettyPrint(")");
-        //Main.log.prettyPrintLn();
     }
 
     static ParamDeclList parse(Scanner s) {

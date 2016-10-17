@@ -27,7 +27,6 @@ class TermOperator extends Operator {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint(" " + opr + " ");
-        //Main.log.prettyPrintLn();
     }
 
     static TermOperator parse(Scanner s) {

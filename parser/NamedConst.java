@@ -27,7 +27,6 @@ class NamedConst extends UnsignedConstant {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint(name);
-        //Main.log.prettyPrintLn();
     }
 
     static NamedConst parse(Scanner s) {

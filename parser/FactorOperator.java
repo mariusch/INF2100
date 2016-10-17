@@ -28,7 +28,6 @@ class FactorOperator extends Operator {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint(" " + type + " ");
-        //Main.log.prettyPrintLn();
     }
 
     static FactorOperator parse(Scanner s) {

@@ -38,8 +38,6 @@ class IfStatm extends Statement {
             stm.get(i).prettyPrint();
         }
         Main.log.prettyOutdent();
-
-        //Main.log.prettyPrintLn();
     }
 
     static IfStatm parse(Scanner s) {

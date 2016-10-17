@@ -878,11 +878,8 @@ begin
       while i2 <= limit do 
         begin
           prime[i2] := false;
-          i2 := i2 + i1
-        end;
-      i1 := i1 + 1
-    end
-end;
+          i2 := i2 + i1end;
+      i1 := i1 + 1endend;
 
 procedure p4 (x: integer);
 begin
@@ -893,7 +890,6 @@ begin
   if x < 10 then
     write(' ');
   write(x);
-
 end;
 
 procedure printprimes;
@@ -911,22 +907,17 @@ begin
             write(eol);
           p4(i);
           nprinted := nprinted + 1;
-
         end;
       i := i + 1;
-
     end;
-  write(eol)
-end;
+  write(eol)end;
 
 begin
   i := 2;
   while i <= limit do 
     begin
       prime[i] := true;
-      i := i + 1
-    end;
+      i := i + 1end;
   findprimes;
   printprimes;
-
 end.

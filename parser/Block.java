@@ -52,7 +52,6 @@ class Block extends PascalSyntax {
         Main.log.prettyOutdent();
 
         Main.log.prettyPrint("end");
-        //Main.log.prettyPrintLn();
 
     }
 

@@ -27,7 +27,6 @@ class PrefixOperator extends Operator {
     @Override
     void prettyPrint() {
         Main.log.prettyPrint(" " + type + " ");
-        //Main.log.prettyPrintLn();
     }
 
     static PrefixOperator parse(Scanner s) {

@@ -34,7 +34,6 @@ class Term extends PascalSyntax {
             fOList.get(i).prettyPrint();
             fList.get(i+1).prettyPrint();
         }
-        //Main.log.prettyPrintLn();
     }
 
     static Term parse(Scanner s) {

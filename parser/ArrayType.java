@@ -51,6 +51,5 @@ class ArrayType extends Type {
         con2.prettyPrint();
         Main.log.prettyPrint("] of ");
         type.prettyPrint();
-        //Main.log.prettyPrintLn();
     }
 }

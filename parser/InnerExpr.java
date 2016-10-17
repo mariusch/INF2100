@@ -30,7 +30,6 @@ class InnerExpr extends Factor {
         Main.log.prettyPrint("(");
         expr.prettyPrint();
         Main.log.prettyPrint(")");
-        //Main.log.prettyPrintLn();
     }
 
     static InnerExpr parse(Scanner s) {

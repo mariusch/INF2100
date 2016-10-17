@@ -38,7 +38,6 @@ class SimpleExpr extends PascalSyntax {
             tList.get(i+1).prettyPrint();
 
         }
-        //Main.log.prettyPrintLn();
     }
 
     static SimpleExpr parse(Scanner s) {

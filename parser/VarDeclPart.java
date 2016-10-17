@@ -36,7 +36,6 @@ class VarDeclPart extends PascalSyntax {
         for (VarDecl vd : vdList){
 
             vd.prettyPrint();
-            //Main.log.prettyPrintLn();
         }
         Main.log.prettyOutdent();
     }
