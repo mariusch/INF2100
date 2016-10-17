@@ -59,7 +59,7 @@ abstract class Factor extends PascalSyntax {
                 }
                 break;
             default:
-                Main.panic("Her er det noe feil! Referansekompilatoren forventer en Value.");
+                s.testError("value");
                 break;
         }
 
