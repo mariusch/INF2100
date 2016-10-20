@@ -49,6 +49,11 @@ public class Program extends PascalDecl {
         return p;
     }
 
+    
+    public void check(Library lib, Library lib2) {
+
+    }
+
 
     @Override
     void checkWhetherAssignable(PascalSyntax where) {

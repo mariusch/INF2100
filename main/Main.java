@@ -9,7 +9,7 @@ import java.io.*;
 public class Main {
     public static final String version = "17.10.2016";
 
-    // Del 3: public static parser.Library library;
+    public static parser.Library library;
     public static LogFile log = new LogFile();
 
     private static String sourceFileName, baseFileName;
@@ -36,8 +36,8 @@ public class Main {
             else if (testParser)
                 doTestParser(s);
             // Del 3:
-            // else if (testChecker)
-            //     doTestChecker(s);
+             else if (testChecker)
+                 doTestChecker(s);
             // Del 4:
             // else
             //     doRunRealCompiler(s);
@@ -114,7 +114,7 @@ public class Main {
 
 
 
-    /* Del 3:
+    //Del 3:
     private static void doTestChecker(Scanner s) {
 	Program prog = Program.parse(s);
 	if (s.curToken.kind != eofToken) 
@@ -122,10 +122,10 @@ public class Main {
 	if (log.doLogPrettyPrint)
 	    prog.prettyPrint();
 	
-	library = new Library();
+	library = new Library(0); //Skal egentlig ikke sende med 0
 	prog.check(library, library);
     }
-    */
+
 
 
     /* Del 4:
