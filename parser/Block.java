@@ -35,6 +35,21 @@ class Block extends PascalSyntax {
         decls.put(id, d);
     }
 
+    PascalDecl findDecl(String id, PascalSyntax where){
+        PascalDecl d = decls.get(id);
+        if (d != null){
+            Main.log.noteBinding(id, where, d);
+            return d;
+        }
+
+        if (outerScope != null){
+            return outerScope.findDecl(id, where);
+        }
+
+        where.error("Name " + id + " is unknown!");
+        return null;
+    }
+
     @Override
     void check(Block curScope, Library lib){
         if (cdp != null){

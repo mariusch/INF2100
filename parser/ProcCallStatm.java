@@ -21,15 +21,13 @@ class ProcCallStatm extends Statement {
     ProcCallStatm(int lNum) {
         super(lNum);
     }
+    ProcDecl procRef;
 
     @Override
     void check(Block curScope, Library lib){
-        //PascalDecl d = curScope.findDecl(name, this);
-    }
+        PascalDecl d = curScope.findDecl(name, this);
 
-    @Override
-    void check(Block curScope, Library lib) {
-
+        procRef = (ProcDecl)d;
     }
 
     @Override
