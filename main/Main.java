@@ -120,7 +120,7 @@ public class Main {
         if (log.doLogPrettyPrint)
             prog.prettyPrint();
 
-        library = new Library();
+        library = new Library(0); //TODO linjenummer?
         prog.check(library, library);
     }
 

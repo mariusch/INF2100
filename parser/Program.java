@@ -21,11 +21,6 @@ public class Program extends PascalDecl {
     }
 
     @Override
-    void check(Block curScope, Library lib) {
-
-    }
-
-    @Override
     public String identify() {
         return "<program> on line " + lineNum;
     }
@@ -54,8 +49,11 @@ public class Program extends PascalDecl {
         return p;
     }
 
-
-    public void check(Library lib, Library lib2) {
+    @Override
+    public void check(Block curScope, Library lib) {
+        if (progBlock != null){
+            progBlock.check(progBlock, lib);
+        }
 
     }
 
