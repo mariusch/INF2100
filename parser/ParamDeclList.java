@@ -21,6 +21,11 @@ class ParamDeclList extends PascalSyntax {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<param decl list> on line " + lineNum;
     }

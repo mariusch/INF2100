@@ -23,6 +23,11 @@ class IfStatm extends Statement {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<if-statm> on line " + lineNum;
     }

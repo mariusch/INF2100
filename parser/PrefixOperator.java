@@ -20,6 +20,11 @@ class PrefixOperator extends Operator {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<prefix opr" + lineNum;
     }

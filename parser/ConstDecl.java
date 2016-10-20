@@ -21,6 +21,11 @@ class ConstDecl extends PascalDecl {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<const decl> on line " + lineNum;
     }

@@ -14,6 +14,11 @@ public class Library extends PascalSyntax {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<library> on line " + lineNum;
     }

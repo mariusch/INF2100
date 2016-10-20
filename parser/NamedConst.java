@@ -20,6 +20,11 @@ class NamedConst extends UnsignedConstant {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<named-const> on line " + lineNum;
     }

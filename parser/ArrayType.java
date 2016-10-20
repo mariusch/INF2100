@@ -20,6 +20,11 @@ class ArrayType extends Type {
         super(n);
     }
 
+    @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
     public static ArrayType parse(Scanner s) {
 
         enterParser("array type");

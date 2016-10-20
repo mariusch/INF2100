@@ -21,6 +21,11 @@ class Variable extends Factor {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<variable> on line " + lineNum;
     }

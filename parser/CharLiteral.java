@@ -20,6 +20,11 @@ class CharLiteral extends UnsignedConstant {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+        
+    }
+
+    @Override
     public String identify() {
         return "<char literal> on line " + lineNum;
     }

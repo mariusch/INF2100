@@ -28,6 +28,11 @@ class ProcCallStatm extends Statement {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<proc call> on line " + lineNum;
     }

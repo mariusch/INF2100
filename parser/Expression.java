@@ -19,6 +19,11 @@ class Expression extends PascalSyntax{
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<expression> on line " + lineNum;
     }

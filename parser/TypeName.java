@@ -19,6 +19,11 @@ class TypeName extends Type {
         super(n);
     }
 
+    @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
     public static TypeName parse(Scanner s) {
         enterParser("type name");
         TypeName tn = new TypeName(s.curLineNum());

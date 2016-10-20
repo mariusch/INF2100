@@ -21,6 +21,11 @@ class InnerExpr extends Factor {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<inner expr> on line " + lineNum;
     }

@@ -16,6 +16,11 @@ class EmptyStatm extends Statement {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<empty statm> on line " + lineNum;
     }

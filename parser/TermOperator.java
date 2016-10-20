@@ -20,6 +20,11 @@ class TermOperator extends Operator {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<term opr> on line " + lineNum;
     }

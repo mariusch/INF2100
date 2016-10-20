@@ -21,6 +21,11 @@ class AssignStatm extends Statement {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<assign statm> on line " + lineNum;
     }

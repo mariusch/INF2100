@@ -21,6 +21,11 @@ class NumberLiteral extends UnsignedConstant {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
     public String identify() {
         return "<number literal> on line " + lineNum;
     }
