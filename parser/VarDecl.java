@@ -57,7 +57,7 @@ class VarDecl extends PascalDecl {
 
     @Override
     void checkWhetherAssignable(PascalSyntax where) {
-
+        //This method should be empty
     }
 
     @Override

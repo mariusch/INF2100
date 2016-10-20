@@ -56,7 +56,7 @@ class ConstDecl extends PascalDecl {
 
     @Override
     void checkWhetherAssignable(PascalSyntax where) {
-
+        where.error("You cannot assign to a constant.");
     }
 
     @Override

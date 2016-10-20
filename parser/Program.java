@@ -51,7 +51,7 @@ public class Program extends PascalDecl {
 
     @Override
     public void check(Block curScope, Library lib) {
-        if (progBlock != null){
+        if (progBlock != null) {
             progBlock.check(progBlock, lib);
         }
 
@@ -60,7 +60,7 @@ public class Program extends PascalDecl {
 
     @Override
     void checkWhetherAssignable(PascalSyntax where) {
-
+        where.error("You cannot assign to a program.");
     }
 
     @Override

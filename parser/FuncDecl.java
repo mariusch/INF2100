@@ -65,4 +65,24 @@ class FuncDecl extends ProcDecl {
         leaveParser("func decl");
         return fd;
     }
+
+    @Override
+    void checkWhetherAssignable(PascalSyntax where) {
+        //This method should be empty
+    }
+
+    @Override
+    void checkWhetherFunction(PascalSyntax where) {
+
+    }
+
+    @Override
+    void checkWhetherProcedure(PascalSyntax where) {
+
+    }
+
+    @Override
+    void checkWhetherValue(PascalSyntax where) {
+
+    }
 }

@@ -39,7 +39,7 @@ class TypeDecl extends PascalDecl {
 
     @Override
     void checkWhetherAssignable(PascalSyntax where) {
-
+        where.error("You cannot assign to a type.");
     }
 
     @Override

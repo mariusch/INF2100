@@ -70,7 +70,7 @@ class ProcDecl extends PascalDecl {
 
     @Override
     void checkWhetherAssignable(PascalSyntax where) {
-
+        where.error("You cannot assign to a proc.");
     }
 
     @Override
