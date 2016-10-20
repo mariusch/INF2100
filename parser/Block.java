@@ -22,6 +22,7 @@ class Block extends PascalSyntax {
     protected Program context;
 
     HashMap<String, PascalDecl> decls = new HashMap<String, PascalDecl>();
+    Block outerScope;
 
     Block(int lNum) {
         super(lNum);
@@ -39,6 +40,8 @@ class Block extends PascalSyntax {
         if (cdp != null){
             cdp.check(this, lib);
         }
+
+        outerScope = curScope;
     }
 
     @Override
