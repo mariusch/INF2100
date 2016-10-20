@@ -16,13 +16,24 @@ class Constant extends PascalSyntax {
     private PrefixOperator po;
     private UnsignedConstant uc;
 
+    private int constVal;
+
     Constant(int lNum) {
         super(lNum);
     }
 
     @Override
     void check(Block curScope, Library lib) {
-
+        uc.check(curScope, lib);
+        type = uc.type;
+        constVal = uc.constVal;
+        if (po != null) {
+            String oprName = prefix.opr.kind.toString();
+            uc.type.checkType(lib.integerType, "Prefix "+oprName, this,
+                    "Prefix + or - may only be applied to Integers.");
+            if (po.opr.kind == subtractToken)
+                constVal = -constVal;
+        }
     }
 
     @Override
