@@ -113,7 +113,6 @@ public class Main {
     }
 
 
-
     //Del 3:
     private static void doTestChecker(Scanner s) {
 	Program prog = Program.parse(s);
@@ -122,10 +121,9 @@ public class Main {
 	if (log.doLogPrettyPrint)
 	    prog.prettyPrint();
 	
-	library = new Library(0); //Skal egentlig ikke sende med 0
+	library = new Library(0); //TODO Skal egentlig ikke sende med 0
 	prog.check(library, library);
     }
-
 
 
     /* Del 4:
