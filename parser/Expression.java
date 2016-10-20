@@ -14,13 +14,23 @@ class Expression extends PascalSyntax{
     private SimpleExpr se, se2;
     private RelOperator ro;
 
+    private types.Type type;
+
     Expression(int lNum) {
         super(lNum);
     }
 
     @Override
     void check(Block curScope, Library lib) {
-
+        leftOp.check(curScope, lib);
+        type = leftOp.type;
+        if (rightOp != null) {
+            rightOp.check(curScope, lib);
+            String oprName = ro.opr.kind.toString();
+            type.checkType(rightOp.type, oprName+" operands", this,
+                    "Operands to "+oprName+" are of different type!");
+            type = lib.booleanType;
+        }
     }
 
     @Override
