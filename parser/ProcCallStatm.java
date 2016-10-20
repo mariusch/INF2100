@@ -18,13 +18,18 @@ class ProcCallStatm extends Statement {
     private ArrayList<Expression> exprList = new ArrayList<Expression>();
     private boolean procCallShort = true;
 
+    private ProcDecl procRef;
+
     ProcCallStatm(int lNum) {
         super(lNum);
     }
 
     @Override
     void check(Block curScope, Library lib){
-        //PascalDecl d = curScope.findDecl(name, this);
+        PascalDecl d = curScope.findDecl(procName, this);
+        //..
+        procRef = (ProcDecl)d;
+        //..
     }
 
     @Override

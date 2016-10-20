@@ -109,44 +109,43 @@ public class Main {
             error("Scanner error: Garbage after the program!");
 
         prog.prettyPrint();
-
     }
 
 
     //Del 3:
     private static void doTestChecker(Scanner s) {
-	Program prog = Program.parse(s);
-	if (s.curToken.kind != eofToken) 
-	    error("Scanner error: Garbage after the program!");
-	if (log.doLogPrettyPrint)
-	    prog.prettyPrint();
-	
-	library = new Library(0); //TODO Skal egentlig ikke sende med 0
-	prog.check(library, library);
+        Program prog = Program.parse(s);
+        if (s.curToken.kind != eofToken)
+            error("Scanner error: Garbage after the program!");
+        if (log.doLogPrettyPrint)
+            prog.prettyPrint();
+
+        library = new Library();
+        prog.check(library, library);
     }
 
 
     /* Del 4:
     private static void doRunRealCompiler(Scanner s) {
-	System.out.print("Parsing...");
-	Program prog = Program.parse(s);
-	if (s.curToken.kind != eofToken) 
-	    error("Scanner error: Garbage after the program!");
+        System.out.print("Parsing...");
+        Program prog = Program.parse(s);
+        if (s.curToken.kind != eofToken)
+            error("Scanner error: Garbage after the program!");
 
-	if (log.doLogPrettyPrint)
-	    prog.prettyPrint();
-	
-	System.out.print(" checking...");
-	library = new Library();
-	prog.check(library, library);
+        if (log.doLogPrettyPrint)
+            prog.prettyPrint();
 
-	System.out.print(" generating code...");
-	CodeFile code = new CodeFile(baseFileName+".s");
-	library.genCode(code);  prog.genCode(code);
-	code.finish();
-	System.out.println("OK");
+        System.out.print(" checking...");
+        library = new Library();
+        prog.check(library, library);
 
-	assembleCode();
+        System.out.print(" generating code...");
+        CodeFile code = new CodeFile(baseFileName+".s");
+        library.genCode(code);  prog.genCode(code);
+        code.finish();
+        System.out.println("OK");
+
+        assembleCode();
     }
     */
 

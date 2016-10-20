@@ -7,7 +7,7 @@ package parser;
  * @author Silje Merethe Dahl
  * @version 2016-10-17
  */
-public class Library extends PascalSyntax {
+public class Library extends Block {
 
     public Library(int lNum) {
         super(lNum);
