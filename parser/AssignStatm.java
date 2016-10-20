@@ -22,7 +22,9 @@ class AssignStatm extends Statement {
 
     @Override
     void check(Block curScope, Library lib) {
-
+        variable.check(curScope, lib);
+        variable.varDecl.checkWhetherAssignable(this);
+        expr.check(curScope, lib);
     }
 
     @Override
