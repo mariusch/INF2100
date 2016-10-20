@@ -4,6 +4,7 @@ import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 /**
@@ -14,15 +15,30 @@ import java.util.ArrayList;
  * @version 2016-10-17
  */
 class Block extends PascalSyntax {
-
     private ConstDeclPart cdp;
     private VarDeclPart vdp;
     private ArrayList<ProcDecl> pdList = new ArrayList<ProcDecl>();
     private StatmList stml;
     protected Program context;
 
+    HashMap<String, PascalDecl> decls = new HashMap<String, PascalDecl>();
+
     Block(int lNum) {
         super(lNum);
+    }
+
+    void addDecl(String id, PascalDecl d){
+        if (decls.containsKey(id)){
+            d.error(id + " declared twice in the same block!");
+        }
+        decls.put(id, d);
+    }
+
+    @Override
+    void check(Block curScope, Library lib){
+        if (cdp != null){
+            cdp.check(this, lib);
+        }
     }
 
     @Override
