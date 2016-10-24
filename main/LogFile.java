@@ -76,7 +76,7 @@ public class LogFile {
     }
 	
 
-    /*
+    /**
      * Make a note in the log file that a token has been read.
      * This note will only be made if the user has requested it.
      */
@@ -121,7 +121,7 @@ public class LogFile {
      */
     public void leaveParser(String name) {
         if (doLogParser) {
-            --parseLevel;  noteParserInfo("/"+name);
+            --parseLevel;  noteParserInfo("/" + name);
         }
     }
 
@@ -150,7 +150,7 @@ public class LogFile {
     }
 
     public void prettyIndent() {
-	prettyIndentation++;
+	    prettyIndentation++;
     }
 
     public void prettyOutdent() {

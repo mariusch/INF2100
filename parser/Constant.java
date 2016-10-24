@@ -25,7 +25,7 @@ class Constant extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
         uc.check(curScope, lib);
-        type = uc.type;
+        /*type = uc.type;
         constVal = uc.constVal;
         if (po != null) {
             String oprName = prefix.opr.kind.toString();
@@ -33,7 +33,7 @@ class Constant extends PascalSyntax {
                     "Prefix + or - may only be applied to Integers.");
             if (po.opr.kind == subtractToken)
                 constVal = -constVal;
-        }
+        } */
     }
 
     @Override

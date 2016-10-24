@@ -30,7 +30,7 @@ class FuncDecl extends ProcDecl {
 
     @Override
     void prettyPrint() {
-        Main.log.prettyPrint("function");
+        Main.log.prettyPrint("function ");
         Main.log.prettyPrint(name);
 
         if (pdl != null)

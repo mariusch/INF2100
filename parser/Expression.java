@@ -22,7 +22,7 @@ class Expression extends PascalSyntax{
 
     @Override
     void check(Block curScope, Library lib) {
-        leftOp.check(curScope, lib);
+        /*leftOp.check(curScope, lib);
         type = leftOp.type;
         if (rightOp != null) {
             rightOp.check(curScope, lib);
@@ -30,7 +30,7 @@ class Expression extends PascalSyntax{
             type.checkType(rightOp.type, oprName+" operands", this,
                     "Operands to "+oprName+" are of different type!");
             type = lib.booleanType;
-        }
+        } */
     }
 
     @Override

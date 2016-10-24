@@ -39,10 +39,16 @@ class IfStatm extends Statement {
         Main.log.prettyPrintLn(" then");
 
         Main.log.prettyIndent();
-        for (int i = 0; i < stm.size(); i++){
-            stm.get(i).prettyPrint();
-        }
+        stm.get(0).prettyPrint();
         Main.log.prettyOutdent();
+
+        if (stm.size() >= 2) {
+            Main.log.prettyPrintLn("");
+            Main.log.prettyPrintLn(" else ");
+            Main.log.prettyIndent();
+            stm.get(1).prettyPrint();
+            Main.log.prettyOutdent();
+        }
     }
 
     static IfStatm parse(Scanner s) {

@@ -35,7 +35,7 @@ class CompoundStatm extends Statement {
         Main.log.prettyIndent();
         statmList.prettyPrint();
         Main.log.prettyOutdent();
-        Main.log.prettyPrint("end");
+        Main.log.prettyPrint(" end");
     }
 
     static CompoundStatm parse(Scanner s) {
