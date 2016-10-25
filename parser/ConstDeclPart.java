@@ -53,5 +53,6 @@ class ConstDeclPart extends PascalSyntax {
     }
 
     public void check(Block block, Library lib) {
+
     }
 }
