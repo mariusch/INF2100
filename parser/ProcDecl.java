@@ -23,7 +23,7 @@ class ProcDecl extends PascalDecl {
 
     @Override
     void check(Block curScope, Library lib) {
-
+        
     }
 
     @Override
