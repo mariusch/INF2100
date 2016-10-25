@@ -141,15 +141,18 @@ Parser:       </statm list>
 Parser:     </block>
 Parser:   </program>
 program tenstars;
-const
+const 
   n = 10;
-var
-  i: integer;
+var 
+  i: integer; 
+
 begin
-  i := 0;
+  i := 0; 
   while i < n do 
     begin
-      write('*');
-      i := i + 1end;
-  write(eol);
+      write('*'); 
+      i := i + 1
+     end; 
+  write(eol); 
+
 end.

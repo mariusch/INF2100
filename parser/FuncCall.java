@@ -47,7 +47,6 @@ class FuncCall extends Factor {
             }
             Main.log.prettyPrint(")");
         }
-        Main.log.prettyPrintLn();
     }
 
     static FuncCall parse(Scanner s) {
