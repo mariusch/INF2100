@@ -35,7 +35,7 @@ class Block extends PascalSyntax {
         decls.put(id, d);
     }
 
-    PascalDecl findDecl(String id, PascalSyntax where){
+    PascalDecl findDecl(String id, PascalSyntax where) {
         PascalDecl d = decls.get(id);
         if (d != null){
             Main.log.noteBinding(id, where, d);
@@ -51,7 +51,7 @@ class Block extends PascalSyntax {
     }
 
     @Override
-    void check(Block curScope, Library lib){
+    void check(Block curScope, Library lib) {
         if (cdp != null){
             cdp.check(this, lib);
         }
@@ -79,6 +79,7 @@ class Block extends PascalSyntax {
                 pd.prettyPrint();
             }
         }
+
         Main.log.prettyPrintLn();
         Main.log.prettyPrintLn("begin");
 
@@ -92,18 +93,17 @@ class Block extends PascalSyntax {
 
     static Block parse(Scanner s) {
         enterParser("block");
-
         Block bl = new Block(s.curLineNum());
 
-        if (s.curToken.kind == TokenKind.constToken){
+        if (s.curToken.kind == TokenKind.constToken)
             bl.cdp = ConstDeclPart.parse(s);
-        }
 
-        if (s.curToken.kind == TokenKind.varToken){
+
+        if (s.curToken.kind == TokenKind.varToken)
             bl.vdp = VarDeclPart.parse(s);
-        }
 
-        while (s.curToken.kind == TokenKind.functionToken || s.curToken.kind == TokenKind.procedureToken){
+
+        while (s.curToken.kind == TokenKind.functionToken || s.curToken.kind == TokenKind.procedureToken) {
             if (s.curToken.kind == TokenKind.functionToken){
                 bl.pdList.add(FuncDecl.parse(s));
 

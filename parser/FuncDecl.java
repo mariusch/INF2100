@@ -29,6 +29,11 @@ class FuncDecl extends ProcDecl {
     }
 
     @Override
+    void check(Block curScope, Library lib) {
+        curScope.addDecl(name, this);
+    }
+
+    @Override
     void prettyPrint() {
         Main.log.prettyPrint("function ");
         Main.log.prettyPrint(name);
