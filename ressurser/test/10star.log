@@ -1,1 +1,3 @@
 Binding on line 5: i was declared as <var decl> on line 3
+Binding on line 6: i was declared as <var decl> on line 3
+Binding on line 6: n was declared as <const decl> on line 2
