@@ -79,6 +79,7 @@ class Block extends PascalSyntax {
                 pd.prettyPrint();
             }
         }
+        Main.log.prettyPrintLn();
         Main.log.prettyPrintLn("begin");
 
         Main.log.prettyIndent();
