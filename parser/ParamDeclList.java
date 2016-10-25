@@ -22,7 +22,7 @@ class ParamDeclList extends PascalSyntax {
 
     @Override
     void check(Block curScope, Library lib) {
-        for (ParamDecl p : pdList){
+        for (ParamDecl p : pdList) {
             p.check(curScope, lib);
         }
     }
