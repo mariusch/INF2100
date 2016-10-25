@@ -11,7 +11,7 @@ import static scanner.TokenKind.*;
  */
 class RelOperator extends Operator {
 
-    private String opVal;
+    protected String opVal;
 
     RelOperator(int lNum) {
         super(lNum);

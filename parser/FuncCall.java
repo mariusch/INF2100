@@ -16,6 +16,7 @@ class FuncCall extends Factor {
 
     private String name;
     private ArrayList<Expression> eList = new ArrayList<Expression>();
+    private FuncDecl funcRef;
 
     FuncCall(int lNum) {
         super(lNum);
@@ -23,6 +24,10 @@ class FuncCall extends Factor {
 
     @Override
     void check(Block curScope, Library lib) {
+        PascalDecl d = curScope.findDecl(name, this);
+        funcRef = (FuncDecl)d;
+
+
         for (Expression e: eList) {
             e.check(curScope, lib);
         }
