@@ -22,7 +22,7 @@ class Variable extends Factor {
 
     @Override
     void check(Block curScope, Library lib) {
-
+        expr.check(curScope, lib);
     }
 
     @Override

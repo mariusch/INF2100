@@ -22,7 +22,8 @@ class WhileStatm extends Statement {
 
     @Override
     void check(Block curScope, Library lib) {
-
+        expr.check(curScope, lib);
+        body.check(curScope, lib);
     }
 
     @Override

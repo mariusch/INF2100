@@ -21,7 +21,13 @@ class Term extends PascalSyntax {
 
     @Override
     void check(Block curScope, Library lib) {
+        for (int i = 0; i < fList.size(); i++){
+            fList.get(i).check(curScope, lib);
 
+            if (fOList.get(i) != null){
+                fOList.get(i).check(curScope, lib);
+            }
+        }
     }
 
     @Override

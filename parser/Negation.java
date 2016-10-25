@@ -22,7 +22,7 @@ class Negation extends Factor {
 
     @Override
     void check(Block curScope, Library lib) {
-
+        fact.check(curScope, lib);
     }
 
     @Override

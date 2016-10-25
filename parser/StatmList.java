@@ -23,7 +23,9 @@ class StatmList extends PascalSyntax {
 
     @Override
     void check(Block curScope, Library lib) {
-
+        for (Statement s : sl){
+            s.check(curScope, lib);
+        }
     }
 
     @Override
