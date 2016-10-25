@@ -36,7 +36,7 @@ class StatmList extends PascalSyntax {
         sl.get(0).prettyPrint();
 
         for (int i = 1; i < sl.size(); i++){
-            Main.log.prettyPrintLn(";");
+            Main.log.prettyPrintLn("; ");
             sl.get(i).prettyPrint();
         }
         Main.log.prettyPrintLn();

@@ -37,7 +37,7 @@ class ParamDeclList extends PascalSyntax {
         pdList.get(0).prettyPrint();
 
         for (int i = 1; i < pdList.size(); i++){
-            Main.log.prettyPrint(";");
+            Main.log.prettyPrint("; ");
             pdList.get(i).prettyPrint();
         }
         

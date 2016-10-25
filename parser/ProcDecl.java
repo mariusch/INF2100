@@ -41,9 +41,9 @@ class ProcDecl extends PascalDecl {
             pdl.prettyPrint();
         }
 
-        Main.log.prettyPrintLn(";");
+        Main.log.prettyPrintLn("; ");
         block.prettyPrint();
-        Main.log.prettyPrint(";");
+        Main.log.prettyPrint("; ");
         Main.log.prettyPrintLn();
         Main.log.prettyPrintLn();
     }

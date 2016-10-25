@@ -42,7 +42,7 @@ class FuncCall extends Factor {
 
 
             for (int i = 1; i < eList.size(); i++){
-                Main.log.prettyPrint(",");
+                Main.log.prettyPrint(", ");
                 eList.get(i).prettyPrint();
             }
             Main.log.prettyPrint(")");

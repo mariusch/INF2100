@@ -28,7 +28,7 @@ class ConstDeclPart extends PascalSyntax {
     @Override
     void prettyPrint() {
 
-        Main.log.prettyPrintLn("const");
+        Main.log.prettyPrintLn("const ");
         Main.log.prettyIndent();
 
         for (ConstDecl cd : cdList){
