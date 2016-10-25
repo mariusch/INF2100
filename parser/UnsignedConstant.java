@@ -3,6 +3,8 @@ package parser;
 import main.Main;
 import scanner.Scanner;
 
+import static scanner.TokenKind.subtractToken;
+
 /**
  * Parser class used for creating a syntax tree with tokens from the scanner module.
  *
@@ -12,8 +14,16 @@ import scanner.Scanner;
  */
 abstract class UnsignedConstant extends Factor {
 
+    protected types.Type type;
+    protected int constVal;
+
     UnsignedConstant(int lNum) {
         super(lNum);
+    }
+
+    @Override
+    void check(Block curScope, Library lib) {
+
     }
 
     abstract void prettyPrint();

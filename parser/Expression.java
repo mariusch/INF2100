@@ -14,12 +14,17 @@ class Expression extends PascalSyntax{
     private SimpleExpr se, se2;
     private RelOperator ro;
 
-    private types.Type type;
+    protected types.Type type;
 
     Expression(int lNum) {
         super(lNum);
     }
 
+    /**
+     * Her må vi skille mellom operand og operator. "+" er operator(opr), mens "3" er operand(op)
+     * @param curScope
+     * @param lib
+     */
     @Override
     void check(Block curScope, Library lib) {
         leftOp.check(curScope, lib);
@@ -27,8 +32,8 @@ class Expression extends PascalSyntax{
         if (rightOp != null) {
             rightOp.check(curScope, lib);
             String oprName = ro.opr.kind.toString();
-            type.checkType(rightOp.type, oprName+" operands", this,
-                    "Operands to "+oprName+" are of different type!");
+            type.checkType(rightOp.type, oprName + " operands", this,
+                    "Operands to " + oprName + " are of different type!");
             type = lib.booleanType;
         }
     }

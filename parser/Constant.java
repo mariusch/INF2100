@@ -17,6 +17,7 @@ class Constant extends PascalSyntax {
     private UnsignedConstant uc;
 
     private int constVal;
+    private types.Type type;
 
     Constant(int lNum) {
         super(lNum);
@@ -28,8 +29,8 @@ class Constant extends PascalSyntax {
         type = uc.type;
         constVal = uc.constVal;
         if (po != null) {
-            String oprName = prefix.opr.kind.toString();
-            uc.type.checkType(lib.integerType, "Prefix "+oprName, this,
+            String oprName = po.opr.kind.toString();
+            uc.type.checkType(lib.integerType, "Prefix " + oprName, this,
                     "Prefix + or - may only be applied to Integers.");
             if (po.opr.kind == subtractToken)
                 constVal = -constVal;

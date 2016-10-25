@@ -15,6 +15,8 @@ class CharLiteral extends UnsignedConstant {
 
     private char val;
 
+    protected int constVal;
+
     CharLiteral(int lNum) {
         super(lNum);
     }

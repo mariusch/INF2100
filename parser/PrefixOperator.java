@@ -13,7 +13,7 @@ import static scanner.TokenKind.*;
  */
 class PrefixOperator extends Operator {
 
-    private String type;
+    protected String opr;
 
     PrefixOperator(int lNum) {
         super(lNum);
@@ -31,7 +31,7 @@ class PrefixOperator extends Operator {
 
     @Override
     void prettyPrint() {
-        Main.log.prettyPrint(" " + type + " ");
+        Main.log.prettyPrint(" " + opr + " ");
     }
 
     static PrefixOperator parse(Scanner s) {
@@ -42,11 +42,11 @@ class PrefixOperator extends Operator {
         switch (s.curToken.kind) {
             case addToken:
                 s.skip(addToken);
-                po.type = "+";
+                po.opr = "+";
                 break;
             case subtractToken:
                s.skip(subtractToken);
-                po.type = "-";
+                po.opr = "-";
                break;
             default:
                 Main.error("no token match in prefix opr");

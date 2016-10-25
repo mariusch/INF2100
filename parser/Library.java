@@ -9,6 +9,12 @@ package parser;
  */
 public class Library extends Block {
 
+    protected types.IntType integerType;
+    protected types.CharType charType;
+    protected types.ArrayType arrayType;
+    protected types.BoolType booleanType;
+
+
     public Library(int lNum) {
         super(lNum);
     }

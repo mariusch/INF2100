@@ -22,7 +22,10 @@ class WhileStatm extends Statement {
 
     @Override
     void check(Block curScope, Library lib) {
+        //Denne metoden er ferdig fra foiler!
         expr.check(curScope, lib);
+        expr.type.checkType(lib.booleanType, "while-test", this,
+                "While-test is not Boolean.");
         body.check(curScope, lib);
     }
 

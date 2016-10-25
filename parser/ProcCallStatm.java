@@ -18,10 +18,11 @@ class ProcCallStatm extends Statement {
     private ArrayList<Expression> exprList = new ArrayList<Expression>();
     private boolean procCallShort = true;
 
+    ProcDecl procRef;
+
     ProcCallStatm(int lNum) {
         super(lNum);
     }
-    ProcDecl procRef;
 
     @Override
     void check(Block curScope, Library lib){
