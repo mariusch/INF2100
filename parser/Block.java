@@ -37,7 +37,7 @@ class Block extends PascalSyntax {
 
     PascalDecl findDecl(String id, PascalSyntax where) {
         PascalDecl d = decls.get(id);
-        if (d != null){
+        if (d != null) {
             Main.log.noteBinding(id, where, d);
             return d;
         }
@@ -52,9 +52,22 @@ class Block extends PascalSyntax {
 
     @Override
     void check(Block curScope, Library lib) {
-        if (cdp != null){
+        if (cdp != null)
             cdp.check(this, lib);
+
+        if (vdp != null)
+            vdp.check(curScope, lib);
+
+        if (pdList != null) {
+            for (ProcDecl pd : pdList) {
+                pd.check(curScope, lib);
+            }
         }
+
+        if (stml != null)
+            stml.check(curScope, lib);
+
+        context.check(curScope, lib);
 
         outerScope = curScope;
     }

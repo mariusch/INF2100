@@ -22,7 +22,9 @@ class ArrayType extends Type {
 
     @Override
     void check(Block curScope, Library lib) {
-
+        con.check(curScope, lib);
+        con2.check(curScope, lib);
+        type.check(curScope, lib);
     }
 
     public static ArrayType parse(Scanner s) {
