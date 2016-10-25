@@ -37,9 +37,7 @@ class Term extends PascalSyntax {
 
     @Override
     void prettyPrint() {
-
         fList.get(0).prettyPrint();
-
 
         for (int i = 0; i < fOList.size(); i++){
             fOList.get(i).prettyPrint();
