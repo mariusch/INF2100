@@ -23,7 +23,9 @@ class FuncCall extends Factor {
 
     @Override
     void check(Block curScope, Library lib) {
-
+        for (Expression e: eList) {
+            e.check(curScope, lib);
+        }
     }
 
     @Override

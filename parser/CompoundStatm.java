@@ -21,7 +21,8 @@ class CompoundStatm extends Statement {
 
     @Override
     void check(Block curScope, Library lib) {
-
+        if (statmList != null)
+            statmList.check(curScope, lib);
     }
 
     @Override

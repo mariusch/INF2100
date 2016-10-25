@@ -24,7 +24,11 @@ class IfStatm extends Statement {
 
     @Override
     void check(Block curScope, Library lib) {
+        exp.check(curScope, lib);
 
+        for (Statement s:stm) {
+            s.check(curScope, lib);
+        }
     }
 
     @Override

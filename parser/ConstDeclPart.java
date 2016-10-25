@@ -52,7 +52,9 @@ class ConstDeclPart extends PascalSyntax {
         return cdp;
     }
 
-    public void check(Block block, Library lib) {
-
+    public void check(Block curScope, Library lib) {
+        for (ConstDecl cd: cdList) {
+            cd.check(curScope, lib);
+        }
     }
 }
