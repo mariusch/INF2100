@@ -28,7 +28,8 @@ class Variable extends Factor {
         //..
         vdRef = (VarDecl)d; 
 
-        expr.check(curScope, lib);
+        if (expr != null)
+            expr.check(curScope, lib);
     }
 
     @Override
