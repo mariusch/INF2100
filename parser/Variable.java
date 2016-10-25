@@ -16,12 +16,18 @@ class Variable extends Factor {
     private Expression expr;
     private String name;
 
+    VarDecl vdRef;
+
     Variable(int lNum) {
         super(lNum);
     }
 
     @Override
     void check(Block curScope, Library lib) {
+        PascalDecl d = curScope.findDecl(name, this);
+        //..
+        vdRef = (VarDecl)d; 
+
         expr.check(curScope, lib);
     }
 
