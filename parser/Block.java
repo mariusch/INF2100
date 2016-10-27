@@ -21,7 +21,7 @@ class Block extends PascalSyntax {
     private StatmList stml;
     protected Program context;
 
-    private HashMap<String, PascalDecl> decls = new HashMap<String, PascalDecl>();
+    HashMap<String, PascalDecl> decls = new HashMap<String, PascalDecl>();
     private Block outerScope;
 
     Block(int lNum) {
