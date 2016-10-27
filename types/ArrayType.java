@@ -16,15 +16,14 @@ public class ArrayType extends Type {
 	    indexType.identify() + "] of " + elemType.identify();
     }
 
-    @Override public void checkType(Type tx, String op, 
-				    PascalSyntax where, String message) {
-	if (tx instanceof ArrayType) {
-	    ArrayType txa = (ArrayType)tx;
-	    indexType.checkType(txa.indexType, "array index", where, message);
-	    elemType.checkType(txa.elemType, op, where, message);
-	} else {
-	    where.error(message);
-	}
+    @Override public void checkType(Type tx, String op, PascalSyntax where, String message) {
+        if (tx instanceof ArrayType) {
+            ArrayType txa = (ArrayType)tx;
+            indexType.checkType(txa.indexType, "array index", where, message);
+            elemType.checkType(txa.elemType, op, where, message);
+        } else {
+            where.error(message);
+        }
     }
 
 

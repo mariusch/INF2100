@@ -28,11 +28,11 @@ class Block extends PascalSyntax {
         super(lNum);
     }
 
-    void addDecl(String id, PascalDecl d){
-        //System.out.println(d.identify() + " " + d.name);
+    void addDecl(String id, PascalDecl d) {
         if (decls.containsKey(id)){
             d.error(id + " declared twice in the same block!");
         }
+        System.out.println("La til:" + id + d.identify());
         decls.put(id, d);
     }
 
