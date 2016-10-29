@@ -52,7 +52,7 @@ public class Program extends PascalDecl {
     @Override
     public void check(Block curScope, Library lib) {
         if (progBlock != null) {
-            progBlock.check(progBlock, lib);
+            progBlock.check(curScope, lib);
         }
 
     }

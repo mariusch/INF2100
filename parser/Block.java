@@ -53,6 +53,9 @@ class Block extends PascalSyntax {
 
     @Override
     void check(Block curScope, Library lib) {
+
+        outerScope = curScope;
+
         if (cdp != null)
             cdp.check(this, lib);
 
@@ -68,9 +71,9 @@ class Block extends PascalSyntax {
         if (stml != null)
             stml.check(curScope, lib);
 
-        context.check(curScope, lib);
+        //context.check(curScope, lib);
 
-        outerScope = curScope;
+
     }
 
     @Override
