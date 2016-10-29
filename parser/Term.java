@@ -15,15 +15,23 @@ class Term extends PascalSyntax {
     private ArrayList<Factor> fList = new ArrayList<Factor>();
     private ArrayList<FactorOperator> fOList = new ArrayList<FactorOperator>();
 
+    types.Type type;
+
     Term(int lNum) {
         super(lNum);
     }
 
     @Override
     void check(Block curScope, Library lib) {
+
+        //Hvis vi bare har en factor, sett type til dennes type
+        //Hvis vi har en eller flere factor oprs kan det være noe annet
+
         fList.get(0).check(curScope, lib);
+        //type = fList.get(0).type;
 
         for (int i = 0; i < fOList.size(); i++){
+            //Sjekk om annen type ...
             fOList.get(i).check(curScope, lib);
             fList.get(i+1).check(curScope, lib);
         }

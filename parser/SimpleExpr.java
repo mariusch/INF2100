@@ -27,9 +27,18 @@ class SimpleExpr extends PascalSyntax {
         if (po != null)
             po.check(curScope, lib);
 
+        //Vi må finne ut hva typen til uttrykket er. Det kan være en million ting ...
+        //Hvis vi har en term og ikke noe mer kan vi bare si at uttrykket blir typen til termen det inneholder
+        //Hvis det inneholder en eller flere term oprs må vi se an hva de er: Er det bare + eller - blir det
+        //integer, hvis det inneholder minst en or blir det kanskje boolean? Kompendiet sier ikke hvem som har
+        //presedens (s. 47). I dette tilfellet virker det som integer vs boolean gir mest mening, men hva med
+        //andre tilfeller der vi møter på dette problemet?
+
         tList.get(0).check(curScope, lib);
+        //type = tList.get(0).type;
 
         for (int i = 0; i < toList.size(); i++){
+            //Sjekk type her fordi den kan være noe annet ...
             toList.get(i).check(curScope, lib);
             tList.get(i+1).check(curScope, lib);
         }

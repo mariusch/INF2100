@@ -16,7 +16,8 @@ class Variable extends Factor {
     private Expression expr;
     private String name;
 
-    VarDecl vdRef;
+    //VarDecl vdRef;
+    PascalDecl vdRef;
 
     Variable(int lNum) {
         super(lNum);
@@ -26,7 +27,8 @@ class Variable extends Factor {
     void check(Block curScope, Library lib) {
         PascalDecl d = curScope.findDecl(name, this);
         //..
-        vdRef = (VarDecl)d; 
+        //vdRef = (VarDecl)d;
+        vdRef = d;
 
         if (expr != null)
             expr.check(curScope, lib);
