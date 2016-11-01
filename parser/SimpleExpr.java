@@ -24,6 +24,7 @@ class SimpleExpr extends PascalSyntax {
 
     @Override
     void check(Block curScope, Library lib) {
+
         if (po != null)
             po.check(curScope, lib);
 
@@ -35,12 +36,22 @@ class SimpleExpr extends PascalSyntax {
         //andre tilfeller der vi møter på dette problemet?
 
         tList.get(0).check(curScope, lib);
-        //type = tList.get(0).type;
+        //Begynner med å anta at vi bare har 1 term. Da kan vi sette type med en gang.
+        type = tList.get(0).type;
+        //System.out.println("Type: " + type);
+
 
         for (int i = 0; i < toList.size(); i++){
             //Sjekk type her fordi den kan være noe annet ...
             toList.get(i).check(curScope, lib);
+            if (toList.get(i).opr.equals("or")){
+                type = lib.booleanType;
+            }
+
             tList.get(i+1).check(curScope, lib);
+            if (type == null){
+                type = lib.integerType;
+            }
         }
     }
 

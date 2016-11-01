@@ -13,7 +13,7 @@ import static scanner.TokenKind.*;
  */
 class TermOperator extends Operator {
 
-    private String opr;
+    String opr;
 
     TermOperator(int lNum) {
         super(lNum);

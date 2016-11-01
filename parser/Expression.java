@@ -28,8 +28,9 @@ class Expression extends PascalSyntax{
     @Override
     void check(Block curScope, Library lib) {
         se.check(curScope, lib);
-        //System.out.println("Type: " + type);
         type = se.type;
+        //System.out.println("Type: " + type);
+
         if (se2 != null) {
             se2.check(curScope, lib);
             String oprName = ro.opVal;
