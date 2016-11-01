@@ -32,7 +32,7 @@ class Block extends PascalSyntax {
         if (decls.containsKey(id)){
             d.error(id + " declared twice in the same block!");
         }
-        System.out.println("La til: " + id + " " + d.identify() + " i scope " + outerScope);
+        System.out.println("La til: " + id + " " + d.identify() + " i scope " + this);
         decls.put(id, d);
     }
 
@@ -45,6 +45,7 @@ class Block extends PascalSyntax {
         }
 
         if (outerScope != null) {
+            System.out.println("SJEKKER OUTER SCOPE..");
             return outerScope.findDecl(id, where);
         }
 
@@ -58,23 +59,21 @@ class Block extends PascalSyntax {
         outerScope = curScope;
 
         if (cdp != null)
-            cdp.check(curScope, lib);
+            cdp.check(this, lib);
 
         if (vdp != null)
-            vdp.check(curScope, lib);
+            vdp.check(this, lib);
 
         if (pdList != null) {
             for (ProcDecl pd : pdList) {
-                pd.check(curScope, lib);
+                pd.check(this, lib);
             }
         }
 
         if (stml != null)
-            stml.check(curScope, lib);
+            stml.check(this, lib);
 
-        //context.check(curScope, lib);
-
-
+        context.check(this, lib);
     }
 
     @Override
