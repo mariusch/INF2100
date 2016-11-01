@@ -29,7 +29,6 @@ class Expression extends PascalSyntax{
     void check(Block curScope, Library lib) {
         se.check(curScope, lib);
         type = se.type;
-        //System.out.println("Type: " + type);
 
         if (se2 != null) {
             se2.check(curScope, lib);

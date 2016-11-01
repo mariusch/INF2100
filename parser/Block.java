@@ -32,7 +32,7 @@ class Block extends PascalSyntax {
         if (decls.containsKey(id)){
             d.error(id + " declared twice in the same block!");
         }
-        System.out.println("La til: " + id + " " + d.identify());
+        System.out.println("La til: " + id + " " + d.identify() + " i scope " + outerScope);
         decls.put(id, d);
     }
 
