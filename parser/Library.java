@@ -27,10 +27,10 @@ public class Library extends Block {
 
     public Library(int lNum) {
         super(lNum);
-        this.addDecl("write", new ProcDecl("write", 0));
-        this.addDecl("eol", new ConstDecl("eol", 0));
-        this.addDecl("false", new ConstDecl("false", 0));
-        this.addDecl("true", new ConstDecl("true", 0));
+        this.addDecl("write", new ProcDecl("write", -1));
+        this.addDecl("eol", new ConstDecl("eol", -1));
+        this.addDecl("false", new ConstDecl("false", -1));
+        this.addDecl("true", new ConstDecl("true", -1));
     }
 
     @Override
