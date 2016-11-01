@@ -26,7 +26,6 @@ class ConstDecl extends PascalDecl {
     void check(Block curScope, Library lib) {
         curScope.addDecl(name, this);
         con.check(curScope, lib);
-
     }
 
     @Override

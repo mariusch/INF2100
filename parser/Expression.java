@@ -34,8 +34,8 @@ class Expression extends PascalSyntax{
         if (se2 != null) {
             se2.check(curScope, lib);
             String oprName = ro.opVal;
-            type.checkType(se2.type, oprName+" operands", this,
-                    "Operands to "+oprName+" are of different type!");
+            type.checkType(se2.type, oprName + " operands", this,
+                    "Operands to " + oprName + " are of different type!");
             type = lib.booleanType;
         }
     }
