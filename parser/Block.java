@@ -38,14 +38,21 @@ class Block extends PascalSyntax {
 
     PascalDecl findDecl(String id, PascalSyntax where) {
         PascalDecl d = decls.get(id);
+        System.out.println("Leter etter " + id + " i curScope: ");
+        System.out.println(this.identify());
 
         if (d != null) {
             Main.log.noteBinding(id, where, d);
             return d;
         }
 
-        if (outerScope != null) {
-            System.out.println("SJEKKER OUTER SCOPE..");
+        //Nødvendig å sjekke om this? Får stackoverflow hvis ikke
+        //Hvorfor blir outerScope satt til this?
+        if (outerScope != null /*&& outerScope != this*/) {
+            //System.out.println("SJEKKER OUTER SCOPE..");
+            //System.out.println(outerScope);
+            System.out.println("Leter etter " + id + " i outer scope: ");
+            System.out.println(outerScope.identify());
             return outerScope.findDecl(id, where);
         }
 
@@ -57,6 +64,7 @@ class Block extends PascalSyntax {
     void check(Block curScope, Library lib) {
 
         outerScope = curScope;
+        //System.out.println(outerScope);
 
         if (cdp != null)
             cdp.check(this, lib);
@@ -73,7 +81,11 @@ class Block extends PascalSyntax {
         if (stml != null)
             stml.check(this, lib);
 
-        context.check(this, lib);
+
+        //Kan dette være feilen?
+        //Context er program. Program sin check kjører progblock sin check.
+        //Siden progblock er en check kjører den context.check() osv ...
+        //context.check(this, lib);
     }
 
     @Override

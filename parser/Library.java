@@ -47,4 +47,8 @@ public class Library extends Block {
     void prettyPrint() {
 
     }
+
+    public String toString(){
+        return "Library";
+    }
 }

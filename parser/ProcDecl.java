@@ -28,7 +28,7 @@ class ProcDecl extends PascalDecl {
         if (pdl != null)
             pdl.check(block, lib);
 
-        block.check(block, lib);
+        block.check(curScope, lib);
     }
 
     @Override
