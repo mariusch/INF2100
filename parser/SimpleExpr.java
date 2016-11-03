@@ -24,39 +24,52 @@ class SimpleExpr extends PascalSyntax {
 
     @Override
     void check(Block curScope, Library lib) {
+        type = lib.integerType;
 
-        if (po != null)
+        if (po != null) {
             po.check(curScope, lib);
-
-        //Vi må finne ut hva typen til uttrykket er. Det kan være en million ting ...
-        //Hvis vi har en term og ikke noe mer kan vi bare si at uttrykket blir typen til termen det inneholder
-        //Hvis det inneholder en eller flere term oprs må vi se an hva de er: Er det bare + eller - blir det
-        //integer, hvis det inneholder minst en or blir det kanskje boolean? Kompendiet sier ikke hvem som har
-        //presedens (s. 47). I dette tilfellet virker det som integer vs boolean gir mest mening, men hva med
-        //andre tilfeller der vi møter på dette problemet?
-
-        tList.get(0).check(curScope, lib);
-        //Begynner med å anta at vi bare har 1 term. Da kan vi sette type med en gang.
-        type = tList.get(0).type;
-        //System.out.println("Type: " + type);
-
-
-        for (int i = 0; i < toList.size(); i++){
-            //Sjekk type her fordi den kan være noe annet ...
-            toList.get(i).check(curScope, lib);
-            if (toList.get(i).opr.equals("or")){
-                type = lib.booleanType;
-            }
-
-            tList.get(i+1).check(curScope, lib);
-            if (type == null) {
-                type = lib.integerType;
-            }
+            type = lib.integerType;
         }
+
+        //Sjekker om det bare er én term
+        System.out.println("Term opr er: " + toList.size());
+        System.out.println("Term er: " + tList.size());
+        if (toList.size() == 0) {
+            System.out.println("KOM HIT");
+            tList.get(0).check(curScope, lib);
+            System.out.println("DETTE ER TYPE SOM BLIR SATT: " + tList.get(0).type);
+            type = tList.get(0).type;
+        } else {
+            //tar første
+            tList.get(0).check(curScope, lib);
+
+            //Sjekker resten i loop
+            for (int i = 0; i < toList.size(); i++) {
+                //Sjekk type her fordi den kan være noe annet ...
+                toList.get(i).check(curScope, lib);
+                if (toList.get(i).opr.equals("or")) {
+                    type = lib.booleanType;
+                }
+
+                tList.get(i + 1).check(curScope, lib);
+                if (type == null) {
+                    type = lib.integerType;
+                }
+            }
+
+        }
+
+
     }
 
     @Override
     public String identify() {
+
+        System.out.println(tList.size());
+        for (Term t : tList ) {
+            t.identify();
+        }
+
         return "<simple expr> on line " + lineNum;
     }
 

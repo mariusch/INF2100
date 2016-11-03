@@ -29,8 +29,32 @@ class Term extends PascalSyntax {
         //Hvis vi har en eller flere factor oprs kan det være noe annet
 
         fList.get(0).check(curScope, lib);
+
+        if (fList.get(0) instanceof UnsignedConstant) {
+            System.out.println("Factor typen som fucker er: UnsignedConst");
+
+            if (fList.get(0) instanceof NumberLiteral){
+                System.out.println("som igjen er... NumberLiteral");
+                type = lib.integerType;
+            } else if (fList.get(0) instanceof CharLiteral){
+                System.out.println("som igjen er... CharLiteral");
+                type = lib.charType;
+            } //.. kan også være name?
+
+        } else if (fList.get(0) instanceof Variable) {
+            System.out.println("Factor typen som fucker er: Variable");
+        } else if (fList.get(0) instanceof Variable) {
+            System.out.println("Factor typen som fucker er: Variable");
+        } else if (fList.get(0) instanceof FuncCall) {
+            System.out.println("Factor typen som fucker er: Func call");
+        } else if (fList.get(0) instanceof InnerExpr) {
+            System.out.println("Factor typen som fucker er: Inner Exp");
+        } else if (fList.get(0) instanceof Negation) {
+            System.out.println("Factor typen som fucker er: Negation");
+        }
         //type = fList.get(0).type;
-        type = fList.get(0).type;
+        // type = fList.get(0).type; denne ble kommentert ut nå, ga null
+        //bruk måten over med masse instanceof
 
         for (int i = 0; i < fOList.size(); i++){
             //Sjekk om annen type ...
