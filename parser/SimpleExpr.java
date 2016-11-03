@@ -49,7 +49,7 @@ class SimpleExpr extends PascalSyntax {
             }
 
             tList.get(i+1).check(curScope, lib);
-            if (type == null){
+            if (type == null) {
                 type = lib.integerType;
             }
         }

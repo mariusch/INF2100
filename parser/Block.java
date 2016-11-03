@@ -2,7 +2,7 @@ package parser;
 
 import main.Main;
 import scanner.Scanner;
-import scanner.TokenKind;
+import static scanner.TokenKind.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -124,16 +124,16 @@ class Block extends PascalSyntax {
         enterParser("block");
         Block bl = new Block(s.curLineNum());
 
-        if (s.curToken.kind == TokenKind.constToken)
+        if (s.curToken.kind == constToken)
             bl.cdp = ConstDeclPart.parse(s);
 
 
-        if (s.curToken.kind == TokenKind.varToken)
+        if (s.curToken.kind == varToken)
             bl.vdp = VarDeclPart.parse(s);
 
 
-        while (s.curToken.kind == TokenKind.functionToken || s.curToken.kind == TokenKind.procedureToken) {
-            if (s.curToken.kind == TokenKind.functionToken){
+        while (s.curToken.kind == functionToken || s.curToken.kind == procedureToken) {
+            if (s.curToken.kind == functionToken) {
                 bl.pdList.add(FuncDecl.parse(s));
 
             } else {
@@ -141,9 +141,9 @@ class Block extends PascalSyntax {
             }
         }
 
-        s.skip(TokenKind.beginToken);
+        s.skip(beginToken);
         bl.stml = StatmList.parse(s);
-        s.skip(TokenKind.endToken);
+        s.skip(endToken);
 
         leaveParser("block");
         return bl;
