@@ -33,7 +33,7 @@ class FuncDecl extends ProcDecl {
         curScope.addDecl(name, this);
 
         if (pdl != null)
-            pdl.check(curScope, lib);
+            pdl.check(blck, lib);
 
         tn.check(blck, lib);
         blck.check(blck, lib);
