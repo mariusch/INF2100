@@ -29,7 +29,6 @@ abstract class Factor extends PascalSyntax {
     static Factor parse(Scanner s) {
         enterParser("factor");
         Factor f = null;
-        types.Type type;
 
         switch (s.curToken.kind) {
             case leftParToken:

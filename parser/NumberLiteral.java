@@ -16,13 +16,15 @@ class NumberLiteral extends UnsignedConstant {
 
     private ArrayList<Integer> num = new ArrayList<Integer>();
 
+    types.Type type;
+
     NumberLiteral(int lNum) {
         super(lNum);
     }
 
     @Override
     void check(Block curScope, Library lib) {
-
+        type = lib.integerType;
     }
 
     @Override

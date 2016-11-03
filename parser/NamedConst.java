@@ -13,6 +13,8 @@ import static scanner.TokenKind.*;
  */
 class NamedConst extends UnsignedConstant {
 
+    types.Type type;
+
     private String name;
 
     NamedConst(int lNum) {
