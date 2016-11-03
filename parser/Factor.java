@@ -1,8 +1,6 @@
 package parser;
 
 import scanner.Scanner;
-import types.*;
-import types.Type;
 
 /**
  * Parser class used for creating a syntax tree with tokens from the scanner module.
@@ -13,7 +11,7 @@ import types.Type;
  */
 abstract class Factor extends PascalSyntax {
 
-    public Type type;
+    types.Type type;
 
     Factor(int lNum) {
         super(lNum);

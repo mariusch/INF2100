@@ -16,6 +16,8 @@ class InnerExpr extends Factor {
 
     private Expression expr;
 
+    types.Type type;
+
     InnerExpr(int lNum) {
         super(lNum);
     }
@@ -23,6 +25,7 @@ class InnerExpr extends Factor {
     @Override
     void check(Block curScope, Library lib) {
         expr.check(curScope, lib);
+        type = expr.type;
     }
 
     @Override

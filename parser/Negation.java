@@ -15,6 +15,7 @@ import static scanner.TokenKind.*;
 class Negation extends Factor {
 
     private Factor fact;
+    types.Type type;
 
     Negation(int lNum) {
         super(lNum);
@@ -23,6 +24,7 @@ class Negation extends Factor {
     @Override
     void check(Block curScope, Library lib) {
         fact.check(curScope, lib);
+        type = lib.booleanType;
     }
 
     @Override

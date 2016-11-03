@@ -19,6 +19,8 @@ class Variable extends Factor {
     //VarDecl vdRef;
     PascalDecl vdRef;
 
+    types.Type type;
+
     Variable(int lNum) {
         super(lNum);
     }
