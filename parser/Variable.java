@@ -31,6 +31,7 @@ class Variable extends Factor {
         //..
         //vdRef = (VarDecl)d;
         vdRef = d;
+        type = vdRef.type;
 
         if (expr != null)
             expr.check(curScope, lib);
