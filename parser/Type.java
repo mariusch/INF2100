@@ -20,7 +20,7 @@ abstract class Type extends PascalSyntax {
         enterParser("type");
         Type t;
 
-        if (s.curToken.kind == nameToken){
+        if (s.curToken.kind == nameToken) {
             t = TypeName.parse(s);
         } else {
             t = ArrayType.parse(s);

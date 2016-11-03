@@ -7,6 +7,6 @@ begin
 end; {Doble}
 
 begin
-   Doble(6);
+   x := Doble(6);
    write('X = ', X, EoL)
 end.

@@ -17,7 +17,7 @@ public abstract class PascalSyntax {
     }
 
     boolean isInLibrary() {
-	return lineNum < 0;
+	    return lineNum < 0;
     }
 
     abstract void check(Block curScope, Library lib);
