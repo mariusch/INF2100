@@ -24,11 +24,13 @@ class Term extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
 
-        //Hvis vi bare har en factor, sett type til dennes type
+        //Hvis vi bare har en factor, sett type til dennes type? Eller basert på dens egenskaper
+
         //Hvis vi har en eller flere factor oprs kan det være noe annet
 
         fList.get(0).check(curScope, lib);
         //type = fList.get(0).type;
+        type = fList.get(0).type;
 
         for (int i = 0; i < fOList.size(); i++){
             //Sjekk om annen type ...

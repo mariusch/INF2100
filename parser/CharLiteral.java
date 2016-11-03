@@ -17,13 +17,14 @@ class CharLiteral extends UnsignedConstant {
 
     protected int constVal;
 
+
     CharLiteral(int lNum) {
         super(lNum);
     }
 
     @Override
     void check(Block curScope, Library lib) {
-        
+        this.type = lib.charType;
     }
 
     @Override
