@@ -25,9 +25,6 @@ class SimpleExpr extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
 
-        if (po != null)
-            po.check(curScope, lib);
-
         //Vi må finne ut hva typen til uttrykket er. Det kan være en million ting ...
         //Hvis vi har en term og ikke noe mer kan vi bare si at uttrykket blir typen til termen det inneholder
         //Hvis det inneholder en eller flere term oprs må vi se an hva de er: Er det bare + eller - blir det
@@ -35,8 +32,14 @@ class SimpleExpr extends PascalSyntax {
         //presedens (s. 47). I dette tilfellet virker det som integer vs boolean gir mest mening, men hva med
         //andre tilfeller der vi møter på dette problemet?
 
+        if (po != null) {
+            po.check(curScope, lib);
+            type = lib.integerType;
+        }
+
         tList.get(0).check(curScope, lib);
         //Begynner med å anta at vi bare har 1 term. Da kan vi sette type med en gang.
+
         type = tList.get(0).type;
         //System.out.println("Type: " + type);
 
