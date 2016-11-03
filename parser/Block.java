@@ -22,7 +22,7 @@ class Block extends PascalSyntax {
     protected Program context;
 
     HashMap<String, PascalDecl> decls = new HashMap<String, PascalDecl>();
-    private Block outerScope;
+    protected Block outerScope;
 
     Block(int lNum) {
         super(lNum);
