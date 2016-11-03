@@ -21,7 +21,7 @@ class PrefixOperator extends Operator {
 
     @Override
     void check(Block curScope, Library lib) {
-
+        //System.out.println("Kommer vi inn i po sin check?");
     }
 
     @Override

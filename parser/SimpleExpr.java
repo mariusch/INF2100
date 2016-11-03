@@ -26,6 +26,7 @@ class SimpleExpr extends PascalSyntax {
     void check(Block curScope, Library lib) {
         type = lib.integerType;
 
+
         if (po != null) {
             po.check(curScope, lib);
             type = lib.integerType;
@@ -55,6 +56,7 @@ class SimpleExpr extends PascalSyntax {
                 if (type == null) {
                     type = lib.integerType;
                 }
+
             }
 
         }

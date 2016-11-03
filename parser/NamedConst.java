@@ -17,13 +17,16 @@ class NamedConst extends UnsignedConstant {
 
     private String name;
 
+    PascalDecl declRef;
+
     NamedConst(int lNum) {
         super(lNum);
     }
 
     @Override
     void check(Block curScope, Library lib) {
-
+        PascalDecl d = curScope.findDecl(name, this);
+        type = d.type;
     }
 
     @Override
