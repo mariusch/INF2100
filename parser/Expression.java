@@ -31,6 +31,9 @@ class Expression extends PascalSyntax{
         type = se.type;
 
         if (se2 != null) {
+
+            type = lib.booleanType;
+
             se2.check(curScope, lib);
             String oprName = ro.opVal;
             //System.out.println("Operator name = " + oprName);

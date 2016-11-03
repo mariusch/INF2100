@@ -14,7 +14,7 @@ import static scanner.TokenKind.*;
  */
 class FactorOperator extends Operator {
 
-    private String type;
+    protected String type;
 
     FactorOperator(int lNum) {
         super(lNum);

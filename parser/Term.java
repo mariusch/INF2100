@@ -36,6 +36,14 @@ class Term extends PascalSyntax {
             //Sjekk om annen type ...
             fOList.get(i).check(curScope, lib);
             fList.get(i+1).check(curScope, lib);
+
+            //baserer type på factor opr
+            if (fOList.get(i).type.equals("and")){
+                type = lib.booleanType;
+            }
+            else{
+                type = lib.integerType;
+            }
         }
     }
 
