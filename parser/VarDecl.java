@@ -26,6 +26,8 @@ class VarDecl extends PascalDecl {
     void check(Block curScope, Library lib) {
         curScope.addDecl(name, this);
         type.check(curScope, lib);
+
+        //Hvordan setter vi typen til VarDecl?
     }
 
     @Override

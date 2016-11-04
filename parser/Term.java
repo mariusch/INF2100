@@ -39,7 +39,11 @@ class Term extends PascalSyntax {
             } else if (fList.get(0) instanceof CharLiteral){
                 System.out.println("som igjen er... CharLiteral");
                 type = lib.charType;
-            } //.. kan også være name?
+            } else if (fList.get(0) instanceof NamedConst){
+                System.out.println("Named Const");
+            }
+
+            //.. kan også være name?
 
         } else if (fList.get(0) instanceof Variable) {
             System.out.println("Factor typen som fucker er: Variable");
