@@ -28,6 +28,8 @@ class Term extends PascalSyntax {
 
         //Hvis vi har en eller flere factor oprs kan det være noe annet
 
+
+        //FList.get(0) sin check skal vel sette type?
         fList.get(0).check(curScope, lib);
 
         if (fList.get(0) instanceof UnsignedConstant) {
