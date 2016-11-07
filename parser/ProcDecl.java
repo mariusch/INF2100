@@ -38,8 +38,6 @@ class ProcDecl extends PascalDecl {
         if (lineNum < 0){
             return "<proc decl> " + name + " in the library";
         }
-
-
         return "<proc decl> " + name + " on line " + lineNum;
     }
 
