@@ -23,8 +23,6 @@ public class Library extends Block {
     //Const eol, false, true
     //Proc write
 
-
-
     public Library(int lNum) {
         super(lNum);
 
