@@ -61,16 +61,18 @@ class ParamDecl extends PascalDecl {
 
     @Override
     void checkWhetherFunction(PascalSyntax where) {
+        where.error(this.name + " is a param, not a function.");
 
     }
 
     @Override
     void checkWhetherProcedure(PascalSyntax where) {
-
+        where.error(this.name + " is a param, not a procedure.");
     }
 
     @Override
     void checkWhetherValue(PascalSyntax where) {
+        //?
 
     }
 }

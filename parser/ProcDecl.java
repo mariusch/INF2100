@@ -87,16 +87,16 @@ class ProcDecl extends PascalDecl {
 
     @Override
     void checkWhetherFunction(PascalSyntax where) {
-
+        where.error(this.name + " is a procedure, not a function.");
     }
 
     @Override
     void checkWhetherProcedure(PascalSyntax where) {
-
+        //Tom
     }
 
     @Override
     void checkWhetherValue(PascalSyntax where) {
-
+        where.error(this.name + " is a procedure, not a value.");
     }
 }
