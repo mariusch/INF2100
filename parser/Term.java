@@ -24,44 +24,35 @@ class Term extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
 
-        //Hvis vi bare har en factor, sett type til dennes type? Eller basert på dens egenskaper
 
-        //Hvis vi har en eller flere factor oprs kan det være noe annet
-
-
-        //FList.get(0) sin check skal vel sette type?
-        fList.get(0).check(curScope, lib);
-
+        //Instanceof under er KUN brukt for debug nå
         if (fList.get(0) instanceof UnsignedConstant) {
-            System.out.println("Factor typen som fucker er: UnsignedConst");
+            System.out.println("Factor type: UnsignedConst");
 
             if (fList.get(0) instanceof NumberLiteral){
                 System.out.println("som igjen er... NumberLiteral");
-                type = lib.integerType;
             } else if (fList.get(0) instanceof CharLiteral){
                 System.out.println("som igjen er... CharLiteral");
-                type = lib.charType;
             } else if (fList.get(0) instanceof NamedConst){
-                System.out.println("Named Const");
+                System.out.println("som igjen er... Named Const");
             }
 
-            //.. kan også være name?
-
         } else if (fList.get(0) instanceof Variable) {
-            System.out.println("Factor typen som fucker er: Variable");
-        } else if (fList.get(0) instanceof Variable) {
-            System.out.println("Factor typen som fucker er: Variable");
+            System.out.println("Factor type: Variable");
         } else if (fList.get(0) instanceof FuncCall) {
-            System.out.println("Factor typen som fucker er: Func call");
+            System.out.println("Factor type: Func call");
         } else if (fList.get(0) instanceof InnerExpr) {
-            System.out.println("Factor typen som fucker er: Inner Exp");
+            System.out.println("Factor type: Inner Exp");
         } else if (fList.get(0) instanceof Negation) {
-            System.out.println("Factor typen som fucker er: Negation");
+            System.out.println("Factor type: Negation");
         }
-        //type = fList.get(0).type;
-        // type = fList.get(0).type; denne ble kommentert ut nå, ga null
-        //bruk måten over med masse instanceof
 
+        //Setter Type
+        fList.get(0).check(curScope, lib);
+        type = fList.get(0).type;
+
+
+        //Flere factorer? Kjører Check og endrer Type
         for (int i = 0; i < fOList.size(); i++){
             //Sjekk om annen type ...
             fOList.get(i).check(curScope, lib);
