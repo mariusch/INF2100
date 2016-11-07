@@ -17,7 +17,7 @@ class Constant extends PascalSyntax {
     private UnsignedConstant uc;
 
     private int constVal;
-    private types.Type type;
+    protected types.Type type;
 
     Constant(int lNum) {
         super(lNum);
