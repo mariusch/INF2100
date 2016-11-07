@@ -23,8 +23,8 @@ class TermOperator extends Operator {
     @Override
     void check(Block curScope, Library lib) {
 
-        expr.type.checkType(left.type, "termopr-test", this,
-                "Termopr-test is not Boolean.");
+        /*expr.type.checkType(left.type, "termopr-test", this,
+                "Termopr-test is not Boolean.");*/
     }
 
     @Override
