@@ -85,13 +85,13 @@ class VarDecl extends PascalDecl {
     @Override
     void checkWhetherFunction(PascalSyntax where) {
         //Kast feil
-        where.error(this.name + " is a " + this.type + ", not a function.");
+        where.error(this.name + " is a variable, not a function.");
     }
 
     @Override
     void checkWhetherProcedure(PascalSyntax where) {
         //Kast feil
-        where.error(this.name + " is a " + this.type + ", not a procedure.");
+        where.error(this.name + " is a variable, not a procedure.");
     }
 
     @Override
