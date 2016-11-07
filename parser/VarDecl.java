@@ -15,8 +15,9 @@ import static scanner.TokenKind.*;
  */
 class VarDecl extends PascalDecl {
 
-    private Type type;
+    private Type vType;
     private String name;
+    types.Type type;
 
     VarDecl(String id, int lNum) {
         super(id, lNum);
@@ -25,7 +26,9 @@ class VarDecl extends PascalDecl {
     @Override
     void check(Block curScope, Library lib) {
         curScope.addDecl(name, this);
-        type.check(curScope, lib);
+        //type.check(curScope, lib);
+        //if (type.)
+        vType.check(curScope, lib);
 
         //Hvordan setter vi typen til VarDecl?
     }
@@ -39,7 +42,7 @@ class VarDecl extends PascalDecl {
     void prettyPrint() {
         Main.log.prettyPrint(name);
         Main.log.prettyPrint(": ");
-        type.prettyPrint();
+        vType.prettyPrint();
         Main.log.prettyPrintLn("; ");
     }
 
@@ -51,7 +54,7 @@ class VarDecl extends PascalDecl {
         vd.name = s.curToken.id;
         s.skip(nameToken);
         s.skip(colonToken);
-        vd.type = Type.parse(s);
+        vd.vType = Type.parse(s);
         s.skip(semicolonToken);
 
         leaveParser("var decl");

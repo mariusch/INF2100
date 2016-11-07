@@ -31,6 +31,7 @@ class Variable extends Factor {
         //..
         //vdRef = (VarDecl)d;
         vdRef = d;
+        vdRef.checkWhetherValue(this);
         type = vdRef.type;
 
         if (expr != null)
