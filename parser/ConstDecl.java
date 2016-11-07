@@ -32,9 +32,9 @@ class ConstDecl extends PascalDecl {
     @Override
     public String identify() {
         if (lineNum < 0){
-            return "<const decl> in the library";
+            return "<const decl> " + name + " in the library";
         }
-        return "<const decl> on line " + lineNum;
+        return "<const decl> " + name + " on line " + lineNum;
     }
 
     @Override

@@ -27,7 +27,7 @@ class FuncDecl extends ProcDecl {
 
     @Override
     public String identify() {
-        return "<func decl> on line " + lineNum;
+        return "<func decl> " + name + " on line " + lineNum;
     }
 
     @Override

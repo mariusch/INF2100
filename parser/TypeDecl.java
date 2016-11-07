@@ -11,7 +11,7 @@ import scanner.Scanner;
  */
 class TypeDecl extends PascalDecl {
 
-    private types.Type type;
+    protected types.Type type;
 
     TypeDecl(String id, int lNum) {
         super(id, lNum);
@@ -25,9 +25,9 @@ class TypeDecl extends PascalDecl {
     @Override
     public String identify() {
         if (lineNum < 0){
-            return "<type decl> in the library";
+            return "<type decl> " + name + " in the library";
         }
-        return "<type decl> on line " + lineNum;
+        return "<type decl> " + name + " on line " + lineNum;
     }
 
     @Override
