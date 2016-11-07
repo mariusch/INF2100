@@ -99,6 +99,6 @@ class FuncDecl extends ProcDecl {
 
     @Override
     void checkWhetherValue(PascalSyntax where) {
-        //?
+        //Tom
     }
 }

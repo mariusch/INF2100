@@ -96,7 +96,7 @@ class VarDecl extends PascalDecl {
 
     @Override
     void checkWhetherValue(PascalSyntax where) {
-        //?
+        //Tom
 
     }
 }

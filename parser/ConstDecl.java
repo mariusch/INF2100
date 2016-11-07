@@ -78,6 +78,6 @@ class ConstDecl extends PascalDecl {
 
     @Override
     void checkWhetherValue(PascalSyntax where) {
-        //Kast feil?
+        //Ok?
     }
 }
