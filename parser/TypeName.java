@@ -15,7 +15,7 @@ class TypeName extends Type {
 
     private String name;
 
-    types.Type intType = new IntType();
+    types.Type intType = new types.IntType();
 
     TypeName(int n) {
         super(n);
@@ -31,8 +31,6 @@ class TypeName extends Type {
             newIntType.setType(this.intType);
             curScope.addDecl(newIntType.name, newIntType);
         } else if (name.equals("boolean")) {
-
-        } else if (name.equals("array")) { //usikker på om dette er riktig
 
         } else {
             error("Error in parse.TypeName: Could not match " + name + " to any type.");

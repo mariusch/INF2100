@@ -15,6 +15,8 @@ class IntType extends Type {
         super(n);
     }
 
+
+
     @Override
     void check(Block curScope, Library lib) {
 

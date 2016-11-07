@@ -11,6 +11,8 @@ import scanner.Scanner;
  */
 class TypeDecl extends PascalDecl {
 
+    private types.Type type;
+
     TypeDecl(String id, int lNum) {
         super(id, lNum);
     }
@@ -31,7 +33,7 @@ class TypeDecl extends PascalDecl {
     }
 
     void setType(types.Type type) {
-
+        this.type = type;
     }
 
     static TypeDecl parse(Scanner s) {
