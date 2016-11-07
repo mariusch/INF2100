@@ -40,11 +40,11 @@ class Block extends PascalSyntax {
         PascalDecl d = decls.get(id);
 
         //Debugg
-        System.out.println("\nPRINTER ALT I SCOPE: " + this.getClass());
+       /* System.out.println("\nPRINTER ALT I SCOPE: " + this.getClass());
         for (String pd : decls.keySet()) {
             System.out.println(pd);
         }
-        System.out.println("\n");
+        System.out.println("\n"); */
 
         if (d != null) {
             System.out.println("Leter etter " + id + " i curScope: ");
