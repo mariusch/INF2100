@@ -37,10 +37,11 @@ class Expression extends PascalSyntax{
             se2.check(curScope, lib);
             String oprName = ro.opVal;
 
-            System.out.println(se2.identify());
+            /*
             type.checkType(se2.type, oprName + " operands", this,
                     "Operands to " + oprName + " are of different type!");
             type = lib.booleanType;
+            */
         }
     }
 

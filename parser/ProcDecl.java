@@ -36,11 +36,11 @@ class ProcDecl extends PascalDecl {
     @Override
     public String identify() {
         if (lineNum < 0){
-            return "<proc decl> in the library";
+            return "<proc decl> " + name + " in the library";
         }
 
 
-        return "<proc decl> on line " + lineNum;
+        return "<proc decl> " + name + " on line " + lineNum;
     }
 
     @Override

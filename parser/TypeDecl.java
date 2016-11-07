@@ -27,7 +27,7 @@ class TypeDecl extends PascalDecl {
         if (lineNum < 0){
             return "<type decl> in the library";
         }
-        return "<type decl> on line " + lineNum;
+        return "<type decl> " + name + " on line " + lineNum;
     }
 
     @Override
