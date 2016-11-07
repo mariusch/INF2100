@@ -14,7 +14,9 @@ import static scanner.TokenKind.*;
  */
 class FactorOperator extends Operator {
 
-    protected String type;
+    protected String token;
+
+    types.Type type;
 
     FactorOperator(int lNum) {
         super(lNum);
@@ -22,6 +24,12 @@ class FactorOperator extends Operator {
 
     @Override
     void check(Block curScope, Library lib) {
+
+        if (token.equals("and")) {
+            type = lib.booleanType;
+        } else {
+            type = lib.integerType;
+        }
 
     }
 
@@ -32,7 +40,7 @@ class FactorOperator extends Operator {
 
     @Override
     void prettyPrint() {
-        Main.log.prettyPrint(" " + type + " ");
+        Main.log.prettyPrint(" " + token + " ");
     }
 
     static FactorOperator parse(Scanner s) {
@@ -41,19 +49,19 @@ class FactorOperator extends Operator {
 
         switch (s.curToken.kind) {
             case multiplyToken:
-                fo.type = multiplyToken.toString();
+                fo.token = multiplyToken.toString();
                 s.skip(multiplyToken);
                 break;
             case divToken:
-                fo.type = divToken.toString();
+                fo.token = divToken.toString();
                 s.skip(divToken);
                 break;
             case modToken:
-                fo.type = modToken.toString();
+                fo.token = modToken.toString();
                 s.skip(modToken);
                 break;
             case andToken:
-                fo.type = andToken.toString();
+                fo.token = andToken.toString();
                 s.skip(andToken);
                 break;
             default:

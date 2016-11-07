@@ -28,6 +28,8 @@ class ArrayType extends Type {
         con2.check(curScope, lib);
         t.check(curScope, lib);
         type = t.type;
+
+        // typeCheck her
     }
 
     public static ArrayType parse(Scanner s) {

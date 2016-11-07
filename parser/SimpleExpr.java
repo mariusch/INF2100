@@ -17,7 +17,6 @@ class SimpleExpr extends PascalSyntax {
     private ArrayList<TermOperator> toList = new ArrayList<TermOperator>();
 
     protected types.Type type;
-    Term t;
 
     SimpleExpr(int lNum) {
         super(lNum);
