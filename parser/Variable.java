@@ -27,11 +27,12 @@ class Variable extends Factor {
     void check(Block curScope, Library lib) {
         //Hva kan denne være? For å sjekke at type er satt
         PascalDecl d = curScope.findDecl(name, this);
-
+        System.out.println("Variable sin deklarasjon er: " + d.getClass());
         vRef = d;
         vRef.checkWhetherValue(this);
         //TODO usikkert om den kan være null
         type = vRef.type;
+        System.out.println("Vriable type er: " + type);
 
         if (expr != null)
             expr.check(curScope, lib);
