@@ -25,8 +25,8 @@ class FuncCall extends Factor {
     @Override
     void check(Block curScope, Library lib) {
 
-
         PascalDecl d = curScope.findDecl(name, this);
+        d.checkWhetherFunction(this);
         funcRef = (FuncDecl)d;
         //Regner med type skal bestemmes av funcDecl-referansen sin type
         type = funcRef.type;

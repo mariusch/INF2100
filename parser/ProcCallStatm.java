@@ -32,6 +32,7 @@ class ProcCallStatm extends Statement {
         }
 
         PascalDecl d = curScope.findDecl(name, this);
+        d.checkWhetherProcedure(this);
         //..
         procRef = (ProcDecl)d;
         //..
