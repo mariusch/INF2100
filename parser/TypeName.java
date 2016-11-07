@@ -15,6 +15,8 @@ class TypeName extends Type {
 
     private String name;
 
+    types.Type intType = new IntType();
+
     TypeName(int n) {
         super(n);
     }
@@ -22,6 +24,19 @@ class TypeName extends Type {
     @Override
     void check(Block curScope, Library lib) {
 
+        System.out.println("TYPENAME: " + name);
+
+        if (name.equals("integer")) {
+            TypeDecl newIntType = new TypeDecl("integer", 0);
+            newIntType.setType(this.intType);
+            curScope.addDecl(newIntType.name, newIntType);
+        } else if (name.equals("boolean")) {
+
+        } else if (name.equals("array")) { //usikker på om dette er riktig
+
+        } else {
+            error("Error in parse.TypeName: Could not match " + name + " to any type.");
+        }
     }
 
     public static TypeName parse(Scanner s) {
