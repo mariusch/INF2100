@@ -17,7 +17,6 @@ public class Library extends Block {
 
     protected types.IntType integerType = new IntType();
     protected types.CharType charType = new CharType();
-    protected types.ArrayType arrayType; //Skal arrayType opprettes på nytt hver gang noe annet sjekker etter array?
     protected types.BoolType booleanType = new BoolType();
 
     //Const eol, false, true
@@ -32,22 +31,18 @@ public class Library extends Block {
         this.addDecl("false", new ConstDecl("false", -1));
         this.addDecl("true", new ConstDecl("true", -1));
 
-        /* boolean, char, integer */
+        /* boolean, char, integer decls*/
+        TypeDecl boolDecl = new TypeDecl("boolean", -1);
+        boolDecl.setType(this.booleanType);
+        this.addDecl("boolean", boolDecl);
 
-        TypeDecl newBoolType = new TypeDecl("boolean", -1);
-        newBoolType.setType(this.booleanType);
+        TypeDecl charDecl = new TypeDecl("char", -1);
+        charDecl.setType(this.charType);
+        this.addDecl("char", charDecl);
 
-        this.addDecl("boolean", newBoolType);
-
-        TypeDecl newCharType = new TypeDecl("char", -1);
-        newCharType.setType(this.charType);
-
-        this.addDecl("char", newCharType);
-
-        TypeDecl newIntType = new TypeDecl("integer", -1);
-        newIntType.setType(this.integerType);
-
-        this.addDecl("integer", newIntType);
+        TypeDecl intDecl = new TypeDecl("integer", -1);
+        intDecl.setType(this.integerType);
+        this.addDecl("integer", intDecl);
     }
 
     @Override

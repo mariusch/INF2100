@@ -23,7 +23,7 @@ class TypeName extends Type {
 
     @Override
     void check(Block curScope, Library lib) {
-        TypeDecl td = (TypeDecl) lib.findDecl(name, this);
+        TypeDecl td = (TypeDecl) curScope.findDecl(name, this);
         type = td.type;
     }
 

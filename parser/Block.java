@@ -41,15 +41,15 @@ class Block extends PascalSyntax {
 
 
         if (d != null) {
-            //System.out.println("Leter etter " + id + " i curScope: ");
-            //System.out.println("HER: " + this.identify());
+            System.out.println("Leter etter " + id + " i curScope: ");
+            System.out.println("HER: " + this.identify());
             Main.log.noteBinding(id, where, d);
             return d;
         }
 
         if (outerScope != null ) {
-            //System.out.println("Leter etter " + id + " i outer scope: ");
-            //System.out.println(outerScope.identify());
+            System.out.println("Leter etter " + id + " i outer scope: ");
+            System.out.println(outerScope.getClass());
             return outerScope.findDecl(id, where);
         }
 
