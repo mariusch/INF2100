@@ -27,10 +27,17 @@ public class Library extends Block {
 
     public Library(int lNum) {
         super(lNum);
+
+        /* false, true, eol, write */
         this.addDecl("write", new ProcDecl("write", -1));
         this.addDecl("eol", new ConstDecl("eol", -1));
         this.addDecl("false", new ConstDecl("false", -1));
         this.addDecl("true", new ConstDecl("true", -1));
+
+        /* boolean, char, integer */
+        this.addDecl("boolean", new TypeDecl("boolean", -1));
+        this.addDecl("char", new TypeDecl("char", -1));
+        this.addDecl("integer", new TypeDecl("integer", -1));
     }
 
     @Override
