@@ -31,11 +31,11 @@ class FuncCall extends Factor {
         d.checkWhetherFunction(this);
         funcRef = (FuncDecl)d;
 
-        if (funcRef.pdl.pdList.size() > eList.size()){
-            Main.error("Error at line " + lineNum + ": Too many parameters in call on " + name + "!");
-        }
-        else if (funcRef.pdl.pdList.size() < eList.size()){
+        if ((funcRef.pdl != null) && funcRef.pdl.pdList.size() > eList.size()){
             Main.error("Error at line " + lineNum + ": Too few parameters in call on " + name + "!");
+        }
+        else if ((funcRef.pdl != null) && funcRef.pdl.pdList.size() < eList.size()){
+            Main.error("Error at line " + lineNum + ": Too many parameters in call on " + name + "!");
         }
 
         type = funcRef.type;

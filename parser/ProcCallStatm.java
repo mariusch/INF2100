@@ -37,6 +37,13 @@ class ProcCallStatm extends Statement {
         procRef = (ProcDecl)d;
         //..
 
+        if ((procRef.pdl != null) && procRef.pdl.pdList.size() > exprList.size()){
+            Main.error("Error at line " + lineNum + ": Too few parameters in call on " + name + "!");
+        }
+        else if ((procRef.pdl != null) && procRef.pdl.pdList.size() < exprList.size()){
+            Main.error("Error at line " + lineNum + ": Too many parameters in call on " + name + "!");
+        }
+
     }
 
     @Override
