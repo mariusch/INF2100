@@ -32,7 +32,7 @@ class Variable extends Factor {
         vRef.checkWhetherValue(this);
         //TODO usikkert om den kan være null
         type = vRef.type;
-        System.out.println("Vriable type er: " + type);
+        System.out.println("Variable type er: " + type);
 
         if (expr != null)
             expr.check(curScope, lib);

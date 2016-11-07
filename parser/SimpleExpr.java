@@ -25,7 +25,6 @@ class SimpleExpr extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
 
-
         if(po!=null){
             po.check(curScope, lib);
         }

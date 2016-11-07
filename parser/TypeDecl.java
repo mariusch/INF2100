@@ -35,8 +35,8 @@ class TypeDecl extends PascalDecl {
 
     }
 
-    void setType(types.Type type) {
-        this.type = type;
+    void setType(types.Type t) {
+        this.type = t;
     }
 
     static TypeDecl parse(Scanner s) {
