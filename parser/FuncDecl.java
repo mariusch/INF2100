@@ -30,7 +30,7 @@ class FuncDecl extends ProcDecl {
 
     @Override
     void check(Block curScope, Library lib) {
-        blck.check(curScope, lib);
+        //blck.check(curScope, lib);
 
         curScope.addDecl(name, this);
 
@@ -38,7 +38,7 @@ class FuncDecl extends ProcDecl {
             pdl.check(blck, lib);
 
         tn.check(blck, lib);
-        //blck.check(blck, lib);
+        blck.check(curScope, lib);
     }
 
     @Override
