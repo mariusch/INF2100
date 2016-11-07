@@ -25,10 +25,12 @@ class Variable extends Factor {
 
     @Override
     void check(Block curScope, Library lib) {
+        //Hva kan denne være? For å sjekke at type er satt
         PascalDecl d = curScope.findDecl(name, this);
 
         vRef = d;
         vRef.checkWhetherValue(this);
+        //TODO usikkert om den kan være null
         type = vRef.type;
 
         if (expr != null)

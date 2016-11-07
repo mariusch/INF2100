@@ -27,23 +27,18 @@ class Expression extends PascalSyntax{
      */
     @Override
     void check(Block curScope, Library lib) {
+
         se.check(curScope, lib);
         type = se.type;
 
-        if (se2 != null) {
-
-            type = lib.booleanType;
-
+        if(se2 != null) {
             se2.check(curScope, lib);
             String oprName = ro.opVal;
 
-
-            /*
-            type.checkType(se2.type, oprName + " operands", this,
-                    "Operands to " + oprName + " are of different type!");
+            se.type.checkType(se2.type, oprName + " operands",
+                    this, "Operands to " + oprName + " are of different type!");
 
             type = lib.booleanType;
-            */
         }
     }
 
@@ -75,5 +70,4 @@ class Expression extends PascalSyntax{
         leaveParser("expression");
         return expr;
     }
-
 }
