@@ -35,9 +35,21 @@ public class Library extends Block {
         this.addDecl("true", new ConstDecl("true", -1));
 
         /* boolean, char, integer */
-        this.addDecl("boolean", new TypeDecl("boolean", -1));
-        this.addDecl("char", new TypeDecl("char", -1));
-        this.addDecl("integer", new TypeDecl("integer", -1));
+
+        TypeDecl newBoolType = new TypeDecl("boolean", -1);
+        newBoolType.setType(this.booleanType);
+
+        this.addDecl("boolean", newBoolType);
+
+        TypeDecl newCharType = new TypeDecl("char", -1);
+        newCharType.setType(this.charType);
+
+        this.addDecl("char", newCharType);
+
+        TypeDecl newIntType = new TypeDecl("integer", -1);
+        newIntType.setType(this.integerType);
+
+        this.addDecl("integer", newIntType);
     }
 
     @Override

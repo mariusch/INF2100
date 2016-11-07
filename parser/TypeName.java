@@ -26,17 +26,18 @@ class TypeName extends Type {
 
         System.out.println("TYPENAME: " + name);
 
-        if (name.equals("integer")) {
-            TypeDecl newIntType = new TypeDecl("integer", 0);
-            newIntType.setType(this.intType);
-            curScope.addDecl(newIntType.name, newIntType);
+        /*if (name.equals("integer")) {
+
+            //curScope.addDecl(newIntType.name, newIntType);
         } else if (name.equals("boolean")) {
 
         } else if (name.equals("char")) {
             
         } else {
             error("Error in parse.TypeName: Could not match " + name + " to any type.");
-        }
+        }*/
+
+        curScope.findDecl(name, this);
     }
 
     public static TypeName parse(Scanner s) {
