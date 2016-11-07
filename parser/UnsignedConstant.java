@@ -24,11 +24,11 @@ abstract class UnsignedConstant extends Factor {
     @Override
     void check(Block curScope, Library lib) {
         /*
-        if (this instanceof NumberLiteral){
-            type = lib.integerType;
-        } else if (this instanceof CharLiteral){
-            type = lib.charType;
-        } //Ellers ..?*/
+        Abstract class
+            NumberLiteral: IntegerType
+            CharLiteral: CharType
+            NamedConst: type to its declaration
+         */
     }
 
     abstract void prettyPrint();
