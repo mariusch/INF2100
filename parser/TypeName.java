@@ -13,7 +13,7 @@ import scanner.TokenKind;
  */
 class TypeName extends Type {
 
-    private String name;
+    protected String name;
 
     types.Type intType = new types.IntType();
 
@@ -32,6 +32,8 @@ class TypeName extends Type {
             curScope.addDecl(newIntType.name, newIntType);
         } else if (name.equals("boolean")) {
 
+        } else if (name.equals("char")) {
+            
         } else {
             error("Error in parse.TypeName: Could not match " + name + " to any type.");
         }
