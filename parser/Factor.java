@@ -11,8 +11,6 @@ import scanner.Scanner;
  */
 abstract class Factor extends PascalSyntax {
 
-    types.Type type;
-
     Factor(int lNum) {
         super(lNum);
     }
