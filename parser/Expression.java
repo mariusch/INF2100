@@ -31,7 +31,7 @@ class Expression extends PascalSyntax{
         se.check(curScope, lib);
         type = se.type;
 
-        if(se2 != null) {
+        if(se2 != null)     {
             se2.check(curScope, lib);
             String oprName = ro.opVal;
 
