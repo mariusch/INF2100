@@ -30,6 +30,21 @@ class VarDecl extends PascalDecl {
         //if (type.)
         vType.check(curScope, lib);
 
+        if (vType instanceof ArrayType){
+            type = lib.arrayType;
+        }
+        else if (vType instanceof TypeName){
+            TypeName tn = (TypeName) vType;
+            if (tn.name.equals("integer")){
+                type = lib.integerType;
+            }
+            else if (tn.name.equals("boolean")){
+                type = lib.booleanType;
+            }
+            else if (tn.name.equals("char")){
+                type = lib.charType;
+            }
+        }
         //Hvordan setter vi typen til VarDecl?
     }
 
