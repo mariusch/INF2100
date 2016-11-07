@@ -17,8 +17,6 @@ class TypeName extends Type {
 
     types.Type type;
 
-    types.Type intType = new types.IntType();
-
     TypeName(int n) {
         super(n);
     }
