@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 class ParamDeclList extends PascalSyntax {
 
-    private ArrayList<ParamDecl> pdList = new ArrayList<ParamDecl>();
+    ArrayList<ParamDecl> pdList = new ArrayList<ParamDecl>();
 
     ParamDeclList(int lNum) {
         super(lNum);

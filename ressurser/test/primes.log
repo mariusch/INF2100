@@ -61,3 +61,5 @@ Binding on line 56: i was declared as <var decl> on line 10
 Binding on line 56: i was declared as <var decl> on line 10
 Binding on line 59: findprimes was declared as <proc decl> on line 12
 Binding on line 59: printprimes was declared as <proc decl> on line 37
+Binding on line 17: i1 was declared as <var decl> i1 on line 13
+Binding on line 17: limit was declared as <const decl> limit on line 7
