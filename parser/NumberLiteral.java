@@ -16,7 +16,7 @@ class NumberLiteral extends UnsignedConstant {
 
     private ArrayList<Integer> num = new ArrayList<Integer>();
 
-    types.Type type;
+    //types.Type type;
 
     NumberLiteral(int lNum) {
         super(lNum);
