@@ -12,6 +12,8 @@ import static scanner.TokenKind.nameToken;
  */
 abstract class Type extends PascalSyntax {
 
+    types.Type type;
+
     Type(int n) {
         super(n);
     }

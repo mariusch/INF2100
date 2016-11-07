@@ -15,7 +15,7 @@ import static scanner.TokenKind.*;
  */
 class VarDecl extends PascalDecl {
 
-    private Type vType;
+    private parser.Type vType;
     private String name;
 
     types.Type type;
@@ -27,24 +27,26 @@ class VarDecl extends PascalDecl {
     @Override
     void check(Block curScope, Library lib) {
         curScope.addDecl(name, this);
-        vType.check(curScope, lib);
 
+        vType.check(curScope, lib);
+        type = vType.type;
+
+        /* Bytett ut med "type = vType.type;" over
         if (vType instanceof ArrayType){
             type = lib.arrayType;
         }
-        else if (vType instanceof TypeName){
+        else if (vType instanceof TypeName) {
             TypeName tn = (TypeName) vType;
             if (tn.name.equals("integer")){
                 type = lib.integerType;
             }
-            else if (tn.name.equals("boolean")){
+            else if (tn.name.equals("boolean")) {
                 type = lib.booleanType;
             }
-            else if (tn.name.equals("char")){
+            else if (tn.name.equals("char")) {
                 type = lib.charType;
             }
-        }
-        //Hvordan setter vi typen til VarDecl?
+        }*/
     }
 
     @Override

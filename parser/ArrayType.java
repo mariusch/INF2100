@@ -14,7 +14,9 @@ import scanner.TokenKind;
 class ArrayType extends Type {
     private Constant con;
     private Constant con2;
-    private Type type;
+    private Type t;
+
+    types.Type type;
 
     ArrayType(int n) {
         super(n);
@@ -24,7 +26,8 @@ class ArrayType extends Type {
     void check(Block curScope, Library lib) {
         con.check(curScope, lib);
         con2.check(curScope, lib);
-        type.check(curScope, lib);
+        t.check(curScope, lib);
+        type = t.type;
     }
 
     public static ArrayType parse(Scanner s) {
@@ -40,7 +43,7 @@ class ArrayType extends Type {
         at.con2 = Constant.parse(s);
         s.skip(TokenKind.rightBracketToken);
         s.skip(TokenKind.ofToken);
-        at.type = Type.parse(s);
+        at.t = Type.parse(s);
 
         leaveParser("array type");
 
@@ -57,6 +60,6 @@ class ArrayType extends Type {
         Main.log.prettyPrint("..");
         con2.prettyPrint();
         Main.log.prettyPrint("] of ");
-        type.prettyPrint();
+        t.prettyPrint();
     }
 }
