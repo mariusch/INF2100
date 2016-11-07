@@ -38,10 +38,11 @@ class Block extends PascalSyntax {
 
     PascalDecl findDecl(String id, PascalSyntax where) {
         PascalDecl d = decls.get(id);
-        System.out.println("Leter etter " + id + " i curScope: ");
-        System.out.println(this.identify());
+
 
         if (d != null) {
+            System.out.println("Leter etter " + id + " i curScope: ");
+            System.out.println(this.identify());
             Main.log.noteBinding(id, where, d);
             return d;
         }
