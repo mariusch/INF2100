@@ -24,7 +24,6 @@ class Term extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
 
-
         //Instanceof under er KUN brukt for debug nå
         if (fList.get(0) instanceof UnsignedConstant) {
             System.out.println("Factor type: UnsignedConst");

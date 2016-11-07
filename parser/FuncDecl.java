@@ -40,6 +40,7 @@ class FuncDecl extends ProcDecl {
             pdl.check(blck, lib);
 
         tn.check(blck, lib);
+        type = tn.type;
         blck.check(curScope, lib);
     }
 

@@ -18,6 +18,8 @@ class FuncCall extends Factor {
     private ArrayList<Expression> eList = new ArrayList<Expression>();
     private FuncDecl funcRef;
 
+    types.Type type;
+
     FuncCall(int lNum) {
         super(lNum);
     }
@@ -28,9 +30,8 @@ class FuncCall extends Factor {
         PascalDecl d = curScope.findDecl(name, this);
         d.checkWhetherFunction(this);
         funcRef = (FuncDecl)d;
-        //Regner med type skal bestemmes av funcDecl-referansen sin type
-        type = funcRef.type;
 
+        type = funcRef.type;
 
         for (Expression e: eList) {
             e.check(curScope, lib);
