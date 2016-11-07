@@ -17,6 +17,7 @@ class VarDecl extends PascalDecl {
 
     private Type vType;
     private String name;
+
     types.Type type;
 
     VarDecl(String id, int lNum) {

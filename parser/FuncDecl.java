@@ -19,6 +19,8 @@ class FuncDecl extends ProcDecl {
     private parser.TypeName tn;
     private Block blck;
 
+    types.Type type;
+
     FuncDecl(String id, int lNum) {
         super(id, lNum);
     }
