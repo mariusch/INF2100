@@ -13,11 +13,9 @@ import static scanner.TokenKind.*;
  */
 class NamedConst extends UnsignedConstant {
 
-    types.Type type;
-
     private String name;
-
-    PascalDecl declRef;
+    protected PascalDecl declRef;
+    protected types.Type type;
 
     NamedConst(int lNum) {
         super(lNum);
@@ -25,8 +23,8 @@ class NamedConst extends UnsignedConstant {
 
     @Override
     void check(Block curScope, Library lib) {
-        PascalDecl d = curScope.findDecl(name, this);
-        type = d.type;
+        declRef = curScope.findDecl(name, this);
+        type = declRef.type;
     }
 
     @Override
