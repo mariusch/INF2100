@@ -51,18 +51,16 @@ class Term extends PascalSyntax {
         fList.get(0).check(curScope, lib);
         type = fList.get(0).type;
 
-
         //Flere factorer? Kjører Check og endrer Type
-        for (int i = 0; i < fOList.size(); i++){
+        for (int i = 0; i < fOList.size(); i++) {
             //Sjekk om annen type ...
             fOList.get(i).check(curScope, lib);
             fList.get(i+1).check(curScope, lib);
 
             //baserer type på factor opr
-            if (fOList.get(i).type.equals("and")){
+            if (fOList.get(i).type.equals("and")) {
                 type = lib.booleanType;
-            }
-            else{
+            } else {
                 type = lib.integerType;
             }
         }

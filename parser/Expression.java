@@ -1,4 +1,4 @@
-﻿package parser;
+package parser;
 
 import scanner.Scanner;
 
