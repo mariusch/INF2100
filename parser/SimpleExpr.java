@@ -17,6 +17,7 @@ class SimpleExpr extends PascalSyntax {
     private ArrayList<TermOperator> toList = new ArrayList<TermOperator>();
 
     protected types.Type type;
+    Term t;
 
     SimpleExpr(int lNum) {
         super(lNum);
@@ -24,44 +25,27 @@ class SimpleExpr extends PascalSyntax {
 
     @Override
     void check(Block curScope, Library lib) {
-        type = lib.integerType;
 
 
-        if (po != null) {
+        if(po!=null){
             po.check(curScope, lib);
-            type = lib.integerType;
         }
 
-        //Sjekker om det bare er én term
-        System.out.println("Term opr er: " + toList.size());
-        System.out.println("Term er: " + tList.size());
-        if (toList.size() == 0) {
-            System.out.println("KOM HIT");
-            tList.get(0).check(curScope, lib);
-            System.out.println("DETTE ER TYPE SOM BLIR SATT: " + tList.get(0).type);
-            type = tList.get(0).type;
-        } else {
-            //tar første
-            tList.get(0).check(curScope, lib);
-
-            //Sjekker resten i loop
-            for (int i = 0; i < toList.size(); i++) {
-                //Sjekk type her fordi den kan være noe annet ...
-                toList.get(i).check(curScope, lib);
-                if (toList.get(i).opr.equals("or")) {
-                    type = lib.booleanType;
-                }
-
-                tList.get(i + 1).check(curScope, lib);
-                if (type == null) {
-                    type = lib.integerType;
-                }
-
+        for(int i = 0; i <tList.size(); i++){
+            Term left = tList.get(i);
+            left.check(curScope, lib);
+            if (i < toList.size()) {
+                TermOperator to = toList.get(i);
+                Term right = tList.get(i+1);
+                right.check(curScope, lib);
+                to.left = left;
+                to.right = right;
+                to.check(curScope, lib);
             }
-
         }
 
-
+        //Usikker på om dette er rett
+        type = tList.get(0).type;
     }
 
     @Override

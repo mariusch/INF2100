@@ -14,6 +14,7 @@ import static scanner.TokenKind.*;
 class TermOperator extends Operator {
 
     String opr;
+    Term left,right; //Skal brukes til checkType
 
     TermOperator(int lNum) {
         super(lNum);
@@ -22,6 +23,8 @@ class TermOperator extends Operator {
     @Override
     void check(Block curScope, Library lib) {
 
+        expr.type.checkType(left.type, "termopr-test", this,
+                "Termopr-test is not Boolean.");
     }
 
     @Override
