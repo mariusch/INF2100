@@ -68,16 +68,16 @@ class ConstDecl extends PascalDecl {
 
     @Override
     void checkWhetherFunction(PascalSyntax where) {
-        where.error("This is not a function!");
+        where.error(this.name + " is a constant, not a function.");
     }
 
     @Override
     void checkWhetherProcedure(PascalSyntax where) {
-        where.error("This is not a Procedure!");
+        where.error(this.name + " is a constant, not a procedure.");
     }
 
     @Override
     void checkWhetherValue(PascalSyntax where) {
-
+        //Kast feil?
     }
 }
