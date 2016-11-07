@@ -16,6 +16,7 @@ class ConstDecl extends PascalDecl {
     private Constant con;
     private String name;
 
+    types.Type type;
     protected int constVal;
 
     ConstDecl(String id, int lNum) {

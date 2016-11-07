@@ -17,6 +17,8 @@ class ProcDecl extends PascalDecl {
     private ParamDeclList pdl;
     private Block block;
 
+    types.Type type;
+
     ProcDecl(String id, int lNum) {
         super(id, lNum);
     }

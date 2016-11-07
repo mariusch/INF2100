@@ -16,6 +16,8 @@ public class Program extends PascalDecl {
     private Block progBlock;
     private String name;
 
+    types.Type type;
+
     Program(String id, int lNum) {
         super(id, lNum);
     }

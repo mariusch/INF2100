@@ -24,6 +24,9 @@ class TypeDecl extends PascalDecl {
 
     @Override
     public String identify() {
+        if (lineNum < 0){
+            return "<type decl> in the library";
+        }
         return "<type decl> on line " + lineNum;
     }
 
