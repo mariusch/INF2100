@@ -32,7 +32,7 @@ class Block extends PascalSyntax {
         if (decls.containsKey(id)){
             d.error(id + " declared twice in the same block!");
         }
-        System.out.println("La til: " + id + " " + d.identify() + " i scope " + this);
+        //System.out.println("La til: " + id + " " + d.identify() + " i scope " + this);
         decls.put(id, d);
     }
 
@@ -47,15 +47,15 @@ class Block extends PascalSyntax {
         System.out.println("\n"); */
 
         if (d != null) {
-            System.out.println("Leter etter " + id + " i curScope: ");
-            System.out.println("HER: " + this.identify());
+            //System.out.println("Leter etter " + id + " i curScope: ");
+            //System.out.println("HER: " + this.identify());
             Main.log.noteBinding(id, where, d);
             return d;
         }
 
         if (outerScope != null ) {
-            System.out.println("Leter etter " + id + " i outer scope: ");
-            System.out.println(outerScope.getClass());
+            //System.out.println("Leter etter " + id + " i outer scope: ");
+            //System.out.println(outerScope.getClass());
             return outerScope.findDecl(id, where);
         }
 

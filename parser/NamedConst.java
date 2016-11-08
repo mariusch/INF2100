@@ -25,7 +25,7 @@ class NamedConst extends UnsignedConstant {
     void check(Block curScope, Library lib) {
         declRef = curScope.findDecl(name, this);
         type = declRef.type;
-        System.out.println("NamedConst setter type: " + type + " av " + declRef.getClass());
+        //System.out.println("NamedConst setter type: " + type + " av " + declRef.getClass());
     }
 
     @Override

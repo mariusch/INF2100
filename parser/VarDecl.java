@@ -28,6 +28,7 @@ class VarDecl extends PascalDecl {
     void check(Block curScope, Library lib) {
         curScope.addDecl(name, this);
 
+        //System.out.println("var decl TYPE:" + vType.getClass());
         vType.check(curScope, lib);
         type = vType.type;
 

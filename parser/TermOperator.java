@@ -14,7 +14,9 @@ import static scanner.TokenKind.*;
 class TermOperator extends Operator {
 
     String opr;
+
     Term left,right; //Skal brukes til checkType
+    types.Type type;
 
     TermOperator(int lNum) {
         super(lNum);
@@ -23,8 +25,14 @@ class TermOperator extends Operator {
     @Override
     void check(Block curScope, Library lib) {
 
-        /*expr.type.checkType(left.type, "termopr-test", this,
-                "Termopr-test is not Boolean.");*/
+        if (opr.equals("or")) {
+            type = lib.booleanType;
+        } else {
+            type = lib.integerType;
+        }
+
+        /* right.type.checkType(left.type, "termopr-test", this,
+                "Termopr-test is not Boolean."); */
     }
 
     @Override

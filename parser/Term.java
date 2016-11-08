@@ -24,6 +24,7 @@ class Term extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
 
+        /*
         //Instanceof under er KUN brukt for debug nå
         if (fList.get(0) instanceof UnsignedConstant) {
             System.out.println("Factor type: UnsignedConst");
@@ -45,6 +46,8 @@ class Term extends PascalSyntax {
         } else if (fList.get(0) instanceof Negation) {
             System.out.println("Factor type: Negation");
         }
+        */
+
 
         //Setter Type
         fList.get(0).check(curScope, lib);
