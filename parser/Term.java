@@ -50,8 +50,11 @@ class Term extends PascalSyntax {
 
 
         //Setter Type
-        fList.get(0).check(curScope, lib);
-        type = fList.get(0).type;
+        Factor f = fList.get(0);
+        f.check(curScope, lib);
+        type = f.type;
+        type = lib.integerType; //Debug kode
+        //System.out.println("Term type er: " + type + " kall på: " + f);
 
         //Flere factorer? Kjører Check og endrer Type
         for (int i = 0; i < fOList.size(); i++) {

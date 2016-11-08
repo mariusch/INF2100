@@ -28,6 +28,7 @@ class ConstDecl extends PascalDecl {
         curScope.addDecl(name, this);
         con.check(curScope, lib);
         type = con.type;
+        //System.out.println("Const decl type er: " + type + " fra " + con);
     }
 
     @Override

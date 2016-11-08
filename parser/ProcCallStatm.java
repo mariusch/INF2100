@@ -18,7 +18,7 @@ class ProcCallStatm extends Statement {
     private ArrayList<Expression> exprList = new ArrayList<Expression>();
     private boolean procCallShort = true;
 
-    ProcDecl procRef;
+    protected ProcDecl procRef;
 
     ProcCallStatm(int lNum) {
         super(lNum);
@@ -26,24 +26,29 @@ class ProcCallStatm extends Statement {
 
     @Override
     void check(Block curScope, Library lib){
-
-        for (Expression e : exprList){
-            e.check(curScope, lib);
-        }
-
         PascalDecl d = curScope.findDecl(name, this);
-        d.checkWhetherProcedure(this);
-        //..
         procRef = (ProcDecl)d;
-        //..
+        procRef.checkWhetherProcedure(this);
 
-        if ((procRef.pdl != null) && procRef.pdl.pdList.size() > exprList.size()){
-            Main.error("Error at line " + lineNum + ": Too few parameters in call on " + name + "!");
-        }
-        else if ((procRef.pdl != null) && procRef.pdl.pdList.size() < exprList.size()){
-            Main.error("Error at line " + lineNum + ": Too many parameters in call on " + name + "!");
-        }
+        for (int i = 0; i < exprList.size(); i++){
 
+            if (procRef.lineNum != -1) {
+                Expression tmp = exprList.get(i);
+                tmp.check(curScope, lib);
+                try {
+                    if (exprList.size() < procRef.pdl.pdList.size())
+                        error("Too few parameters in call on " + procRef.name);
+
+                    types.Type temp = procRef.pdl.pdList.get(i).type;
+                    tmp.type.checkType(temp,"param #" + (i+1), this,
+                            "wrong type of parameters");
+                }catch(IndexOutOfBoundsException e) {
+                    error("Too many parameters in call on " + procRef.name);
+                }
+            } else {
+                exprList.get(i).check(curScope,lib);
+            }
+        }
     }
 
     @Override

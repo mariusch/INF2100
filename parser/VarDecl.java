@@ -32,9 +32,9 @@ class VarDecl extends PascalDecl {
         vType.check(curScope, lib);
         type = vType.type;
 
-        /* Bytett ut med "type = vType.type;" over
+        //Det over burde holde?
         if (vType instanceof ArrayType){
-            type = lib.arrayType;
+            type = lib.booleanType; //Feil
         }
         else if (vType instanceof TypeName) {
             TypeName tn = (TypeName) vType;
@@ -47,7 +47,9 @@ class VarDecl extends PascalDecl {
             else if (tn.name.equals("char")) {
                 type = lib.charType;
             }
-        }*/
+        }
+
+        //System.out.println("Var decl er: " + type + " fra " + vType.getClass());
     }
 
     @Override

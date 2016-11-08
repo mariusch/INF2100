@@ -16,7 +16,7 @@ class CharLiteral extends UnsignedConstant {
     private char val;
 
     protected int constVal;
-
+    protected types.Type type;
 
     CharLiteral(int lNum) {
         super(lNum);
@@ -24,7 +24,7 @@ class CharLiteral extends UnsignedConstant {
 
     @Override
     void check(Block curScope, Library lib) {
-        this.type = lib.charType;
+        type = lib.charType;
     }
 
     @Override

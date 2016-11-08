@@ -14,9 +14,11 @@ class CharType extends Type {
         super(n);
     }
 
+    protected types.Type type;
+
     @Override
     void check(Block curScope, Library lib) {
-
+        type = lib.charType;
     }
 
     public static CharType parse(Scanner s) {

@@ -11,15 +11,15 @@ import scanner.Scanner;
  */
 class IntType extends Type {
 
+    protected types.Type type;
+
     IntType(int n) {
         super(n);
     }
 
-
-
     @Override
     void check(Block curScope, Library lib) {
-
+        type = lib.integerType;
     }
 
     public static IntType parse(Scanner s) {

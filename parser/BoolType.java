@@ -11,13 +11,15 @@ import scanner.Scanner;
  */
 class BoolType extends Type {
 
+    protected types.Type type;
+
     BoolType(int n) {
         super(n);
     }
 
     @Override
     void check(Block curScope, Library lib) {
-
+        type = lib.booleanType;
     }
 
     public static BoolType parse(Scanner s) {

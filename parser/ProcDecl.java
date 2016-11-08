@@ -13,8 +13,8 @@ import scanner.TokenKind;
  */
 class ProcDecl extends PascalDecl {
 
-    private String name;
-    ParamDeclList pdl;
+    protected String name;
+    protected ParamDeclList pdl;
     private Block block;
 
     types.Type type;

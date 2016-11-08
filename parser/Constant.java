@@ -26,7 +26,24 @@ class Constant extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
         uc.check(curScope, lib);
-        type = uc.type;
+
+        if (po != null) {
+            type = lib.integerType;
+            System.out.println("Const decl type satt: " + type);
+        } else {
+            type = uc.type;
+
+            //Disse to if-testene er bare debug for nullpointer
+            if (uc instanceof NumberLiteral)
+                type = lib.integerType;
+
+            if (uc instanceof NamedConst)
+                type = lib.integerType;
+
+            //System.out.println("Const type er: " + type + " fra " + uc.getClass());
+        }
+
+
         constVal = uc.constVal;
         if (po != null) {
             String oprName = po.opr;

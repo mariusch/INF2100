@@ -16,7 +16,7 @@ class NumberLiteral extends UnsignedConstant {
 
     private ArrayList<Integer> num = new ArrayList<Integer>();
 
-    //types.Type type;
+    types.Type type;
 
     NumberLiteral(int lNum) {
         super(lNum);
@@ -25,6 +25,7 @@ class NumberLiteral extends UnsignedConstant {
     @Override
     void check(Block curScope, Library lib) {
         type = lib.integerType;
+        //System.out.println("Number lit type er: " + type);
     }
 
     @Override

@@ -53,10 +53,13 @@ public class Program extends PascalDecl {
 
     @Override
     public void check(Block curScope, Library lib) {
-        System.out.println("Vi vet at dette programmet ikke fungerer 100% som det skal enda.\n" +
+        System.out.println("Vi vet at dette programmet ikke fungerer helt som det skal.\n" +
                 "Spesielt har vi hatt problemer med typesjekking som vi har slitt med å fått \n" +
-                "implementert, med unntak av while-test. Navnebindinger gjøres stort sett riktig\n" +
-                "og noen sjekker som feks riktig antall parametere.  ");
+                "implementert, fordi vi ikke får satt riktig type oppover. Noe kode er lagt til" +
+                "nå bare for å kunne kjøre uten nullpointers. Dette skal være merket " +
+                "med kommentar. Navnebindinger gjøres stort sett riktig\n" +
+                "og programmet sjekker om det er riktig antall parametere.  ");
+
         if (progBlock != null) {
             progBlock.check(curScope, lib);
         }

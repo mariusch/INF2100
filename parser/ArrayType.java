@@ -27,7 +27,7 @@ class ArrayType extends Type {
         con.check(curScope, lib);
         con2.check(curScope, lib);
         t.check(curScope, lib);
-        type = t.type;
+        type = lib.booleanType; //Debug
 
         // typeCheck her
     }
