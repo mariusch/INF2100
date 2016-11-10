@@ -26,6 +26,7 @@ class CharLiteral extends UnsignedConstant {
     @Override
     void check(Block curScope, Library lib) {
         type = lib.charType;
+        constVal = (int) val;
     }
 
     @Override
