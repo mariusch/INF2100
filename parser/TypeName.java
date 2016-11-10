@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
@@ -26,6 +27,11 @@ class TypeName extends Type {
         TypeDecl td = (TypeDecl) curScope.findDecl(name, this);
         type = td.type;
         //System.out.println("Type Name er:" + type);
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     public static TypeName parse(Scanner s) {

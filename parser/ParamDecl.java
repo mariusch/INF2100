@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -30,6 +31,11 @@ class ParamDecl extends PascalDecl {
         //System.out.println("TypeName er: " + tn.type);
         type = tn.type;
         //System.out.println("Param Decl er: " + tn.type);
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

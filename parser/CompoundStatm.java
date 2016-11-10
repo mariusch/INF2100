@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
@@ -23,6 +24,11 @@ class CompoundStatm extends Statement {
     void check(Block curScope, Library lib) {
         if (statmList != null)
             statmList.check(curScope, lib);
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

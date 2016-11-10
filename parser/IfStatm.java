@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import java.util.ArrayList;
@@ -29,6 +30,11 @@ class IfStatm extends Statement {
         for (Statement s:stm) {
             s.check(curScope, lib);
         }
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

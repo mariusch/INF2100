@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import java.util.ArrayList;
@@ -26,6 +27,11 @@ class StatmList extends PascalSyntax {
         for (Statement s : sl){
             s.check(curScope, lib);
         }
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

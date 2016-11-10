@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import scanner.Scanner;
 
 /**
@@ -20,6 +21,11 @@ class IntType extends Type {
     @Override
     void check(Block curScope, Library lib) {
         type = lib.integerType;
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     public static IntType parse(Scanner s) {

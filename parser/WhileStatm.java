@@ -30,6 +30,11 @@ class WhileStatm extends Statement {
     }
 
     @Override
+    void genCode(CodeFile f) {
+
+    }
+
+    @Override
     public String identify() {
         return "<while-statm> on line " + lineNum;
     }

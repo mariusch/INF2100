@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import scanner.Scanner;
 
 /**
@@ -41,6 +42,11 @@ class Expression extends PascalSyntax{
                     this, "Operands to " + oprName + " are of different type!");
             type = lib.booleanType;
         }
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

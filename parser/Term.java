@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import scanner.Scanner;
 import java.util.ArrayList;
 
@@ -69,6 +70,11 @@ class Term extends PascalSyntax {
                 type = lib.integerType;
             }
         }
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

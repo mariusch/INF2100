@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -89,6 +90,11 @@ class Block extends PascalSyntax {
         //Context er program. Program sin check kjører progblock sin check.
         //Siden progblock er en check kjører den context.check() osv ...
         //context.check(this, lib);
+    }
+
+    @Override
+    public void genCode(CodeFile f) {
+
     }
 
     @Override

@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
@@ -30,6 +31,11 @@ class ArrayType extends Type {
         type = lib.booleanType; //Debug
 
         // typeCheck her
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     public static ArrayType parse(Scanner s) {

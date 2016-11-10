@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -27,6 +28,11 @@ class AssignStatm extends Statement {
         expr.check(curScope, lib);
         /*expr.type.checkType(variable.type, ":=", this,
                 "While-test is not Boolean."); */
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

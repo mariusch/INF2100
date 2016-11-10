@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import scanner.Scanner;
 
 /**
@@ -17,6 +18,11 @@ class EmptyStatm extends Statement {
 
     @Override
     void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
+    void genCode(CodeFile f) {
 
     }
 

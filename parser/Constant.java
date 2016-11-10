@@ -55,6 +55,11 @@ class Constant extends PascalSyntax {
     }
 
     @Override
+    void genCode(CodeFile f) {
+
+    }
+
+    @Override
     public String identify() {
         return "<constant> on line " + lineNum;
     }

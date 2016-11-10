@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -63,6 +64,11 @@ public class Program extends PascalDecl {
         if (progBlock != null) {
             progBlock.check(curScope, lib);
         }
+
+    }
+
+    @Override
+    public void genCode(CodeFile f) {
 
     }
 

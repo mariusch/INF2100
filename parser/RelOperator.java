@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
@@ -19,6 +20,11 @@ class RelOperator extends Operator {
 
     @Override
     void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
+    void genCode(CodeFile f) {
 
     }
 

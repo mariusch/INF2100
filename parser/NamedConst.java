@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -27,6 +28,11 @@ class NamedConst extends UnsignedConstant {
         type = declRef.type;
         type = lib.integerType; //Debug kode
         //System.out.println("NamedConst setter type: " + type + " av " + declRef.getClass());
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

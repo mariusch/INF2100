@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -26,6 +27,11 @@ class InnerExpr extends Factor {
     void check(Block curScope, Library lib) {
         expr.check(curScope, lib);
         type = expr.type;
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

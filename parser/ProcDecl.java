@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
@@ -33,6 +34,11 @@ class ProcDecl extends PascalDecl {
             pdl.check(block, lib);
 
         block.check(curScope, lib);
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

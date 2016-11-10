@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.charValToken;
@@ -25,6 +26,11 @@ class CharLiteral extends UnsignedConstant {
     @Override
     void check(Block curScope, Library lib) {
         type = lib.charType;
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

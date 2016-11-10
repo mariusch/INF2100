@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import scanner.Scanner;
 
 /**
@@ -19,6 +20,11 @@ class TypeDecl extends PascalDecl {
 
     @Override
     void check(Block curScope, Library lib) {
+
+    }
+
+    @Override
+    void genCode(CodeFile f) {
 
     }
 

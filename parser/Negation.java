@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -25,6 +26,11 @@ class Negation extends Factor {
     void check(Block curScope, Library lib) {
         fact.check(curScope, lib);
         type = lib.booleanType;
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

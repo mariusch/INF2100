@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import scanner.Scanner;
 import java.util.ArrayList;
 
@@ -44,6 +45,11 @@ class SimpleExpr extends PascalSyntax {
 
         //Usikker på om dette er rett
         type = tList.get(0).type;
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

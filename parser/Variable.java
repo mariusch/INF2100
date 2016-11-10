@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -34,6 +35,11 @@ class Variable extends Factor {
 
         if (expr != null)
             expr.check(curScope, lib);
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

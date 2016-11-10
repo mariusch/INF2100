@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
@@ -50,6 +51,11 @@ class VarDecl extends PascalDecl {
         }
 
         //System.out.println("Var decl er: " + type + " fra " + vType.getClass());
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

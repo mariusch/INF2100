@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import java.util.ArrayList;
@@ -43,6 +44,11 @@ class FuncCall extends Factor {
         for (Expression e: eList) {
             e.check(curScope, lib);
         }
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

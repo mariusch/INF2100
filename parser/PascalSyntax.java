@@ -21,7 +21,9 @@ public abstract class PascalSyntax {
     }
 
     abstract void check(Block curScope, Library lib);
-    // Del 4: abstract void genCode(CodeFile f);
+
+    abstract void genCode(CodeFile f);
+
     abstract public String identify();
 
     public void error(String message) {

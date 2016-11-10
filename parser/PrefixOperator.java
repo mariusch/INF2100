@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -22,6 +23,11 @@ class PrefixOperator extends Operator {
     @Override
     void check(Block curScope, Library lib) {
         //System.out.println("Kommer vi inn i po sin check?");
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

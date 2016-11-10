@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import java.util.ArrayList;
@@ -26,6 +27,11 @@ class NumberLiteral extends UnsignedConstant {
     void check(Block curScope, Library lib) {
         type = lib.integerType;
         //System.out.println("Number lit type er: " + type);
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

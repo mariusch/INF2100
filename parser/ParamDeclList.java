@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
@@ -25,6 +26,11 @@ class ParamDeclList extends PascalSyntax {
         for (ParamDecl p : pdList) {
             p.check(curScope, lib);
         }
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

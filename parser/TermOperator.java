@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -33,6 +34,11 @@ class TermOperator extends Operator {
 
         /* right.type.checkType(left.type, "termopr-test", this,
                 "Termopr-test is not Boolean."); */
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override

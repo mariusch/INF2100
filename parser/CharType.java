@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import scanner.Scanner;
 
 /**
@@ -19,6 +20,11 @@ class CharType extends Type {
     @Override
     void check(Block curScope, Library lib) {
         type = lib.charType;
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     public static CharType parse(Scanner s) {

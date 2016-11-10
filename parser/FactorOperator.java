@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -30,6 +31,11 @@ class FactorOperator extends Operator {
         } else {
             type = lib.integerType;
         }
+
+    }
+
+    @Override
+    void genCode(CodeFile f) {
 
     }
 

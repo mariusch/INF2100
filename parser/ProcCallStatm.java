@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
@@ -49,6 +50,11 @@ class ProcCallStatm extends Statement {
                 exprList.get(i).check(curScope,lib);
             }
         }
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+
     }
 
     @Override
