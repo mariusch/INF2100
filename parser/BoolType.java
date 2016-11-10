@@ -25,7 +25,8 @@ class BoolType extends Type {
 
     @Override
     void genCode(CodeFile f) {
-
+        String testLabel = f.getLocalLabel(),
+                endLabel = f.getLocalLabel();
     }
 
     public static BoolType parse(Scanner s) {

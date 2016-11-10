@@ -94,7 +94,8 @@ class Block extends PascalSyntax {
 
     @Override
     public void genCode(CodeFile f) {
-
+        String testLabel = f.getLocalLabel(),
+                endLabel = f.getLocalLabel();
     }
 
     @Override

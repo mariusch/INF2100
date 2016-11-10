@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import types.*;
 import types.ArrayType;
 import types.BoolType;

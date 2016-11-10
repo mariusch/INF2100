@@ -36,7 +36,8 @@ class FactorOperator extends Operator {
 
     @Override
     void genCode(CodeFile f) {
-
+        String testLabel = f.getLocalLabel(),
+                endLabel = f.getLocalLabel();
     }
 
     @Override

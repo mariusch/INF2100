@@ -1,5 +1,6 @@
 package parser;
 
+import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
@@ -44,6 +45,12 @@ class FuncDecl extends ProcDecl {
         tn.check(blck, lib);
         type = tn.type;
         blck.check(curScope, lib);
+    }
+
+    @Override
+    void genCode(CodeFile f) {
+        String testLabel = f.getLocalLabel(),
+                endLabel = f.getLocalLabel();
     }
 
     @Override

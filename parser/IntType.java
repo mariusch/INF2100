@@ -25,7 +25,8 @@ class IntType extends Type {
 
     @Override
     void genCode(CodeFile f) {
-
+        String testLabel = f.getLocalLabel(),
+                endLabel = f.getLocalLabel();
     }
 
     public static IntType parse(Scanner s) {

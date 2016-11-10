@@ -74,7 +74,8 @@ class Term extends PascalSyntax {
 
     @Override
     void genCode(CodeFile f) {
-
+        String testLabel = f.getLocalLabel(),
+                endLabel = f.getLocalLabel();
     }
 
     @Override

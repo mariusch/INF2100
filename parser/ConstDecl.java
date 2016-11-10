@@ -34,7 +34,8 @@ class ConstDecl extends PascalDecl {
 
     @Override
     void genCode(CodeFile f) {
-
+        String testLabel = f.getLocalLabel(),
+                endLabel = f.getLocalLabel();
     }
 
     @Override
