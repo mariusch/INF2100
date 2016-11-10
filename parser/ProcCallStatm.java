@@ -42,7 +42,7 @@ class ProcCallStatm extends Statement {
                     types.Type temp = procRef.pdl.pdList.get(i).type;
                     tmp.type.checkType(temp,"param #" + (i+1), this,
                             "wrong type of parameters");
-                }catch(IndexOutOfBoundsException e) {
+                } catch(IndexOutOfBoundsException e) {
                     error("Too many parameters in call on " + procRef.name);
                 }
             } else {
