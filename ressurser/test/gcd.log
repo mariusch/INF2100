@@ -15,8 +15,8 @@ Binding on line 19: res was declared as <var decl> res on line 8
 Binding on line 19: gcd was declared as <func decl> gcd on line 10
 Binding on line 19: v1 was declared as <const decl> v1 on line 6
 Binding on line 19: v2 was declared as <const decl> v2 on line 6
-Binding on line 20: write was declared as <proc decl> null in the library
+Binding on line 20: write was declared as <proc decl> write in the library
 Binding on line 20: v1 was declared as <const decl> v1 on line 6
 Binding on line 20: v2 was declared as <const decl> v2 on line 6
 Binding on line 20: res was declared as <var decl> res on line 8
-Binding on line 20: eol was declared as <const decl> null in the library
+Binding on line 20: eol was declared as <const decl> eol in the library

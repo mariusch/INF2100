@@ -72,14 +72,14 @@ Binding on line 35: m was declared as <var decl> m on line 14
 Binding on line 35: m was declared as <var decl> m on line 14
 Binding on line 37: month was declared as <var decl> month on line 16
 Type check = operands on line 37: type Integer vs type Integer
-Binding on line 38: write was declared as <proc decl> null in the library
+Binding on line 38: write was declared as <proc decl> write in the library
 Binding on line 38: day was declared as <var decl> day on line 17
 Binding on line 38: y was declared as <param decl> y on line 10
-Binding on line 38: eol was declared as <const decl> null in the library
-Binding on line 40: write was declared as <proc decl> null in the library
+Binding on line 38: eol was declared as <const decl> eol in the library
+Binding on line 40: write was declared as <proc decl> write in the library
 Binding on line 40: day was declared as <var decl> day on line 17
 Binding on line 40: y was declared as <param decl> y on line 10
-Binding on line 40: eol was declared as <const decl> null in the library
+Binding on line 40: eol was declared as <const decl> eol in the library
 Binding on line 44: y was declared as <var decl> y on line 8
 Binding on line 45: y was declared as <var decl> y on line 8
 Type check <= operands on line 45: type Integer vs type Integer

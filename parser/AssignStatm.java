@@ -26,8 +26,8 @@ class AssignStatm extends Statement {
         variable.check(curScope, lib);
         variable.vRef.checkWhetherAssignable(this); //fra foilene?
         expr.check(curScope, lib);
-        /*expr.type.checkType(variable.type, ":=", this,
-                "While-test is not Boolean."); */
+        expr.type.checkType(variable.type, ":=", this,
+                ":= is not Boolean.");
     }
 
     @Override
