@@ -32,8 +32,11 @@ class TermOperator extends Operator {
             type = lib.integerType;
         }
 
-        /* right.type.checkType(left.type, "termopr-test", this,
-                "Termopr-test is not Boolean."); */
+        right.type.checkType(left.type, "left " + opr + " operand" , this,
+                opr + " is different type.");
+
+        left.type.checkType(right.type, "right " + opr, this,
+                opr + " is different type.");
     }
 
     @Override
