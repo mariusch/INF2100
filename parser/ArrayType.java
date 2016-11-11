@@ -5,6 +5,8 @@ import main.Main;
 import scanner.Scanner;
 import scanner.TokenKind;
 
+import java.util.ArrayList;
+
 /**
  * Parser class used for creating a syntax tree with tokens from the scanner module.
  *
@@ -15,6 +17,7 @@ import scanner.TokenKind;
 class ArrayType extends Type {
     private Constant con;
     private Constant con2;
+
     private Type t;
 
     types.Type type;
@@ -27,10 +30,13 @@ class ArrayType extends Type {
     void check(Block curScope, Library lib) {
         con.check(curScope, lib);
         con2.check(curScope, lib);
+
+
         t.check(curScope, lib);
         type = lib.booleanType; //Debug
 
         // typeCheck her
+        con.type.checkType(con2.type, "array limits", this, "Different types in assignment!");
     }
 
     @Override
