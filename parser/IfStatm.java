@@ -27,7 +27,10 @@ class IfStatm extends Statement {
     void check(Block curScope, Library lib) {
         exp.check(curScope, lib);
 
-        for (Statement s:stm) {
+        exp.type.checkType(lib.booleanType, "if-test", this,
+                "If-test is not Boolean.");
+
+        for (Statement s : stm) {
             s.check(curScope, lib);
         }
     }
