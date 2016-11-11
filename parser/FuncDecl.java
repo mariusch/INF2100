@@ -15,7 +15,7 @@ import static scanner.TokenKind.*;
  */
 class FuncDecl extends ProcDecl {
 
-    private String name;
+    public String name;
     ParamDeclList pdl;
     private parser.TypeName tn;
     private Block blck;

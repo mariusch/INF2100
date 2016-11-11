@@ -32,12 +32,37 @@ class FuncCall extends Factor {
         d.checkWhetherFunction(this);
         funcRef = (FuncDecl)d;
 
-        if ((funcRef.pdl != null) && funcRef.pdl.pdList.size() > eList.size()){
+        for (int i = 0; i < eList.size(); i++) {
+
+            if (funcRef.lineNum != -1) {
+                Expression tmp = eList.get(i);
+                tmp.check(curScope, lib);
+                try {
+                    if (eList.size() < funcRef.pdl.pdList.size())
+                        error("Too few parameters in call on " + funcRef.name);
+
+                    types.Type temp = funcRef.pdl.pdList.get(i).type;
+                    tmp.type.checkType(temp, "param #" + (i + 1), this,
+                            "wrong type of parameters");
+                } catch (IndexOutOfBoundsException e) {
+                    error("Too many parameters in call on " + funcRef.name);
+                }
+            } else {
+                eList.get(i).check(curScope, lib);
+            }
+
+        }
+
+
+
+
+
+        /*if ((funcRef.pdl != null) && funcRef.pdl.pdList.size() > eList.size()){
             Main.error("Error at line " + lineNum + ": Too few parameters in call on " + name + "!");
         }
         else if ((funcRef.pdl != null) && funcRef.pdl.pdList.size() < eList.size()){
             Main.error("Error at line " + lineNum + ": Too many parameters in call on " + name + "!");
-        }
+        }*/
 
         type = funcRef.type;
 
