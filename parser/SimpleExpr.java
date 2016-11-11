@@ -38,8 +38,8 @@ class SimpleExpr extends PascalSyntax {
                 TermOperator to = toList.get(i);
                 Term right = tList.get(i+1);
                 right.check(curScope, lib);
-                to.left = left;
-                to.right = right;
+                to.left = right;
+                to.right = left;
                 to.check(curScope, lib);
             }
         }

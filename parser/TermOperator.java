@@ -16,7 +16,7 @@ class TermOperator extends Operator {
 
     String opr;
 
-    Term left,right; //Skal brukes til checkType
+    Term left, right;
     types.Type type;
 
     TermOperator(int lNum) {

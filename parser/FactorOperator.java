@@ -32,6 +32,12 @@ class FactorOperator extends Operator {
             type = lib.integerType;
         }
 
+        /*
+
+        Her skal det være typeCheck
+
+         */
+
     }
 
     @Override
