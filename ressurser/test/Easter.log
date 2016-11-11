@@ -126,7 +126,7 @@ Type check right + on line 35: type Integer vs type Integer
 Type check := on line 35: type Integer vs type Integer
 Binding on line 37: month was declared as <var decl> month on line 16
 Type check = operands on line 37: type Integer vs type Integer
-Type check := on line 37: type Boolean vs type Boolean
+Type check if-test on line 37: type Boolean vs type Boolean
 Binding on line 38: write was declared as <proc decl> write in the library
 Binding on line 38: day was declared as <var decl> day on line 17
 Binding on line 38: y was declared as <param decl> y on line 10
