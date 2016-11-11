@@ -17,7 +17,8 @@ class FactorOperator extends Operator {
 
     protected String token;
 
-    types.Type type;
+    protected Factor right, left;
+
 
     FactorOperator(int lNum) {
         super(lNum);
@@ -32,12 +33,7 @@ class FactorOperator extends Operator {
             type = lib.integerType;
         }
 
-        /*
-
-        Her skal det være typeCheck
-
-         */
-
+        //Her skal det være typecheck
     }
 
     @Override

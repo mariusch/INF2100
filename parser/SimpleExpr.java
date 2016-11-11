@@ -30,7 +30,7 @@ class SimpleExpr extends PascalSyntax {
             po.check(curScope, lib);
         }
 
-        for(int i = 0; i <tList.size(); i++){
+        for (int i = 0; i <tList.size(); i++) {
             Term left = tList.get(i);
             left.check(curScope, lib);
 
@@ -38,8 +38,8 @@ class SimpleExpr extends PascalSyntax {
                 TermOperator to = toList.get(i);
                 Term right = tList.get(i+1);
                 right.check(curScope, lib);
-                to.left = right;
-                to.right = left;
+                to.left = left;
+                to.right = right;
                 to.check(curScope, lib);
             }
         }

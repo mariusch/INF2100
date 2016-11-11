@@ -9,6 +9,8 @@ package parser;
  */
 abstract class Operator extends PascalSyntax {
 
+    protected types.Type type;
+
     Operator(int lNum) {
         super(lNum);
     }

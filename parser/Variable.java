@@ -17,8 +17,7 @@ class Variable extends Factor {
     private Expression expr;
     private String name;
 
-    PascalDecl vRef;
-    types.Type type;
+    protected PascalDecl vRef;
 
     Variable(int lNum) {
         super(lNum);

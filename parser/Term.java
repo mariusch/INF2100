@@ -25,37 +25,11 @@ class Term extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
 
-        /*
-        //Instanceof under er KUN brukt for debug nå
-        if (fList.get(0) instanceof UnsignedConstant) {
-            System.out.println("Factor type: UnsignedConst");
-
-            if (fList.get(0) instanceof NumberLiteral){
-                System.out.println("som igjen er... NumberLiteral");
-            } else if (fList.get(0) instanceof CharLiteral){
-                System.out.println("som igjen er... CharLiteral");
-            } else if (fList.get(0) instanceof NamedConst){
-                System.out.println("som igjen er... Named Const");
-            }
-
-        } else if (fList.get(0) instanceof Variable) {
-            System.out.println("Factor type: Variable");
-        } else if (fList.get(0) instanceof FuncCall) {
-            System.out.println("Factor type: Func call");
-        } else if (fList.get(0) instanceof InnerExpr) {
-            System.out.println("Factor type: Inner Exp");
-        } else if (fList.get(0) instanceof Negation) {
-            System.out.println("Factor type: Negation");
-        }
-        */
-
-
         //Setter Type
         Factor f = fList.get(0);
         f.check(curScope, lib);
         type = f.type;
         type = lib.integerType; //Debug kode
-        //System.out.println("Term type er: " + type + " kall på: " + f);
 
         //Flere factorer? Kjører Check og endrer Type
         for (int i = 0; i < fOList.size(); i++) {

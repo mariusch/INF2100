@@ -19,8 +19,6 @@ class FuncCall extends Factor {
     private ArrayList<Expression> eList = new ArrayList<Expression>();
     private FuncDecl funcRef;
 
-    types.Type type;
-
     FuncCall(int lNum) {
         super(lNum);
     }

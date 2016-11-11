@@ -17,7 +17,6 @@ class TermOperator extends Operator {
     String opr;
 
     Term left, right;
-    types.Type type;
 
     TermOperator(int lNum) {
         super(lNum);

@@ -16,8 +16,6 @@ class TypeName extends Type {
 
     protected String name;
 
-    types.Type type;
-
     TypeName(int n) {
         super(n);
     }

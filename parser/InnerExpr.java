@@ -17,8 +17,6 @@ class InnerExpr extends Factor {
 
     private Expression expr;
 
-    types.Type type;
-
     InnerExpr(int lNum) {
         super(lNum);
     }

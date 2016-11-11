@@ -16,7 +16,6 @@ class NamedConst extends UnsignedConstant {
 
     private String name;
     protected PascalDecl declRef;
-    protected types.Type type;
 
     NamedConst(int lNum) {
         super(lNum);
