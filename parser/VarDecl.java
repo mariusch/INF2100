@@ -17,9 +17,6 @@ import static scanner.TokenKind.*;
 class VarDecl extends PascalDecl {
 
     private parser.Type vType;
-    private String name;
-
-    types.Type type;
 
     VarDecl(String id, int lNum) {
         super(id, lNum);
@@ -29,7 +26,6 @@ class VarDecl extends PascalDecl {
     void check(Block curScope, Library lib) {
         curScope.addDecl(name, this);
 
-        //System.out.println("var decl TYPE:" + vType.getClass());
         vType.check(curScope, lib);
         type = vType.type;
 
@@ -94,19 +90,17 @@ class VarDecl extends PascalDecl {
 
     @Override
     void checkWhetherFunction(PascalSyntax where) {
-        //Kast feil
         where.error(this.name + " is a variable, not a function.");
     }
 
     @Override
     void checkWhetherProcedure(PascalSyntax where) {
-        //Kast feil
         where.error(this.name + " is a variable, not a procedure.");
     }
 
     @Override
     void checkWhetherValue(PascalSyntax where) {
-        //Tom
+        //This method should be empty
 
     }
 }

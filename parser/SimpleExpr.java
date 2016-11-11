@@ -31,12 +31,16 @@ class SimpleExpr extends PascalSyntax {
         }
 
         for (int i = 0; i <tList.size(); i++) {
-            Term left = tList.get(i);
+            Term left, right;
+
+            left = tList.get(i);
             left.check(curScope, lib);
 
             if (i < toList.size()) {
                 TermOperator to = toList.get(i);
-                Term right = tList.get(i+1);
+                right = tList.get(i+1);
+                System.out.println("Left er: " + left);
+                System.out.println("Right er: " + right + "\n");
                 right.check(curScope, lib);
                 to.left = left;
                 to.right = right;
