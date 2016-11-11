@@ -17,6 +17,7 @@ public class ArrayType extends Type {
     }
 
     @Override public void checkType(Type tx, String op, PascalSyntax where, String message) {
+        System.out.println("Dette er forhaapentligvis en array");
         if (tx instanceof ArrayType) {
             ArrayType txa = (ArrayType)tx;
             indexType.checkType(txa.indexType, "array index", where, message);

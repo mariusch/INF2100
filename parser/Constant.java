@@ -16,7 +16,7 @@ class Constant extends PascalSyntax {
     private PrefixOperator po;
     private UnsignedConstant uc;
 
-    private int constVal;
+    int constVal;
     protected types.Type type;
 
     Constant(int lNum) {

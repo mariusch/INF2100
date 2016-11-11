@@ -1,6 +1,7 @@
 program TypeError;
 
-var arr : array [2..10] of Boolean;
+
+var arr : array [2..'c'] of Boolean;
     i	  : integer;
 	
 begin
