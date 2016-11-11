@@ -12,8 +12,6 @@ import scanner.Scanner;
  */
 class BoolType extends Type {
 
-    protected types.Type type;
-
     BoolType(int n) {
         super(n);
     }

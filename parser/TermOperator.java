@@ -14,9 +14,9 @@ import static scanner.TokenKind.*;
  */
 class TermOperator extends Operator {
 
-    String opr;
+    protected String opr;
 
-    Term left, right;
+    protected Term left, right;
 
     TermOperator(int lNum) {
         super(lNum);

@@ -15,12 +15,10 @@ import java.util.ArrayList;
  * @version 2016-10-17
  */
 class ArrayType extends Type {
-    Constant con;
-    Constant con2;
+    protected Constant con;
+    protected Constant con2;
 
-    public Type t;
-
-    types.Type type;
+    protected Type t;
 
     ArrayType(int n) {
         super(n);
