@@ -34,7 +34,7 @@ class TermOperator extends Operator {
         right.type.checkType(left.type, "left " + opr + " operand" , this,
                 opr + " is different type.");
 
-        left.type.checkType(right.type, "right " + opr, this,
+        left.type.checkType(right.type, "right " + opr + " operand" , this,
                 opr + " is different type.");
     }
 

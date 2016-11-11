@@ -5,7 +5,6 @@ import main.Main;
 import scanner.Scanner;
 import static scanner.TokenKind.*;
 
-
 /**
  * Parser class used for creating a syntax tree with tokens from the scanner module.
  *
@@ -33,7 +32,11 @@ class FactorOperator extends Operator {
             type = lib.integerType;
         }
 
-        //Her skal det være typecheck
+        right.type.checkType(left.type, "left " + token + " operand" , this,
+                token + " is different type.");
+
+        left.type.checkType(right.type, "right " + token + " operand" , this,
+                token + " is different type.");
     }
 
     @Override

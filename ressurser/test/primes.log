@@ -12,6 +12,8 @@ Type check <= operands on line 17: type Integer vs type Integer
 Type check while-test on line 17: type Boolean vs type Boolean
 Binding on line 19: i2 was declared as <var decl> i2 on line 14
 Binding on line 19: i1 was declared as <var decl> i1 on line 13
+Type check left * operand on line 19: type Integer vs type Integer
+Type check right * operand on line 19: type Integer vs type Integer
 Type check := on line 19: type Integer vs type Integer
 Binding on line 20: i2 was declared as <var decl> i2 on line 14
 Binding on line 20: limit was declared as <const decl> limit on line 7
@@ -25,13 +27,13 @@ Binding on line 23: i2 was declared as <var decl> i2 on line 14
 Binding on line 23: i2 was declared as <var decl> i2 on line 14
 Binding on line 23: i1 was declared as <var decl> i1 on line 13
 Type check left + operand on line 23: type Integer vs type Integer
-Type check right + on line 23: type Integer vs type Integer
+Type check right + operand on line 23: type Integer vs type Integer
 Binding on line 23: i1 was declared as <var decl> i1 on line 13
 Type check := on line 23: type Integer vs type Integer
 Binding on line 25: i1 was declared as <var decl> i1 on line 13
 Binding on line 25: i1 was declared as <var decl> i1 on line 13
 Type check left + operand on line 25: type Integer vs type Integer
-Type check right + on line 25: type Integer vs type Integer
+Type check right + operand on line 25: type Integer vs type Integer
 Type check := on line 25: type Integer vs type Integer
 Binding on line 29: integer was declared as <type decl> integer in the library
 Binding on line 31: x was declared as <param decl> x on line 29

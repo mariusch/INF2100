@@ -34,8 +34,11 @@ class Term extends PascalSyntax {
         //Flere factorer? Kjører Check og endrer Type
         for (int i = 0; i < fOList.size(); i++) {
             //Sjekk om annen type ...
-            fOList.get(i).check(curScope, lib);
+            FactorOperator fo = fOList.get(i);
             fList.get(i+1).check(curScope, lib);
+            fo.left = f;
+            fo.right = fList.get(i+1);
+            fo.check(curScope, lib);
 
             //baserer type på factor opr
             if (fOList.get(i).type.equals("and")) {
