@@ -31,6 +31,7 @@ class ArrayType extends Type {
 
 
         t.check(curScope, lib);
+
         //type = lib.booleanType; //Debug
 
 

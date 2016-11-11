@@ -29,7 +29,7 @@ class Term extends PascalSyntax {
         Factor f = fList.get(0);
         f.check(curScope, lib);
         type = f.type;
-        type = lib.integerType; //Debug kode
+        //type = lib.integerType; //Debug kode
 
         //Flere factorer? Kjører Check og endrer Type
         for (int i = 0; i < fOList.size(); i++) {

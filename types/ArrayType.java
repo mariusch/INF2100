@@ -7,6 +7,7 @@ public class ArrayType extends Type {
     public int loLim, hiLim;
 
     public ArrayType(Type e, Type i, int lo, int hi) {
+        System.out.println("Laget en array av " + e.identify());
         elemType = e;
         indexType = i;  loLim = lo;  hiLim = hi;
     }
@@ -17,7 +18,7 @@ public class ArrayType extends Type {
     }
 
     @Override public void checkType(Type tx, String op, PascalSyntax where, String message) {
-        System.out.println("Dette er forhaapentligvis en array");
+
         if (tx instanceof ArrayType) {
             ArrayType txa = (ArrayType)tx;
             indexType.checkType(txa.indexType, "array index", where, message);
