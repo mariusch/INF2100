@@ -15,7 +15,7 @@ import static scanner.TokenKind.*;
 class ConstDecl extends PascalDecl {
 
     private Constant con;
-    private String name;
+    //private String name;
 
     types.Type type;
     protected int constVal;
