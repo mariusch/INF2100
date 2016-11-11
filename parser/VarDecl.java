@@ -16,7 +16,7 @@ import static scanner.TokenKind.*;
  */
 class VarDecl extends PascalDecl {
 
-    private parser.Type vType;
+    private Type vType;
     private String name;
 
     types.Type type;
@@ -35,7 +35,17 @@ class VarDecl extends PascalDecl {
 
         //Det over burde holde?
         if (vType instanceof ArrayType){
-            type = lib.booleanType; //Feil
+            //type = lib.booleanType; //Feil
+
+            //if (ArrayType) vType.t =
+
+            ArrayType tmp = (ArrayType) vType;
+
+            System.out.println(tmp.t.type);
+
+            type = new types.ArrayType(tmp.t.type, tmp.con.type, tmp.con.constVal, tmp.con2.constVal);
+
+            
         }
         else if (vType instanceof TypeName) {
             TypeName tn = (TypeName) vType;

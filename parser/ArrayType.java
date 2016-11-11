@@ -15,10 +15,10 @@ import java.util.ArrayList;
  * @version 2016-10-17
  */
 class ArrayType extends Type {
-    private Constant con;
-    private Constant con2;
+    Constant con;
+    Constant con2;
 
-    private Type t;
+    public Type t;
 
     types.Type type;
 
@@ -35,8 +35,11 @@ class ArrayType extends Type {
         t.check(curScope, lib);
         type = lib.booleanType; //Debug
 
+        //if (t instanceof )
+
         // typeCheck her
-        con.type.checkType(con2.type, "array limits", this, "Different types in assignment!");
+        //con.type.checkType(con2.type, "array limits", this, "Different types in assignment!");
+        //Skal man sjekke en gang til?
     }
 
     @Override
