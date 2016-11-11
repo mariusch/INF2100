@@ -31,7 +31,8 @@ class ArrayType extends Type {
 
 
         t.check(curScope, lib);
-        type = lib.booleanType; //Debug
+        //type = lib.booleanType; //Debug
+
 
         //if (t instanceof )
 

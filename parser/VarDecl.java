@@ -40,8 +40,6 @@ class VarDecl extends PascalDecl {
             System.out.println(tmp.t.type);
 
             type = new types.ArrayType(tmp.t.type, tmp.con.type, tmp.con.constVal, tmp.con2.constVal);
-
-            
         }
         else if (vType instanceof TypeName) {
             TypeName tn = (TypeName) vType;
