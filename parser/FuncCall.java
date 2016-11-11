@@ -51,17 +51,6 @@ class FuncCall extends Factor {
 
         }
 
-
-
-
-
-        /*if ((funcRef.pdl != null) && funcRef.pdl.pdList.size() > eList.size()){
-            Main.error("Error at line " + lineNum + ": Too few parameters in call on " + name + "!");
-        }
-        else if ((funcRef.pdl != null) && funcRef.pdl.pdList.size() < eList.size()){
-            Main.error("Error at line " + lineNum + ": Too many parameters in call on " + name + "!");
-        }*/
-
         type = funcRef.type;
 
         for (Expression e: eList) {

@@ -12,8 +12,6 @@ import scanner.Scanner;
  */
 class TypeDecl extends PascalDecl {
 
-    protected types.Type type;
-
     TypeDecl(String id, int lNum) {
         super(id, lNum);
     }

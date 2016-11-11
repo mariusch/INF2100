@@ -39,8 +39,8 @@ class ProcCallStatm extends Statement {
                 try {
                     if (exprList.size() < procRef.pdl.pdList.size())
                         error("Too few parameters in call on " + procRef.name);
-
                     types.Type temp = procRef.pdl.pdList.get(i).type;
+                    System.out.println(tmp.type);
                     tmp.type.checkType(temp,"param #" + (i+1), this,
                             "wrong type of parameters");
                 } catch(IndexOutOfBoundsException e) {

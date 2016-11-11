@@ -12,8 +12,6 @@ import scanner.Scanner;
  */
 class IntType extends Type {
 
-    protected types.Type type;
-
     IntType(int n) {
         super(n);
     }

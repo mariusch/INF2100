@@ -14,7 +14,6 @@ import scanner.TokenKind;
  */
 class ProcDecl extends PascalDecl {
 
-    //protected String name;
     protected ParamDeclList pdl;
     private Block block;
 

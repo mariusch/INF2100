@@ -17,8 +17,6 @@ class ParamDecl extends PascalDecl {
     private String name;
     private TypeName tn;
 
-    types.Type type;
-
     ParamDecl(String id, int lNum) {
         super(id, lNum);
     }

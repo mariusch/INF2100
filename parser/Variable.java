@@ -29,8 +29,7 @@ class Variable extends Factor {
         vRef = d;
         vRef.checkWhetherValue(this);
         type = vRef.type;
-        type = lib.integerType; //Debug kode
-        //System.out.println("Variable type er: " + type + " fra klasse: " + vRef.getClass());
+        //type = lib.integerType; //Debug kode
 
         if (expr != null)
             expr.check(curScope, lib);
