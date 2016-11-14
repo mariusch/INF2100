@@ -34,6 +34,8 @@ class SimpleExpr extends PascalSyntax {
         left = tList.get(0);
         left.check(curScope, lib);
 
+        type = tList.get(0).type;
+
         for (int i = 0; i <tList.size(); i++) {
 
             if (i < toList.size()) {
@@ -47,10 +49,12 @@ class SimpleExpr extends PascalSyntax {
                 to.left = left;
                 to.right = right;
                 to.check(curScope, lib);
+
+                type = to.type;
             }
         }
 
-        type = tList.get(0).type;
+        //type = tList.get(0).type;
     }
 
     @Override
