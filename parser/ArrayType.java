@@ -38,7 +38,7 @@ class ArrayType extends Type {
         //if (t instanceof )
 
         // typeCheck her
-        //con.type.checkType(con2.type, "array limits", this, "Different types in assignment!");
+        con.type.checkType(con2.type, "array limits", this, "Different types in assignment!");
         //Skal man sjekke en gang til?
     }
 
