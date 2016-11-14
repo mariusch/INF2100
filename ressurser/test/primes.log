@@ -21,5 +21,3 @@ Type check while-test on line 20: type Boolean vs type Boolean
 Binding on line 22: prime was declared as <var decl> prime on line 9
 Binding on line 22: i2 was declared as <var decl> i2 on line 14
 Binding on line 22: false was declared as <const decl> false in the library
-Type check := on line 22: type Integer vs type array [0..0: type Integer] of type Boolean
-Error at line 22: := is not Boolean.

@@ -25,28 +25,32 @@ class Term extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
 
-        //Setter Type
         Factor f = fList.get(0);
         f.check(curScope, lib);
-        type = f.type;
-        //type = lib.integerType; //Debug kode
 
-        //Flere factorer? Kjører Check og endrer Type
-        for (int i = 0; i < fOList.size(); i++) {
-            //Sjekk om annen type ...
-            FactorOperator fo = fOList.get(i);
-            fList.get(i+1).check(curScope, lib);
-            fo.left = f;
-            fo.right = fList.get(i+1);
-            fo.check(curScope, lib);
+        if (fOList.size() != 0) {
 
-            //baserer type på factor opr
-            if (fOList.get(i).type.equals("and")) {
-                type = lib.booleanType;
-            } else {
-                type = lib.integerType;
+            for (int i = 0; i < fOList.size(); i++) {
+                //Sjekk om annen type ...
+                FactorOperator fo = fOList.get(i);
+                fList.get(i+1).check(curScope, lib);
+                fo.left = f;
+                fo.right = fList.get(i+1);
+                fo.check(curScope, lib);
+
+                //baserer type på factor opr
+                if (fOList.get(i).type.equals("and")) {
+                    type = lib.booleanType;
+                } else {
+                    type = lib.integerType;
+                }
             }
+        } else {
+            type = f.type;
+            //System.out.println("Factor er: " + f.getClass() + f.name + " med type " + f.type + " " + f.identify());
+            //type = lib.integerType; //Debug kode
         }
+
     }
 
     @Override

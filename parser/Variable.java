@@ -30,6 +30,8 @@ class Variable extends Factor {
         vRef.checkWhetherValue(this);
         type = vRef.type;
         //type = lib.integerType; //Debug kode
+        System.out.println("Factor er: " + d.getClass() + name + " med type " + vRef.type + " " + d.identify());
+
 
         if (expr != null)
             expr.check(curScope, lib);
