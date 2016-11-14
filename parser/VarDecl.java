@@ -16,7 +16,7 @@ import static scanner.TokenKind.*;
  */
 class VarDecl extends PascalDecl {
 
-    private parser.Type vType;
+    protected parser.Type vType;
 
     VarDecl(String id, int lNum) {
         super(id, lNum);
@@ -45,8 +45,6 @@ class VarDecl extends PascalDecl {
                 type = lib.charType;
             }
         }
-
-        //System.out.println("Var decl er: " + type + " fra " + vType.getClass());
     }
 
     @Override

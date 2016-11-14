@@ -23,13 +23,12 @@ class AssignStatm extends Statement {
 
     @Override
     void check(Block curScope, Library lib) {
+
         variable.check(curScope, lib);
         variable.vRef.checkWhetherAssignable(this);
         expr.check(curScope, lib);
         expr.type.checkType(variable.type, ":=", this,
                 ":= is not Boolean.");
-
-        //variable.type.checkType(expr.type, "array index", this, "Different types in assignment!");
     }
 
     @Override

@@ -3,6 +3,8 @@ package parser;
 import main.CodeFile;
 import main.Main;
 import scanner.Scanner;
+import types.*;
+
 import static scanner.TokenKind.*;
 
 /**
@@ -32,8 +34,16 @@ class Variable extends Factor {
 
         if (expr != null)
             expr.check(curScope, lib);
-        System.out.println("Factor er: " + d.getClass() + " navn " + name + " med type " + d.type + " " + d.identify());
 
+
+        if (vRef instanceof VarDecl) {
+            VarDecl vd = (VarDecl) vRef;
+
+            if (vd.vType instanceof ArrayType) {
+                parser.ArrayType at = (ArrayType) vd.vType;
+                expr.type.checkType(at.con.type, "array index", this, "Different types in assignment!");
+            }
+        }
     }
 
     @Override

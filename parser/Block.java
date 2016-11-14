@@ -33,30 +33,18 @@ class Block extends PascalSyntax {
         if (decls.containsKey(id)){
             d.error(id + " declared twice in the same block!");
         }
-        //System.out.println("La til: " + id + " " + d.identify() + " i scope " + this);
         decls.put(id, d);
     }
 
     PascalDecl findDecl(String id, PascalSyntax where) {
         PascalDecl d = decls.get(id);
 
-        //Debugg
-       /* System.out.println("\nPRINTER ALT I SCOPE: " + this.getClass());
-        for (String pd : decls.keySet()) {
-            System.out.println(pd);
-        }
-        System.out.println("\n"); */
-
         if (d != null) {
-            //System.out.println("Leter etter " + id + " i curScope: ");
-            //System.out.println("HER: " + this.identify());
             Main.log.noteBinding(id, where, d);
             return d;
         }
 
         if (outerScope != null ) {
-            //System.out.println("Leter etter " + id + " i outer scope: ");
-            //System.out.println(outerScope.getClass());
             return outerScope.findDecl(id, where);
         }
 
@@ -68,7 +56,6 @@ class Block extends PascalSyntax {
     void check(Block curScope, Library lib) {
 
         outerScope = curScope;
-        //System.out.println(outerScope);
 
         if (cdp != null)
             cdp.check(this, lib);
@@ -85,11 +72,6 @@ class Block extends PascalSyntax {
         if (stml != null)
             stml.check(this, lib);
 
-
-        //Kan dette være feilen?
-        //Context er program. Program sin check kjører progblock sin check.
-        //Siden progblock er en check kjører den context.check() osv ...
-        //context.check(this, lib);
     }
 
     @Override
