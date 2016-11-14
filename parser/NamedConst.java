@@ -26,6 +26,8 @@ class NamedConst extends UnsignedConstant {
         declRef = curScope.findDecl(name, this);
         type = declRef.type;
         //type = lib.integerType; //Debug kode
+
+        //ConstVal??
     }
 
     @Override

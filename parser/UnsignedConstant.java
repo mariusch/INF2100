@@ -15,7 +15,7 @@ import static scanner.TokenKind.subtractToken;
 abstract class UnsignedConstant extends Factor {
 
     //protected types.Type type;
-    protected int constVal;
+    int constVal;
 
     UnsignedConstant(int lNum) {
         super(lNum);

@@ -25,6 +25,14 @@ class NumberLiteral extends UnsignedConstant {
     void check(Block curScope, Library lib) {
         type = lib.integerType;
         //System.out.println("Number lit type er: " + type);
+
+
+        //Beregner constVal
+        String tmp = "";
+        for (int i = 0; i < num.size(); i++){
+            tmp += num.get(i);
+        }
+        constVal = Integer.parseInt(tmp);
     }
 
     @Override
