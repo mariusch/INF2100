@@ -30,10 +30,10 @@ public class Library extends Block {
         this.addDecl("write", new ProcDecl("write", -1));
         this.addDecl("eol", new ConstDecl("eol", -1));
 
-        TypeDecl falseConDecl = new TypeDecl("false", -1);
+        ConstDecl falseConDecl = new ConstDecl("false", -1);
         falseConDecl.setType(this.booleanType);
         this.addDecl("false", falseConDecl);
-        TypeDecl trueConDecl = new TypeDecl("true", -1);
+        ConstDecl trueConDecl = new ConstDecl("true", -1);
         trueConDecl.setType(this.booleanType);
         this.addDecl("true", trueConDecl);
 

@@ -67,6 +67,10 @@ class ConstDecl extends PascalDecl {
         return cd;
     }
 
+    void setType(types.Type t) {
+        this.type = t;
+    }
+
     @Override
     void checkWhetherAssignable(PascalSyntax where) {
         where.error("You cannot assign to a constant.");

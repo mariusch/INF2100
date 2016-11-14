@@ -87,4 +87,6 @@ class Constant extends PascalSyntax {
         return con;
     }
 
+
+
 }
