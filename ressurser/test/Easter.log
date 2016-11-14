@@ -52,7 +52,6 @@ Binding on line 27: b was declared as <var decl> b on line 12
 Binding on line 27: f was declared as <var decl> f on line 13
 Type check left - operand on line 27: type Integer vs type Integer
 Type check right - operand on line 27: type Integer vs type Integer
-Binding on line 27: f was declared as <var decl> f on line 13
 Type check left + operand on line 27: type Integer vs type Integer
 Type check right + operand on line 27: type Integer vs type Integer
 Type check left div operand on line 27: type Integer vs type Integer
@@ -65,15 +64,12 @@ Type check right * operand on line 28: type Integer vs type Integer
 Binding on line 28: b was declared as <var decl> b on line 12
 Type check left + operand on line 28: type Integer vs type Integer
 Type check right + operand on line 28: type Integer vs type Integer
-Binding on line 28: b was declared as <var decl> b on line 12
 Binding on line 28: d was declared as <var decl> d on line 12
 Type check left - operand on line 28: type Integer vs type Integer
 Type check right - operand on line 28: type Integer vs type Integer
-Binding on line 28: d was declared as <var decl> d on line 12
 Binding on line 28: g was declared as <var decl> g on line 13
 Type check left - operand on line 28: type Integer vs type Integer
 Type check right - operand on line 28: type Integer vs type Integer
-Binding on line 28: g was declared as <var decl> g on line 13
 Type check left + operand on line 28: type Integer vs type Integer
 Type check right + operand on line 28: type Integer vs type Integer
 Type check left mod operand on line 28: type Integer vs type Integer
@@ -95,25 +91,17 @@ Type check left * operand on line 31: type Integer vs type Integer
 Type check right * operand on line 31: type Integer vs type Integer
 Type check left + operand on line 31: type Integer vs type Integer
 Type check right + operand on line 31: type Integer vs type Integer
-Binding on line 31: e was declared as <var decl> e on line 12
-Type check left * operand on line 31: type Integer vs type Integer
-Type check right * operand on line 31: type Integer vs type Integer
 Binding on line 31: i was declared as <var decl> i on line 13
 Type check left * operand on line 31: type Integer vs type Integer
 Type check right * operand on line 31: type Integer vs type Integer
 Type check left + operand on line 31: type Integer vs type Integer
 Type check right + operand on line 31: type Integer vs type Integer
-Binding on line 31: i was declared as <var decl> i on line 13
-Type check left * operand on line 31: type Integer vs type Integer
-Type check right * operand on line 31: type Integer vs type Integer
 Binding on line 31: h was declared as <var decl> h on line 13
 Type check left - operand on line 31: type Integer vs type Integer
 Type check right - operand on line 31: type Integer vs type Integer
-Binding on line 31: h was declared as <var decl> h on line 13
 Binding on line 31: k was declared as <var decl> k on line 13
 Type check left - operand on line 31: type Integer vs type Integer
 Type check right - operand on line 31: type Integer vs type Integer
-Binding on line 31: k was declared as <var decl> k on line 13
 Type check left mod operand on line 31: type Integer vs type Integer
 Type check right mod operand on line 31: type Integer vs type Integer
 Type check := on line 31: type Integer vs type Integer
@@ -124,17 +112,11 @@ Type check left * operand on line 32: type Integer vs type Integer
 Type check right * operand on line 32: type Integer vs type Integer
 Type check left + operand on line 32: type Integer vs type Integer
 Type check right + operand on line 32: type Integer vs type Integer
-Binding on line 32: h was declared as <var decl> h on line 13
-Type check left * operand on line 32: type Integer vs type Integer
-Type check right * operand on line 32: type Integer vs type Integer
 Binding on line 32: l was declared as <var decl> l on line 14
 Type check left * operand on line 32: type Integer vs type Integer
 Type check right * operand on line 32: type Integer vs type Integer
 Type check left + operand on line 32: type Integer vs type Integer
 Type check right + operand on line 32: type Integer vs type Integer
-Binding on line 32: l was declared as <var decl> l on line 14
-Type check left * operand on line 32: type Integer vs type Integer
-Type check right * operand on line 32: type Integer vs type Integer
 Type check left div operand on line 32: type Integer vs type Integer
 Type check right div operand on line 32: type Integer vs type Integer
 Type check := on line 32: type Integer vs type Integer
@@ -143,15 +125,11 @@ Binding on line 34: h was declared as <var decl> h on line 13
 Binding on line 34: l was declared as <var decl> l on line 14
 Type check left + operand on line 34: type Integer vs type Integer
 Type check right + operand on line 34: type Integer vs type Integer
-Binding on line 34: l was declared as <var decl> l on line 14
 Binding on line 34: m was declared as <var decl> m on line 14
 Type check left * operand on line 34: type Integer vs type Integer
 Type check right * operand on line 34: type Integer vs type Integer
 Type check left - operand on line 34: type Integer vs type Integer
 Type check right - operand on line 34: type Integer vs type Integer
-Binding on line 34: m was declared as <var decl> m on line 14
-Type check left * operand on line 34: type Integer vs type Integer
-Type check right * operand on line 34: type Integer vs type Integer
 Type check left + operand on line 34: type Integer vs type Integer
 Type check right + operand on line 34: type Integer vs type Integer
 Type check left div operand on line 34: type Integer vs type Integer
@@ -162,15 +140,11 @@ Binding on line 35: h was declared as <var decl> h on line 13
 Binding on line 35: l was declared as <var decl> l on line 14
 Type check left + operand on line 35: type Integer vs type Integer
 Type check right + operand on line 35: type Integer vs type Integer
-Binding on line 35: l was declared as <var decl> l on line 14
 Binding on line 35: m was declared as <var decl> m on line 14
 Type check left * operand on line 35: type Integer vs type Integer
 Type check right * operand on line 35: type Integer vs type Integer
 Type check left - operand on line 35: type Integer vs type Integer
 Type check right - operand on line 35: type Integer vs type Integer
-Binding on line 35: m was declared as <var decl> m on line 14
-Type check left * operand on line 35: type Integer vs type Integer
-Type check right * operand on line 35: type Integer vs type Integer
 Type check left + operand on line 35: type Integer vs type Integer
 Type check right + operand on line 35: type Integer vs type Integer
 Type check left mod operand on line 35: type Integer vs type Integer
