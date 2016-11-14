@@ -28,6 +28,19 @@ class NamedConst extends UnsignedConstant {
 
         System.out.println(declRef.getClass());
         //ConstVal??
+
+        /*if (declRef.type == lib.integerType){
+
+
+        } else if (declRef.type == lib.charType){
+
+        } else if (declRef.type == lib.booleanType){
+
+        }*/
+
+        ConstDecl cd = (ConstDecl) declRef;
+
+        constVal = cd.constVal;
     }
 
     @Override

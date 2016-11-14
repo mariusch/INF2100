@@ -33,6 +33,7 @@ public class Library extends Block {
         ConstDecl falseConDecl = new ConstDecl("false", -1);
         falseConDecl.setType(this.booleanType);
         this.addDecl("false", falseConDecl);
+
         ConstDecl trueConDecl = new ConstDecl("true", -1);
         trueConDecl.setType(this.booleanType);
         this.addDecl("true", trueConDecl);
