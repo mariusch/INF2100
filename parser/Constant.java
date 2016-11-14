@@ -16,7 +16,7 @@ class Constant extends PascalSyntax {
     private PrefixOperator po;
     private UnsignedConstant uc;
 
-    int constVal;
+    protected int constVal;
     protected types.Type type;
 
     Constant(int lNum) {
@@ -41,15 +41,6 @@ class Constant extends PascalSyntax {
 
         } else {
             type = uc.type;
-
-            //Disse to if-testene er bare debug for nullpointer
-            /*if (uc instanceof NumberLiteral)
-                type = lib.integerType;
-
-            if (uc instanceof NamedConst)
-                type = lib.integerType;*/
-
-            //System.out.println("Const type er: " + type + " fra " + uc.getClass());
         }
     }
 

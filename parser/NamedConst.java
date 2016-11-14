@@ -25,8 +25,8 @@ class NamedConst extends UnsignedConstant {
     void check(Block curScope, Library lib) {
         declRef = curScope.findDecl(name, this);
         type = declRef.type;
-        //type = lib.integerType; //Debug kode
 
+        System.out.println(declRef.getClass());
         //ConstVal??
     }
 
