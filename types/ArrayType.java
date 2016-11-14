@@ -7,7 +7,6 @@ public class ArrayType extends Type {
     public int loLim, hiLim;
 
     public ArrayType(Type e, Type i, int lo, int hi) {
-        System.out.println("Laget en array av " + e.identify());
         elemType = e;
         indexType = i;  loLim = lo;  hiLim = hi;
     }

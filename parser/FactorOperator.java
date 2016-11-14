@@ -26,13 +26,11 @@ class FactorOperator extends Operator {
     @Override
     void check(Block curScope, Library lib) {
 
-        System.out.println("Factor opr: " + token);
         if (token.equals("and")) {
             type = lib.booleanType;
         } else {
             type = lib.integerType;
         }
-        System.out.println("Factor opr type er: " + type);
 
         right.type.checkType(left.type, "left " + token + " operand" , this,
                 token + " is different type.");

@@ -41,10 +41,6 @@ class SimpleExpr extends PascalSyntax {
             if (i < toList.size()) {
                 TermOperator to = toList.get(i);
                 right = tList.get(i+1);
-
-                System.out.println("Left er: " + left);
-                System.out.println("Right er: " + right + "\n");
-
                 right.check(curScope, lib);
                 to.left = left;
                 to.right = right;
@@ -54,7 +50,6 @@ class SimpleExpr extends PascalSyntax {
             }
         }
 
-        //type = tList.get(0).type;
     }
 
     @Override

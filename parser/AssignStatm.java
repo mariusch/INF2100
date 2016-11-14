@@ -24,14 +24,10 @@ class AssignStatm extends Statement {
     @Override
     void check(Block curScope, Library lib) {
         variable.check(curScope, lib);
-        variable.vRef.checkWhetherAssignable(this); //fra foilene?
+        variable.vRef.checkWhetherAssignable(this);
         expr.check(curScope, lib);
-        System.out.println("Assign stm variable type er: " + variable.type + " " + variable.getClass() );
         expr.type.checkType(variable.type, ":=", this,
                 ":= is not Boolean.");
-
-        //variable.type.checkType(con2.type, "array index", this, "Different types in assignment!");
-
     }
 
     @Override

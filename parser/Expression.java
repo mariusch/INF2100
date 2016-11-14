@@ -39,7 +39,6 @@ class Expression extends PascalSyntax{
             se.type.checkType(se2.type, oprName + " operands",
                     this, "Operands to " + oprName + " are of different type!");
             type = lib.booleanType;
-            System.out.println("Expression type er: " + type);
         }
     }
 
