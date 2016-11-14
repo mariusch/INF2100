@@ -25,28 +25,24 @@ class Term extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
 
-        Factor f = fList.get(0);
-        f.check(curScope, lib);
+        Factor left, right;
+        left = fList.get(0);
+        left.check(curScope, lib);
+        type = left.type;
 
-        if (fOList.size() != 0) {
+        for (int i = 0; i <fList.size(); i++) {
 
-            for (int i = 0; i < fOList.size(); i++) {
-                //Sjekk om annen type ...
+            if (i < fOList.size()) {
                 FactorOperator fo = fOList.get(i);
-                fList.get(i+1).check(curScope, lib);
-                fo.left = f;
-                fo.right = fList.get(i+1);
+                right = fList.get(i+1);
+                right.check(curScope, lib);
+                fo.left = left;
+                fo.right = right;
                 fo.check(curScope, lib);
 
-                //baserer type på factor opr
-                type = fOList.get(i).type;
+                type = fo.type;
             }
-        } else {
-            type = f.type;
-            //System.out.println("Factor er: " + f.getClass() + f.name + " med type " + f.type + " " + f.identify());
-            //type = lib.integerType; //Debug kode
         }
-
     }
 
     @Override

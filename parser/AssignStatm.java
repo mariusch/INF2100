@@ -28,6 +28,8 @@ class AssignStatm extends Statement {
         expr.check(curScope, lib);
         expr.type.checkType(variable.type, ":=", this,
                 ":= is not Boolean.");
+
+        //variable.type.checkType(expr.type, "array index", this, "Different types in assignment!");
     }
 
     @Override

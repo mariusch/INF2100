@@ -25,10 +25,7 @@ class ParamDecl extends PascalDecl {
     void check(Block curScope, Library lib) {
         curScope.addDecl(name, this);
         tn.check(curScope, lib);
-
-        //System.out.println("TypeName er: " + tn.type);
         type = tn.type;
-        //System.out.println("Param Decl er: " + tn.type);
     }
 
     @Override

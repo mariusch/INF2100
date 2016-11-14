@@ -32,6 +32,8 @@ class Variable extends Factor {
 
         if (expr != null)
             expr.check(curScope, lib);
+        System.out.println("Factor er: " + d.getClass() + " navn " + name + " med type " + d.type + " " + d.identify());
+
     }
 
     @Override
