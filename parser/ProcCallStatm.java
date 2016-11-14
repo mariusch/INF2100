@@ -33,6 +33,10 @@ class ProcCallStatm extends Statement {
 
         for (int i = 0; i < exprList.size(); i++){
 
+            if (exprList.get(i).type instanceof types.ArrayType){
+                error("Arrays not allowed as parameters.");
+            }
+
             if (procRef.lineNum != -1) {
                 Expression tmp = exprList.get(i);
                 tmp.check(curScope, lib);
