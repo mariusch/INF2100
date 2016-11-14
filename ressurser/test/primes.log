@@ -28,7 +28,6 @@ Binding on line 23: i2 was declared as <var decl> i2 on line 14
 Binding on line 23: i1 was declared as <var decl> i1 on line 13
 Type check left + operand on line 23: type Integer vs type Integer
 Type check right + operand on line 23: type Integer vs type Integer
-Binding on line 23: i1 was declared as <var decl> i1 on line 13
 Type check := on line 23: type Integer vs type Integer
 Binding on line 25: i1 was declared as <var decl> i1 on line 13
 Binding on line 25: i1 was declared as <var decl> i1 on line 13
