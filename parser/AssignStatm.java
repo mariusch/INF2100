@@ -26,6 +26,7 @@ class AssignStatm extends Statement {
         variable.check(curScope, lib);
         variable.vRef.checkWhetherAssignable(this); //fra foilene?
         expr.check(curScope, lib);
+        System.out.println("Assign stm variable type er: " + variable.type + " " + variable.getClass() );
         expr.type.checkType(variable.type, ":=", this,
                 ":= is not Boolean.");
     }

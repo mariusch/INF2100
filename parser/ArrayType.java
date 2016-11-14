@@ -18,7 +18,7 @@ class ArrayType extends Type {
     protected Constant con;
     protected Constant con2;
 
-    protected Type t;
+    protected parser.Type t;
 
     ArrayType(int n) {
         super(n);
@@ -32,8 +32,8 @@ class ArrayType extends Type {
 
         t.check(curScope, lib);
 
-        //type = lib.booleanType; //Debug
-
+        type = t.type;
+        System.out.println("ArrayType er av type: " + type);
 
         //if (t instanceof )
 

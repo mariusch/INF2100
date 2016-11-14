@@ -15,7 +15,6 @@ import static scanner.TokenKind.*;
 class ConstDecl extends PascalDecl {
 
     private Constant con;
-    //private String name;
 
     protected int constVal;
 
@@ -26,10 +25,8 @@ class ConstDecl extends PascalDecl {
     @Override
     void check(Block curScope, Library lib) {
         curScope.addDecl(name, this);
-        System.out.println("Const decl: " + name + " " + type);
         con.check(curScope, lib);
         type = con.type;
-        //System.out.println("Const decl type er: " + type + " fra " + con);
     }
 
     @Override

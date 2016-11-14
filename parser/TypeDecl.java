@@ -68,6 +68,6 @@ class TypeDecl extends PascalDecl {
 
     @Override
     void checkWhetherValue(PascalSyntax where) {
-        where.error(this.name + " is a type, not a value.");
+        //where.error(this.name + " is a type, not a value.");
     }
 }

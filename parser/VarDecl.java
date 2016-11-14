@@ -30,16 +30,14 @@ class VarDecl extends PascalDecl {
         type = vType.type;
 
         //Det over burde holde?
-        if (vType instanceof ArrayType){
-            //type = lib.booleanType; //Feil
-
-            //if (ArrayType) vType.t =
+        if (vType instanceof ArrayType) {
 
             ArrayType tmp = (ArrayType) vType;
 
             System.out.println(tmp.t.type);
 
-            type = new types.ArrayType(tmp.t.type, tmp.con.type, tmp.con.constVal, tmp.con2.constVal);
+            vType.type = new types.ArrayType(tmp.t.type, tmp.con.type, tmp.con.constVal, tmp.con2.constVal);
+            System.out.println("ArrayType blir satt til: " + type );
         }
         else if (vType instanceof TypeName) {
             TypeName tn = (TypeName) vType;
