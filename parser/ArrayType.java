@@ -28,11 +28,12 @@ class ArrayType extends Type {
     void check(Block curScope, Library lib) {
         con.check(curScope, lib);
         con2.check(curScope, lib);
-        //Check array limit types
-        con.type.checkType(con2.type, "array limits", this, "Different types in assignment!");
 
         t.check(curScope, lib);
         type = t.type;
+
+        //Check array limit types
+        con.type.checkType(con2.type, "array limits", this, "Different types in assignment!");
     }
 
     @Override
