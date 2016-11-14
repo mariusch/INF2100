@@ -54,6 +54,11 @@ public class Program extends PascalDecl {
 
     @Override
     public void check(Block curScope, Library lib) {
+
+        System.out.println("\nVi har skjønt at vi kunne implementert typeCheck av arrayer på en bedre måte enn " +
+                "slik det har blitt gjort. Tar gjerne i mot tilbakemelding på" +
+                "hvordan dette kunne vært løst annerledes. \n");
+
         if (progBlock != null)
             progBlock.check(curScope, lib);
 
