@@ -48,14 +48,8 @@ class FuncCall extends Factor {
             } else {
                 eList.get(i).check(curScope, lib);
             }
-
         }
-
         type = funcRef.type;
-
-        for (Expression e: eList) {
-            e.check(curScope, lib);
-        }
     }
 
     @Override
