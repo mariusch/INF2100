@@ -42,6 +42,10 @@ class TermOperator extends Operator {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        left.genCode(f);
+        //...
+        right.genCode(f);
     }
 
     @Override

@@ -49,6 +49,15 @@ class Term extends PascalSyntax {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+
+        //Usikker på denne
+        for (int i = 0; i < fList.size(); i++){
+            fList.get(i).genCode(f);
+            if (i < fOList.size()){
+                fOList.get(i).genCode(f);
+            }
+        }
     }
 
     @Override
