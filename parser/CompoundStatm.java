@@ -30,6 +30,9 @@ class CompoundStatm extends Statement {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        statmList.genCode(f);
+
     }
 
     @Override

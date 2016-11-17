@@ -48,6 +48,11 @@ class Constant extends PascalSyntax {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        if (po != null)
+            po.genCode(f);
+
+        uc.genCode(f);
     }
 
     @Override

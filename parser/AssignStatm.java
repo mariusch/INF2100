@@ -35,6 +35,9 @@ class AssignStatm extends Statement {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        variable.genCode(f);
+        expr.genCode(f);
     }
 
     @Override
