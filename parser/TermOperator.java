@@ -43,9 +43,6 @@ class TermOperator extends Operator {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 
-        left.genCode(f);
-        //...
-        right.genCode(f);
     }
 
     @Override

@@ -31,6 +31,9 @@ class Negation extends Factor {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        fact.genCode(f);
+
     }
 
     @Override

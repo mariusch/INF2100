@@ -39,6 +39,13 @@ class IfStatm extends Statement {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        exp.genCode(f);
+        stm.get(0).genCode(f);
+
+        if (stm.size() >= 2) {
+            stm.get(1).genCode(f);
+        }
     }
 
     @Override

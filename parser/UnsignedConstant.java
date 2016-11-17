@@ -23,10 +23,10 @@ abstract class UnsignedConstant extends Factor {
     @Override
     void check(Block curScope, Library lib) {
         /*
-        Abstract class
-            NumberLiteral: IntegerType
-            CharLiteral: CharType
-            NamedConst: type to its declaration
+            Abstract class
+            - NumberLiteral: IntegerType
+            - CharLiteral: CharType
+            - NamedConst: type to its declaration
          */
     }
 

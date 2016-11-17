@@ -51,12 +51,11 @@ class Term extends PascalSyntax {
                 endLabel = f.getLocalLabel();
 
 
-        //Usikker på denne
-        for (int i = 0; i < fList.size(); i++){
-            fList.get(i).genCode(f);
-            if (i < fOList.size()){
-                fOList.get(i).genCode(f);
-            }
+        fList.get(0).genCode(f);
+
+        for (int i = 0; i < fOList.size(); i++){
+            fOList.get(i).genCode(f);
+            fList.get(i+1).genCode(f);
         }
     }
 
