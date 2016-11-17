@@ -17,8 +17,6 @@ public class Program extends PascalDecl {
     private Block progBlock;
     private String name;
 
-    types.Type type;
-
     Program(String id, int lNum) {
         super(id, lNum);
     }
@@ -54,21 +52,20 @@ public class Program extends PascalDecl {
 
     @Override
     public void check(Block curScope, Library lib) {
-
-        System.out.println("\nVi har skjønt at vi kunne implementert typeCheck av arrayer på en bedre måte enn " +
-                "slik det har blitt gjort. Tar gjerne i mot tilbakemelding på" +
-                "hvordan dette kunne vært løst annerledes. \n");
-
         if (progBlock != null)
             progBlock.check(curScope, lib);
-
-
     }
 
     @Override
     public void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        f.genInstr("",              ".globl",             "main",                             "");
+        f.genInstr("main",          "call",               "prog$"+f.getLabel(name),           "Start program");
+        f.genInstr("",              "movl",               "$0,%eax",                          "Set status 0 and");
+        f.genInstr("",              "ret",                "",                                 "terminate the program");
+        progBlock.genCode(f);
     }
 
 

@@ -78,6 +78,21 @@ class Block extends PascalSyntax {
     public void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        if (cdp != null)
+            cdp.genCode(f);
+
+        if (vdp != null)
+            vdp.genCode(f);
+
+        if (!pdList.isEmpty()) {
+            for (ProcDecl pd : pdList) {
+                pd.genCode(f);
+            }
+        }
+
+        stml.genCode(f);
+
     }
 
     @Override
