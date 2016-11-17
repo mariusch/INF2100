@@ -51,7 +51,9 @@ class Variable extends Factor {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 
-        expr.genCode(f);
+        if (expr != null) {
+            expr.genCode(f);
+        }
     }
 
     @Override

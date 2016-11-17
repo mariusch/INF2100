@@ -34,8 +34,10 @@ class StatmList extends PascalSyntax {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 
-        for (Statement s : sl){
-            s.genCode(f);
+        sl.get(0).genCode(f);
+
+        for (int i = 1; i < sl.size(); i++){
+            sl.get(i).genCode(f);
         }
     }
 

@@ -59,6 +59,14 @@ class ProcCallStatm extends Statement {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        if (!procCallShort) {
+            exprList.get(0).genCode(f);
+
+            for (int i = 1; i < exprList.size(); i++){
+                exprList.get(i).genCode(f);
+            }
+        }
     }
 
     @Override

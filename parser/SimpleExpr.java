@@ -56,17 +56,16 @@ class SimpleExpr extends PascalSyntax {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 
-        if (po != null){
+
+        if (po != null)
             po.genCode(f);
-        }
 
-        //Usikker på denne
-        for (int i = 0; i < tList.size(); i++){
-            tList.get(i).genCode(f);
+        tList.get(0).genCode(f);
 
-            if (i < toList.size()){
-                toList.get(i).genCode(f);
-            }
+        for (int i = 0; i < toList.size(); i++){
+            toList.get(i).genCode(f);
+            tList.get(i+1).genCode(f);
+
         }
     }
 

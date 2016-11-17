@@ -46,6 +46,12 @@ class Expression extends PascalSyntax{
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        se.genCode(f);
+        if (ro != null) {
+            ro.genCode(f);
+            se2.genCode(f);
+        }
     }
 
     @Override

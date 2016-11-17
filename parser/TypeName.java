@@ -24,7 +24,6 @@ class TypeName extends Type {
     void check(Block curScope, Library lib) {
         TypeDecl td = (TypeDecl) curScope.findDecl(name, this);
         type = td.type;
-        //System.out.println("Type Name er:" + type);
     }
 
     @Override

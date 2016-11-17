@@ -56,6 +56,14 @@ class FuncCall extends Factor {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        if (!eList.isEmpty()){
+            eList.get(0).genCode(f);
+
+            for (int i = 1; i < eList.size(); i++){
+                eList.get(i).genCode(f);
+            }
+        }
     }
 
     @Override
