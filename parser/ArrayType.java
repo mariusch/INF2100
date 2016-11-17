@@ -40,6 +40,10 @@ class ArrayType extends Type {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        con.genCode(f);
+        con2.genCode(f);
+        t.genCode(f);
     }
 
     public static ArrayType parse(Scanner s) {
