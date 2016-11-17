@@ -33,6 +33,12 @@ class StatmList extends PascalSyntax {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        sl.get(0).genCode(f);
+
+        for (int i = 1; i < sl.size(); i++){
+            sl.get(i).genCode(f);
+        }
     }
 
     @Override

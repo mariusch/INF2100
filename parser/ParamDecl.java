@@ -32,6 +32,8 @@ class ParamDecl extends PascalDecl {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        tn.genCode(f);
     }
 
     @Override

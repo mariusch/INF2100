@@ -51,6 +51,8 @@ class VarDecl extends PascalDecl {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        vType.genCode(f);
     }
 
     @Override

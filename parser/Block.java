@@ -91,7 +91,8 @@ class Block extends PascalSyntax {
             }
         }
 
-        stml.genCode(f);
+        if (stml != null)
+            stml.genCode(f);
 
     }
 

@@ -37,6 +37,11 @@ class ProcDecl extends PascalDecl {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        if (pdl != null) {
+            pdl.genCode(f);
+        }
+        block.genCode(f);
     }
 
     @Override

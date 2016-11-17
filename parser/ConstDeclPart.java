@@ -62,5 +62,9 @@ class ConstDeclPart extends PascalSyntax {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        for (ConstDecl cd : cdList){
+            cd.genCode(f);
+        }
     }
 }
