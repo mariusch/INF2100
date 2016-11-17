@@ -55,6 +55,19 @@ class SimpleExpr extends PascalSyntax {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        if (po != null){
+            po.genCode(f);
+        }
+
+        //Usikker på denne
+        for (int i = 0; i < tList.size(); i++){
+            tList.get(i).genCode(f);
+
+            if (i < toList.size()){
+                toList.get(i).genCode(f);
+            }
+        }
     }
 
     @Override
