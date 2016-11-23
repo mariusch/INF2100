@@ -45,8 +45,7 @@ class FuncDecl extends ProcDecl {
 
     @Override
     void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
+        label = f.getLabel("func$" + name);
 
         if (pdl != null)
             pdl.genCode(f);

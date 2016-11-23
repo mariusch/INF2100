@@ -79,6 +79,8 @@ class Block extends PascalSyntax {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 
+        //Sjekk/sett offset
+
         if (cdp != null)
             cdp.genCode(f);
 

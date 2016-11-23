@@ -58,12 +58,23 @@ class FuncCall extends Factor {
                 endLabel = f.getLocalLabel();
 
         if (!eList.isEmpty()){
-            eList.get(0).genCode(f);
 
-            for (int i = 1; i < eList.size(); i++){
+            for (int i = eList.size()-1; i > 0; i--){
                 eList.get(i).genCode(f);
+                //pushl %eax
+                f.genInstr("",      "pushl",        "%eax",         "Push value from expr to stack");
             }
         }
+
+        //call proc$f_n - vet ikke hva f_n er
+
+        f.genInstr("",      "call",         funcRef.label,      "Function call");
+
+        int sz = 4*eList.size();
+        f.genInstr("",      "addl",         "$" + sz + ",%esp", "Remove stuff from stack");
+
+
+
     }
 
     @Override

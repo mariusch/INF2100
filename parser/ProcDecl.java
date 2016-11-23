@@ -16,6 +16,7 @@ class ProcDecl extends PascalDecl {
 
     protected ParamDeclList pdl;
     private Block block;
+    String label;
 
     ProcDecl(String id, int lNum) {
         super(id, lNum);
@@ -35,8 +36,7 @@ class ProcDecl extends PascalDecl {
 
     @Override
     void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
+        label = f.getLabel("proc$" + name);
 
         if (pdl != null) {
             pdl.genCode(f);
