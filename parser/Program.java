@@ -15,7 +15,7 @@ import static scanner.TokenKind.*;
 public class Program extends PascalDecl {
 
     private Block progBlock;
-    private String name;
+    protected String name;
 
     Program(String id, int lNum) {
         super(id, lNum);
@@ -61,10 +61,14 @@ public class Program extends PascalDecl {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 
+        String progName = f.getLabel(name);
+
         f.genInstr("",              ".globl",             "main",                             "");
-        f.genInstr("main",          "call",               "prog$"+f.getLabel(name),           "Start program");
+        f.genInstr("main",          "call",               "prog$"+progName,           "Start program");
         f.genInstr("",              "movl",               "$0,%eax",                          "Set status 0 and");
         f.genInstr("",              "ret",                "",                                 "terminate the program");
+
+        f.genInstr("prog$"+progName,          "",               "",           "");
         progBlock.genCode(f);
     }
 

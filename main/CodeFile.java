@@ -30,11 +30,11 @@ public class CodeFile {
 
 
     public String getLabel(String origName) {
-	return origName + "_" + (++numLabels);
+	    return origName + "_" + (++numLabels);
     }
 
     public String getLocalLabel() {
-	return String.format(".L%04d", ++numLabels);
+	    return String.format(".L%04d", ++numLabels);
     }
 
 

@@ -34,7 +34,7 @@ class WhileStatm extends Statement {
                 endLabel = f.getLocalLabel();
 
         f.genInstr(testLabel, "", "", "Start while-statement");
-        expr.genCode(f);
+        expr.genCode(f); //med svar i %EAX
         f.genInstr("", "cmpl", "$0,%eax", "");
         f.genInstr("", "je", endLabel, "");
         body.genCode(f);

@@ -79,7 +79,8 @@ class Block extends PascalSyntax {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 
-        //Sjekk/sett offset
+        int offset = 32; //Pluss 4 pr. parameter
+        f.genInstr("",              "enter",             "$"+offset+",$1",                      "Start of BLANK");
 
 
         if (cdp != null)
@@ -96,6 +97,10 @@ class Block extends PascalSyntax {
 
         if (stml != null)
             stml.genCode(f);
+
+
+        f.genInstr("",              "leave",                "",                                 "End of BLANK");
+        f.genInstr("",              "ret",                "",                                 "");
 
     }
 
