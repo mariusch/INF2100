@@ -30,6 +30,8 @@ class ParamDecl extends PascalDecl {
         //declLevel og declOffset
         declOffset =- type.size();
         declLevel = curScope.findDeclLvl();
+        System.out.println("declOffset " + declOffset);
+        System.out.println("declLevel: " + declLevel + " navn " + name + " linje: " +  curScope.lineNum);
     }
 
     @Override
