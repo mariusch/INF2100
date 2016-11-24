@@ -36,8 +36,37 @@ class AssignStatm extends Statement {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 
-        variable.genCode(f);
+        //variable.genCode(f); Står ikke i kompendiet at vi skal kalle dennes gencode ...
+
+
         expr.genCode(f);
+
+        int tmpb = 0; //Endre til blokknivå når vi har det på plass
+        int tmpo = 0; //Endre til offset når vi har det på plass
+
+        //Sjekk typen til variabelen
+        //Merk: b er blokknivå, o er offset
+        //
+        //Hvis vanlig variabel:
+        //movl −4b(%ebp),%edx
+        //movl %eax,o(%edx)
+        if (variable.vRef instanceof VarDecl){
+            f.genInstr("",          "movl",         -4*tmpb + "(%ebp),%edx",         "Var?");
+            f.genInstr("",          "movl",         "%eax," + tmpo + "(%edx)",       "?");
+        }
+
+        //
+        //Hvis array:
+        //Dropp denne foreløpig
+        //
+        //Hvis funksjon:
+        //Hvordan kan den være funksjon? Har vi tatt høyde for dette?
+        //movl − 4 (b + 1 )(%ebp),%edx
+        //movl %eax,-32(%edx)
+        else if (variable.vRef instanceof FuncDecl){
+            f.genInstr("",          "movl",         -4*(tmpb+1)+"(%ebp),%edx",      "");
+            f.genInstr("",          "movl",         "%eax,-32(%edx)",               "");
+        }
     }
 
     @Override

@@ -60,13 +60,13 @@ class FuncCall extends Factor {
         if (!eList.isEmpty()){
 
             for (int i = eList.size()-1; i > 0; i--){
-                eList.get(i).genCode(f);
+                eList.get(i).genCode(f); //Legger value fra expr til %eax
                 //pushl %eax
                 f.genInstr("",      "pushl",        "%eax",         "Push value from expr to stack");
             }
         }
 
-        //call proc$f_n - vet ikke hva f_n er
+        //call proc$f_n - f_n er navnet til funksjonsdeklarasjonen
 
         f.genInstr("",      "call",         funcRef.label,      "Function call");
 
