@@ -48,10 +48,4 @@ public abstract class PascalDecl extends PascalSyntax {
     abstract void checkWhetherFunction(PascalSyntax where);
     abstract void checkWhetherProcedure(PascalSyntax where);
     abstract void checkWhetherValue(PascalSyntax where);
-
-    int findDeclLvl(PascalSyntax scope) {
-        int level = 12;
-
-        return level;
-    }
 }

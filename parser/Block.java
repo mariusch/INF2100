@@ -159,4 +159,10 @@ class Block extends PascalSyntax {
         leaveParser("block");
         return bl;
     }
+
+    int findDeclLvl(PascalSyntax scope) {
+        int level = 12;
+
+        return level;
+    }
 }

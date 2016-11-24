@@ -26,14 +26,14 @@ class ParamDecl extends PascalDecl {
         curScope.addDecl(name, this);
         tn.check(curScope, lib);
         type = tn.type;
+
+        //declLevel og declOffset
+        declOffset =- type.size();
+        declLevel = curScope.findDeclLvl(this);
     }
 
     @Override
     void genCode(CodeFile f) {
-        //declLevel og declOffset
-        declOffset =- type.size();
-        declLevel = findDeclLvl(this);
-
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 

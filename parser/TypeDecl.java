@@ -19,14 +19,13 @@ class TypeDecl extends PascalDecl {
     @Override
     void check(Block curScope, Library lib) {
 
+        //declLevel og declOffset
+        declOffset =- type.size();
+        declLevel = curScope.findDeclLvl(this);
     }
 
     @Override
     void genCode(CodeFile f) {
-        //declLevel og declOffset
-        declOffset =- type.size();
-        declLevel = findDeclLvl(this);
-
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
     }
