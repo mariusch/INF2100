@@ -57,16 +57,37 @@ class ProcCallStatm extends Statement {
 
     @Override
     void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
 
         if (!procCallShort) {
-            exprList.get(0).genCode(f);
+            /*exprList.get(0).genCode(f);
 
             for (int i = 1; i < exprList.size(); i++){
-                exprList.get(i).genCode(f);
+                exprList.get(i).genCode(f);*/
+
+
+            if (!exprList.isEmpty()){
+
+                for (int i = exprList.size()-1; i > 0; i--){
+                    exprList.get(i).genCode(f); //Legger value fra expr til %eax
+                    //pushl %eax
+                    f.genInstr("",      "pushl",        "%eax",         "Push value from expr to stack");
+                }
             }
+
+            //call func$f_n - f_n er navnet til funksjonsdeklarasjonen
+
+            f.genInstr("",      "call",         procRef.label,      "Proc call");
+
+            int sz = 4*exprList.size();
+            f.genInstr("",      "addl",         "$" + sz + ",%esp", "Remove stuff from stack");
+
         }
+
+
+
+
+
+
     }
 
     @Override

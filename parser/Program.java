@@ -58,9 +58,6 @@ public class Program extends PascalDecl {
 
     @Override
     public void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
-
         String progName = f.getLabel(name);
 
         f.genInstr("",              ".globl",             "main",                             "");

@@ -1,60 +1,68 @@
-# Code file created by Pascal2016 compiler 2016-11-24 13:23:10
+# Code file created by Pascal2016 compiler 2016-11-24 13:38:53
         enter   $32,$1                  # Start of BLANK
         leave                           # End of BLANK
         ret                             
         .globl  main                    
 main:
-        call    prog$primes_5           # Start program
+        call    prog$primes_3           # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
-prog$primes_5:
+prog$primes_3:
         enter   $32,$1                  # Start of BLANK
         enter   $32,$1                  # Start of BLANK
         movl    0(%ebp),%edx            # Var?
         movl    %eax,0(%edx)            # ?
-.L0061:
+.L0059:
                                         # Start while-statement
         cmpl    $0,%eax                 
-        je      .L0062                  
+        je      .L0060                  
         movl    0(%ebp),%edx            # Var?
         movl    %eax,0(%edx)            # ?
-.L0097:
+.L0095:
                                         # Start while-statement
         cmpl    $0,%eax                 
-        je      .L0098                  
+        je      .L0096                  
         movl    0(%ebp),%edx            # Var?
         movl    %eax,0(%edx)            # ?
         movl    0(%ebp),%edx            # Var?
         movl    %eax,0(%edx)            # ?
-        jmp     .L0097                  
-.L0098:
+        jmp     .L0095                  
+.L0096:
                                         # End while-statement
         movl    0(%ebp),%edx            # Var?
         movl    %eax,0(%edx)            # ?
-        jmp     .L0061                  
-.L0062:
+        jmp     .L0059                  
+.L0060:
                                         # End while-statement
         leave                           # End of BLANK
         ret                             
         enter   $32,$1                  # Start of BLANK
         cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0172                  # Jump to .L0172
-.L0172:
+        je      .L0170                  # Jump to .L0170
+        call    null                    # Proc call
+        addl    $4,%esp                 # Remove stuff from stack
+.L0170:
                                         # ?
-.L0173:
+.L0171:
                                         # ??
         cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0200                  # Jump to .L0200
-.L0200:
+        je      .L0188                  # Jump to .L0188
+        call    null                    # Proc call
+        addl    $4,%esp                 # Remove stuff from stack
+.L0188:
                                         # ?
-.L0201:
+.L0189:
                                         # ??
         cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0228                  # Jump to .L0228
-.L0228:
+        je      .L0206                  # Jump to .L0206
+        call    null                    # Proc call
+        addl    $4,%esp                 # Remove stuff from stack
+.L0206:
                                         # ?
-.L0229:
+.L0207:
                                         # ??
+        call    null                    # Proc call
+        addl    $4,%esp                 # Remove stuff from stack
         leave                           # End of BLANK
         ret                             
         enter   $32,$1                  # Start of BLANK
@@ -62,43 +70,49 @@ prog$primes_5:
         movl    %eax,0(%edx)            # ?
         movl    0(%ebp),%edx            # Var?
         movl    %eax,0(%edx)            # ?
-.L0301:
+.L0259:
                                         # Start while-statement
         cmpl    $0,%eax                 
-        je      .L0302                  
+        je      .L0260                  
         cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0323                  # Jump to .L0323
+        je      .L0281                  # Jump to .L0281
         cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0345                  # Jump to .L0345
-.L0345:
+        je      .L0303                  # Jump to .L0303
+        call    null                    # Proc call
+        addl    $4,%esp                 # Remove stuff from stack
+.L0303:
                                         # ?
-.L0346:
+.L0304:
+                                        # ??
+        call    proc$p4_159             # Proc call
+        addl    $4,%esp                 # Remove stuff from stack
+        movl    0(%ebp),%edx            # Var?
+        movl    %eax,0(%edx)            # ?
+.L0281:
+                                        # ?
+.L0282:
                                         # ??
         movl    0(%ebp),%edx            # Var?
         movl    %eax,0(%edx)            # ?
-.L0323:
-                                        # ?
-.L0324:
-                                        # ??
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
-        jmp     .L0301                  
-.L0302:
+        jmp     .L0259                  
+.L0260:
                                         # End while-statement
+        call    null                    # Proc call
+        addl    $4,%esp                 # Remove stuff from stack
         leave                           # End of BLANK
         ret                             
         movl    0(%ebp),%edx            # Var?
         movl    %eax,0(%edx)            # ?
-.L0469:
+.L0397:
                                         # Start while-statement
         cmpl    $0,%eax                 
-        je      .L0470                  
+        je      .L0398                  
         movl    0(%ebp),%edx            # Var?
         movl    %eax,0(%edx)            # ?
         movl    0(%ebp),%edx            # Var?
         movl    %eax,0(%edx)            # ?
-        jmp     .L0469                  
-.L0470:
+        jmp     .L0397                  
+.L0398:
                                         # End while-statement
         leave                           # End of BLANK
         ret                             

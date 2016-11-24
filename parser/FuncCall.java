@@ -54,8 +54,6 @@ class FuncCall extends Factor {
 
     @Override
     void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
 
         if (!eList.isEmpty()){
 
@@ -66,7 +64,7 @@ class FuncCall extends Factor {
             }
         }
 
-        //call proc$f_n - f_n er navnet til funksjonsdeklarasjonen
+        //call func$f_n - f_n er navnet til funksjonsdeklarasjonen
 
         f.genInstr("",      "call",         funcRef.label,      "Function call");
 
