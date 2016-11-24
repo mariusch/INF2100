@@ -98,7 +98,6 @@ class Block extends PascalSyntax {
         if (stml != null)
             stml.genCode(f);
 
-
         f.genInstr("",              "leave",                "",                                 "End of BLANK");
         f.genInstr("",              "ret",                "",                                 "");
 
