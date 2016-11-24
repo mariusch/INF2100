@@ -37,15 +37,35 @@ class IfStatm extends Statement {
 
     @Override
     void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
+        String lab1 = f.getLocalLabel(),
+                lab2 = f.getLocalLabel();
+
+
 
         exp.genCode(f);
+
+        //Hvis kun if:
+        //
+
+        //Hvis if/else:
+        //
+
+        f.genInstr("",      "cmpl",     "$0,%eax",      "Is 0 = %eax?");
+        f.genInstr("",      "je",       lab1,           "Jump to " + lab1);
+
         stm.get(0).genCode(f);
 
-        if (stm.size() >= 2) {
+        if (stm.size() > 1){
+            f.genInstr("",  "jmp",      lab2,           "Jump to next label");
+        }
+
+        f.genInstr(lab1,    "",     "",     "?");
+
+        if (stm.size() > 1){
             stm.get(1).genCode(f);
         }
+
+        f.genInstr(lab2,    "",     "",       "??");
     }
 
     @Override
