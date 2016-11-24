@@ -45,6 +45,10 @@ class FuncDecl extends ProcDecl {
 
     @Override
     void genCode(CodeFile f) {
+        //declLevel og declOffset
+        declOffset =- type.size();
+        declLevel = findDeclLvl(this);
+
         label = f.getLabel("func$" + name);
 
         if (pdl != null)

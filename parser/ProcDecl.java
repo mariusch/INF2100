@@ -36,6 +36,10 @@ class ProcDecl extends PascalDecl {
 
     @Override
     void genCode(CodeFile f) {
+        //declLevel og declOffset
+        declOffset =- type.size();
+        declLevel = findDeclLvl(this);
+
         label = f.getLabel("proc$" + name);
 
         if (pdl != null) {

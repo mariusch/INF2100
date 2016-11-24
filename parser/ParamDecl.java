@@ -30,6 +30,10 @@ class ParamDecl extends PascalDecl {
 
     @Override
     void genCode(CodeFile f) {
+        //declLevel og declOffset
+        declOffset =- type.size();
+        declLevel = findDeclLvl(this);
+
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 

@@ -13,8 +13,8 @@ public abstract class PascalDecl extends PascalSyntax {
     types.Type type = null;
 
     PascalDecl(String id, int lNum) {
-	super(lNum);
-	name = id;
+        super(lNum);
+        name = id;
     }
 
     @Override
@@ -48,4 +48,10 @@ public abstract class PascalDecl extends PascalSyntax {
     abstract void checkWhetherFunction(PascalSyntax where);
     abstract void checkWhetherProcedure(PascalSyntax where);
     abstract void checkWhetherValue(PascalSyntax where);
+
+    int findDeclLvl(PascalSyntax scope) {
+        int level = 12;
+
+        return level;
+    }
 }

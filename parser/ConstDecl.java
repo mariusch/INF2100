@@ -33,6 +33,12 @@ class ConstDecl extends PascalDecl {
 
     @Override
     void genCode(CodeFile f) {
+        //declLevel og declOffset
+        declOffset =- type.size();
+        declLevel = findDeclLvl(this);
+        System.out.println(declLevel);
+        System.out.println(declOffset);
+
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 

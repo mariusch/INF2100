@@ -81,6 +81,7 @@ class Block extends PascalSyntax {
 
         //Sjekk/sett offset
 
+
         if (cdp != null)
             cdp.genCode(f);
 
