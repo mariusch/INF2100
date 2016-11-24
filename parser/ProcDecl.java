@@ -32,6 +32,10 @@ class ProcDecl extends PascalDecl {
             pdl.check(block, lib);
 
         block.check(curScope, lib);
+
+        //declLevel og declOffset
+        declOffset =- type.size();
+        declLevel = curScope.findDeclLvl(this);
     }
 
     @Override

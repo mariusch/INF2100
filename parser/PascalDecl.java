@@ -13,8 +13,8 @@ public abstract class PascalDecl extends PascalSyntax {
     types.Type type = null;
 
     PascalDecl(String id, int lNum) {
-	super(lNum);
-	name = id;
+        super(lNum);
+        name = id;
     }
 
     @Override

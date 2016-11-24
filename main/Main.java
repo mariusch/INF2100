@@ -7,7 +7,7 @@ import static scanner.TokenKind.*;
 import java.io.*;
 
 public class Main {
-    public static final String version = "17.10.2016";
+    public static final String version = "0.9";
 
     public static parser.Library library;
     public static LogFile log = new LogFile();
@@ -120,7 +120,7 @@ public class Main {
         if (log.doLogPrettyPrint)
             prog.prettyPrint();
 
-        library = new Library(0); //TODO linjenummer?
+        library = new Library(0);
         prog.check(library, library);
     }
 

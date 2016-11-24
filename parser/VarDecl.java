@@ -45,10 +45,15 @@ class VarDecl extends PascalDecl {
                 type = lib.charType;
             }
         }
+
+        //declLevel og declOffset
+        declOffset =- type.size();
+        declLevel = curScope.findDeclLvl(this);
     }
 
     @Override
     void genCode(CodeFile f) {
+
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 

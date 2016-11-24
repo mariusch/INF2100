@@ -41,6 +41,10 @@ class FuncDecl extends ProcDecl {
         tn.check(blck, lib);
         type = tn.type;
         blck.check(curScope, lib);
+
+        //declLevel og declOffset
+        declOffset =- type.size();
+        declLevel = curScope.findDeclLvl(this);
     }
 
     @Override

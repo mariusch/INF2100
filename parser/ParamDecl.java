@@ -26,6 +26,10 @@ class ParamDecl extends PascalDecl {
         curScope.addDecl(name, this);
         tn.check(curScope, lib);
         type = tn.type;
+
+        //declLevel og declOffset
+        declOffset =- type.size();
+        declLevel = curScope.findDeclLvl(this);
     }
 
     @Override
