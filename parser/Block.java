@@ -160,8 +160,14 @@ class Block extends PascalSyntax {
         return bl;
     }
 
-    int findDeclLvl(PascalSyntax scope) {
-        int level = 12;
+    int findDeclLvl() {
+        int level = 0;
+        Block tmp = this;
+
+        while (tmp.outerScope != null) {
+            level += 1;
+            tmp = tmp.outerScope;
+        }
 
         return level;
     }
