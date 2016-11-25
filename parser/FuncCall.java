@@ -54,6 +54,7 @@ class FuncCall extends Factor {
 
     @Override
     void genCode(CodeFile f) {
+        f.genInstr(funcRef.label,              "enter",             "$"+32+",$1",                      "Start of "+name);
 
         if (!eList.isEmpty()){
 

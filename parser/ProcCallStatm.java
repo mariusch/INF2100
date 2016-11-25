@@ -57,6 +57,8 @@ class ProcCallStatm extends Statement {
 
     @Override
     void genCode(CodeFile f) {
+        procRef.label = f.getLabel("proc$" + name);
+        f.genInstr(procRef.label,              "enter",             "$"+32+",$1",                      "Start of "+name);
 
         if (!procCallShort) {
             /*exprList.get(0).genCode(f);
@@ -82,11 +84,6 @@ class ProcCallStatm extends Statement {
             f.genInstr("",      "addl",         "$" + sz + ",%esp", "Remove stuff from stack");
 
         }
-
-
-
-
-
 
     }
 
