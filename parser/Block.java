@@ -80,7 +80,12 @@ class Block extends PascalSyntax {
                 endLabel = f.getLocalLabel();
 
         int offset = 32; //Pluss 4 pr. parameter
-        f.genInstr("",              "enter",             "$"+offset+",$1",                      "Start of BLANK");
+
+        if (context != null) {
+            f.genInstr("",              "enter",             "$"+offset+",$1",                      "Start of "+context.name);
+        } else {
+            f.genInstr("",              "enter",             "$"+offset+",$1",                      "Start of BLANK");
+        }
 
 
         if (cdp != null)
@@ -98,7 +103,11 @@ class Block extends PascalSyntax {
         if (stml != null)
             stml.genCode(f);
 
-        f.genInstr("",              "leave",                "",                                 "End of BLANK");
+        if (context != null) {
+            f.genInstr("",              "leave",                "",                                 "End of "+context.name);
+        } else {
+            f.genInstr("",              "leave",                "",                                 "End of BLANK");
+        }
         f.genInstr("",              "ret",                "",                                 "");
 
     }

@@ -24,6 +24,8 @@ class Negation extends Factor {
     @Override
     void check(Block curScope, Library lib) {
         fact.check(curScope, lib);
+        fact.type.checkType(lib.booleanType, "'not'" + " operand" , this,
+                "Negation-test is not Boolean.");
         type = lib.booleanType;
     }
 
