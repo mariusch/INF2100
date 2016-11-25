@@ -59,13 +59,13 @@ class IfStatm extends Statement {
             f.genInstr("",  "jmp",      lab2,           "Jump to next label");
         }
 
-        f.genInstr(lab1,    "",     "",     "?");
+        f.genInstr(lab1,    "",     "",     "");
 
         if (stm.size() > 1){
             stm.get(1).genCode(f);
         }
 
-        f.genInstr(lab2,    "",     "",       "??");
+        f.genInstr(lab2,    "",     "",       "");
     }
 
     @Override
