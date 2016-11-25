@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Code file created by Pascal2016 compiler 2016-11-25 13:04:39
-=======
-# Code file created by Pascal2016 compiler 2016-11-25 12:17:59
->>>>>>> origin/master
+# Code file created by Pascal2016 compiler 2016-11-25 13:07:27
         .globl  main                    
 main:
         call    prog$tenstars_1         # Start program
@@ -14,11 +10,7 @@ prog$tenstars_1:
         movl    $0,%eax                 #   0
         pushl   %eax                    
         movl    0(%ebp),%edx            
-<<<<<<< HEAD
         movl    %eax,0(%edx)            # i :=
-=======
-        movl    %eax,0(%edx)            
->>>>>>> origin/master
 .L0028:
                                         # Start while-statement
         pushl   %eax                    
@@ -36,11 +28,7 @@ prog$tenstars_1:
         popl    %eax                    
         addl    %ecx,%eax               #    +
         movl    0(%ebp),%edx            
-<<<<<<< HEAD
         movl    %eax,0(%edx)            # i :=
-=======
-        movl    %eax,0(%edx)            
->>>>>>> origin/master
         jmp     .L0028                  
 .L0029:
                                         # End while-statement
