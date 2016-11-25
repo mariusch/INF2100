@@ -60,29 +60,50 @@ class ProcCallStatm extends Statement {
         procRef.label = f.getLabel("proc$" + name);
         f.genInstr(procRef.label,              "enter",             "$"+32+",$1",                      "Start of "+name);
 
-        if (!procCallShort) {
-            /*exprList.get(0).genCode(f);
 
-            for (int i = 1; i < exprList.size(); i++){
-                exprList.get(i).genCode(f);*/
+        if (name.equals("write")){
 
-
-            if (!exprList.isEmpty()){
-
-                for (int i = exprList.size()-1; i > 0; i--){
-                    exprList.get(i).genCode(f); //Legger value fra expr til %eax
-                    //pushl %eax
-                    f.genInstr("",      "pushl",        "%eax",         "Push next param.");
+            System.out.println("kom hit");
+            for (int i = exprList.size() - 1; i >= 0; i--) {
+                exprList.get(i).genCode(f); //Legger value fra expr til %eax
+                f.genInstr("", "pushl", "%eax", "");
+                //pushl %eax
+                //f.genInstr("", "pushl", "%eax", "Push value from expr to stack");
+                if (exprList.get(i).type instanceof types.IntType){
+                    f.genInstr("", "call", "write_int", "");
                 }
+                else if (exprList.get(i).type instanceof types.CharType){
+                    f.genInstr("", "call", "write_char", "");
+
+                }
+                else if (exprList.get(i).type instanceof types.BoolType){
+                    f.genInstr("", "call", "write_bool", "");
+                }
+                else {
+                    Main.panic(name);
+                }
+                f.genInstr("", "addl", "$4,%esp", "");
             }
 
-            //call func$f_n - f_n er navnet til funksjonsdeklarasjonen
 
-            f.genInstr("",      "call",         procRef.label,      "");
 
-            int sz = 4*exprList.size();
-            f.genInstr("",      "addl",         "$" + sz + ",%esp", "Pop param.");
+        } else {
 
+            if (!procCallShort) {
+
+                    for (int i = exprList.size() - 1; i >= 0; i--) {
+                        exprList.get(i).genCode(f); //Legger value fra expr til %eax
+                        //pushl %eax
+                        f.genInstr("", "pushl", "%eax", "Push next param.");
+                    }
+
+                //call func$f_n - f_n er navnet til funksjonsdeklarasjonen
+
+                f.genInstr("", "call", procRef.label, "Proc call");
+
+                int sz = 4 * exprList.size();
+                f.genInstr("", "addl", "$" + sz + ",%esp", "Pop param.");
+            }
         }
 
     }
