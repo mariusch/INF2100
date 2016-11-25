@@ -55,7 +55,7 @@ class FuncCall extends Factor {
     @Override
     void genCode(CodeFile f) {
         //Hvor mange bytes tar variablene? (Skal inn i "$"+(32+???)",$1")
-        f.genInstr(funcRef.label,              "enter",             "$"+(32/* + ?? */)+",$" + funcRef.declLevel,                      "Start of "+name);
+        //f.genInstr(funcRef.label,              "enter",             "$"+(32/* + ?? */)+",$" + funcRef.declLevel,                      "Start of "+name);
 
         if (!eList.isEmpty()){
 

@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-25 14:07:36
+# Code file created by Pascal2016 compiler 2016-11-25 20:41:49
         .globl  _main                   
 _main:
         call    prog$tenstars_1         # Start program

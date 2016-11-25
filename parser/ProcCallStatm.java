@@ -57,8 +57,6 @@ class ProcCallStatm extends Statement {
 
     @Override
     void genCode(CodeFile f) {
-        procRef.label = f.getLabel("proc$" + name);
-
 
         if (name.equals("write")){
 
@@ -87,7 +85,7 @@ class ProcCallStatm extends Statement {
 
         } else {
             //Hvor mange bytes tar variablene? (Skal inn i "$"+(32+???)",$1")
-            f.genInstr(procRef.label,              "enter",             "$"+32+",$" + procRef.declLevel,                      "Start of "+name);
+            //f.genInstr(procRef.label,              "enter",             "$"+32+",$" + procRef.declLevel,                      "Start of "+name);
             //System.out.println("Proc Decl level: " + procRef.declLevel);
             if (!procCallShort) {
 

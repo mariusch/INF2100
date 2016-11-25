@@ -105,8 +105,6 @@ class Block extends PascalSyntax {
 
         if (context != null) {
             f.genInstr("",              "leave",                "",                                 "End of "+context.name);
-        } else {
-            f.genInstr("",              "leave",                "",                                 "End of BLANK");
         }
         f.genInstr("",              "ret",                "",                                 "");
 
