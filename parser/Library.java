@@ -28,7 +28,11 @@ public class Library extends Block {
 
         /* false, true, eol, write */
         this.addDecl("write", new ProcDecl("write", -1));
-        this.addDecl("eol", new ConstDecl("eol", -1));
+
+        ConstDecl eolDecl = new ConstDecl("eol", -1);
+        eolDecl.setType(this.charType);
+
+        this.addDecl("eol", eolDecl);
 
         ConstDecl falseConDecl = new ConstDecl("false", -1);
         falseConDecl.setType(this.booleanType);
