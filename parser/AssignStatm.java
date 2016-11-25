@@ -52,7 +52,11 @@ class AssignStatm extends Statement {
         //movl %eax,o(%edx)
         if (variable.vRef instanceof VarDecl){
             f.genInstr("",          "movl",         -4*tmpb + "(%ebp),%edx",         "");
+<<<<<<< HEAD
             f.genInstr("",          "movl",         "%eax," + tmpo + "(%edx)",       variable.name+" :=");
+=======
+            f.genInstr("",          "movl",         "%eax," + tmpo + "(%edx)",       "");
+>>>>>>> origin/master
         }
 
         //
