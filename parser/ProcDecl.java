@@ -53,7 +53,7 @@ class ProcDecl extends PascalDecl {
         }
         block.genCode(f);
 
-        f.genInstr("",      "leave",         "",      "");
+        f.genInstr("",      "leave",         "",      "End of "+name);
         f.genInstr("",      "ret",         "",      "");
     }
 

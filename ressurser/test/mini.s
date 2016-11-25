@@ -1,12 +1,13 @@
-# Code file created by Pascal2016 compiler 2016-11-25 11:55:26
-        .globl  main                    
-main:
+# Code file created by Pascal2016 compiler 2016-11-25 21:35:51
+        .globl  _main                   
+_main:
         call    prog$mini_1             # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
 prog$mini_1:
         enter   $32,$1                  # Start of mini
         movl    $120,%eax               #   'x'
+        pushl   %eax                    
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.

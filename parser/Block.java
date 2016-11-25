@@ -77,15 +77,6 @@ class Block extends PascalSyntax {
     @Override
     public void genCode(CodeFile f) {
 
-        int offset = 32; //Pluss 4 pr. parameter
-
-        if (context != null) {
-            f.genInstr("",              "enter",             "$"+offset+",$1",                      "Start of "+context.name);
-        } else {
-            f.genInstr("",              "enter",             "$"+offset+",$1",                      "Start of BLANK");
-        }
-
-
         if (cdp != null)
             cdp.genCode(f);
 
@@ -97,15 +88,8 @@ class Block extends PascalSyntax {
                 pd.genCode(f);
             }
         }
-
         if (stml != null)
             stml.genCode(f);
-
-        if (context != null) {
-            f.genInstr("",              "leave",                "",                                 "End of "+context.name);
-        }
-        f.genInstr("",              "ret",                "",                                 "");
-
     }
 
     @Override

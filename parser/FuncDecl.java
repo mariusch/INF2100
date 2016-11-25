@@ -63,7 +63,7 @@ class FuncDecl extends ProcDecl {
         blck.genCode(f);
 
         f.genInstr("",      "movl",         "-32(%ebp),%eax",      "");
-        f.genInstr("",      "leave",         "",      "");
+        f.genInstr("",      "leave",         "",      "End of "+name);
         f.genInstr("",      "ret",         "",      "");
 
 
