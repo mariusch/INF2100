@@ -1,6 +1,6 @@
-# Code file created by Pascal2016 compiler 2016-11-25 13:07:27
-        .globl  main                    
-main:
+# Code file created by Pascal2016 compiler 2016-11-25 14:07:36
+        .globl  _main                   
+_main:
         call    prog$tenstars_1         # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program

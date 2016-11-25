@@ -60,8 +60,15 @@ public class Program extends PascalDecl {
     public void genCode(CodeFile f) {
         String progName = f.getLabel(name);
 
-        f.genInstr("",              ".globl",             "main",                             "");
-        f.genInstr("main",          "call",               "prog$"+progName,           "Start program");
+        String mainName;
+        if (main.Main.useUnderscore()) {
+            mainName = "_main";
+        } else {
+            mainName = "main";
+        }
+
+        f.genInstr("",              ".globl",             mainName,                             "");
+        f.genInstr(mainName,          "call",               "prog$"+progName,           "Start program");
         f.genInstr("",              "movl",               "$0,%eax",                          "Set status 0 and");
         f.genInstr("",              "ret",                "",                                 "terminate the program");
 
