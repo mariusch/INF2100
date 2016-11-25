@@ -28,8 +28,6 @@ class TypeName extends Type {
 
     @Override
     void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
     }
 
     public static TypeName parse(Scanner s) {

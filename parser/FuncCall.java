@@ -54,8 +54,6 @@ class FuncCall extends Factor {
 
     @Override
     void genCode(CodeFile f) {
-        //Hvor mange bytes tar variablene? (Skal inn i "$"+(32+???)",$1")
-        //f.genInstr(funcRef.label,              "enter",             "$"+(32/* + ?? */)+",$" + funcRef.declLevel,                      "Start of "+name);
 
         if (!eList.isEmpty()){
 
@@ -67,7 +65,6 @@ class FuncCall extends Factor {
         }
 
         //call func$f_n - f_n er navnet til funksjonsdeklarasjonen
-
         f.genInstr("",      "call",         funcRef.label,      "Function call");
 
         int sz = 4*eList.size();

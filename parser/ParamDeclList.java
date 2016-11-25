@@ -30,9 +30,6 @@ class ParamDeclList extends PascalSyntax {
 
     @Override
     void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
-
         pdList.get(0).genCode(f);
 
         for (int i = 1; i < pdList.size(); i++){

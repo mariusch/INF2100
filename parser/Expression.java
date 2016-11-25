@@ -44,7 +44,6 @@ class Expression extends PascalSyntax{
 
     @Override
     void genCode(CodeFile f) {
-
         se.genCode(f);
         if (ro != null) {
             ro.genCode(f);

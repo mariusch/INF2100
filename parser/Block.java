@@ -76,8 +76,6 @@ class Block extends PascalSyntax {
 
     @Override
     public void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
 
         int offset = 32; //Pluss 4 pr. parameter
 

@@ -26,9 +26,6 @@ class PrefixOperator extends Operator {
 
     @Override
     void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
-
         if (opr.equals("-"))
             f.genInstr("", "negl", "%eax", "  "+opr);
     }

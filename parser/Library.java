@@ -20,9 +20,6 @@ public class Library extends Block {
     protected types.CharType charType = new CharType();
     protected types.BoolType booleanType = new BoolType();
 
-    //Const eol, false, true
-    //Proc write
-
     public Library(int lNum) {
         super(lNum);
 
@@ -63,7 +60,6 @@ public class Library extends Block {
 
     @Override
     public void genCode(CodeFile f) {
-
     }
 
     @Override

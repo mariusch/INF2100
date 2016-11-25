@@ -29,11 +29,7 @@ class InnerExpr extends Factor {
 
     @Override
     void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
-
         expr.genCode(f);
-
     }
 
     @Override

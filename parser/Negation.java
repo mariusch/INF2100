@@ -31,12 +31,8 @@ class Negation extends Factor {
 
     @Override
     void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
-
         f.genInstr("", "xorl", "$1,%eax", "Negation side 49");
         fact.genCode(f);
-
     }
 
     @Override

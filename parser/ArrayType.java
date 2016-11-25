@@ -38,9 +38,6 @@ class ArrayType extends Type {
 
     @Override
     void genCode(CodeFile f) {
-        String testLabel = f.getLocalLabel(),
-                endLabel = f.getLocalLabel();
-
         con.genCode(f);
         con2.genCode(f);
         t.genCode(f);
