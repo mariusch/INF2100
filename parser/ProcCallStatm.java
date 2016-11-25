@@ -64,7 +64,7 @@ class ProcCallStatm extends Statement {
 
             for (int i = exprList.size() - 1; i >= 0; i--) {
                 exprList.get(i).genCode(f); //Legger value fra expr til %eax
-                f.genInstr("", "pushl", "%eax", "");
+                f.genInstr("", "pushl", "%eax", "Push next param.");
                 //pushl %eax
                 //f.genInstr("", "pushl", "%eax", "Push value from expr to stack");
                 if (exprList.get(i).type instanceof types.IntType){
@@ -80,7 +80,7 @@ class ProcCallStatm extends Statement {
                 else {
                     Main.panic(name);
                 }
-                f.genInstr("", "addl", "$4,%esp", "");
+                f.genInstr("", "addl", "$4,%esp", "Pop param.");
             }
 
 

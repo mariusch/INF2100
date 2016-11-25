@@ -35,6 +35,8 @@ class NamedConst extends UnsignedConstant {
     void genCode(CodeFile f) {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
+
+        f.genInstr("", "movl", "$"+constVal+",%eax", "  '" + name + "'");
     }
 
     @Override
