@@ -88,6 +88,7 @@ class ProcCallStatm extends Statement {
         } else {
             //Hvor mange bytes tar variablene? (Skal inn i "$"+(32+???)",$1")
             f.genInstr(procRef.label,              "enter",             "$"+32+",$" + procRef.declLevel,                      "Start of "+name);
+            //System.out.println("Proc Decl level: " + procRef.declLevel);
             if (!procCallShort) {
 
                     for (int i = exprList.size() - 1; i >= 0; i--) {

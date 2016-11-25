@@ -1,266 +1,548 @@
-# Code file created by Pascal2016 compiler 2016-11-25 10:49:01
+# Code file created by Pascal2016 compiler 2016-11-25 13:14:57
         .globl  main                    
 main:
         call    prog$operatortest_1     # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
 prog$operatortest_1:
+        enter   $32,$1                  # Start of operatortest
         enter   $32,$1                  # Start of BLANK
         enter   $32,$1                  # Start of BLANK
-        enter   $32,$1                  # Start of BLANK
-proc$write_16:
-        enter   $32,$1                  # Start of write
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$write_16           # Proc call
-        addl    $40,%esp                # Remove stuff from stack
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_bool              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $61,%eax                #   '='
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_bool              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $116,%eax               #   't'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $111,%eax               #   'o'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $110,%eax               #   'n'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
         leave                           # End of BLANK
         ret                             
-proc$test_93:
-        enter   $32,$1                  # Start of test
-        call    proc$test_93            # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
-proc$test_94:
-        enter   $32,$1                  # Start of test
-        call    proc$test_94            # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
+proc$test_81:
+        enter   $32,$2                  # Start of test
+        pushl   %eax                    # Push next param.
+        call    proc$test_81            # Proc call
+        addl    $4,%esp                 # Pop param.
+proc$test_88:
+        enter   $32,$2                  # Start of test
+        pushl   %eax                    # Push next param.
+        call    proc$test_88            # Proc call
+        addl    $4,%esp                 # Pop param.
         leave                           # End of BLANK
         ret                             
         enter   $32,$1                  # Start of BLANK
         enter   $32,$1                  # Start of BLANK
-proc$write_111:
-        enter   $32,$1                  # Start of write
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$write_111          # Proc call
-        addl    $48,%esp                # Remove stuff from stack
-proc$write_204:
-        enter   $32,$1                  # Start of write
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$write_204          # Proc call
-        addl    $44,%esp                # Remove stuff from stack
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_bool              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $61,%eax                #   '='
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_bool              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $100,%eax               #   'd'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $110,%eax               #   'n'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $97,%eax                #   'a'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_bool              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_bool              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $61,%eax                #   '='
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_bool              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $114,%eax               #   'r'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $111,%eax               #   'o'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_bool              
+        addl    $4,%esp                 # Pop param.
         leave                           # End of BLANK
         ret                             
-proc$test_293:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_293           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
+proc$test_263:
+        enter   $32,$2                  # Start of test
+        pushl   %eax                    # Push next param.
+        pushl   %eax                    # Push next param.
+        call    proc$test_263           # Proc call
+        addl    $8,%esp                 # Pop param.
+proc$test_276:
+        enter   $32,$2                  # Start of test
+        pushl   %eax                    # Push next param.
+        pushl   %eax                    # Push next param.
+        call    proc$test_276           # Proc call
+        addl    $8,%esp                 # Pop param.
+proc$test_289:
+        enter   $32,$2                  # Start of test
+        pushl   %eax                    # Push next param.
+        pushl   %eax                    # Push next param.
+        call    proc$test_289           # Proc call
+        addl    $8,%esp                 # Pop param.
 proc$test_302:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
+        enter   $32,$2                  # Start of test
+        pushl   %eax                    # Push next param.
+        pushl   %eax                    # Push next param.
         call    proc$test_302           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
-proc$test_311:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_311           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
-proc$test_320:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_320           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
+        addl    $8,%esp                 # Pop param.
         leave                           # End of BLANK
         ret                             
         enter   $32,$1                  # Start of BLANK
         enter   $32,$1                  # Start of BLANK
-proc$write_341:
-        enter   $32,$1                  # Start of write
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$write_341          # Proc call
-        addl    $32,%esp                # Remove stuff from stack
-proc$write_400:
-        enter   $32,$1                  # Start of write
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$write_400          # Proc call
-        addl    $32,%esp                # Remove stuff from stack
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $61,%eax                #   '='
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $45,%eax                #   '-'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $61,%eax                #   '='
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $43,%eax                #   '+'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
         leave                           # End of BLANK
         ret                             
-proc$test_461:
-        enter   $32,$1                  # Start of test
-        call    proc$test_461           # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
-proc$test_462:
-        enter   $32,$1                  # Start of test
-        call    proc$test_462           # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
-proc$test_463:
-        enter   $32,$1                  # Start of test
-        call    proc$test_463           # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
+proc$test_431:
+        enter   $32,$2                  # Start of test
+        movl    $17,%eax                #   17
+        pushl   %eax                    # Push next param.
+        call    proc$test_431           # Proc call
+        addl    $4,%esp                 # Pop param.
+proc$test_438:
+        enter   $32,$2                  # Start of test
+        movl    $11,%eax                #   11
+        pushl   %eax                    # Push next param.
+        call    proc$test_438           # Proc call
+        addl    $4,%esp                 # Pop param.
+proc$test_447:
+        enter   $32,$2                  # Start of test
+        movl    $0,%eax                 #   0
+        pushl   %eax                    # Push next param.
+        call    proc$test_447           # Proc call
+        addl    $4,%esp                 # Pop param.
         leave                           # End of BLANK
         ret                             
         enter   $32,$1                  # Start of BLANK
         enter   $32,$1                  # Start of BLANK
-proc$write_480:
-        enter   $32,$1                  # Start of write
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$write_480          # Proc call
-        addl    $40,%esp                # Remove stuff from stack
-proc$write_559:
-        enter   $32,$1                  # Start of write
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$write_559          # Proc call
-        addl    $40,%esp                # Remove stuff from stack
-proc$write_638:
-        enter   $32,$1                  # Start of write
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$write_638          # Proc call
-        addl    $40,%esp                # Remove stuff from stack
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $61,%eax                #   '='
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $43,%eax                #   '+'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $61,%eax                #   '='
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $45,%eax                #   '-'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $61,%eax                #   '='
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $42,%eax                #   '*'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $0,%eax                 #   0
         cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0715                  # Jump to .L0715
-proc$write_737:
-        enter   $32,$1                  # Start of write
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$write_737          # Proc call
-        addl    $48,%esp                # Remove stuff from stack
-proc$write_830:
-        enter   $32,$1                  # Start of write
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$write_830          # Proc call
-        addl    $48,%esp                # Remove stuff from stack
-.L0715:
+        je      .L0669                  # Jump to .L0669
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $61,%eax                #   '='
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $118,%eax               #   'v'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $105,%eax               #   'i'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $100,%eax               #   'd'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $61,%eax                #   '='
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $100,%eax               #   'd'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $111,%eax               #   'o'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $109,%eax               #   'm'
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
+.L0669:
                                         # ?
-.L0716:
+.L0670:
                                         # ??
         leave                           # End of BLANK
         ret                             
-proc$test_925:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_925           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
-proc$test_934:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_934           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
-proc$test_945:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_945           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
-proc$test_954:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_954           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
-proc$test_963:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_963           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
-proc$test_974:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_974           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
-proc$test_983:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_983           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
-proc$test_992:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_992           # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
-proc$test_1003:
-        enter   $32,$1                  # Start of test
-        pushl   %eax                    # Push value from expr to stack
-        call    proc$test_1003          # Proc call
-        addl    $8,%esp                 # Remove stuff from stack
+proc$test_845:
+        enter   $32,$2                  # Start of test
+        movl    $17,%eax                #   17
+        pushl   %eax                    # Push next param.
+        movl    $17,%eax                #   17
+        pushl   %eax                    # Push next param.
+        call    proc$test_845           # Proc call
+        addl    $8,%esp                 # Pop param.
+proc$test_858:
+        enter   $32,$2                  # Start of test
+        movl    $11,%eax                #   11
+        pushl   %eax                    # Push next param.
+        movl    $17,%eax                #   17
+        pushl   %eax                    # Push next param.
+        call    proc$test_858           # Proc call
+        addl    $8,%esp                 # Pop param.
+proc$test_873:
+        enter   $32,$2                  # Start of test
+        movl    $0,%eax                 #   0
+        pushl   %eax                    # Push next param.
+        movl    $17,%eax                #   17
+        pushl   %eax                    # Push next param.
+        call    proc$test_873           # Proc call
+        addl    $8,%esp                 # Pop param.
+proc$test_886:
+        enter   $32,$2                  # Start of test
+        movl    $17,%eax                #   17
+        pushl   %eax                    # Push next param.
+        movl    $11,%eax                #   11
+        pushl   %eax                    # Push next param.
+        call    proc$test_886           # Proc call
+        addl    $8,%esp                 # Pop param.
+proc$test_901:
+        enter   $32,$2                  # Start of test
+        movl    $11,%eax                #   11
+        pushl   %eax                    # Push next param.
+        movl    $11,%eax                #   11
+        pushl   %eax                    # Push next param.
+        call    proc$test_901           # Proc call
+        addl    $8,%esp                 # Pop param.
+proc$test_918:
+        enter   $32,$2                  # Start of test
+        movl    $0,%eax                 #   0
+        pushl   %eax                    # Push next param.
+        movl    $17,%eax                #   17
+        pushl   %eax                    # Push next param.
+        call    proc$test_918           # Proc call
+        addl    $8,%esp                 # Pop param.
+proc$test_931:
+        enter   $32,$2                  # Start of test
+        movl    $17,%eax                #   17
+        pushl   %eax                    # Push next param.
+        movl    $0,%eax                 #   0
+        pushl   %eax                    # Push next param.
+        call    proc$test_931           # Proc call
+        addl    $8,%esp                 # Pop param.
+proc$test_944:
+        enter   $32,$2                  # Start of test
+        movl    $11,%eax                #   11
+        pushl   %eax                    # Push next param.
+        movl    $0,%eax                 #   0
+        pushl   %eax                    # Push next param.
+        call    proc$test_944           # Proc call
+        addl    $8,%esp                 # Pop param.
+proc$test_959:
+        enter   $32,$2                  # Start of test
+        movl    $0,%eax                 #   0
+        pushl   %eax                    # Push next param.
+        movl    $0,%eax                 #   0
+        pushl   %eax                    # Push next param.
+        call    proc$test_959           # Proc call
+        addl    $8,%esp                 # Pop param.
         leave                           # End of BLANK
         ret                             
-proc$testunaryboolean_1014:
+proc$testunaryboolean_974:
         enter   $32,$1                  # Start of testunaryboolean
-proc$testunarynumeric_1015:
+proc$testunarynumeric_975:
         enter   $32,$1                  # Start of testunarynumeric
-proc$testbinaryboolean_1016:
+proc$testbinaryboolean_976:
         enter   $32,$1                  # Start of testbinaryboolean
-proc$testbinarynumeric_1017:
+proc$testbinarynumeric_977:
         enter   $32,$1                  # Start of testbinarynumeric
-        leave                           # End of BLANK
+        leave                           # End of operatortest
         ret                             

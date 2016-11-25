@@ -1,133 +1,149 @@
-# Code file created by Pascal2016 compiler 2016-11-25 10:32:59
+# Code file created by Pascal2016 compiler 2016-11-25 13:14:28
         .globl  main                    
 main:
         call    prog$primes_1           # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
 prog$primes_1:
+        enter   $32,$1                  # Start of primes
+        movl    $1000,%eax              #   1000
+        movl    $2,%eax                 #   2
+        movl    $1000,%eax              #   'limit'
         enter   $32,$1                  # Start of BLANK
-        enter   $32,$1                  # Start of BLANK
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
-.L0056:
+        movl    $2,%eax                 #   2
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
+.L0054:
                                         # Start while-statement
         cmpl    $0,%eax                 
-        je      .L0057                  
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
-.L0092:
+        je      .L0055                  
+        movl    $2,%eax                 #   2
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
+.L0086:
                                         # Start while-statement
         cmpl    $0,%eax                 
-        je      .L0093                  
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
-        jmp     .L0092                  
-.L0093:
+        je      .L0087                  
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
+        jmp     .L0086                  
+.L0087:
                                         # End while-statement
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
-        jmp     .L0056                  
-.L0057:
+        movl    $1,%eax                 #   1
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
+        jmp     .L0054                  
+.L0055:
                                         # End while-statement
         leave                           # End of BLANK
         ret                             
         enter   $32,$1                  # Start of BLANK
+        movl    $1000,%eax              #   1000
         cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0166                  # Jump to .L0166
-proc$write_184:
-        enter   $32,$1                  # Start of write
-        call    proc$write_184          # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
-.L0166:
+        je      .L0152                  # Jump to .L0152
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+.L0152:
                                         # ?
-.L0167:
+.L0153:
                                         # ??
+        movl    $100,%eax               #   100
         cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0185                  # Jump to .L0185
-proc$write_203:
-        enter   $32,$1                  # Start of write
-        call    proc$write_203          # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
-.L0185:
+        je      .L0175                  # Jump to .L0175
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+.L0175:
                                         # ?
-.L0186:
+.L0176:
                                         # ??
+        movl    $10,%eax                #   10
         cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0204                  # Jump to .L0204
-proc$write_222:
-        enter   $32,$1                  # Start of write
-        call    proc$write_222          # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
-.L0204:
+        je      .L0198                  # Jump to .L0198
+        movl    $32,%eax                #   ' '
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+.L0198:
                                         # ?
-.L0205:
+.L0199:
                                         # ??
-proc$write_223:
-        enter   $32,$1                  # Start of write
-        call    proc$write_223          # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
+        pushl   %eax                    # Push next param.
+        call    write_int               
+        addl    $4,%esp                 # Pop param.
         leave                           # End of BLANK
         ret                             
         enter   $32,$1                  # Start of BLANK
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
+        movl    $2,%eax                 #   2
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
+        movl    $0,%eax                 #   0
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
 .L0258:
                                         # Start while-statement
         cmpl    $0,%eax                 
         je      .L0259                  
         cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0280                  # Jump to .L0280
+        je      .L0278                  # Jump to .L0278
+        movl    $0,%eax                 #   0
+        movl    $10,%eax                #   10
+        movl    $0,%eax                 #   0
         cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0302                  # Jump to .L0302
-proc$write_352:
-        enter   $32,$1                  # Start of write
-        call    proc$write_352          # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
-.L0302:
+        je      .L0296                  # Jump to .L0296
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
+.L0296:
                                         # ?
-.L0303:
+.L0297:
                                         # ??
-proc$p4_353:
+proc$p4_347:
         enter   $32,$1                  # Start of p4
-        call    proc$p4_353             # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
-.L0280:
+        pushl   %eax                    # Push next param.
+        call    proc$p4_347             # Proc call
+        addl    $4,%esp                 # Pop param.
+        movl    $1,%eax                 #   1
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
+.L0278:
                                         # ?
-.L0281:
+.L0279:
                                         # ??
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
+        movl    $1,%eax                 #   1
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
         jmp     .L0258                  
 .L0259:
                                         # End while-statement
-proc$write_386:
-        enter   $32,$1                  # Start of write
-        call    proc$write_386          # Proc call
-        addl    $4,%esp                 # Remove stuff from stack
+        pushl   %eax                    # Push next param.
+        call    write_char              
+        addl    $4,%esp                 # Pop param.
         leave                           # End of BLANK
         ret                             
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
+        movl    $2,%eax                 #   2
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
 .L0399:
                                         # Start while-statement
         cmpl    $0,%eax                 
         je      .L0400                  
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
-        movl    0(%ebp),%edx            # Var?
-        movl    %eax,0(%edx)            # ?
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
+        movl    $1,%eax                 #   1
+        movl    0(%ebp),%edx            
+        movl    %eax,0(%edx)            
         jmp     .L0399                  
 .L0400:
                                         # End while-statement
-proc$findprimes_447:
+proc$findprimes_441:
         enter   $32,$1                  # Start of findprimes
-proc$printprimes_448:
+proc$printprimes_442:
         enter   $32,$1                  # Start of printprimes
-        leave                           # End of BLANK
+        leave                           # End of primes
         ret                             
