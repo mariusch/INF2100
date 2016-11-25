@@ -58,12 +58,10 @@ class ProcCallStatm extends Statement {
     @Override
     void genCode(CodeFile f) {
         procRef.label = f.getLabel("proc$" + name);
-        f.genInstr(procRef.label,              "enter",             "$"+32+",$1",                      "Start of "+name);
 
 
         if (name.equals("write")){
 
-            System.out.println("kom hit");
             for (int i = exprList.size() - 1; i >= 0; i--) {
                 exprList.get(i).genCode(f); //Legger value fra expr til %eax
                 f.genInstr("", "pushl", "%eax", "");
@@ -88,7 +86,7 @@ class ProcCallStatm extends Statement {
 
 
         } else {
-
+            f.genInstr(procRef.label,              "enter",             "$"+32+",$1",                      "Start of "+name);
             if (!procCallShort) {
             /*exprList.get(0).genCode(f);
 
