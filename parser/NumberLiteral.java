@@ -38,7 +38,7 @@ class NumberLiteral extends UnsignedConstant {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 
-        f.genInstr("", "movl", "$"+constVal+",%eax", "  '" + constVal + "'");
+        f.genInstr("", "movl", "$"+constVal+",%eax", "  " + constVal);
 
     }
 
