@@ -40,6 +40,17 @@ class TermOperator extends Operator {
 
     @Override
     void genCode(CodeFile f) {
+
+        if (opr.equals("+")) {
+            f.genInstr("",          "pushl",         "%eax",               "");
+            f.genInstr("",          "movl",         "%eax,%ecx",               "");
+            f.genInstr("",          "popl",         "%eax",               "");
+            f.genInstr("",          "addl",         "%ecx,%eax",               "   "+opr);
+        }
+
+        // -
+
+        // or
     }
 
     @Override

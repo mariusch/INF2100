@@ -58,40 +58,14 @@ class SimpleExpr extends PascalSyntax {
         if (po != null)
             po.genCode(f);
 
+        //Misstenker at denne skal flyttes "nedover"
         tList.get(0).genCode(f);
-        f.genInstr("",          "pushl",         "%eax",               "");
 
 
         for (int i = 0; i < toList.size(); i++){
             toList.get(i).genCode(f);
             tList.get(i+1).genCode(f);
-
-            if (toList.get(0).opr.equals("+")) {
-                f.genInstr("",          "movl",         "%eax,%ecx",               "");
-                f.genInstr("",          "popl",         "%eax",               "");
-                f.genInstr("",          "addl",         "%ecx,%eax",               "   "+toList.get(0).opr);
-
-            }/*
-                --- Disse to er skrevet riktig, men er kanskje på feil sted? ---
-
-             else if (toList.get(0).opr.equals("div")) {
-                f.genInstr("",          "movl",         "%eax,%ecx",               "--simple expr: div");
-                f.genInstr("",          "popl",         "%eax",               "--simple expr: div");
-                f.genInstr("",          "cdq",         "",               "--simple expr: div");
-                f.genInstr("",          "idivl",         "%ecx",               "--simple expr: div");
-            } else if (toList.get(0).opr.equals("=")) {
-                f.genInstr("",          "popl",         "%ecx",               "--simple expr: =");
-                f.genInstr("",          "cmpl",         "%eax,%ecx",               "--simple expr: =");
-                f.genInstr("",          "movl",         "$0,%eax",               "--simple expr: =");
-                f.genInstr("",          "sete",         "%al",               "--simple expr: =");
-
-            } else {
-                Main.panic("Error i Simple Expr");
-            } */
-
         }
-
-
     }
 
     @Override

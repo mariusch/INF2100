@@ -25,6 +25,23 @@ class RelOperator extends Operator {
 
     @Override
     void genCode(CodeFile f) {
+
+        if (opVal.equals("=")) {
+            f.genInstr("",          "popl",         "%ecx",               "--simple expr: =");
+            f.genInstr("",          "cmpl",         "%eax,%ecx",               "--simple expr: =");
+            f.genInstr("",          "movl",         "$0,%eax",               "--simple expr: =");
+            f.genInstr("",          "sete",         "%al",               "--simple expr: =");
+        }
+
+        // <>
+
+        // <
+
+        // <=
+
+        // >
+
+        // >=
     }
 
     @Override
