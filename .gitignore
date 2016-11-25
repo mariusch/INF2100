@@ -54,6 +54,7 @@ INF2100.iml
 *.js
 *.css
 *.zip
+*.s
 JavaDoc/
 
 # Mac
