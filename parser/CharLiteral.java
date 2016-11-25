@@ -33,7 +33,6 @@ class CharLiteral extends UnsignedConstant {
         String testLabel = f.getLocalLabel(),
                 endLabel = f.getLocalLabel();
 
-        System.out.println("DENNE BLIR KALT");
         f.genInstr("", "movl", "$"+constVal+",%eax", "  '" + val + "'");
     }
 
