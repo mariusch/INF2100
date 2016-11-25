@@ -17,7 +17,7 @@ import static scanner.TokenKind.*;
 class Variable extends Factor {
 
     private Expression expr;
-    private String name;
+    protected String name;
 
     protected PascalDecl vRef;
 
