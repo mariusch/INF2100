@@ -31,17 +31,20 @@ class RelOperator extends Operator {
             f.genInstr("",          "cmpl",         "%eax,%ecx",               "--simple expr: =");
             f.genInstr("",          "movl",         "$0,%eax",               "--simple expr: =");
             f.genInstr("",          "sete",         "%al",               "--simple expr: =");
+        } else if (opVal.equals("<>")) {
+            f.genInstr("",          "",         "",               " <> : Ikke implementert. Rel Opr");
+        } else if (opVal.equals("<")) {
+            f.genInstr("",          "",         "",               " < : Ikke implementert. Rel Opr");
+        } else if (opVal.equals("<=")) {
+            f.genInstr("",          "",         "",               " <= : Ikke implementert. Rel Opr");
+        } else if (opVal.equals(">")) {
+            f.genInstr("",          "",         "",               " > : Ikke implementert. Rel Opr");
+        } else if (opVal.equals(">=")) {
+            f.genInstr("",          "",         "",               " >= : Ikke implementert. Rel Opr");
+        } else {
+            Main.panic("Rel opr - genCode()");
         }
 
-        // <>
-
-        // <
-
-        // <=
-
-        // >
-
-        // >=
     }
 
     @Override

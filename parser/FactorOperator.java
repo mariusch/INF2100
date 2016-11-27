@@ -42,18 +42,20 @@ class FactorOperator extends Operator {
     @Override
     void genCode(CodeFile f) {
 
-        // *
-
-        if (token.equals("div")) {
+        if (token.equals("*")) {
+            f.genInstr("",          "",         "",               " * : Ikke implementert. Factor Opr");
+        } else if (token.equals("div")) {
             f.genInstr("",          "movl",         "%eax,%ecx",               "--simple expr: div");
             f.genInstr("",          "popl",         "%eax",               "--simple expr: div");
             f.genInstr("",          "cdq",         "",               "--simple expr: div");
             f.genInstr("",          "idivl",         "%ecx",               "--simple expr: div");
+        } else if (token.equals("mod")) {
+            f.genInstr("",          "",         "",               " mod : Ikke implementert. Factor Opr");
+        } else if (token.equals("and")) {
+            f.genInstr("",          "",         "",               " and : Ikke implementert. Factor Opr");
+        } else {
+            Main.panic("Factor opr - genCode()");
         }
-
-        // mod
-
-        // and
     }
 
     @Override
