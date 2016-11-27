@@ -16,7 +16,7 @@ class FactorOperator extends Operator {
 
     protected String token;
 
-    protected Factor right, left;
+    protected Factor left, right;
 
 
     FactorOperator(int lNum) {
@@ -45,6 +45,9 @@ class FactorOperator extends Operator {
         if (token.equals("*")) {
             f.genInstr("",          "",         "",               " * : Ikke implementert. Factor Opr");
         } else if (token.equals("div")) {
+            left.genCode(f);
+            f.genInstr("",          "pushl",         "%eax",               "");
+            right.genCode(f);
             f.genInstr("",          "movl",         "%eax,%ecx",               "--simple expr: div");
             f.genInstr("",          "popl",         "%eax",               "--simple expr: div");
             f.genInstr("",          "cdq",         "",               "--simple expr: div");

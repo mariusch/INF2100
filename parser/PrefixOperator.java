@@ -15,6 +15,7 @@ import static scanner.TokenKind.*;
 class PrefixOperator extends Operator {
 
     protected String opr;
+    protected PascalSyntax ref;
 
     PrefixOperator(int lNum) {
         super(lNum);
@@ -22,6 +23,20 @@ class PrefixOperator extends Operator {
 
     @Override
     void check(Block curScope, Library lib) {
+
+        if (ref instanceof Term) {
+            Term tmp = (Term) ref;
+            tmp.type.checkType(lib.integerType, "Prefix " + opr + " operand", this,
+                    "Prefix + or - may only be applied to Integers.");
+
+        } else if (ref instanceof UnsignedConstant) {
+            UnsignedConstant tmp = (UnsignedConstant) ref;
+            tmp.type.checkType(lib.integerType, "Prefix " + opr + " operand", this,
+                    "Prefix + or - may only be applied to Integers.");
+
+        } else {
+            Main.panic("Error in Prefix Opr");
+        }
     }
 
     @Override

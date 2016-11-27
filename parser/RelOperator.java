@@ -14,6 +14,8 @@ class RelOperator extends Operator {
 
     protected String opVal;
 
+    protected SimpleExpr left, right;
+
     RelOperator(int lNum) {
         super(lNum);
     }
@@ -27,14 +29,27 @@ class RelOperator extends Operator {
     void genCode(CodeFile f) {
 
         if (opVal.equals("=")) {
+
+            //Her mangler right og left som klassevariabler
+            left.genCode(f);
             f.genInstr("",          "popl",         "%ecx",               "--simple expr: =");
+            right.genCode(f);
             f.genInstr("",          "cmpl",         "%eax,%ecx",               "--simple expr: =");
             f.genInstr("",          "movl",         "$0,%eax",               "--simple expr: =");
             f.genInstr("",          "sete",         "%al",               "--simple expr: =");
         } else if (opVal.equals("<>")) {
             f.genInstr("",          "",         "",               " <> : Ikke implementert. Rel Opr");
         } else if (opVal.equals("<")) {
-            f.genInstr("",          "",         "",               " < : Ikke implementert. Rel Opr");
+            //Denne er skrevet etter utskrift fra referansekompilatoren
+            left.genCode(f);
+            f.genInstr("",          "push",         "%eax",               "");
+            right.genCode(f);
+            f.genInstr("",          "popl",         "%ecx",               "");
+            f.genInstr("",          "cmpl",         "%eax,%ecx",               "");
+            f.genInstr("",          "movl",         "$0,%eax",               "");
+            f.genInstr("",          "setl",         "%al",               "Test <");
+
+            //f.genInstr("",          "",         "",               " < : Ikke implementert. Rel Opr");
         } else if (opVal.equals("<=")) {
             f.genInstr("",          "",         "",               " <= : Ikke implementert. Rel Opr");
         } else if (opVal.equals(">")) {

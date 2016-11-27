@@ -27,15 +27,16 @@ class SimpleExpr extends PascalSyntax {
     @Override
     void check(Block curScope, Library lib) {
 
-        if(po!=null){
-            po.check(curScope, lib);
-        }
-
         Term left, right;
 
         left = tList.get(0);
         left.check(curScope, lib);
         type = left.type;
+
+        if(po!=null){
+            po.ref = left;
+            po.check(curScope, lib);
+        }
 
         for (int i = 0; i <tList.size(); i++) {
 
@@ -58,9 +59,8 @@ class SimpleExpr extends PascalSyntax {
         if (po != null)
             po.genCode(f);
 
-        //Misstenker at denne skal flyttes "nedover"
+        //Tror denne skal flyttes "nedover"
         tList.get(0).genCode(f);
-
 
         for (int i = 0; i < toList.size(); i++){
             toList.get(i).genCode(f);

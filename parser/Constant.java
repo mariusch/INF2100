@@ -27,17 +27,16 @@ class Constant extends PascalSyntax {
     void check(Block curScope, Library lib) {
         uc.check(curScope, lib);
         constVal = uc.constVal;
+        //System.out.println(po + " " + po.ref + " " + uc);
 
         if (po != null) {
             type = lib.integerType;
-            System.out.println("Const decl type satt: " + type);
 
-            String oprName = po.opr;
-            uc.type.checkType(lib.integerType, "Prefix " + oprName, this,
-                    "Prefix + or - may only be applied to Integers.");
             if (po.opr.equals("-")) {
                 constVal = -constVal;
             }
+            po.ref = uc;
+            po.check(curScope, lib);
 
         } else {
             type = uc.type;

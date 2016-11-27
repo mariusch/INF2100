@@ -49,7 +49,16 @@ class Variable extends Factor {
     @Override
     void genCode(CodeFile f) {
         if (expr != null) {
-            expr.genCode(f);
+            //expr.genCode(f);// tror ikke denne skal kalles? ref tabell 4.5 s49
+        }
+
+        //Usikker på om dette er rett
+        System.out.println(vRef);
+        if (vRef instanceof VarDecl) {
+            f.genInstr("", "movl", "-4(%ebp),%edx", ""); // -4 skal være -4b, blokknivå
+            f.genInstr("", "movl", "0(%edx),%eax", "    "+name);
+        } else if (vRef instanceof ConstDecl) {
+            f.genInstr("", "movl", "$10,%eax", "    10"+name);
         }
     }
 
