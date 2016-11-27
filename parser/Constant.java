@@ -27,7 +27,6 @@ class Constant extends PascalSyntax {
     void check(Block curScope, Library lib) {
         uc.check(curScope, lib);
         constVal = uc.constVal;
-        //System.out.println(po + " " + po.ref + " " + uc);
 
         if (po != null) {
             type = lib.integerType;

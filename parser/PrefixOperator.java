@@ -28,12 +28,10 @@ class PrefixOperator extends Operator {
             Term tmp = (Term) ref;
             tmp.type.checkType(lib.integerType, "Prefix " + opr + " operand", this,
                     "Prefix + or - may only be applied to Integers.");
-
         } else if (ref instanceof UnsignedConstant) {
             UnsignedConstant tmp = (UnsignedConstant) ref;
             tmp.type.checkType(lib.integerType, "Prefix " + opr + " operand", this,
                     "Prefix + or - may only be applied to Integers.");
-
         } else {
             Main.panic("Error in Prefix Opr");
         }
