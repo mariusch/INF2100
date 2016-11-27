@@ -37,7 +37,7 @@ class ConstDecl extends PascalDecl {
 
     @Override
     void genCode(CodeFile f) {
-        con.genCode(f);
+        //con.genCode(f); denne lager feil utskrift i 10star -> "movl    $10,%eax                #   10"
     }
 
     @Override
