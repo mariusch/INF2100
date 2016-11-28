@@ -17,7 +17,7 @@ import java.util.HashMap;
  */
 class Block extends PascalSyntax {
     private ConstDeclPart cdp;
-    private VarDeclPart vdp;
+     VarDeclPart vdp;
     private ArrayList<ProcDecl> pdList = new ArrayList<ProcDecl>();
     private StatmList stml;
     protected Program context;
