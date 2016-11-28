@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-28 15:58:59
+# Code file created by Pascal2016 compiler 2016-11-28 16:04:14
         .globl  _main                   
 _main:
         call    prog$tenstars_1         # Start program
@@ -11,9 +11,9 @@ prog$tenstars_1:
         movl    %eax,-4(%edx)           # i :=
 .L0002:
                                         # Start while-statement
-        movl    1(%ebp),%edx            
+        movl    -4(%ebp),%edx           
         movl    -4(%edx),%eax           #     i
-        push    %eax                    
+        pushl   %eax                    
         movl    $10,%eax                #   10 Skrevet ut i: <number literal> on line 2
         popl    %ecx                    
         cmpl    %eax,%ecx               
@@ -26,7 +26,7 @@ prog$tenstars_1:
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
-        movl    1(%ebp),%edx            
+        movl    -4(%ebp),%edx           
         movl    -4(%edx),%eax           #     i
         pushl   %eax                    
         movl    $1,%eax                 #   1 Skrevet ut i: <number literal> on line 7
