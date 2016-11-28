@@ -32,11 +32,11 @@ class RelOperator extends Operator {
 
             //Her mangler right og left som klassevariabler
             left.genCode(f);
-            f.genInstr("",          "popl",         "%ecx",               "--simple expr: =");
+            f.genInstr("",          "popl",         "%ecx",               "");
             right.genCode(f);
-            f.genInstr("",          "cmpl",         "%eax,%ecx",               "--simple expr: =");
-            f.genInstr("",          "movl",         "$0,%eax",               "--simple expr: =");
-            f.genInstr("",          "sete",         "%al",               "--simple expr: =");
+            f.genInstr("",          "cmpl",         "%eax,%ecx",               "");
+            f.genInstr("",          "movl",         "$0,%eax",               "");
+            f.genInstr("",          "sete",         "%al",               "");
         } else if (opVal.equals("<>")) {
             f.genInstr("",          "",         "",               " <> : Ikke implementert. Rel Opr");
         } else if (opVal.equals("<")) {

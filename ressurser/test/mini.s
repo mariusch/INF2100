@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-27 14:47:01
+# Code file created by Pascal2016 compiler 2016-11-28 12:31:06
         .globl  _main                   
 _main:
         call    prog$mini_1             # Start program
