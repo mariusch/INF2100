@@ -1,5 +1,7 @@
 package parser;
 
+import main.CodeFile;
+
 /**
  * Parser class used for creating a syntax tree with tokens from the scanner module.
  *
@@ -19,6 +21,8 @@ public abstract class PascalDecl extends PascalSyntax {
 
     @Override
     abstract void prettyPrint();
+
+    abstract void genCode(CodeFile f);
 
 
     /**
