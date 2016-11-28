@@ -41,7 +41,7 @@ class RelOperator extends Operator {
         } else if (opVal.equals("<")) {
             //Denne er skrevet etter utskrift fra referansekompilatoren
             //left.genCode(f);
-            f.genInstr("",          "push",         "%eax",               "");
+            f.genInstr("",          "pushl",         "%eax",               "");
             right.genCode(f);
             f.genInstr("",          "popl",         "%ecx",               "");
             f.genInstr("",          "cmpl",         "%eax,%ecx",               "");
