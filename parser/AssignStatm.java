@@ -46,6 +46,9 @@ class AssignStatm extends Statement {
         //Hvis vanlig variabel:
             //movl −4b(%ebp),%edx
             //movl %eax,o(%edx)
+
+
+
         if (variable.vRef instanceof VarDecl) {
             f.genInstr("",          "movl",         -4*tmpb + "(%ebp),%edx",         "");
             f.genInstr("",          "movl",         "%eax," + tmpo + "(%edx)",       variable.name+" :=");
