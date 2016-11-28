@@ -30,7 +30,6 @@ class RelOperator extends Operator {
 
         if (opVal.equals("=")) {
 
-            //Her mangler right og left som klassevariabler
             left.genCode(f);
             f.genInstr("",          "popl",         "%ecx",               "");
             right.genCode(f);
@@ -41,7 +40,7 @@ class RelOperator extends Operator {
             f.genInstr("",          "",         "",               " <> : Ikke implementert. Rel Opr");
         } else if (opVal.equals("<")) {
             //Denne er skrevet etter utskrift fra referansekompilatoren
-            left.genCode(f);
+            //left.genCode(f);
             f.genInstr("",          "push",         "%eax",               "");
             right.genCode(f);
             f.genInstr("",          "popl",         "%ecx",               "");

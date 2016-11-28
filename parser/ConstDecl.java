@@ -37,8 +37,11 @@ class ConstDecl extends PascalDecl {
 
     @Override
     void genCode(CodeFile f) {
-        if (con != null)
+        if (con != null) {
             con.genCode(f);
+        } else {
+            f.genInstr("", "movl", "$"+constVal+",%eax", "  " + constVal + " Skrevet ut i: " + this.identify());
+        }
     }
 
     @Override

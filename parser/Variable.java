@@ -54,7 +54,7 @@ class Variable extends Factor {
         }
 
         //Usikker på om dette er rett
-        System.out.println(vRef);
+        System.out.println(vRef + vRef.identify() + " og expr er: " + expr);
         /*if (vRef instanceof VarDecl) {
             f.genInstr("", "movl", "-4(%ebp),%edx", ""); // -4 skal være -4b, blokknivå
             f.genInstr("", "movl", "0(%edx),%eax", "    "+name);

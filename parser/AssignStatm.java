@@ -29,14 +29,16 @@ class AssignStatm extends Statement {
         expr.check(curScope, lib);
         expr.type.checkType(variable.type, ":=", this,
                 ":= is not Boolean.");
+
     }
 
     @Override
     void genCode(CodeFile f) {
         expr.genCode(f);
 
-        int tmpb = 0; //Endre til blokknivå når vi har det på plass
-        int tmpo = 0; //Endre til offset når vi har det på plass
+        int tmpb = variable.vRef.declLevel; //Endre til blokknivå når vi har det på plass
+        int tmpo = variable.vRef.declOffset; //Endre til offset når vi har det på plass
+        System.out.println("Blokknivå: " + tmpb + " Offset: " + tmpo);
 
         //Sjekk typen til variabelen
             //Merk: b er blokknivå, o er offset

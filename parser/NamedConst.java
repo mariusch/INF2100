@@ -26,7 +26,6 @@ class NamedConst extends UnsignedConstant {
         declRef = curScope.findDecl(name, this);
         type = declRef.type;
 
-
         ConstDecl cd = (ConstDecl) declRef;
         constVal = cd.constVal;
     }

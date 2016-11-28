@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-28 13:08:57
+# Code file created by Pascal2016 compiler 2016-11-28 15:28:24
         .globl  _main                   
 _main:
         call    prog$tenstars_1         # Start program
@@ -6,18 +6,13 @@ _main:
         ret                             # terminate the program
 prog$tenstars_1:
         enter   $32,$1                  # Start of tenstars
-        movl    $10,%eax                #   10
-        movl    -4(%ebp),%edx           
-        movl    0(%edx),%eax            #     i
         movl    $0,%eax                 #   0
-        movl    0(%ebp),%edx            
-        movl    %eax,0(%edx)            # i :=
+        movl    -4(%ebp),%edx           
+        movl    %eax,-4(%edx)           # i :=
 .L0002:
                                         # Start while-statement
         movl    -4(%ebp),%edx           
-        movl    0(%edx),%eax            #     i
-        movl    -4(%ebp),%edx           
-        movl    0(%edx),%eax            #     i
+        movl    0(%edx),%eax            #     i Skrevet ut i: parser.VarDecl@49476842
         push    %eax                    
         movl    $10,%eax                #   10
         popl    %ecx                    
@@ -32,20 +27,21 @@ prog$tenstars_1:
         call    write_char              
         addl    $4,%esp                 # Pop param.
         movl    -4(%ebp),%edx           
-        movl    0(%edx),%eax            #     i
+        movl    0(%edx),%eax            #     i Skrevet ut i: parser.VarDecl@49476842
         movl    -4(%ebp),%edx           
-        movl    0(%edx),%eax            #     i
+        movl    0(%edx),%eax            #     i Skrevet ut i: parser.VarDecl@49476842
         pushl   %eax                    
         movl    $1,%eax                 #   1
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #    +
         movl    $1,%eax                 #   1
-        movl    0(%ebp),%edx            
-        movl    %eax,0(%edx)            # i :=
+        movl    -4(%ebp),%edx           
+        movl    %eax,-4(%edx)           # i :=
         jmp     .L0002                  
 .L0003:
                                         # End while-statement
+        movl    $10,%eax                #   10 Skrevet ut i: <const decl> eol in the library
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
