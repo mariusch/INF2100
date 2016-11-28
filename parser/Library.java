@@ -28,15 +28,18 @@ public class Library extends Block {
 
         ConstDecl eolDecl = new ConstDecl("eol", -1);
         eolDecl.setType(this.charType);
+        eolDecl.constVal = 10;
 
         this.addDecl("eol", eolDecl);
 
         ConstDecl falseConDecl = new ConstDecl("false", -1);
         falseConDecl.setType(this.booleanType);
+        falseConDecl.constVal = 0;
         this.addDecl("false", falseConDecl);
 
         ConstDecl trueConDecl = new ConstDecl("true", -1);
         trueConDecl.setType(this.booleanType);
+        trueConDecl.constVal = 1;
         this.addDecl("true", trueConDecl);
 
         /* boolean, char, integer decls*/
