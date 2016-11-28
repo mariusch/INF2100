@@ -59,7 +59,6 @@ class SimpleExpr extends PascalSyntax {
         if (po != null)
             po.genCode(f);
 
-        //Tror denne skal flyttes "nedover"
         tList.get(0).genCode(f);
 
         for (int i = 0; i < toList.size(); i++){
