@@ -61,9 +61,12 @@ class SimpleExpr extends PascalSyntax {
 
         tList.get(0).genCode(f);
 
-        for (int i = 0; i < toList.size(); i++){
-            toList.get(i).genCode(f);
-            tList.get(i+1).genCode(f);
+        for (int i = 0; i < toList.size(); i++) {
+
+            if (i < toList.size()) {
+                toList.get(i).genCode(f);
+                tList.get(i + 1).genCode(f);
+            }
         }
     }
 

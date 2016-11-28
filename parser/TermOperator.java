@@ -42,7 +42,7 @@ class TermOperator extends Operator {
     void genCode(CodeFile f) {
 
         if (opr.equals("+")) {
-            left.genCode(f);
+            //left.genCode(f);
             f.genInstr("",          "pushl",         "%eax",               "");
             right.genCode(f);
             f.genInstr("",          "movl",         "%eax,%ecx",               "");
