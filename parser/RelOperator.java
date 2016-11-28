@@ -29,8 +29,7 @@ class RelOperator extends Operator {
     void genCode(CodeFile f) {
 
         if (opVal.equals("=")) {
-
-            //Her mangler right og left som klassevariabler
+            
             left.genCode(f);
             f.genInstr("",          "popl",         "%ecx",               "");
             right.genCode(f);
