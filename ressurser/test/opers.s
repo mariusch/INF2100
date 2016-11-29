@@ -1,15 +1,10 @@
-# Code file created by Pascal2016 compiler 2016-11-29 13:48:41
+# Code file created by Pascal2016 compiler 2016-11-29 13:55:28
         .globl  _main                   
 _main:
         call    prog$operatortest_1     # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
-prog$operatortest_1:
-        enter   $32,$1                  # Start of operatortest
-proc$testunaryboolean_2:
-        enter   $-32,$1                 # Start of testunaryboolean
-proc$test_3:
-        enter   $-28,$2                 # Start of test
+        enter   $-28,$1                 # Start of test
         movl    $10,%eax                #   10
         pushl   %eax                    # Push next param.
         call    write_char              
@@ -51,6 +46,7 @@ proc$test_3:
         addl    $4,%esp                 # Pop param.
         leave                           # End of test
         ret                             
+        enter   $-32,$1                 # Start of testunaryboolean
         movl    $0,%eax                 #   0
         pushl   %eax                    # Push next param.
         call    proc$test_3             # Proc call
@@ -61,10 +57,7 @@ proc$test_3:
         addl    $4,%esp                 # Pop param.
         leave                           # End of testunaryboolean
         ret                             
-proc$testbinaryboolean_4:
-        enter   $-32,$1                 # Start of testbinaryboolean
-proc$test_5:
-        enter   $-24,$2                 # Start of test
+        enter   $-24,$1                 # Start of test
         movl    $10,%eax                #   10
         pushl   %eax                    # Push next param.
         call    write_char              
@@ -161,6 +154,7 @@ proc$test_5:
         addl    $4,%esp                 # Pop param.
         leave                           # End of test
         ret                             
+        enter   $-32,$1                 # Start of testbinaryboolean
         movl    $0,%eax                 #   0
         pushl   %eax                    # Push next param.
         movl    $0,%eax                 #   0
@@ -187,10 +181,7 @@ proc$test_5:
         addl    $8,%esp                 # Pop param.
         leave                           # End of testbinaryboolean
         ret                             
-proc$testunarynumeric_6:
-        enter   $-32,$1                 # Start of testunarynumeric
-proc$test_7:
-        enter   $-28,$2                 # Start of test
+        enter   $-28,$1                 # Start of test
         movl    $10,%eax                #   10
         pushl   %eax                    # Push next param.
         call    write_char              
@@ -254,6 +245,7 @@ proc$test_7:
         addl    $4,%esp                 # Pop param.
         leave                           # End of test
         ret                             
+        enter   $-32,$1                 # Start of testunarynumeric
         movl    $17,%eax                #   17
         pushl   %eax                    # Push next param.
         call    proc$test_7             # Proc call
@@ -269,10 +261,7 @@ proc$test_7:
         addl    $4,%esp                 # Pop param.
         leave                           # End of testunarynumeric
         ret                             
-proc$testbinarynumeric_8:
-        enter   $-32,$1                 # Start of testbinarynumeric
-proc$test_9:
-        enter   $-24,$2                 # Start of test
+        enter   $-24,$1                 # Start of test
         movl    $10,%eax                #   10
         pushl   %eax                    # Push next param.
         call    write_char              
@@ -505,6 +494,7 @@ proc$test_9:
                                         # End if-statement
         leave                           # End of test
         ret                             
+        enter   $-32,$1                 # Start of testbinarynumeric
         movl    $17,%eax                #   17
         pushl   %eax                    # Push next param.
         movl    $17,%eax                #   17
@@ -566,5 +556,7 @@ proc$test_9:
         addl    $8,%esp                 # Pop param.
         leave                           # End of testbinarynumeric
         ret                             
+prog$operatortest_1:
+        enter   $32,$1                  # Start of program
         leave                           # End of operatortest
         ret                             
