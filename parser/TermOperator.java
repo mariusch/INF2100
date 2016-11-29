@@ -47,9 +47,22 @@ class TermOperator extends Operator {
             right.genCode(f);
             f.genInstr("",          "movl",         "%eax,%ecx",               "");
             f.genInstr("",          "popl",         "%eax",               "");
-            f.genInstr("",          "addl",         "%ecx,%eax",               "   "+opr);
+            f.genInstr("",          "addl",         "%ecx,%eax",               "  "+opr);
         } else if (opr.equals("-")) {
-            f.genInstr("",          "",         "",               " > : Ikke implementert. Term Opr");
+
+
+
+            left.genCode(f);
+            f.genInstr("",          "pushl",         "%eax",               "");
+            right.genCode(f);
+            f.genInstr("",          "movl",         "%eax,%ecx",               "");
+            f.genInstr("",          "popl",         "%eax",               "");
+            f.genInstr("",          "subl",         "%ecx,%eax",               "  "+opr);
+
+
+            //f.genInstr("",          "",         "",               " - : Ikke implementert. Term Opr");
+
+
         } else if (opr.equals("or")) {
             f.genInstr("",          "",         "",               " > : Ikke implementert. Term Opr");
         } else {
