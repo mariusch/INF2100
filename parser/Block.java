@@ -17,12 +17,12 @@ import java.util.HashMap;
  */
 class Block extends PascalSyntax {
     private ConstDeclPart cdp;
-     VarDeclPart vdp;
+    protected VarDeclPart vdp;
     private ArrayList<ProcDecl> pdList = new ArrayList<ProcDecl>();
     private StatmList stml;
     protected PascalDecl context;
 
-    HashMap<String, PascalDecl> decls = new HashMap<String, PascalDecl>();
+    protected HashMap<String, PascalDecl> decls = new HashMap<String, PascalDecl>();
     protected Block outerScope;
 
     Block(int lNum) {
@@ -92,7 +92,6 @@ class Block extends PascalSyntax {
         String decln = "";
         if (context instanceof Program) {
             decln = "prog$";
-            //f.genInstr("prog$"+context.progProcFuncName,          "",               "",           "");
         } else if (context instanceof ProcDecl) {
             decln = "proc$";
         } else if (context instanceof FuncDecl){
@@ -101,7 +100,8 @@ class Block extends PascalSyntax {
             decln = "prog$";
         } else {Main.panic(this.identify());}
 
-        f.genInstr(decln+context.progProcFuncName,              "enter",             "$"+context.declOffset+",$1",                      "Start of " + context.name);
+        f.genInstr(decln+context.progProcFuncName, "enter", "$"+context.declOffset+",$1", "Start of " + context.name);
+
         if (stml != null)
             stml.genCode(f);
     }

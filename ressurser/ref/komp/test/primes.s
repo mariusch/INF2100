@@ -88,7 +88,7 @@ proc$p4_7:
         popl    %ecx                    
         cmpl    %eax,%ecx               
         movl    $0,%eax                 
-        setl    %al                     # Test <
+        setl    %al                     # Test <        setl    %al                     # Test <
         cmpl    $0,%eax                 
         je      .L0008                  
         movl    $32,%eax                #   ' '

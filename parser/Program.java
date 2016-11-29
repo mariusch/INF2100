@@ -14,8 +14,7 @@ import static scanner.TokenKind.*;
  */
 public class Program extends PascalDecl {
 
-    private Block progBlock;
-    protected String name;
+    protected Block progBlock;
 
     Program(String id, int lNum) {
         super(id, lNum);
@@ -58,7 +57,6 @@ public class Program extends PascalDecl {
 
     @Override
     public void genCode(CodeFile f) {
-        //String progName = f.getLabel(name);
         progProcFuncName = f.getLabel(name);
 
         String mainName;
@@ -73,14 +71,11 @@ public class Program extends PascalDecl {
         f.genInstr("",              "movl",               "$0,%eax",                          "Set status 0 and");
         f.genInstr("",              "ret",                "",                                 "terminate the program");
 
-        //f.genInstr("prog$"+progName,          "",               "",           "");
-
         if (progBlock.vdp != null) {
             declOffset = 32 + (4 * progBlock.vdp.vdList.size()); //32 Pluss 4 pr. variabel
         }
         else {declOffset = 32;}
 
-        //f.genInstr("",              "enter",             "$"+declOffset+",$1",                      "Start of " + name);
         progBlock.genCode(f);
 
         f.genInstr("",              "leave",              "",                  "End of "+name);

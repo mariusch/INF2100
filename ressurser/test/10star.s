@@ -1,11 +1,11 @@
-# Code file created by Pascal2016 compiler 2016-11-29 13:34:37
+# Code file created by Pascal2016 compiler 2016-11-29 16:30:12
         .globl  _main                   
 _main:
         call    prog$tenstars_1         # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
 prog$tenstars_1:
-        enter   $36,$1                  # Start of program
+        enter   $36,$1                  # Start of tenstars
         movl    $0,%eax                 #   0
         movl    -4(%ebp),%edx           
         movl    %eax,-4(%edx)           # i :=
