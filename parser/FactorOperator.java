@@ -43,7 +43,15 @@ class FactorOperator extends Operator {
     void genCode(CodeFile f) {
 
         if (token.equals("*")) {
-            f.genInstr("",          "",         "",               " * : Ikke implementert. Factor Opr");
+
+            //Denne er skrevet etter utskrift fra referansekompilatoren
+            left.genCode(f);
+            f.genInstr("",          "pushl",         "%eax",               "");
+            right.genCode(f);
+            f.genInstr("",          "movl",         "%eax,%ecx",               "");
+            f.genInstr("",          "popl",         "%eax",               "");
+            f.genInstr("",          "imull",         "%ecx,%eax",               "  "+token);
+
         } else if (token.equals("div")) {
             left.genCode(f);
             f.genInstr("",          "pushl",         "%eax",               "");

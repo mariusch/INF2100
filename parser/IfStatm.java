@@ -40,10 +40,11 @@ class IfStatm extends Statement {
         String lab1 = f.getLocalLabel(),
                 lab2 = f.getLocalLabel();
 
+        f.genInstr("",      "",     "",      "Start if-statement");
         exp.genCode(f);
 
-        f.genInstr("",      "cmpl",     "$0,%eax",      "Is 0 = %eax?");
-        f.genInstr("",      "je",       lab1,           "Jump to " + lab1);
+        f.genInstr("",      "cmpl",     "$0,%eax",      "");
+        f.genInstr("",      "je",       lab1,           "");
 
         stm.get(0).genCode(f);
 
@@ -57,6 +58,7 @@ class IfStatm extends Statement {
             stm.get(1).genCode(f);
             f.genInstr(lab2,    "",     "",       "");
         }
+        f.genInstr("",      "",     "",      "End if-statement");
     }
 
     @Override
