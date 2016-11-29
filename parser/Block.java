@@ -89,12 +89,11 @@ class Block extends PascalSyntax {
             }
         }
 
-        if (context instanceof Program){
-            f.genInstr("prog$"+context.progProcFuncName,          "",               "",           "");
-        }
-
         String decln = "";
-        if (context instanceof ProcDecl) {
+        if (context instanceof Program) {
+            decln = "prog$";
+            //f.genInstr("prog$"+context.progProcFuncName,          "",               "",           "");
+        } else if (context instanceof ProcDecl) {
             decln = "proc$";
         } else if (context instanceof FuncDecl){
             decln = "func$";

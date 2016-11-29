@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-29 14:16:40
+# Code file created by Pascal2016 compiler 2016-11-29 16:12:03
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
@@ -219,7 +219,6 @@ proc$printprimes_14:
         addl    $4,%esp                 # Pop param.
         leave                           # End of printprimes
         ret                             
-prog$primes_1:
 prog$primes_1:
         enter   $40,$1                  # Start of program
         movl    $2,%eax                 #   2
