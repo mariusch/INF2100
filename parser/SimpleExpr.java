@@ -59,14 +59,11 @@ class SimpleExpr extends PascalSyntax {
         if (po != null)
             po.genCode(f);
 
-        tList.get(0).genCode(f);
-
-        for (int i = 0; i < toList.size(); i++) {
-
-            if (i < toList.size()) {
-                toList.get(i).genCode(f);
-                tList.get(i + 1).genCode(f);
-            }
+        //Term kalles ikke her hvis Term Opr finnes, fordi Term Opr kaller både left & right. Da blir det dobbelt
+        if (toList.size() != 0) {
+            toList.get(0).genCode(f);
+        } else {
+            tList.get(0).genCode(f);
         }
     }
 

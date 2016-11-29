@@ -40,7 +40,7 @@ class RelOperator extends Operator {
             f.genInstr("",          "",         "",               " <> : Ikke implementert. Rel Opr");
         } else if (opVal.equals("<")) {
             //Denne er skrevet etter utskrift fra referansekompilatoren
-            //left.genCode(f);
+            left.genCode(f);
             f.genInstr("",          "pushl",         "%eax",               "");
             right.genCode(f);
             f.genInstr("",          "popl",         "%ecx",               "");
