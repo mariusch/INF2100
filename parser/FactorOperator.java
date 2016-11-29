@@ -63,7 +63,15 @@ class FactorOperator extends Operator {
         } else if (token.equals("mod")) {
             f.genInstr("",          "",         "",               " mod : Ikke implementert. Factor Opr");
         } else if (token.equals("and")) {
-            f.genInstr("",          "",         "",               " and : Ikke implementert. Factor Opr");
+
+            //Denne er skrevet etter utskrift fra referansekompilatoren  - UFERDIG
+            f.genInstr("",          "",         "",               " Start 'and' :DEBUG");
+
+            f.genInstr("",          "movl",         "%eax,%ecx",               "");
+            f.genInstr("",          "popl",         "%eax",               "");
+            f.genInstr("",          "andl",         "%ecx,%eax",               "  "+token);
+
+            f.genInstr("",          "",         "",               " End 'and' :DEBUG");
         } else {
             Main.panic("Factor opr - genCode()");
         }

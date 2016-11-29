@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-29 13:17:51
+# Code file created by Pascal2016 compiler 2016-11-29 13:28:51
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
@@ -24,15 +24,12 @@ proc$findprimes_2:
         cmpl    $0,%eax                 
         je      .L0004                  
         movl    $2,%eax                 #   2
-        movl    $2,%eax                 #   2
         pushl   %eax                    
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   i1
         movl    %eax,%ecx               
         popl    %eax                    
         imull   %ecx,%eax               #   *
-        movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   i1
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # i2 :=
 .L0005:
@@ -155,24 +152,11 @@ proc$printprimes_14:
         cmpl    $0,%eax                 
         je      .L0017                  
                                         # Start if-statement
-        movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   nprinted
-        pushl   %eax                    
-        movl    $0,%eax                 #   0
-        popl    %ecx                    
-        cmpl    %eax,%ecx               
-        movl    $0,%eax                 
-        setg    %al                     # Test >
-                                        #  and : Ikke implementert. Factor Opr
-        movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   nprinted
-                                        #  mod : Ikke implementert. Factor Opr
-        movl    $10,%eax                #   10
-        popl    %ecx                    
-        movl    $0,%eax                 #   0
-        cmpl    %eax,%ecx               
-        movl    $0,%eax                 
-        sete    %al                     
+                                        #  Start 'and' :DEBUG
+        movl    %eax,%ecx               
+        popl    %eax                    
+        andl    %ecx,%eax               #   and
+                                        #  End 'and' :DEBUG
         cmpl    $0,%eax                 
         je      .L0019                  
         movl    $10,%eax                #   10
