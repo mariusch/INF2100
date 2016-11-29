@@ -55,7 +55,7 @@ class VarDecl extends PascalDecl {
     void genCode(CodeFile f) {
 
         vType.genCode(f);
-        f.genInstr("", "movl", declLevel+"(%ebp),%edx", ""); // -4 skal være -4b, blokknivå
+        f.genInstr("", "movl", declLevel*-4+"(%ebp),%edx", ""); // -4 skal være -4b, blokknivå
         f.genInstr("", "movl", declOffset+"(%edx),%eax", "    "+name);
     }
 
