@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-29 13:03:03
+# Code file created by Pascal2016 compiler 2016-11-29 13:08:18
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
@@ -24,7 +24,13 @@ proc$findprimes_2:
         cmpl    $0,%eax                 
         je      .L0004                  
         movl    $2,%eax                 #   2
-                                        #  * : Ikke implementert. Factor Opr
+        movl    $2,%eax                 #   2
+        pushl   %eax                    
+        movl    -8(%ebp),%edx           
+        movl    -4(%edx),%eax           #   i1
+        movl    %eax,%ecx               
+        popl    %eax                    
+        imull   %ecx,%eax               #   *
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   i1
         movl    -8(%ebp),%edx           
