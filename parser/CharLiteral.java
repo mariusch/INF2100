@@ -30,7 +30,7 @@ class CharLiteral extends UnsignedConstant {
 
     @Override
     void genCode(CodeFile f) {
-        f.genInstr("", "movl", "$"+constVal+",%eax", "  '" + val + "'" + " Skrevet ut i: " + this.identify());
+        f.genInstr("", "movl", "$"+constVal+",%eax", "  '" + val + "'");
     }
 
     @Override

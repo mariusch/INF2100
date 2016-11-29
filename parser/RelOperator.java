@@ -101,6 +101,7 @@ class RelOperator extends Operator {
         }
 
         leaveParser("rel opr");
+        leaveParser("rel opr");
         return ro;
     }
 

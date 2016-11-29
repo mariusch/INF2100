@@ -74,6 +74,7 @@ public class Program extends PascalDecl {
 
         f.genInstr("prog$"+progName,          "",               "",           "");
 
+        System.out.println("vdp: " + progBlock.vdp);
         declOffset = 32+(4*progBlock.vdp.vdList.size()); //32 Pluss 4 pr. parameter
         f.genInstr("",              "enter",             "$"+declOffset+",$1",                      "Start of " + name);
         progBlock.genCode(f);
