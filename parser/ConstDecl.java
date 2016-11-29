@@ -40,7 +40,7 @@ class ConstDecl extends PascalDecl {
         if (con != null) {
             con.genCode(f);
         } else {
-            f.genInstr("", "movl", "$"+constVal+",%eax", "  " + constVal + " Skrevet ut i: " + this.identify());
+            f.genInstr("", "movl", "$"+constVal+",%eax", "  " + constVal);
         }
     }
 

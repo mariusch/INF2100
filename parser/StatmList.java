@@ -31,10 +31,8 @@ class StatmList extends PascalSyntax {
 
     @Override
     void genCode(CodeFile f) {
-        sl.get(0).genCode(f);
-
-        for (int i = 1; i < sl.size(); i++){
-            sl.get(i).genCode(f);
+        for (Statement s : sl){
+            s.genCode(f);
         }
     }
 
