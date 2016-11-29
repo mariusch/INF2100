@@ -48,9 +48,9 @@ class ProcDecl extends PascalDecl {
 
         f.genInstr(label,              "enter",             "$"+declOffset+",$" + declLevel,                      "Start of "+name);
 
-        if (pdl != null) {
+        /*if (pdl != null) {
             pdl.genCode(f);
-        }
+        }*/
         block.genCode(f);
 
         f.genInstr("",      "leave",         "",      "End of "+name);
