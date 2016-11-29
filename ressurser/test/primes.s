@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-29 12:24:16
+# Code file created by Pascal2016 compiler 2016-11-29 12:38:15
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
@@ -13,10 +13,7 @@ proc$findprimes_2:
         movl    %eax,-4(%edx)           # i1 :=
 .L0003:
                                         # Start while-statement
-        movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #     i1
                                         #  <= : Ikke implementert. Rel Opr
-        movl    $1000,%eax              #   1000 Skrevet ut i: <number literal> on line 7
         cmpl    $0,%eax                 
         je      .L0004                  
         movl    $2,%eax                 #   2 Skrevet ut i: <number literal> on line 19
@@ -27,13 +24,10 @@ proc$findprimes_2:
         movl    %eax,-4(%edx)           # i2 :=
 .L0005:
                                         # Start while-statement
-        movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #     i2
                                         #  <= : Ikke implementert. Rel Opr
-        movl    $1000,%eax              #   1000 Skrevet ut i: <number literal> on line 7
         cmpl    $0,%eax                 
         je      .L0006                  
-        movl    $0,%eax                 #   0 Skrevet ut i: <const decl> false in the library
+        movl    $0,%eax                 #   0
         movl    -4(%ebp),%edx           
         movl    %eax,-4(%edx)           # prime :=
         movl    -8(%ebp),%edx           
@@ -44,8 +38,6 @@ proc$findprimes_2:
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #    +
-        movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #     i1
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # i2 :=
         jmp     .L0005                  
@@ -58,7 +50,6 @@ proc$findprimes_2:
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #    +
-        movl    $1,%eax                 #   1 Skrevet ut i: <number literal> on line 25
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # i1 :=
         jmp     .L0003                  
@@ -74,7 +65,6 @@ proc$p4_7:
         cmpl    %eax,%ecx               
         movl    $0,%eax                 
         setl    %al                     # Test <
-        movl    $1000,%eax              #   1000 Skrevet ut i: <number literal> on line 31
         cmpl    $0,%eax                 # Is 0 = %eax?
         je      .L0008                  # Jump to .L0008
         movl    $32,%eax                #   ' ' Skrevet ut i: <char literal> on line 31
@@ -88,7 +78,6 @@ proc$p4_7:
         cmpl    %eax,%ecx               
         movl    $0,%eax                 
         setl    %al                     # Test <
-        movl    $100,%eax               #   100 Skrevet ut i: <number literal> on line 32
         cmpl    $0,%eax                 # Is 0 = %eax?
         je      .L0010                  # Jump to .L0010
         movl    $32,%eax                #   ' ' Skrevet ut i: <char literal> on line 32
@@ -102,7 +91,6 @@ proc$p4_7:
         cmpl    %eax,%ecx               
         movl    $0,%eax                 
         setl    %al                     # Test <
-        movl    $10,%eax                #   10 Skrevet ut i: <number literal> on line 33
         cmpl    $0,%eax                 # Is 0 = %eax?
         je      .L0012                  # Jump to .L0012
         movl    $32,%eax                #   ' ' Skrevet ut i: <char literal> on line 33
@@ -125,25 +113,15 @@ proc$printprimes_14:
         movl    %eax,-4(%edx)           # nprinted :=
 .L0015:
                                         # Start while-statement
-        movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #     i
                                         #  <= : Ikke implementert. Rel Opr
-        movl    $1000,%eax              #   1000 Skrevet ut i: <number literal> on line 7
         cmpl    $0,%eax                 
         je      .L0016                  
         movl    -4(%ebp),%edx           
         movl    -4(%edx),%eax           #     prime
         cmpl    $0,%eax                 # Is 0 = %eax?
         je      .L0017                  # Jump to .L0017
-        movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #     nprinted
                                         #  > : Ikke implementert. Rel Opr
-        movl    $0,%eax                 #   0 Skrevet ut i: <number literal> on line 46
                                         #  and : Ikke implementert. Factor Opr
-        movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #     nprinted
-                                        #  mod : Ikke implementert. Factor Opr
-        movl    $10,%eax                #   10 Skrevet ut i: <number literal> on line 46
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #     nprinted
                                         #  mod : Ikke implementert. Factor Opr
@@ -153,10 +131,9 @@ proc$printprimes_14:
         cmpl    %eax,%ecx               
         movl    $0,%eax                 
         sete    %al                     
-        movl    $0,%eax                 #   0 Skrevet ut i: <number literal> on line 46
         cmpl    $0,%eax                 # Is 0 = %eax?
         je      .L0019                  # Jump to .L0019
-        movl    $10,%eax                #   10 Skrevet ut i: <const decl> eol in the library
+        movl    $10,%eax                #   10
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
@@ -173,7 +150,6 @@ proc$printprimes_14:
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #    +
-        movl    $1,%eax                 #   1 Skrevet ut i: <number literal> on line 47
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # nprinted :=
 .L0017:
@@ -184,13 +160,12 @@ proc$printprimes_14:
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #    +
-        movl    $1,%eax                 #   1 Skrevet ut i: <number literal> on line 49
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # i :=
         jmp     .L0015                  
 .L0016:
                                         # End while-statement
-        movl    $10,%eax                #   10 Skrevet ut i: <const decl> eol in the library
+        movl    $10,%eax                #   10
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
@@ -201,13 +176,10 @@ proc$printprimes_14:
         movl    %eax,-4(%edx)           # i :=
 .L0021:
                                         # Start while-statement
-        movl    -4(%ebp),%edx           
-        movl    -4(%edx),%eax           #     i
                                         #  <= : Ikke implementert. Rel Opr
-        movl    $1000,%eax              #   1000 Skrevet ut i: <number literal> on line 7
         cmpl    $0,%eax                 
         je      .L0022                  
-        movl    $1,%eax                 #   1 Skrevet ut i: <const decl> true in the library
+        movl    $1,%eax                 #   1
         movl    -4(%ebp),%edx           
         movl    %eax,-4(%edx)           # prime :=
         movl    -4(%ebp),%edx           
@@ -217,7 +189,6 @@ proc$printprimes_14:
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #    +
-        movl    $1,%eax                 #   1 Skrevet ut i: <number literal> on line 56
         movl    -4(%ebp),%edx           
         movl    %eax,-4(%edx)           # i :=
         jmp     .L0021                  
