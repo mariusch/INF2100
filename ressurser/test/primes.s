@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-29 12:01:05
+# Code file created by Pascal2016 compiler 2016-11-29 12:24:16
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
