@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-29 14:10:12
+# Code file created by Pascal2016 compiler 2016-11-29 14:16:40
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
@@ -187,9 +187,9 @@ proc$printprimes_14:
                                         # End if-statement
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   i
-        pushl   %eax                    # Push next param.
-        call    null                    # Proc call
-        addl    $4,%esp                 # Pop param.
+        pushl   %eax                    # Push param #1.
+        call    null                    
+        addl    $4,%esp                 # Pop params.
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   nprinted
         pushl   %eax                    
