@@ -33,9 +33,10 @@ class RelOperator extends Operator {
             left.genCode(f);
             f.genInstr("",          "popl",         "%ecx",               "");
             right.genCode(f);
+            f.genInstr("",          "popl",         "%ecx",               "");
             f.genInstr("",          "cmpl",         "%eax,%ecx",               "");
             f.genInstr("",          "movl",         "$0,%eax",               "");
-            f.genInstr("",          "sete",         "%al",               "");
+            f.genInstr("",          "sete",         "%al",               "Test =");
         } else if (opVal.equals("<>")) {
 
             f.genInstr("",          "",         "",               " <> : Ikke implementert. Rel Opr");
