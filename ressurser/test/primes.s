@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-29 13:08:18
+# Code file created by Pascal2016 compiler 2016-11-29 13:17:51
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
@@ -155,7 +155,14 @@ proc$printprimes_14:
         cmpl    $0,%eax                 
         je      .L0017                  
                                         # Start if-statement
-                                        #  > : Ikke implementert. Rel Opr
+        movl    -8(%ebp),%edx           
+        movl    -4(%edx),%eax           #   nprinted
+        pushl   %eax                    
+        movl    $0,%eax                 #   0
+        popl    %ecx                    
+        cmpl    %eax,%ecx               
+        movl    $0,%eax                 
+        setg    %al                     # Test >
                                         #  and : Ikke implementert. Factor Opr
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   nprinted
