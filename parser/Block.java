@@ -92,7 +92,17 @@ class Block extends PascalSyntax {
         if (context instanceof Program){
             f.genInstr("prog$"+context.progProcFuncName,          "",               "",           "");
         }
-        f.genInstr("",              "enter",             "$"+context.declOffset+",$1",                      "Start of " + context.name);
+
+        String decln = "";
+        if (context instanceof ProcDecl) {
+            decln = "proc$";
+        } else if (context instanceof FuncDecl){
+            decln = "func$";
+        } else if (context instanceof Program){
+            decln = "prog$";
+        } else {Main.panic(this.identify());}
+
+        f.genInstr(decln+context.progProcFuncName,              "enter",             "$"+context.declOffset+",$1",                      "Start of " + context.name);
         if (stml != null)
             stml.genCode(f);
     }
