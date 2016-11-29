@@ -44,7 +44,8 @@ class ProcDecl extends PascalDecl {
 
     @Override
     void genCode(CodeFile f) {
-        label = f.getLabel("proc$" + name);
+        //label = f.getLabel("proc$" + name);
+        progProcFuncName = f.getLabel(name);
 
         //f.genInstr(label,              "enter",             "$"+declOffset+",$" + declLevel,                      "Start of "+name);
 

@@ -53,8 +53,9 @@ class FuncDecl extends ProcDecl {
 
     @Override
     void genCode(CodeFile f) {
-        label = f.getLabel("func$" + name);
-        f.genInstr(label,              "enter",             "$"+(32/* + ?? */)+",$" + declLevel,                      "Start of "+name);
+        progProcFuncName = f.getLabel(name);
+        //label = f.getLabel("func$" + name);
+        //f.genInstr(label,              "enter",             "$"+(32/* + ?? */)+",$" + declLevel,                      "Start of "+name);
 
         if (pdl != null)
             pdl.genCode(f);
