@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-29 12:51:13
+# Code file created by Pascal2016 compiler 2016-11-29 13:03:03
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
@@ -13,7 +13,14 @@ proc$findprimes_2:
         movl    %eax,-4(%edx)           # i1 :=
 .L0003:
                                         # Start while-statement
-                                        #  <= : Ikke implementert. Rel Opr
+        movl    -8(%ebp),%edx           
+        movl    -4(%edx),%eax           #   i1
+        pushl   %eax                    
+        movl    $1000,%eax              #   1000
+        popl    %ecx                    
+        cmpl    %eax,%ecx               
+        movl    $0,%eax                 
+        setle   %al                     # Test <=
         cmpl    $0,%eax                 
         je      .L0004                  
         movl    $2,%eax                 #   2
@@ -24,7 +31,14 @@ proc$findprimes_2:
         movl    %eax,-4(%edx)           # i2 :=
 .L0005:
                                         # Start while-statement
-                                        #  <= : Ikke implementert. Rel Opr
+        movl    -8(%ebp),%edx           
+        movl    -4(%edx),%eax           #   i2
+        pushl   %eax                    
+        movl    $1000,%eax              #   1000
+        popl    %ecx                    
+        cmpl    %eax,%ecx               
+        movl    $0,%eax                 
+        setle   %al                     # Test <=
         cmpl    $0,%eax                 
         je      .L0006                  
         movl    $0,%eax                 #   0
@@ -119,7 +133,14 @@ proc$printprimes_14:
         movl    %eax,-4(%edx)           # nprinted :=
 .L0015:
                                         # Start while-statement
-                                        #  <= : Ikke implementert. Rel Opr
+        movl    -8(%ebp),%edx           
+        movl    -4(%edx),%eax           #   i
+        pushl   %eax                    
+        movl    $1000,%eax              #   1000
+        popl    %ecx                    
+        cmpl    %eax,%ecx               
+        movl    $0,%eax                 
+        setle   %al                     # Test <=
         cmpl    $0,%eax                 
         je      .L0016                  
                                         # Start if-statement
@@ -186,7 +207,14 @@ proc$printprimes_14:
         movl    %eax,-4(%edx)           # i :=
 .L0021:
                                         # Start while-statement
-                                        #  <= : Ikke implementert. Rel Opr
+        movl    -4(%ebp),%edx           
+        movl    -4(%edx),%eax           #   i
+        pushl   %eax                    
+        movl    $1000,%eax              #   1000
+        popl    %ecx                    
+        cmpl    %eax,%ecx               
+        movl    $0,%eax                 
+        setle   %al                     # Test <=
         cmpl    $0,%eax                 
         je      .L0022                  
         movl    $1,%eax                 #   1
