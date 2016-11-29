@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-29 12:43:26
+# Code file created by Pascal2016 compiler 2016-11-29 12:51:13
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
@@ -59,45 +59,51 @@ proc$findprimes_2:
         ret                             
 proc$p4_7:
         enter   $-28,$1                 # Start of p4
+                                        # Start if-statement
         pushl   %eax                    
         movl    $1000,%eax              #   1000
         popl    %ecx                    
         cmpl    %eax,%ecx               
         movl    $0,%eax                 
         setl    %al                     # Test <
-        cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0008                  # Jump to .L0008
+        cmpl    $0,%eax                 
+        je      .L0008                  
         movl    $32,%eax                #   ' '
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
 .L0008:
+                                        # End if-statement
+                                        # Start if-statement
         pushl   %eax                    
         movl    $100,%eax               #   100
         popl    %ecx                    
         cmpl    %eax,%ecx               
         movl    $0,%eax                 
         setl    %al                     # Test <
-        cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0010                  # Jump to .L0010
+        cmpl    $0,%eax                 
+        je      .L0010                  
         movl    $32,%eax                #   ' '
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
 .L0010:
+                                        # End if-statement
+                                        # Start if-statement
         pushl   %eax                    
         movl    $10,%eax                #   10
         popl    %ecx                    
         cmpl    %eax,%ecx               
         movl    $0,%eax                 
         setl    %al                     # Test <
-        cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0012                  # Jump to .L0012
+        cmpl    $0,%eax                 
+        je      .L0012                  
         movl    $32,%eax                #   ' '
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
 .L0012:
+                                        # End if-statement
         pushl   %eax                    # Push next param.
         call    write_int               
         addl    $4,%esp                 # Pop param.
@@ -116,10 +122,12 @@ proc$printprimes_14:
                                         #  <= : Ikke implementert. Rel Opr
         cmpl    $0,%eax                 
         je      .L0016                  
+                                        # Start if-statement
         movl    -4(%ebp),%edx           
         movl    -4(%edx),%eax           #   prime
-        cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0017                  # Jump to .L0017
+        cmpl    $0,%eax                 
+        je      .L0017                  
+                                        # Start if-statement
                                         #  > : Ikke implementert. Rel Opr
                                         #  and : Ikke implementert. Factor Opr
         movl    -8(%ebp),%edx           
@@ -131,13 +139,14 @@ proc$printprimes_14:
         cmpl    %eax,%ecx               
         movl    $0,%eax                 
         sete    %al                     
-        cmpl    $0,%eax                 # Is 0 = %eax?
-        je      .L0019                  # Jump to .L0019
+        cmpl    $0,%eax                 
+        je      .L0019                  
         movl    $10,%eax                #   10
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
 .L0019:
+                                        # End if-statement
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   i
         pushl   %eax                    # Push next param.
@@ -153,6 +162,7 @@ proc$printprimes_14:
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # nprinted :=
 .L0017:
+                                        # End if-statement
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   i
         pushl   %eax                    
