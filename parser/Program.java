@@ -58,7 +58,8 @@ public class Program extends PascalDecl {
 
     @Override
     public void genCode(CodeFile f) {
-        String progName = f.getLabel(name);
+        //String progName = f.getLabel(name);
+        progProcFuncName = f.getLabel(name);
 
         String mainName;
         if (main.Main.useUnderscore()) {
@@ -68,18 +69,18 @@ public class Program extends PascalDecl {
         }
 
         f.genInstr("",              ".globl",             mainName,                             "");
-        f.genInstr(mainName,          "call",               "prog$"+progName,           "Start program");
+        f.genInstr(mainName,          "call",               "prog$"+progProcFuncName,           "Start program");
         f.genInstr("",              "movl",               "$0,%eax",                          "Set status 0 and");
         f.genInstr("",              "ret",                "",                                 "terminate the program");
 
-        f.genInstr("prog$"+progName,          "",               "",           "");
+        //f.genInstr("prog$"+progName,          "",               "",           "");
 
         if (progBlock.vdp != null) {
             declOffset = 32 + (4 * progBlock.vdp.vdList.size()); //32 Pluss 4 pr. variabel
         }
         else {declOffset = 32;}
 
-        f.genInstr("",              "enter",             "$"+declOffset+",$1",                      "Start of " + name);
+        //f.genInstr("",              "enter",             "$"+declOffset+",$1",                      "Start of " + name);
         progBlock.genCode(f);
 
         f.genInstr("",              "leave",              "",                  "End of "+name);

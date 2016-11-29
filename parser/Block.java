@@ -20,7 +20,7 @@ class Block extends PascalSyntax {
      VarDeclPart vdp;
     private ArrayList<ProcDecl> pdList = new ArrayList<ProcDecl>();
     private StatmList stml;
-    protected Program context;
+    protected PascalDecl context;
 
     HashMap<String, PascalDecl> decls = new HashMap<String, PascalDecl>();
     protected Block outerScope;
@@ -88,6 +88,11 @@ class Block extends PascalSyntax {
                 pd.genCode(f);
             }
         }
+
+        if (context instanceof Program){
+            f.genInstr("prog$"+context.progProcFuncName,          "",               "",           "");
+        }
+        f.genInstr("",              "enter",             "$"+context.declOffset+",$1",                      "Start of " + context.name);
         if (stml != null)
             stml.genCode(f);
     }

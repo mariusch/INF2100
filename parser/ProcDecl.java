@@ -46,7 +46,7 @@ class ProcDecl extends PascalDecl {
     void genCode(CodeFile f) {
         label = f.getLabel("proc$" + name);
 
-        f.genInstr(label,              "enter",             "$"+declOffset+",$" + declLevel,                      "Start of "+name);
+        //f.genInstr(label,              "enter",             "$"+declOffset+",$" + declLevel,                      "Start of "+name);
 
         /*if (pdl != null) {
             pdl.genCode(f);
@@ -95,7 +95,7 @@ class ProcDecl extends PascalDecl {
             pd.pdl = ParamDeclList.parse(s);
 
         s.skip(TokenKind.semicolonToken);
-        pd.block = Block.parse(s);
+        pd.block = Block.parse(s); pd.block.context = pd;
         s.skip(TokenKind.semicolonToken);
 
         leaveParser("proc decl");

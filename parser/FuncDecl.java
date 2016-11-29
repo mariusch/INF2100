@@ -100,7 +100,7 @@ class FuncDecl extends ProcDecl {
         s.skip(colonToken);
         fd.tn = TypeName.parse(s);
         s.skip(semicolonToken);
-        fd.blck = Block.parse(s);
+        fd.blck = Block.parse(s); fd.blck.context = fd;
         s.skip(semicolonToken);
 
         leaveParser("func decl");
