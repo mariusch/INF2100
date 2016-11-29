@@ -47,11 +47,11 @@ class Term extends PascalSyntax {
 
     @Override
     void genCode(CodeFile f) {
-        fList.get(0).genCode(f);
-
-        for (int i = 0; i < fOList.size(); i++){
-            fOList.get(i).genCode(f);
-            fList.get(i+1).genCode(f);
+        //Factor kalles ikke her hvis Factor Opr finnes, fordi Factor Opr kaller både left & right. Da blir det dobbelt
+        if (fOList.size() != 0) {
+            fOList.get(0).genCode(f);
+        } else {
+            fList.get(0).genCode(f);
         }
     }
 
