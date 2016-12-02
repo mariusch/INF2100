@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-02 15:40:14
+# Code file created by Pascal2016 compiler 2016-12-02 15:44:01
         .globl  _main                   
 _main:
         call    prog$gcd_1              # Start program
@@ -21,7 +21,7 @@ proc$gcd_2:
         movl    -4(%edx),%eax           #   m
         movl    -8(%ebp),%edx           
         movl    %eax,-32(%edx)          # gcd :=
-        jmp     .L0004                  # Jump to next label
+        jmp     .L0004                  
 .L0003:
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   m
