@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-02 16:21:15
+# Code file created by Pascal2016 compiler 2016-12-02 16:24:39
         .globl  _main                   
 _main:
         call    prog$operatortest_1     # Start program
@@ -39,9 +39,9 @@ proc$test_3:
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
-        xorl    $1,%eax                 # Negation side 49
         movl    -12(%ebp),%edx          
         movl    -4(%edx),%eax           #   x
+        xorl    $0x1,%eax               #   not
         pushl   %eax                    # Push next param.
         call    write_bool              
         addl    $4,%esp                 # Pop param.
@@ -232,9 +232,9 @@ proc$test_7:
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
-        negl    %eax                    #   - (prefix)
         movl    -12(%ebp),%edx          
         movl    -4(%edx),%eax           #   x
+        negl    %eax                    #   - (prefix)
         pushl   %eax                    # Push next param.
         call    write_int               
         addl    $4,%esp                 # Pop param.
@@ -284,8 +284,8 @@ proc$testunarynumeric_6:
         pushl   %eax                    # Push param #1.
         call    proc$test_7             
         addl    $4,%esp                 # Pop params.
-        negl    %eax                    #   - (prefix)
         movl    $11,%eax                #   11
+        negl    %eax                    #   - (prefix)
         pushl   %eax                    # Push param #1.
         call    proc$test_7             
         addl    $4,%esp                 # Pop params.
@@ -445,7 +445,14 @@ proc$test_9:
         call    write_char              
         addl    $4,%esp                 # Pop param.
                                         # Start if-statement
-                                        #  <> : Ikke implementert. Rel Opr
+        movl    -12(%ebp),%edx          
+        movl    -4(%edx),%eax           #   y
+        pushl   %eax                    
+        movl    $0,%eax                 #   0
+        popl    %ecx                    
+        cmpl    %eax,%ecx               
+        movl    $0,%eax                 
+        setne   %al                     # Test <>
         cmpl    $0,%eax                 
         je      .L0010                  
         movl    -12(%ebp),%edx          
@@ -495,10 +502,10 @@ proc$test_9:
         pushl   %eax                    
         movl    -12(%ebp),%edx          
         movl    -4(%edx),%eax           #   y
-        movl    %eax,%ecx               # --simple expr: div
-        popl    %eax                    # --simple expr: div
-        cdq                             # --simple expr: div
-        idivl   %ecx                    # --simple expr: div
+        movl    %eax,%ecx               
+        popl    %eax                    
+        cdq                             
+        idivl   %ecx                    #   /
         pushl   %eax                    # Push next param.
         call    write_int               
         addl    $4,%esp                 # Pop param.
@@ -577,8 +584,8 @@ proc$testbinarynumeric_8:
         pushl   %eax                    # Push param #1.
         call    proc$test_9             
         addl    $8,%esp                 # Pop params.
-        negl    %eax                    #   - (prefix)
         movl    $11,%eax                #   11
+        negl    %eax                    #   - (prefix)
         pushl   %eax                    # Push param #2.
         movl    $17,%eax                #   17
         pushl   %eax                    # Push param #1.
@@ -592,16 +599,16 @@ proc$testbinarynumeric_8:
         addl    $8,%esp                 # Pop params.
         movl    $17,%eax                #   17
         pushl   %eax                    # Push param #2.
-        negl    %eax                    #   - (prefix)
         movl    $11,%eax                #   11
+        negl    %eax                    #   - (prefix)
         pushl   %eax                    # Push param #1.
         call    proc$test_9             
         addl    $8,%esp                 # Pop params.
-        negl    %eax                    #   - (prefix)
         movl    $11,%eax                #   11
+        negl    %eax                    #   - (prefix)
         pushl   %eax                    # Push param #2.
-        negl    %eax                    #   - (prefix)
         movl    $11,%eax                #   11
+        negl    %eax                    #   - (prefix)
         pushl   %eax                    # Push param #1.
         call    proc$test_9             
         addl    $8,%esp                 # Pop params.
@@ -617,8 +624,8 @@ proc$testbinarynumeric_8:
         pushl   %eax                    # Push param #1.
         call    proc$test_9             
         addl    $8,%esp                 # Pop params.
-        negl    %eax                    #   - (prefix)
         movl    $11,%eax                #   11
+        negl    %eax                    #   - (prefix)
         pushl   %eax                    # Push param #2.
         movl    $0,%eax                 #   0
         pushl   %eax                    # Push param #1.
