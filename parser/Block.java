@@ -96,12 +96,12 @@ class Block extends PascalSyntax {
         String decln = "";
         if (context instanceof Program) {
             decln = "prog$";
-        } else if (context instanceof ProcDecl) {
-            decln = "proc$";
-        } else if (context instanceof FuncDecl) {
+        }
+        else if (context instanceof FuncDecl) {
             decln = "func$";
-        } else if (context instanceof Program) {
-            decln = "prog$";
+        }
+        else if (context instanceof ProcDecl) {
+            decln = "proc$";
         } else {Main.panic(this.identify());}
 
         f.genInstr(decln+context.progProcFuncName, "enter", "$"+context.declOffset+",$1", "Start of " + context.name);
