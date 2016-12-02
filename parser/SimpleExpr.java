@@ -56,14 +56,15 @@ class SimpleExpr extends PascalSyntax {
     @Override
     void genCode(CodeFile f) {
 
-        if (po != null)
-            po.genCode(f);
-
         //Term kalles ikke her hvis Term Opr finnes, fordi Term Opr kaller både left & right. Da blir det dobbelt
         if (toList.size() != 0) {
             toList.get(0).genCode(f);
         } else {
             tList.get(0).genCode(f);
+        }
+
+        if (po != null) {
+            po.genCode(f);
         }
     }
 
