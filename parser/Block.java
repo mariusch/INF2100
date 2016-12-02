@@ -87,10 +87,6 @@ class Block extends PascalSyntax {
             for (ProcDecl pd : pdList) {
                 pd.genCode(f);
             }
-
-            /*for (int i = pdList.size()-1; i > 0; i--){
-                pdList.get(i).genCode(f);
-            }*/
         }
 
         String decln = "";
