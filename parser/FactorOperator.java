@@ -56,10 +56,10 @@ class FactorOperator extends Operator {
             left.genCode(f);
             f.genInstr("",          "pushl",         "%eax",               "");
             right.genCode(f);
-            f.genInstr("",          "movl",         "%eax,%ecx",               "--simple expr: div");
-            f.genInstr("",          "popl",         "%eax",               "--simple expr: div");
-            f.genInstr("",          "cdq",         "",               "--simple expr: div");
-            f.genInstr("",          "idivl",         "%ecx",               "--simple expr: div");
+            f.genInstr("",          "movl",         "%eax,%ecx",               "");
+            f.genInstr("",          "popl",         "%eax",               "");
+            f.genInstr("",          "cdq",         "",               "");
+            f.genInstr("",          "idivl",         "%ecx",               "  /");
         } else if (token.equals("mod")) {
 
             //Denne er skrevet etter utskrift fra referansekompilatoren
