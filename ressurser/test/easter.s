@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-02 15:59:09
+# Code file created by Pascal2016 compiler 2016-12-02 16:47:00
         .globl  _main                   
 _main:
         call    prog$easter_1           # Start program
@@ -21,10 +21,10 @@ proc$easter_2:
         movl    -4(%edx),%eax           #   y
         pushl   %eax                    
         movl    $100,%eax               #   100
-        movl    %eax,%ecx               # --simple expr: div
-        popl    %eax                    # --simple expr: div
-        cdq                             # --simple expr: div
-        idivl   %ecx                    # --simple expr: div
+        movl    %eax,%ecx               
+        popl    %eax                    
+        cdq                             
+        idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # b :=
         movl    -8(%ebp),%edx           
@@ -42,10 +42,10 @@ proc$easter_2:
         movl    -4(%edx),%eax           #   b
         pushl   %eax                    
         movl    $4,%eax                 #   4
-        movl    %eax,%ecx               # --simple expr: div
-        popl    %eax                    # --simple expr: div
-        cdq                             # --simple expr: div
-        idivl   %ecx                    # --simple expr: div
+        movl    %eax,%ecx               
+        popl    %eax                    
+        cdq                             
+        idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # d :=
         movl    -8(%ebp),%edx           
@@ -68,10 +68,10 @@ proc$easter_2:
         addl    %ecx,%eax               #   +
         pushl   %eax                    
         movl    $25,%eax                #   25
-        movl    %eax,%ecx               # --simple expr: div
-        popl    %eax                    # --simple expr: div
-        cdq                             # --simple expr: div
-        idivl   %ecx                    # --simple expr: div
+        movl    %eax,%ecx               
+        popl    %eax                    
+        cdq                             
+        idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # f :=
         movl    -8(%ebp),%edx           
@@ -84,10 +84,10 @@ proc$easter_2:
         subl    %ecx,%eax               #   -
         pushl   %eax                    
         movl    $3,%eax                 #   3
-        movl    %eax,%ecx               # --simple expr: div
-        popl    %eax                    # --simple expr: div
-        cdq                             # --simple expr: div
-        idivl   %ecx                    # --simple expr: div
+        movl    %eax,%ecx               
+        popl    %eax                    
+        cdq                             
+        idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # g :=
         movl    $19,%eax                #   19
@@ -116,10 +116,10 @@ proc$easter_2:
         movl    -4(%edx),%eax           #   c
         pushl   %eax                    
         movl    $4,%eax                 #   4
-        movl    %eax,%ecx               # --simple expr: div
-        popl    %eax                    # --simple expr: div
-        cdq                             # --simple expr: div
-        idivl   %ecx                    # --simple expr: div
+        movl    %eax,%ecx               
+        popl    %eax                    
+        cdq                             
+        idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # i :=
         movl    -8(%ebp),%edx           
@@ -169,10 +169,10 @@ proc$easter_2:
         addl    %ecx,%eax               #   +
         pushl   %eax                    
         movl    $451,%eax               #   451
-        movl    %eax,%ecx               # --simple expr: div
-        popl    %eax                    # --simple expr: div
-        cdq                             # --simple expr: div
-        idivl   %ecx                    # --simple expr: div
+        movl    %eax,%ecx               
+        popl    %eax                    
+        cdq                             
+        idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # m :=
         movl    -8(%ebp),%edx           
@@ -185,10 +185,10 @@ proc$easter_2:
         addl    %ecx,%eax               #   +
         pushl   %eax                    
         movl    $31,%eax                #   31
-        movl    %eax,%ecx               # --simple expr: div
-        popl    %eax                    # --simple expr: div
-        cdq                             # --simple expr: div
-        idivl   %ecx                    # --simple expr: div
+        movl    %eax,%ecx               
+        popl    %eax                    
+        cdq                             
+        idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
         movl    %eax,-4(%edx)           # month :=
         movl    -8(%ebp),%edx           
@@ -334,7 +334,7 @@ prog$easter_1:
         movl    -4(%ebp),%edx           
         movl    -4(%edx),%eax           #   y
         pushl   %eax                    # Push param #1.
-        call    null                    
+        call    proc$easter_2           
         addl    $4,%esp                 # Pop params.
         movl    -4(%ebp),%edx           
         movl    -4(%edx),%eax           #   y

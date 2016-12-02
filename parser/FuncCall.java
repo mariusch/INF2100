@@ -57,10 +57,10 @@ class FuncCall extends Factor {
 
         if (!eList.isEmpty()){
 
-            for (int i = eList.size()-1; i > 0; i--){
+            for (int i = eList.size()-1; i >= 0; i--){
                 eList.get(i).genCode(f); //Legger value fra expr til %eax
                 //pushl %eax
-                f.genInstr("",      "pushl",        "%eax",         "Push value from expr to stack");
+                f.genInstr("",      "pushl",        "%eax",         "Push param #" + (i+1));
             }
         }
 
@@ -68,7 +68,7 @@ class FuncCall extends Factor {
         f.genInstr("",      "call",         "func$" + funcRef.progProcFuncName,      "");
 
         int sz = 4*eList.size();
-        f.genInstr("",      "addl",         "$" + sz + ",%esp", "Remove stuff from stack");
+        f.genInstr("",      "addl",         "$" + sz + ",%esp", "Pop parameters");
 
 
 
