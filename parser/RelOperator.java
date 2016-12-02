@@ -39,7 +39,14 @@ class RelOperator extends Operator {
             f.genInstr("",          "sete",         "%al",               "Test =");
         } else if (opVal.equals("<>")) {
 
-            f.genInstr("",          "",         "",               " <> : Ikke implementert. Rel Opr");
+            //Denne er skrevet etter utskrift fra referansekompilatoren
+            left.genCode(f);
+            f.genInstr("",          "pushl",         "%eax",               "");
+            right.genCode(f);
+            f.genInstr("",          "popl",         "%ecx",               "");
+            f.genInstr("",          "cmpl",         "%eax,%ecx",               "");
+            f.genInstr("",          "movl",         "$0,%eax",               "");
+            f.genInstr("",          "setne",         "%al",               "Test <>");
 
         } else if (opVal.equals("<")) {
 
@@ -75,9 +82,7 @@ class RelOperator extends Operator {
             f.genInstr("",          "setg",         "%al",               "Test >");
 
         } else if (opVal.equals(">=")) {
-
             f.genInstr("",          "",         "",               " >= : Ikke implementert. Rel Opr");
-
         } else {
             Main.panic("Rel opr - genCode()");
         }
