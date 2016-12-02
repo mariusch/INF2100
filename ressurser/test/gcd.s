@@ -1,13 +1,9 @@
-# Code file created by Pascal2016 compiler 2016-12-02 15:31:01
+# Code file created by Pascal2016 compiler 2016-12-02 15:35:40
         .globl  _main                   
 _main:
         call    prog$gcd_1              # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
-        movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   m
-        movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   n
 proc$gcd_2:
         enter   $-24,$1                 # Start of function
                                         # Start if-statement
