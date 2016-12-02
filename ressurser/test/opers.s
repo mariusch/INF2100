@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-02 16:11:51
+# Code file created by Pascal2016 compiler 2016-12-02 16:15:08
         .globl  _main                   
 _main:
         call    prog$operatortest_1     # Start program
@@ -39,9 +39,9 @@ proc$test_3:
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
-        xorl    $1,%eax                 # Negation side 49
         movl    -12(%ebp),%edx          
         movl    -4(%edx),%eax           #   x
+        xorl    $0x1,%eax               #   not
         pushl   %eax                    # Push next param.
         call    write_bool              
         addl    $4,%esp                 # Pop param.
