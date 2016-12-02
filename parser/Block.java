@@ -94,9 +94,9 @@ class Block extends PascalSyntax {
             decln = "prog$";
         } else if (context instanceof ProcDecl) {
             decln = "proc$";
-        } else if (context instanceof FuncDecl){
+        } else if (context instanceof FuncDecl) {
             decln = "func$";
-        } else if (context instanceof Program){
+        } else if (context instanceof Program) {
             decln = "prog$";
         } else {Main.panic(this.identify());}
 

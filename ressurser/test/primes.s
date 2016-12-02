@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-11-29 17:05:55
+# Code file created by Pascal2016 compiler 2016-12-02 15:10:24
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
@@ -75,6 +75,8 @@ proc$findprimes_2:
 proc$p4_7:
         enter   $-28,$1                 # Start of p4
                                         # Start if-statement
+        movl    -8(%ebp),%edx           
+        movl    -4(%edx),%eax           #   x
         pushl   %eax                    
         movl    $1000,%eax              #   1000
         popl    %ecx                    
@@ -90,6 +92,8 @@ proc$p4_7:
 .L0008:
                                         # End if-statement
                                         # Start if-statement
+        movl    -8(%ebp),%edx           
+        movl    -4(%edx),%eax           #   x
         pushl   %eax                    
         movl    $100,%eax               #   100
         popl    %ecx                    
@@ -105,6 +109,8 @@ proc$p4_7:
 .L0010:
                                         # End if-statement
                                         # Start if-statement
+        movl    -8(%ebp),%edx           
+        movl    -4(%edx),%eax           #   x
         pushl   %eax                    
         movl    $10,%eax                #   10
         popl    %ecx                    
@@ -119,6 +125,8 @@ proc$p4_7:
         addl    $4,%esp                 # Pop param.
 .L0012:
                                         # End if-statement
+        movl    -8(%ebp),%edx           
+        movl    -4(%edx),%eax           #   x
         pushl   %eax                    # Push next param.
         call    write_int               
         addl    $4,%esp                 # Pop param.

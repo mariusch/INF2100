@@ -36,7 +36,9 @@ class ParamDecl extends PascalDecl {
 
     @Override
     void genCode(CodeFile f) {
-        tn.genCode(f);
+        //Kode finnes også i Var Decl
+        f.genInstr("", "movl", declLevel*-4+"(%ebp),%edx", ""); // -4 skal være -4b, blokknivå
+        f.genInstr("", "movl", declOffset+"(%edx),%eax", "  "+name);
     }
 
     @Override

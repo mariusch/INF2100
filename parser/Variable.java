@@ -48,11 +48,6 @@ class Variable extends Factor {
 
     @Override
     void genCode(CodeFile f) {
-        if (expr != null) {
-            //expr.genCode(f);// tror ikke denne skal kalles? ref tabell 4.5 s49
-
-        }
-
         vRef.genCode(f);
     }
 
