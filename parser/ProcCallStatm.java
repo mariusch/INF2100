@@ -85,10 +85,10 @@ class ProcCallStatm extends Statement {
 
             if (!procCallShort) {
 
-                    for (int i = exprList.size() - 1; i >= 0; i--) {
-                        exprList.get(i).genCode(f); //Legger value fra expr til %eax
-                        f.genInstr("", "pushl", "%eax", "Push param #" + (i+1) +".");
-                    }
+                for (int i = exprList.size() - 1; i >= 0; i--) {
+                    exprList.get(i).genCode(f); //Legger value fra expr til %eax
+                    f.genInstr("", "pushl", "%eax", "Push param #" + (i+1) +".");
+                }
 
                 //call func$f_n - f_n er navnet til funksjonsdeklarasjonen
                 f.genInstr("", "call", procRef.label, "");
