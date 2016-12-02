@@ -91,7 +91,7 @@ class ProcCallStatm extends Statement {
                 }
 
                 //call func$f_n - f_n er navnet til funksjonsdeklarasjonen
-                f.genInstr("", "call", procRef.label, "");
+                f.genInstr("", "call", "proc$" + procRef.progProcFuncName, "");
 
                 int sz = 4 * exprList.size();
                 f.genInstr("", "addl", "$" + sz + ",%esp", "Pop params.");

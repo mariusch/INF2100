@@ -16,7 +16,7 @@ class ProcDecl extends PascalDecl {
 
     protected ParamDeclList pdl;
     private Block block;
-    protected String label;
+    //protected String label;
 
     ProcDecl(String id, int lNum) {
         super(id, lNum);

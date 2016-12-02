@@ -65,7 +65,7 @@ class FuncCall extends Factor {
         }
 
         //call func$f_n - f_n er navnet til funksjonsdeklarasjonen
-        f.genInstr("",      "call",         funcRef.label,      "");
+        f.genInstr("",      "call",         "func$" + funcRef.progProcFuncName,      "");
 
         int sz = 4*eList.size();
         f.genInstr("",      "addl",         "$" + sz + ",%esp", "Remove stuff from stack");
