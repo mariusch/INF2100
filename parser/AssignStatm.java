@@ -64,7 +64,7 @@ class AssignStatm extends Statement {
             //movl %eax,-32(%edx)
         else if (variable.vRef instanceof FuncDecl) {
             f.genInstr("",          "movl",         -4*(tmpb+1)+"(%ebp),%edx",      "");
-            f.genInstr("",          "movl",         "%eax,-32(%edx)",               "");
+            f.genInstr("",          "movl",         "%eax,-32(%edx)",               variable.name+" :=");
         }
     }
 

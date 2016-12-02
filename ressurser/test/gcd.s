@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-02 15:35:40
+# Code file created by Pascal2016 compiler 2016-12-02 15:40:14
         .globl  _main                   
 _main:
         call    prog$gcd_1              # Start program
@@ -9,7 +9,7 @@ proc$gcd_2:
                                         # Start if-statement
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   n
-        popl    %ecx                    
+        pushl   %eax                    
         movl    $0,%eax                 #   0
         popl    %ecx                    
         cmpl    %eax,%ecx               
@@ -20,7 +20,7 @@ proc$gcd_2:
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   m
         movl    -8(%ebp),%edx           
-        movl    %eax,-32(%edx)          
+        movl    %eax,-32(%edx)          # gcd :=
         jmp     .L0004                  # Jump to next label
 .L0003:
         movl    -8(%ebp),%edx           
@@ -37,7 +37,7 @@ proc$gcd_2:
         call    null                    
         addl    $8,%esp                 # Remove stuff from stack
         movl    -8(%ebp),%edx           
-        movl    %eax,-32(%edx)          
+        movl    %eax,-32(%edx)          # gcd :=
 .L0004:
                                         # End if-statement
         movl    -32(%ebp),%eax          # Fetch return value
