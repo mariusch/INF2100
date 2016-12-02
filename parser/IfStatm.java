@@ -51,7 +51,7 @@ class IfStatm extends Statement {
         stm.get(0).genCode(f);
 
         if (stm.size() > 1) {
-            f.genInstr("",  "jmp",      lab2,           "Jump to next label");
+            f.genInstr("",  "jmp",      lab2,           "");
         }
 
         f.genInstr(lab1,    "",     "",     "");

@@ -31,7 +31,7 @@ class RelOperator extends Operator {
         if (opVal.equals("=")) {
 
             left.genCode(f);
-            f.genInstr("",          "popl",         "%ecx",               "");
+            f.genInstr("",          "pushl",         "%eax",               "");
             right.genCode(f);
             f.genInstr("",          "popl",         "%ecx",               "");
             f.genInstr("",          "cmpl",         "%eax,%ecx",               "");
