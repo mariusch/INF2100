@@ -54,24 +54,17 @@ class FuncCall extends Factor {
 
     @Override
     void genCode(CodeFile f) {
+        int sz = 4*eList.size();
 
         if (!eList.isEmpty()){
-
-            for (int i = eList.size()-1; i >= 0; i--){
-                eList.get(i).genCode(f); //Legger value fra expr til %eax
-                //pushl %eax
+            for (int i = eList.size()-1; i >= 0; i--) { //Reverse
+                eList.get(i).genCode(f);
                 f.genInstr("",      "pushl",        "%eax",         "Push param #" + (i+1));
             }
         }
 
-        //call func$f_n - f_n er navnet til funksjonsdeklarasjonen
         f.genInstr("",      "call",         "func$" + funcRef.progProcFuncName,      "");
-
-        int sz = 4*eList.size();
         f.genInstr("",      "addl",         "$" + sz + ",%esp", "Pop parameters");
-
-
-
     }
 
     @Override

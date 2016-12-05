@@ -60,9 +60,5 @@ class ConstDeclPart extends PascalSyntax {
 
     @Override
     void genCode(CodeFile f) {
-        for (ConstDecl cd : cdList){
-            //Kommentert ut for test av for mange kall
-           // cd.genCode(f);
-        }
     }
 }

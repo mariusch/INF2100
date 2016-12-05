@@ -29,7 +29,6 @@ class CompoundStatm extends Statement {
     @Override
     void genCode(CodeFile f) {
         statmList.genCode(f);
-
     }
 
     @Override

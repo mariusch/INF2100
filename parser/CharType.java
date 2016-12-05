@@ -22,7 +22,6 @@ class CharType extends Type {
 
     @Override
     void genCode(CodeFile f) {
-
     }
 
     public static CharType parse(Scanner s) {

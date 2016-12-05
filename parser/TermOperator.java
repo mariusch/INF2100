@@ -15,7 +15,6 @@ import static scanner.TokenKind.*;
 class TermOperator extends Operator {
 
     protected String opr;
-
     protected Term left, right;
 
     TermOperator(int lNum) {
@@ -40,26 +39,23 @@ class TermOperator extends Operator {
     @Override
     void genCode(CodeFile f) {
 
-
+        //Common for all operators
         f.genInstr("",          "pushl",         "%eax",               "");
         right.genCode(f);
         f.genInstr("",          "movl",         "%eax,%ecx",               "");
         f.genInstr("",          "popl",         "%eax",               "");
 
+        //Special code for each operator
         if (opr.equals("+")) {
-            //left.genCode(f);
 
             f.genInstr("",          "addl",         "%ecx,%eax",               "  "+opr);
+
         } else if (opr.equals("-")) {
 
-            //Denne er skrevet etter utskrift fra referansekompilatoren
-            //left.genCode(f);
             f.genInstr("",          "subl",         "%ecx,%eax",               "  "+opr);
 
         } else if (opr.equals("or")) {
 
-            //Denne er skrevet etter utskrift fra referansekompilatoren
-            //left.genCode(f);
             f.genInstr("",          "orl",         "%ecx,%eax",               "  "+opr);
 
         } else {

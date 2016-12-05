@@ -48,9 +48,8 @@ class Expression extends PascalSyntax{
     @Override
     void genCode(CodeFile f) {
 
-        //Simple Expr kalles ikke her hvis Rel Opr finnes, fordi Rel Opr kaller både left & right. Da blir det dobbelt
         if (ro != null) {
-            ro.genCode(f);
+            ro.genCode(f);   //Simple Expr is beeing called from Rel Opr
         } else {
             se.genCode(f);
         }

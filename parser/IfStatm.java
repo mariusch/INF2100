@@ -41,21 +41,19 @@ class IfStatm extends Statement {
                 lab2 = f.getLocalLabel();
 
         f.genInstr("",      "",     "",      "Start if-statement");
-        //System.out.println("IF sin expr er: " + exp + " som har se: " + exp.se + " og se2 " + exp.se2);
         exp.genCode(f);
-
         f.genInstr("",      "cmpl",     "$0,%eax",      "");
         f.genInstr("",      "je",       lab1,           "");
-
-
         stm.get(0).genCode(f);
 
+        //Else instruction
         if (stm.size() > 1) {
             f.genInstr("",  "jmp",      lab2,           "");
         }
 
         f.genInstr(lab1,    "",     "",     "");
 
+        //Else instruction
         if (stm.size() > 1){
             stm.get(1).genCode(f);
             f.genInstr(lab2,    "",     "",       "");

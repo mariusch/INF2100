@@ -59,6 +59,7 @@ public class Program extends PascalDecl {
     public void genCode(CodeFile f) {
         progProcFuncName = f.getLabel(name);
 
+        //OSX and Linux uses underscore
         String mainName;
         if (main.Main.useUnderscore()) {
             mainName = "_main";
@@ -66,18 +67,21 @@ public class Program extends PascalDecl {
             mainName = "main";
         }
 
+        //Generate main program that calls the out program
         f.genInstr("",              ".globl",             mainName,                             "");
         f.genInstr(mainName,          "call",               "prog$"+progProcFuncName,           "Start program");
         f.genInstr("",              "movl",               "$0,%eax",                          "Set status 0 and");
         f.genInstr("",              "ret",                "",                                 "terminate the program");
 
+        //Calculate offset
         if (progBlock.vdp != null) {
-            declOffset = 32 + (4 * progBlock.vdp.vdList.size()); //32 Pluss 4 pr. variabel
+            declOffset = 32 + (4 * progBlock.vdp.vdList.size());
         }
-        else {declOffset = 32;}
+        else {
+            declOffset = 32;
+        }
 
         progBlock.genCode(f);
-
         f.genInstr("",              "leave",              "",                  "End of "+name);
         f.genInstr("",              "ret",                "",                  "");
     }

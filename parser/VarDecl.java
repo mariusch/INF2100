@@ -46,16 +46,14 @@ class VarDecl extends PascalDecl {
             }
         }
 
-        //declLevel og declOffset
-        //declOffset = -32 - type.size(); //Dette er feil
+        //Get level of declaration
         declLevel = curScope.findDeclLvl();
     }
 
     @Override
     void genCode(CodeFile f) {
-
-        //Kode finnes også i ParamDecl
-        f.genInstr("", "movl", declLevel*-4+"(%ebp),%edx", ""); // -4 skal være -4b, blokknivå
+        //See ParamDecl
+        f.genInstr("", "movl", declLevel*-4+"(%ebp),%edx", "");
         f.genInstr("", "movl", declOffset+"(%edx),%eax", "  "+name);
     }
 

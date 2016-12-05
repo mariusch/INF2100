@@ -57,19 +57,16 @@ class FuncDecl extends ProcDecl {
         if (pdl != null)
             pdl.genCode(f);
 
-
         if (blck.vdp != null) {
-            declOffset = 32 + (4 * blck.vdp.vdList.size()); //32 Pluss 4 pr. variabel
+            declOffset = 32 + (4 * blck.vdp.vdList.size());
+        } else {
+            declOffset = 32;
         }
-        else {declOffset = 32;}
-
 
         tn.genCode(f);
         blck.genCode(f);
 
-
         f.genInstr("",      "movl",         "-32(%ebp),%eax",      "Fetch return value");
-
         f.genInstr("",      "leave",         "",      "End of "+name);
         f.genInstr("",      "ret",         "",      "");
     }

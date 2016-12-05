@@ -42,34 +42,30 @@ class FactorOperator extends Operator {
     @Override
     void genCode(CodeFile f) {
 
+        //Common for all operators
         f.genInstr("",          "pushl",         "%eax",               "");
         right.genCode(f);
         f.genInstr("",          "movl",         "%eax,%ecx",               "");
         f.genInstr("",          "popl",         "%eax",               "");
 
+        //Special code for each operator
         if (token.equals("*")) {
-
-            //Denne er skrevet etter utskrift fra referansekompilatoren
-            //left.genCode(f);
 
             f.genInstr("",          "imull",         "%ecx,%eax",               "  *");
 
         } else if (token.equals("div")) {
-            //left.genCode(f);
+
             f.genInstr("",          "cdq",         "",               "");
             f.genInstr("",          "idivl",         "%ecx",               "  /");
+
         } else if (token.equals("mod")) {
 
-            //Denne er skrevet etter utskrift fra referansekompilatoren
-            //left.genCode(f);
             f.genInstr("",          "cdq",         "",               "");
             f.genInstr("",          "idivl",         "%ecx",               "");
             f.genInstr("",          "movl",         "%edx,%eax",               "  mod");
 
         } else if (token.equals("and")) {
 
-            //Denne er skrevet etter utskrift fra referansekompilatoren
-            //left.genCode(f);
             f.genInstr("",          "andl",         "%ecx,%eax",               "  and");
 
         } else {

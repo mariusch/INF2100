@@ -38,9 +38,6 @@ class ArrayType extends Type {
 
     @Override
     void genCode(CodeFile f) {
-        /*con.genCode(f);
-        con2.genCode(f);
-        t.genCode(f);*/
     }
 
     public static ArrayType parse(Scanner s) {

@@ -32,10 +32,6 @@ class VarDeclPart extends PascalSyntax {
 
     @Override
     void genCode(CodeFile f) {
-        for (VarDecl vd : vdList) {
-            //Kommentert ut for test av for mange kall
-            //vd.genCode(f);
-        }
     }
 
     @Override

@@ -43,24 +43,15 @@ class ProcDecl extends PascalDecl {
 
     @Override
     void genCode(CodeFile f) {
-        //label = f.getLabel("proc$" + name);
         progProcFuncName = f.getLabel(name);
 
-        //f.genInstr(label,              "enter",             "$"+declOffset+",$" + declLevel,                      "Start of "+name);
-
-        /*if (pdl != null) {
-            pdl.genCode(f);
-        }*/
-
         if (block.vdp != null) {
-            declOffset = 32 + (4 * block.vdp.vdList.size()); //32 Pluss 4 pr. variabel
+            declOffset = 32 + (4 * block.vdp.vdList.size());
+        } else {
+            declOffset = 32;
         }
-        else {declOffset = 32;}
 
         block.genCode(f);
-
-
-
         f.genInstr("",      "leave",         "",      "End of "+name);
         f.genInstr("",      "ret",         "",      "");
     }

@@ -30,14 +30,12 @@ class ParamDecl extends PascalDecl {
         //declLevel og declOffset
         declOffset =- type.size();
         declLevel = curScope.findDeclLvl();
-        System.out.println("declOffset " + declOffset);
-        System.out.println("declLevel: " + declLevel + " navn " + name + " linje: " +  curScope.lineNum);
     }
 
     @Override
     void genCode(CodeFile f) {
-        //Kode finnes også i Var Decl
-        f.genInstr("", "movl", declLevel*-4+"(%ebp),%edx", ""); // -4 skal være -4b, blokknivå
+        //See VarDecl
+        f.genInstr("", "movl", declLevel*-4+"(%ebp),%edx", "");
         f.genInstr("", "movl", declOffset+"(%edx),%eax", "  "+name);
     }
 
