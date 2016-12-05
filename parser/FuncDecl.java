@@ -43,9 +43,9 @@ class FuncDecl extends ProcDecl {
 
         //declLevel og declOffset
         if (pdl != null) {
-            declOffset =- 32 - ( 4 * pdl.pdList.size() );
+            declOffset = 32 + ( 4 * pdl.pdList.size() );
         } else {
-            declOffset =- 32;
+            declOffset = 32;
         }
         declLevel = curScope.findDeclLvl();
     }

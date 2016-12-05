@@ -15,6 +15,7 @@ import java.util.HashMap;
  * @author Silje Merethe Dahl
  * @version 2016-10-17
  */
+
 class Block extends PascalSyntax {
     private ConstDeclPart cdp;
     protected VarDeclPart vdp;
