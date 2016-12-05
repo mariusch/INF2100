@@ -38,7 +38,7 @@ class AssignStatm extends Statement {
 
         int tmpb = variable.vRef.declLevel; //Endre til blokknivå når vi har det på plass
         int tmpo = variable.vRef.declOffset; //Endre til offset når vi har det på plass
-        System.out.println("Blokknivå: " + tmpb + " Offset: " + tmpo);
+        System.out.println("Blokknivå: " + tmpb + " Offset: " + tmpo + " og vRef er: " + variable.vRef);
 
         //Sjekk typen til variabelen
             //Merk: b er blokknivå, o er offset

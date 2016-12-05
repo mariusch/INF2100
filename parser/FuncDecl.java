@@ -15,8 +15,7 @@ import static scanner.TokenKind.*;
  */
 class FuncDecl extends ProcDecl {
 
-    //public String name;
-    ParamDeclList pdl;
+    protected ParamDeclList pdl;
     private parser.TypeName tn;
     private Block blck;
 
@@ -44,7 +43,7 @@ class FuncDecl extends ProcDecl {
 
         //declLevel og declOffset
         if (pdl != null) {
-            declOffset =- 32 + ( 4 * pdl.pdList.size() );
+            declOffset =- 32 - ( 4 * pdl.pdList.size() );
         } else {
             declOffset =- 32;
         }
