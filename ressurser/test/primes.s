@@ -1,18 +1,18 @@
-# Code file created by Pascal2016 compiler 2016-12-05 14:01:26
+# Code file created by Pascal2016 compiler 2016-12-05 14:32:14
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
 proc$findprimes_2:
-        enter   $32,$1                  # Start of findprimes
+        enter   $40,$2                  # Start of findprimes
         movl    $2,%eax                 #   2
         movl    -8(%ebp),%edx           
-        movl    %eax,-36(%edx)          # i1 :=
+        movl    %eax,0(%edx)            # i1 :=
 .L0003:
                                         # Start while-statement
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   i1
+        movl    0(%edx),%eax            #   i1
         pushl   %eax                    
         movl    $1000,%eax              #   1000
         popl    %ecx                    
@@ -24,16 +24,16 @@ proc$findprimes_2:
         movl    $2,%eax                 #   2
         pushl   %eax                    
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   i1
+        movl    0(%edx),%eax            #   i1
         movl    %eax,%ecx               
         popl    %eax                    
         imull   %ecx,%eax               #   *
         movl    -8(%ebp),%edx           
-        movl    %eax,-36(%edx)          # i2 :=
+        movl    %eax,0(%edx)            # i2 :=
 .L0005:
                                         # Start while-statement
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   i2
+        movl    0(%edx),%eax            #   i2
         pushl   %eax                    
         movl    $1000,%eax              #   1000
         popl    %ecx                    
@@ -44,36 +44,36 @@ proc$findprimes_2:
         je      .L0006                  
         movl    $0,%eax                 #   0
         movl    -4(%ebp),%edx           
-        movl    %eax,-36(%edx)          # prime :=
+        movl    %eax,0(%edx)            # prime :=
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   i2
+        movl    0(%edx),%eax            #   i2
         pushl   %eax                    
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   i1
+        movl    0(%edx),%eax            #   i1
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #   +
         movl    -8(%ebp),%edx           
-        movl    %eax,-36(%edx)          # i2 :=
+        movl    %eax,0(%edx)            # i2 :=
         jmp     .L0005                  
 .L0006:
                                         # End while-statement
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   i1
+        movl    0(%edx),%eax            #   i1
         pushl   %eax                    
         movl    $1,%eax                 #   1
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #   +
         movl    -8(%ebp),%edx           
-        movl    %eax,-36(%edx)          # i1 :=
+        movl    %eax,0(%edx)            # i1 :=
         jmp     .L0003                  
 .L0004:
                                         # End while-statement
         leave                           # End of findprimes
         ret                             
 proc$p4_7:
-        enter   $36,$1                  # Start of p4
+        enter   $32,$2                  # Start of p4
                                         # Start if-statement
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   x
@@ -133,17 +133,17 @@ proc$p4_7:
         leave                           # End of p4
         ret                             
 proc$printprimes_14:
-        enter   $32,$1                  # Start of printprimes
+        enter   $40,$2                  # Start of printprimes
         movl    $2,%eax                 #   2
         movl    -8(%ebp),%edx           
-        movl    %eax,-36(%edx)          # i :=
+        movl    %eax,0(%edx)            # i :=
         movl    $0,%eax                 #   0
         movl    -8(%ebp),%edx           
-        movl    %eax,-36(%edx)          # nprinted :=
+        movl    %eax,0(%edx)            # nprinted :=
 .L0015:
                                         # Start while-statement
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   i
+        movl    0(%edx),%eax            #   i
         pushl   %eax                    
         movl    $1000,%eax              #   1000
         popl    %ecx                    
@@ -154,12 +154,12 @@ proc$printprimes_14:
         je      .L0016                  
                                         # Start if-statement
         movl    -4(%ebp),%edx           
-        movl    -36(%edx),%eax          #   prime
+        movl    0(%edx),%eax            #   prime
         cmpl    $0,%eax                 
         je      .L0017                  
                                         # Start if-statement
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   nprinted
+        movl    0(%edx),%eax            #   nprinted
         pushl   %eax                    
         movl    $0,%eax                 #   0
         popl    %ecx                    
@@ -168,7 +168,7 @@ proc$printprimes_14:
         setg    %al                     # Test >
         pushl   %eax                    
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   nprinted
+        movl    0(%edx),%eax            #   nprinted
         pushl   %eax                    
         movl    $10,%eax                #   10
         movl    %eax,%ecx               
@@ -194,30 +194,30 @@ proc$printprimes_14:
 .L0019:
                                         # End if-statement
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   i
+        movl    0(%edx),%eax            #   i
         pushl   %eax                    # Push param #1.
         call    proc$p4_7               
         addl    $4,%esp                 # Pop params.
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   nprinted
+        movl    0(%edx),%eax            #   nprinted
         pushl   %eax                    
         movl    $1,%eax                 #   1
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #   +
         movl    -8(%ebp),%edx           
-        movl    %eax,-36(%edx)          # nprinted :=
+        movl    %eax,0(%edx)            # nprinted :=
 .L0017:
                                         # End if-statement
         movl    -8(%ebp),%edx           
-        movl    -36(%edx),%eax          #   i
+        movl    0(%edx),%eax            #   i
         pushl   %eax                    
         movl    $1,%eax                 #   1
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #   +
         movl    -8(%ebp),%edx           
-        movl    %eax,-36(%edx)          # i :=
+        movl    %eax,0(%edx)            # i :=
         jmp     .L0015                  
 .L0016:
                                         # End while-statement
@@ -231,11 +231,11 @@ prog$primes_1:
         enter   $40,$1                  # Start of primes
         movl    $2,%eax                 #   2
         movl    -4(%ebp),%edx           
-        movl    %eax,-36(%edx)          # i :=
+        movl    %eax,0(%edx)            # i :=
 .L0021:
                                         # Start while-statement
         movl    -4(%ebp),%edx           
-        movl    -36(%edx),%eax          #   i
+        movl    0(%edx),%eax            #   i
         pushl   %eax                    
         movl    $1000,%eax              #   1000
         popl    %ecx                    
@@ -246,16 +246,16 @@ prog$primes_1:
         je      .L0022                  
         movl    $1,%eax                 #   1
         movl    -4(%ebp),%edx           
-        movl    %eax,-36(%edx)          # prime :=
+        movl    %eax,0(%edx)            # prime :=
         movl    -4(%ebp),%edx           
-        movl    -36(%edx),%eax          #   i
+        movl    0(%edx),%eax            #   i
         pushl   %eax                    
         movl    $1,%eax                 #   1
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #   +
         movl    -4(%ebp),%edx           
-        movl    %eax,-36(%edx)          # i :=
+        movl    %eax,0(%edx)            # i :=
         jmp     .L0021                  
 .L0022:
                                         # End while-statement

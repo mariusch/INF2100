@@ -47,7 +47,7 @@ class VarDecl extends PascalDecl {
         }
 
         //declLevel og declOffset
-        declOffset =- 32 - type.size(); //Dette er feil
+        //declOffset = -32 - type.size(); //Dette er feil
         declLevel = curScope.findDeclLvl();
     }
 
