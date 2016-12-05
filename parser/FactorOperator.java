@@ -50,7 +50,7 @@ class FactorOperator extends Operator {
             right.genCode(f);
             f.genInstr("",          "movl",         "%eax,%ecx",               "");
             f.genInstr("",          "popl",         "%eax",               "");
-            f.genInstr("",          "imull",         "%ecx,%eax",               "  "+token);
+            f.genInstr("",          "imull",         "%ecx,%eax",               "  *");
 
         } else if (token.equals("div")) {
             left.genCode(f);
@@ -70,7 +70,7 @@ class FactorOperator extends Operator {
             f.genInstr("",          "popl",         "%eax",               "");
             f.genInstr("",          "cdq",         "",               "");
             f.genInstr("",          "idivl",         "%ecx",               "");
-            f.genInstr("",          "movl",         "%edx,%eax",               "  "+token);
+            f.genInstr("",          "movl",         "%edx,%eax",               "  mod");
 
         } else if (token.equals("and")) {
 
@@ -80,7 +80,7 @@ class FactorOperator extends Operator {
             right.genCode(f);
             f.genInstr("",          "movl",         "%eax,%ecx",               "");
             f.genInstr("",          "popl",         "%eax",               "");
-            f.genInstr("",          "andl",         "%ecx,%eax",               "  "+token);
+            f.genInstr("",          "andl",         "%ecx,%eax",               "  and");
 
         } else {
             Main.panic("Factor opr - genCode()");

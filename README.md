@@ -4,8 +4,7 @@ Her kommer readme
 
 
 
-@todo: SimpleExpr fungerer ikke med mer enn 2 terms (test easter.pas)
 @todo: Offset & blokknivå
 @todo: Mangler noen call-setninger i opers.pas (nederst)
 @todo: Mangler noen call i primes.pas ... og array-ting, hvis vi har tid noen gang
-@todo: 
+@todo: For mange linjer i beregninger i easter.pas
