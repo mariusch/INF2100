@@ -1,11 +1,11 @@
-# Code file created by Pascal2016 compiler 2016-12-02 16:57:31
+# Code file created by Pascal2016 compiler 2016-12-05 13:30:59
         .globl  _main                   
 _main:
         call    prog$gcd_1              # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
 func$gcd_2:
-        enter   $-24,$1                 # Start of function
+        enter   $-24,$1                 # Start of gcd
                                         # Start if-statement
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   n
@@ -92,8 +92,6 @@ prog$gcd_1:
         pushl   %eax                    # Push next param.
         call    write_char              
         addl    $4,%esp                 # Pop param.
-        movl    -4(%ebp),%edx           
-        movl    -4(%edx),%eax           #   res
         pushl   %eax                    # Push next param.
         call    write_int               
         addl    $4,%esp                 # Pop param.

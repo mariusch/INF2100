@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-02 16:47:00
+# Code file created by Pascal2016 compiler 2016-12-05 13:18:47
         .globl  _main                   
 _main:
         call    prog$easter_1           # Start program
@@ -16,7 +16,7 @@ proc$easter_2:
         idivl   %ecx                    
         movl    %edx,%eax               #   mod
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # a :=
+        movl    %eax,-36(%edx)          # a :=
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   y
         pushl   %eax                    
@@ -26,7 +26,7 @@ proc$easter_2:
         cdq                             
         idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # b :=
+        movl    %eax,-36(%edx)          # b :=
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   y
         pushl   %eax                    
@@ -37,9 +37,9 @@ proc$easter_2:
         idivl   %ecx                    
         movl    %edx,%eax               #   mod
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # c :=
+        movl    %eax,-36(%edx)          # c :=
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   b
+        movl    -36(%edx),%eax          #   b
         pushl   %eax                    
         movl    $4,%eax                 #   4
         movl    %eax,%ecx               
@@ -47,9 +47,9 @@ proc$easter_2:
         cdq                             
         idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # d :=
+        movl    %eax,-36(%edx)          # d :=
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   b
+        movl    -36(%edx),%eax          #   b
         pushl   %eax                    
         movl    $4,%eax                 #   4
         movl    %eax,%ecx               
@@ -58,9 +58,9 @@ proc$easter_2:
         idivl   %ecx                    
         movl    %edx,%eax               #   mod
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # e :=
+        movl    %eax,-36(%edx)          # e :=
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   b
+        movl    -36(%edx),%eax          #   b
         pushl   %eax                    
         movl    $8,%eax                 #   8
         movl    %eax,%ecx               
@@ -73,12 +73,12 @@ proc$easter_2:
         cdq                             
         idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # f :=
+        movl    %eax,-36(%edx)          # f :=
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   b
+        movl    -36(%edx),%eax          #   b
         pushl   %eax                    
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   f
+        movl    -36(%edx),%eax          #   f
         movl    %eax,%ecx               
         popl    %eax                    
         subl    %ecx,%eax               #   -
@@ -89,17 +89,17 @@ proc$easter_2:
         cdq                             
         idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # g :=
+        movl    %eax,-36(%edx)          # g :=
         movl    $19,%eax                #   19
         pushl   %eax                    
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   a
+        movl    -36(%edx),%eax          #   a
         movl    %eax,%ecx               
         popl    %eax                    
         imull   %ecx,%eax               #   *
         pushl   %eax                    
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   b
+        movl    -36(%edx),%eax          #   b
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #   +
@@ -111,9 +111,9 @@ proc$easter_2:
         idivl   %ecx                    
         movl    %edx,%eax               #   mod
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # h :=
+        movl    %eax,-36(%edx)          # h :=
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   c
+        movl    -36(%edx),%eax          #   c
         pushl   %eax                    
         movl    $4,%eax                 #   4
         movl    %eax,%ecx               
@@ -121,9 +121,9 @@ proc$easter_2:
         cdq                             
         idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # i :=
+        movl    %eax,-36(%edx)          # i :=
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   c
+        movl    -36(%edx),%eax          #   c
         pushl   %eax                    
         movl    $4,%eax                 #   4
         movl    %eax,%ecx               
@@ -132,13 +132,13 @@ proc$easter_2:
         idivl   %ecx                    
         movl    %edx,%eax               #   mod
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # k :=
+        movl    %eax,-36(%edx)          # k :=
         movl    $32,%eax                #   32
         pushl   %eax                    
         movl    $2,%eax                 #   2
         pushl   %eax                    
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   e
+        movl    -36(%edx),%eax          #   e
         movl    %eax,%ecx               
         popl    %eax                    
         imull   %ecx,%eax               #   *
@@ -153,14 +153,14 @@ proc$easter_2:
         idivl   %ecx                    
         movl    %edx,%eax               #   mod
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # l :=
+        movl    %eax,-36(%edx)          # l :=
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   a
+        movl    -36(%edx),%eax          #   a
         pushl   %eax                    
         movl    $11,%eax                #   11
         pushl   %eax                    
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   h
+        movl    -36(%edx),%eax          #   h
         movl    %eax,%ecx               
         popl    %eax                    
         imull   %ecx,%eax               #   *
@@ -174,12 +174,12 @@ proc$easter_2:
         cdq                             
         idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # m :=
+        movl    %eax,-36(%edx)          # m :=
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   h
+        movl    -36(%edx),%eax          #   h
         pushl   %eax                    
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   l
+        movl    -36(%edx),%eax          #   l
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #   +
@@ -190,12 +190,12 @@ proc$easter_2:
         cdq                             
         idivl   %ecx                    #   /
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # month :=
+        movl    %eax,-36(%edx)          # month :=
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   h
+        movl    -36(%edx),%eax          #   h
         pushl   %eax                    
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   l
+        movl    -36(%edx),%eax          #   l
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #   +
@@ -212,10 +212,10 @@ proc$easter_2:
         popl    %eax                    
         addl    %ecx,%eax               #   +
         movl    -8(%ebp),%edx           
-        movl    %eax,-4(%edx)           # day :=
+        movl    %eax,-36(%edx)          # day :=
                                         # Start if-statement
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   month
+        movl    -36(%edx),%eax          #   month
         pushl   %eax                    
         movl    $3,%eax                 #   3
         popl    %ecx                    
@@ -225,7 +225,7 @@ proc$easter_2:
         cmpl    $0,%eax                 
         je      .L0003                  
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   day
+        movl    -36(%edx),%eax          #   day
         pushl   %eax                    # Push next param.
         call    write_int               
         addl    $4,%esp                 # Pop param.
@@ -269,7 +269,7 @@ proc$easter_2:
         jmp     .L0004                  
 .L0003:
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   day
+        movl    -36(%edx),%eax          #   day
         pushl   %eax                    # Push next param.
         call    write_int               
         addl    $4,%esp                 # Pop param.
@@ -318,11 +318,11 @@ prog$easter_1:
         enter   $36,$1                  # Start of easter
         movl    $2010,%eax              #   2010
         movl    -4(%ebp),%edx           
-        movl    %eax,-4(%edx)           # y :=
+        movl    %eax,-36(%edx)          # y :=
 .L0005:
                                         # Start while-statement
         movl    -4(%ebp),%edx           
-        movl    -4(%edx),%eax           #   y
+        movl    -36(%edx),%eax          #   y
         pushl   %eax                    
         movl    $2020,%eax              #   2020
         popl    %ecx                    
@@ -332,19 +332,19 @@ prog$easter_1:
         cmpl    $0,%eax                 
         je      .L0006                  
         movl    -4(%ebp),%edx           
-        movl    -4(%edx),%eax           #   y
+        movl    -36(%edx),%eax          #   y
         pushl   %eax                    # Push param #1.
         call    proc$easter_2           
         addl    $4,%esp                 # Pop params.
         movl    -4(%ebp),%edx           
-        movl    -4(%edx),%eax           #   y
+        movl    -36(%edx),%eax          #   y
         pushl   %eax                    
         movl    $1,%eax                 #   1
         movl    %eax,%ecx               
         popl    %eax                    
         addl    %ecx,%eax               #   +
         movl    -4(%ebp),%edx           
-        movl    %eax,-4(%edx)           # y :=
+        movl    %eax,-36(%edx)          # y :=
         jmp     .L0005                  
 .L0006:
                                         # End while-statement
