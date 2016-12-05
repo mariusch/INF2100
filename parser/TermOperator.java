@@ -30,7 +30,6 @@ class TermOperator extends Operator {
         } else {
             type = lib.integerType;
         }
-
         right.type.checkType(left.type, "left " + opr + " operand" , this,
                 opr + " is different type.");
 
