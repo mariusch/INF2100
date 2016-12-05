@@ -40,31 +40,26 @@ class TermOperator extends Operator {
     @Override
     void genCode(CodeFile f) {
 
+
+        f.genInstr("",          "pushl",         "%eax",               "");
+        right.genCode(f);
+        f.genInstr("",          "movl",         "%eax,%ecx",               "");
+        f.genInstr("",          "popl",         "%eax",               "");
+
         if (opr.equals("+")) {
-            left.genCode(f);
-            f.genInstr("",          "pushl",         "%eax",               "");
-            right.genCode(f);
-            f.genInstr("",          "movl",         "%eax,%ecx",               "");
-            f.genInstr("",          "popl",         "%eax",               "");
+            //left.genCode(f);
+
             f.genInstr("",          "addl",         "%ecx,%eax",               "  "+opr);
         } else if (opr.equals("-")) {
 
             //Denne er skrevet etter utskrift fra referansekompilatoren
-            left.genCode(f);
-            f.genInstr("",          "pushl",         "%eax",               "");
-            right.genCode(f);
-            f.genInstr("",          "movl",         "%eax,%ecx",               "");
-            f.genInstr("",          "popl",         "%eax",               "");
+            //left.genCode(f);
             f.genInstr("",          "subl",         "%ecx,%eax",               "  "+opr);
 
         } else if (opr.equals("or")) {
 
             //Denne er skrevet etter utskrift fra referansekompilatoren
-            left.genCode(f);
-            f.genInstr("",          "pushl",         "%eax",               "");
-            right.genCode(f);
-            f.genInstr("",          "movl",         "%eax,%ecx",               "");
-            f.genInstr("",          "popl",         "%eax",               "");
+            //left.genCode(f);
             f.genInstr("",          "orl",         "%ecx,%eax",               "  "+opr);
 
         } else {

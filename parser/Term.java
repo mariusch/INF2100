@@ -27,6 +27,10 @@ class Term extends PascalSyntax {
 
         Factor left, right;
         left = fList.get(0);
+
+        //   h := (19*a+b-d-g+15) mod 30;
+
+
         left.check(curScope, lib);
         type = left.type;
 
@@ -48,8 +52,9 @@ class Term extends PascalSyntax {
     @Override
     void genCode(CodeFile f) {
         //Factor kalles ikke her hvis Factor Opr finnes, fordi Factor Opr kaller både left & right. Da blir det dobbelt
+
         if (fOList.size() != 0) {
-            //fOList.get(0).genCode(f);
+            fOList.get(0).left.genCode(f);
 
             for (int i = 0; i < fOList.size(); i++){
                 fOList.get(i).genCode(f);
