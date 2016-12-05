@@ -100,7 +100,7 @@ class Block extends PascalSyntax {
             decln = "proc$";
         } else {Main.panic(this.identify());}
 
-        f.genInstr(decln+context.progProcFuncName, "enter", "$"+context.declOffset+",$1", "Start of " + context.name);
+        f.genInstr(decln+context.progProcFuncName, "enter", "$"+context.declOffset+",$"+this.findDeclLvl(), "Start of " + context.name);
 
         if (stml != null)
             stml.genCode(f);
