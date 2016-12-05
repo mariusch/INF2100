@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-05 16:09:03
+# Code file created by Pascal2016 compiler 2016-12-05 16:32:01
         .globl  _main                   
 _main:
         call    prog$easter_1           # Start program
