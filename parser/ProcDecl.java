@@ -52,7 +52,15 @@ class ProcDecl extends PascalDecl {
         /*if (pdl != null) {
             pdl.genCode(f);
         }*/
+
+        if (block.vdp != null) {
+            declOffset = 32 + (4 * block.vdp.vdList.size()); //32 Pluss 4 pr. variabel
+        }
+        else {declOffset = 32;}
+
         block.genCode(f);
+
+
 
         f.genInstr("",      "leave",         "",      "End of "+name);
         f.genInstr("",      "ret",         "",      "");
