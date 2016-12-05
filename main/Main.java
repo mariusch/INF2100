@@ -7,7 +7,7 @@ import static scanner.TokenKind.*;
 import java.io.*;
 
 public class Main {
-    public static final String version = "0.9";
+    public static final String version = "1.0";
 
     public static parser.Library library;
     public static LogFile log = new LogFile();
@@ -102,7 +102,7 @@ public class Main {
     }
 
 
-    //Del 2:
+    //Part 2:
     private static void doTestParser(Scanner s) {
         Program prog = Program.parse(s);
         if (s.curToken.kind != eofToken)
@@ -112,7 +112,7 @@ public class Main {
     }
 
 
-    //Del 3:
+    //Part 3:
     private static void doTestChecker(Scanner s) {
         Program prog = Program.parse(s);
         if (s.curToken.kind != eofToken)
@@ -125,7 +125,7 @@ public class Main {
     }
 
 
-    // Del 4:
+    // Part 4:
     private static void doRunRealCompiler(Scanner s) {
         System.out.print("Parsing...");
         Program prog = Program.parse(s);

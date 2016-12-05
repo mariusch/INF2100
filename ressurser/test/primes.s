@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-05 15:51:09
+# Code file created by Pascal2016 compiler 2016-12-05 23:30:20
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
@@ -259,5 +259,7 @@ prog$primes_1:
         jmp     .L0021                  
 .L0022:
                                         # End while-statement
+        call    proc$findprimes_2       
+        call    proc$printprimes_14     
         leave                           # End of primes
         ret                             
