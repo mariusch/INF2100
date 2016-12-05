@@ -1,11 +1,11 @@
-# Code file created by Pascal2016 compiler 2016-12-05 14:01:26
+# Code file created by Pascal2016 compiler 2016-12-05 14:10:25
         .globl  _main                   
 _main:
         call    prog$primes_1           # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
 proc$findprimes_2:
-        enter   $32,$1                  # Start of findprimes
+        enter   $40,$2                  # Start of findprimes
         movl    $2,%eax                 #   2
         movl    -8(%ebp),%edx           
         movl    %eax,-36(%edx)          # i1 :=
@@ -73,7 +73,7 @@ proc$findprimes_2:
         leave                           # End of findprimes
         ret                             
 proc$p4_7:
-        enter   $36,$1                  # Start of p4
+        enter   $32,$2                  # Start of p4
                                         # Start if-statement
         movl    -8(%ebp),%edx           
         movl    -4(%edx),%eax           #   x
@@ -133,7 +133,7 @@ proc$p4_7:
         leave                           # End of p4
         ret                             
 proc$printprimes_14:
-        enter   $32,$1                  # Start of printprimes
+        enter   $40,$2                  # Start of printprimes
         movl    $2,%eax                 #   2
         movl    -8(%ebp),%edx           
         movl    %eax,-36(%edx)          # i :=

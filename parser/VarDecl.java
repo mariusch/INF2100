@@ -35,7 +35,7 @@ class VarDecl extends PascalDecl {
         }
         else if (vType instanceof TypeName) {
             TypeName tn = (TypeName) vType;
-            if (tn.name.equals("integer")){
+            if (tn.name.equals("integer")) {
                 type = lib.integerType;
             }
             else if (tn.name.equals("boolean")) {
