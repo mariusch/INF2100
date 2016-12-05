@@ -96,6 +96,9 @@ class ProcCallStatm extends Statement {
                 int sz = 4 * exprList.size();
                 f.genInstr("", "addl", "$" + sz + ",%esp", "Pop params.");
             }
+            else {
+                f.genInstr("", "call", "proc$" + procRef.progProcFuncName, "");
+            }
         }
 
     }

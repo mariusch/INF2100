@@ -1,11 +1,11 @@
-# Code file created by Pascal2016 compiler 2016-12-02 16:24:39
+# Code file created by Pascal2016 compiler 2016-12-05 21:13:24
         .globl  _main                   
 _main:
         call    prog$operatortest_1     # Start program
         movl    $0,%eax                 # Set status 0 and
         ret                             # terminate the program
 proc$test_3:
-        enter   $-28,$1                 # Start of test
+        enter   $32,$3                  # Start of test
         movl    $110,%eax               #   'n'
         pushl   %eax                    # Push next param.
         call    write_char              
@@ -52,7 +52,7 @@ proc$test_3:
         leave                           # End of test
         ret                             
 proc$testunaryboolean_2:
-        enter   $-32,$1                 # Start of testunaryboolean
+        enter   $32,$2                  # Start of testunaryboolean
         movl    $0,%eax                 #   0
         pushl   %eax                    # Push param #1.
         call    proc$test_3             
@@ -64,7 +64,7 @@ proc$testunaryboolean_2:
         leave                           # End of testunaryboolean
         ret                             
 proc$test_5:
-        enter   $-24,$1                 # Start of test
+        enter   $32,$3                  # Start of test
         movl    -12(%ebp),%edx          
         movl    -4(%edx),%eax           #   x
         pushl   %eax                    # Push next param.
@@ -178,7 +178,7 @@ proc$test_5:
         leave                           # End of test
         ret                             
 proc$testbinaryboolean_4:
-        enter   $-32,$1                 # Start of testbinaryboolean
+        enter   $32,$2                  # Start of testbinaryboolean
         movl    $0,%eax                 #   0
         pushl   %eax                    # Push param #2.
         movl    $0,%eax                 #   0
@@ -206,7 +206,7 @@ proc$testbinaryboolean_4:
         leave                           # End of testbinaryboolean
         ret                             
 proc$test_7:
-        enter   $-28,$1                 # Start of test
+        enter   $32,$3                  # Start of test
         movl    $45,%eax                #   '-'
         pushl   %eax                    # Push next param.
         call    write_char              
@@ -279,7 +279,7 @@ proc$test_7:
         leave                           # End of test
         ret                             
 proc$testunarynumeric_6:
-        enter   $-32,$1                 # Start of testunarynumeric
+        enter   $32,$2                  # Start of testunarynumeric
         movl    $17,%eax                #   17
         pushl   %eax                    # Push param #1.
         call    proc$test_7             
@@ -296,7 +296,7 @@ proc$testunarynumeric_6:
         leave                           # End of testunarynumeric
         ret                             
 proc$test_9:
-        enter   $-24,$1                 # Start of test
+        enter   $32,$3                  # Start of test
         movl    -12(%ebp),%edx          
         movl    -4(%edx),%eax           #   x
         pushl   %eax                    # Push next param.
@@ -577,7 +577,7 @@ proc$test_9:
         leave                           # End of test
         ret                             
 proc$testbinarynumeric_8:
-        enter   $-32,$1                 # Start of testbinarynumeric
+        enter   $32,$2                  # Start of testbinarynumeric
         movl    $17,%eax                #   17
         pushl   %eax                    # Push param #2.
         movl    $17,%eax                #   17
@@ -641,5 +641,9 @@ proc$testbinarynumeric_8:
         ret                             
 prog$operatortest_1:
         enter   $32,$1                  # Start of operatortest
+        call    proc$testunaryboolean_2 
+        call    proc$testunarynumeric_6 
+        call    proc$testbinaryboolean_4 
+        call    proc$testbinarynumeric_8 
         leave                           # End of operatortest
         ret                             
