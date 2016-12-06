@@ -27,8 +27,7 @@ class ParamDecl extends PascalDecl {
         tn.check(curScope, lib);
         type = tn.type;
 
-        //declLevel og declOffset
-        declOffset =- type.size();
+        //Get level of declaration
         declLevel = curScope.findDeclLvl();
     }
 

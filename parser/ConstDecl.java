@@ -29,10 +29,6 @@ class ConstDecl extends PascalDecl {
         type = con.type;
 
         constVal = con.constVal;
-
-        //declLevel og declOffset
-        declOffset =- type.size();
-        declLevel = curScope.findDeclLvl();
     }
 
     @Override

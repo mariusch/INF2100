@@ -1,4 +1,4 @@
-# Code file created by Pascal2016 compiler 2016-12-05 21:07:29
+# Code file created by Pascal2016 compiler 2016-12-05 23:48:24
         .globl  _main                   
 _main:
         call    prog$easter_1           # Start program
@@ -7,7 +7,7 @@ _main:
 proc$easter_2:
         enter   $92,$2                  # Start of easter
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   y
+        movl    0(%edx),%eax            #   y
         pushl   %eax                    
         movl    $19,%eax                #   19
         movl    %eax,%ecx               
@@ -18,7 +18,7 @@ proc$easter_2:
         movl    -8(%ebp),%edx           
         movl    %eax,0(%edx)            # a :=
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   y
+        movl    0(%edx),%eax            #   y
         pushl   %eax                    
         movl    $100,%eax               #   100
         movl    %eax,%ecx               
@@ -28,7 +28,7 @@ proc$easter_2:
         movl    -8(%ebp),%edx           
         movl    %eax,0(%edx)            # b :=
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   y
+        movl    0(%edx),%eax            #   y
         pushl   %eax                    
         movl    $100,%eax               #   100
         movl    %eax,%ecx               
@@ -346,7 +346,7 @@ proc$easter_2:
         call    write_char              
         addl    $4,%esp                 # Pop param.
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   y
+        movl    0(%edx),%eax            #   y
         pushl   %eax                    # Push next param.
         call    write_int               
         addl    $4,%esp                 # Pop param.
@@ -390,7 +390,7 @@ proc$easter_2:
         call    write_char              
         addl    $4,%esp                 # Pop param.
         movl    -8(%ebp),%edx           
-        movl    -4(%edx),%eax           #   y
+        movl    0(%edx),%eax            #   y
         pushl   %eax                    # Push next param.
         call    write_int               
         addl    $4,%esp                 # Pop param.
