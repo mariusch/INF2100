@@ -32,6 +32,11 @@ class VarDeclPart extends PascalSyntax {
 
     @Override
     void genCode(CodeFile f) {
+        int teller = 32;
+        for (VarDecl vd : vdList) {
+            teller = teller + 4;
+            vd.declOffset = -teller;
+        }
     }
 
     @Override
@@ -45,7 +50,6 @@ class VarDeclPart extends PascalSyntax {
         Main.log.prettyPrintLn("var ");
         Main.log.prettyIndent();
         for (VarDecl vd : vdList){
-
             vd.prettyPrint();
         }
         Main.log.prettyOutdent();

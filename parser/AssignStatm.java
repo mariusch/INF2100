@@ -29,7 +29,6 @@ class AssignStatm extends Statement {
         expr.check(curScope, lib);
         expr.type.checkType(variable.type, ":=", this,
                 ":= is not Boolean.");
-
     }
 
     @Override
@@ -44,8 +43,7 @@ class AssignStatm extends Statement {
             f.genInstr("",          "movl",         "%eax," + tmpo + "(%edx)",       variable.name+" :=");
         }
 
-        //Hvis array:
-            //Dropp denne foreløpig
+        //Skip array implementation for now:
 
         else if (variable.vRef instanceof FuncDecl) {
             f.genInstr("",          "movl",         -4*(tmpb+1)+"(%ebp),%edx",      "");

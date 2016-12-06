@@ -45,6 +45,9 @@ class ProcDecl extends PascalDecl {
     void genCode(CodeFile f) {
         progProcFuncName = f.getLabel(name);
 
+        if (pdl != null)
+            pdl.genCode(f);
+
         if (block.vdp != null) {
             declOffset = 32 + (4 * block.vdp.vdList.size());
         } else {

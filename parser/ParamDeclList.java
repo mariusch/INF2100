@@ -30,6 +30,11 @@ class ParamDeclList extends PascalSyntax {
 
     @Override
     void genCode(CodeFile f) {
+        int teller = 4;
+        for (ParamDecl pd : pdList) {
+            teller = teller + 4;
+            pd.declOffset = teller;
+        }
     }
 
     @Override
